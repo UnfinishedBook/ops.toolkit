@@ -11,14 +11,15 @@ class Loop(Cmd):
 
     #事件循环开始前执行
     def preloop(self):
+        #选择要管理的环境
+        env = self.select(GL.deploy().keys())
+        GL.setEnv(env)
+
         #验证管理密码
         password = getpass.getpass('请输入使用密码：')
         if verifyPwd(password) == False:
             exit()
         GL.setPwd(password)
-        #选择要管理的环境
-        env = self.select(GL.deploy().keys())
-        GL.setEnv(env)
 
         intro = GL.deploy()[GL.env()]['intro']
         if GL.project() == 'quickbid':
