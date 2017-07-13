@@ -25,10 +25,9 @@ class Model:
 
     def deploy(self):
         if len(self.__deploy) == 0:
-            for ip in GL.deploy()[GL.env()]:
-                if ip == 'intro':
-                    continue
-                for t in GL.deploy()[GL.env()][ip]:
+            ips = GL.deploy()[GL.env()]['deploy']
+            for ip in ips:
+                for t in ips[ip]:
                     if t == self.name():
                         self.__deploy.append(ip)
         return self.__deploy

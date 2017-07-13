@@ -1,42 +1,46 @@
 {
     "test": {
         "intro": "测试环境",
-        "10.104.197.116": [
-            "activity-center",
-            "caishen-center",
-            "caishen-center-2",
-            "coupon-process",
-            "free-process",
-            "integration-process",
-            "red-packet-process",
-            "activity-server-1",
-            "activity-server-2",
-            "lottery-server",
-            "monitor-server",
-            "pay-server",
-            "pk-server-1",
-            "pk-server-2",
-            "red-packet-server",
-            "activity",
-            "api",
-            "count",
-            "delivery",
-            "deliveryTimer",
-            "cms",
-            "cmsTimer",
-            "hotdata",
-            "main",
-            "mainTimer",
-            "monitor",
-            "periodGenerator",
-            "security",
-            "stats",
-            "statsTimer"
-        ]
+        "deploy": {
+            "10.104.197.116": [
+                "activity-center",
+                "caishen-center",
+                "caishen-center-2",
+                "coupon-process",
+                "free-process",
+                "integration-process",
+                "red-packet-process",
+                "activity-server-1",
+                "activity-server-2",
+                "lottery-server",
+                "monitor-server",
+                "pay-server",
+                "pk-server-1",
+                "pk-server-2",
+                "red-packet-server",
+                "activity",
+                "api",
+                "count",
+                "delivery",
+                "deliveryTimer",
+                "cms",
+                "cmsTimer",
+                "hotdata",
+                "main",
+                "mainTimer",
+                "monitor",
+                "periodGenerator",
+                "security",
+                "stats",
+                "statsTimer"
+            ]
+        }
     },
     "pro": {
         "intro": "生产环境",
-        "10.104.11.150": [
-        ]
+        "deploy": {
+            "10.104.11.150": [
+            ]
+        }
     }
 }

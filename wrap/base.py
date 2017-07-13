@@ -27,8 +27,9 @@ class Remote:
 
 #验证密码是否正确
 def verifyPwd(pwd):
+    ip = GL.deploy()[GL.env()]['deploy'].keys()[0]
     try:
-        ssh = sshLogin('172.18.27.5', 'root', pwd, GL.rsa())
+        ssh = sshLogin(ip, 'root', pwd, GL.rsa())
         ssh.logout()
         return True
     except Exception as e:
