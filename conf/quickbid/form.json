@@ -1,0 +1,24 @@
+{
+    "bakdir": "/mydata/maintenance/backup", 
+    "center": {
+        "appdir": "/mydata/center",
+        "cnfdir": "/data/config/server",
+        "updir": "/mydata/center/zip"
+    },
+    "process": {
+        "appdir": "/mydata/process",
+        "cnfdir": "/data/config/process",
+        "updir": "/mydata/process/zip" 
+    },
+    "server": {
+        "appdir": "/mydata/server",
+        "cnfdir": "/data/config/server",
+        "updir": "/mydata/server/war" 
+    },
+    "node": {
+        "appdir": "/mydata/nodeproj"
+    },
+    "static": {
+        "appdir": "/mydata"
+    }
+}

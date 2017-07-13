@@ -1,0 +1,71 @@
+{
+    "quickbid-center": {
+        "form": "center",
+        "pack": "quickbid-provider-0.1.0-assembly.zip",
+        "appdir": "quickbid-provider-0.1.0"
+    },
+    "qb-firewall-process": {
+        "form": "process",
+        "pack": "qb-firewall-process-assembly.zip",
+        "appdir": "qb-firewall-process"
+    },
+    "qb-prizepool-process": {
+        "form": "process",
+        "pack": "qb-prizepool-process-assembly.zip",
+        "appdir": "qb-prizepool-process"
+    },
+    "qb-proxy-process": {
+        "form": "process",
+        "pack": "qb-proxy-process-assembly.zip",
+        "appdir": "qb-proxy-process"
+    },
+    "quickbid-process": {
+        "form": "process",
+        "pack": "quickbid-process-assembly.zip",
+        "appdir": "quickbid-process"
+    },
+    "qbinside-server": {
+        "form": "server",
+        "pack": "qbinside.war",
+        "appdir": "tomcat-qbinside-server/webapps/qbinside"
+    },
+    "qbmonitor-server": {
+        "form": "server",
+        "pack": "qbmonitor.war",
+        "appdir": "tomcat-qbmonitor-server/webapps/qbmonitor"
+    },
+    "qbpay-server": {
+        "form": "server",
+        "pack": "qbpay.war",
+        "appdir": "tomcat-qbpay-server/webapps/qbpay"
+    },
+    "quickbid-server": {
+        "form": "server",
+        "pack": "quickbid.war",
+        "appdir": "tomcat-quickbid-server/webapps/quickbid"
+    },
+    "ad-api": {
+        "form": "node",
+        "appdir": "ad-api"
+    },
+    "api": {
+        "form": "node",
+        "appdir": "api"
+    },
+    "auth": {
+        "form": "node",
+        "appdir": "auth"
+    },
+    "cms": {
+        "form": "node",
+        "appdir": "cms"
+    },
+    "cmsTimer": {
+        "form": "node",
+        "appdir": "cms"
+    },
+    "data": {
+        "form": "node",
+        "appdir": "ad_stats"
+    }
+}

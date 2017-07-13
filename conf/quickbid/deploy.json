@@ -1,0 +1,78 @@
+{
+    "test": {
+        "intro": "测试环境",
+        "monitor": "172.18.27.5:7092",
+        "muser": "admin",
+        "mpwd": "ab8b4bae3aa8d4ac95afc4a7d16d5b3ee818fd14ede1b57a6136ef4661323e2a",
+        "172.18.27.5": [
+            "wap",
+            "quickbid-center",
+            "qb-data-process",
+            "qb-firewall-process",
+            "qb-prizepool-process",
+            "qb-proxy-process",
+            "quickbid-process",
+            "qbinside-server",
+            "qbmonitor-server",
+            "qbpay-server",
+            "quickbid-server",
+            "ad-api",
+            "api",
+            "auth",
+            "cms",
+            "cmsTimer",
+            "data"
+        ]
+    },
+    "pro": {
+        "intro": "生产环境",
+        "monitor": "172.18.203.145:7092",
+        "muser": "admin",
+        "mpwd": "ab8b4bae3aa8d4ac95afc4a7d16d5b3ee818fd14ede1b57a6136ef4661323e2a",
+        "172.18.27.8": [
+            "cdn",
+            "wap"
+        ],
+        "172.18.27.10": [
+            "quickbid-center",
+            "qb-firewall-process",
+            "qb-prizepool-process",
+            "qb-proxy-process"
+        ],
+        "172.18.203.147": [
+            "quickbid-center",
+            "quickbid-process"
+        ],
+        "172.18.27.6": [
+            "quickbid-center",
+            "qbinside-server",
+            "qbmonitor-server",
+            "qbpay-server",
+            "qbshield-server",
+            "quickbid-server"
+        ],
+        "172.18.203.145": [
+            "quickbid-center",
+            "qb-data-process",
+            "qbinside-server",
+            "qbmonitor-server",
+            "qbpay-server",
+            "quickbid-server"
+        ],
+        "172.18.27.7": [
+            "ad-api",
+            "api",
+            "auth",
+            "cms",
+            "data"
+        ],
+        "172.18.203.146": [
+            "ad-api",
+            "api",
+            "auth",
+            "cms",
+            "cmsTimer",
+            "data"
+        ]
+    }
+}
