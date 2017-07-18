@@ -2,7 +2,7 @@
     "bakdir": "/mydata/maintenance/backup", 
     "center": {
         "appdir": "/mydata/center",
-        "cnfdir": "/data/config/server",
+        "cnfdir": "/data/config/center",
         "updir": "/mydata/center/zip"
     },
     "process": {
@@ -16,6 +16,6 @@
         "updir": "/mydata/server/war" 
     },
     "node": {
-        "appdir": "/mydata/nodeproj"
+        "appdir": "/mydata/project/caishen"
     }
 }

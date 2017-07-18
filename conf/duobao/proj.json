@@ -1,71 +1,211 @@
 {
-    "quickbid-center": {
+    "activity-center": {
         "form": "center",
-        "pack": "quickbid-provider-0.1.0-assembly.zip",
-        "appdir": "quickbid-provider-0.1.0"
+        "pack": "activity-provider-0.1.0-assembly.zip",
+        "appdir": "activity-provider-0.1.0",
+        "trunk": "codes/center/activity-center",
+        "tag": "codes/tag/{issue}/center/activity-center",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/center/activity-center"
     },
-    "qb-firewall-process": {
+    "caishen-center": {
+        "form": "center",
+        "pack": "caishen-provider-0.1.0-assembly.zip",
+        "appdir": "caishen-provider-0.1.0",
+        "trunk": "codes/center/caishen-center",
+        "tag": "codes/tag/{issue}/center/caishen-center",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/center/caishen-center"
+    },
+    "caishen-center-2": {
+        "form": "center",
+        "pack": "caishen-provider-0.1.0-assembly.zip",
+        "appdir": "caishen-provider-0.1.0",
+        "trunk": "codes/center/caishen-center",
+        "tag": "codes/tag/{issue}/center/caishen-center",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/center/caishen-center"
+    },
+    "coupon-process": {
         "form": "process",
-        "pack": "qb-firewall-process-assembly.zip",
-        "appdir": "qb-firewall-process"
+        "pack": "coupon-process-assembly.zip",
+        "appdir": "coupon-process",
+        "trunk": "codes/process/coupon-process",
+        "tag": "codes/tag/{issue}/process/coupon-process",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/process/coupon-process"
     },
-    "qb-prizepool-process": {
+    "free-process": {
         "form": "process",
-        "pack": "qb-prizepool-process-assembly.zip",
-        "appdir": "qb-prizepool-process"
+        "pack": "free-process-assembly.zip",
+        "appdir": "free-process",
+        "trunk": "codes/process/free-process",
+        "tag": "codes/tag/{issue}/process/free-process",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/process/free-process"
     },
-    "qb-proxy-process": {
+    "integration-process": {
         "form": "process",
-        "pack": "qb-proxy-process-assembly.zip",
-        "appdir": "qb-proxy-process"
+        "pack": "integration-process-assembly.zip",
+        "appdir": "integration-process",
+        "trunk": "codes/process/integration-process",
+        "tag": "codes/tag/{issue}/process/integration-process",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/process/integration-process"
     },
-    "quickbid-process": {
+    "red-packet-process": {
         "form": "process",
-        "pack": "quickbid-process-assembly.zip",
-        "appdir": "quickbid-process"
+        "pack": "red-packet-process-assembly.zip",
+        "appdir": "red-packet-process",
+        "trunk": "codes/process/red-packet-process",
+        "tag": "codes/tag/{issue}/process/red-packet-process",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/process/red-packet-process"
     },
-    "qbinside-server": {
+    "activity-server": {
         "form": "server",
-        "pack": "qbinside.war",
-        "appdir": "tomcat-qbinside-server/webapps/qbinside"
+        "pack": "activity.war",
+        "appdir": "tomcat-activity-server/webapps/activity",
+        "trunk": "codes/server/activity-server",
+        "tag": "codes/tag/{issue}/server/activity-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/activity-server"
     },
-    "qbmonitor-server": {
+    "lottery-server": {
         "form": "server",
-        "pack": "qbmonitor.war",
-        "appdir": "tomcat-qbmonitor-server/webapps/qbmonitor"
+        "pack": "lottery.war",
+        "appdir": "tomcat-lottery-server/webapps/monitor",
+        "trunk": "codes/server/lottery-server",
+        "tag": "codes/tag/{issue}/server/lottery-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/lottery-server"
     },
-    "qbpay-server": {
+    "monitor-server": {
         "form": "server",
-        "pack": "qbpay.war",
-        "appdir": "tomcat-qbpay-server/webapps/qbpay"
+        "pack": "monitor.war",
+        "appdir": "tomcat-monitor-server/webapps/monitor",
+        "trunk": "codes/server/monitor-server",
+        "tag": "codes/tag/{issue}/server/monitor-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/monitor-server"
     },
-    "quickbid-server": {
+    "pay-server": {
         "form": "server",
-        "pack": "quickbid.war",
-        "appdir": "tomcat-quickbid-server/webapps/quickbid"
+        "pack": "pay.war",
+        "appdir": "tomcat-pay-server/webapps/pay",
+        "trunk": "codes/server/pay-server",
+        "tag": "codes/tag/{issue}/server/pay-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/pay-server"
     },
-    "ad-api": {
+    "pk-server": {
+        "form": "server",
+        "pack": "pk.war",
+        "appdir": "tomcat-pk-server/webapps/pk",
+        "trunk": "codes/server/pk-server",
+        "tag": "codes/tag/{issue}/server/pk-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/pk-server"
+    },
+    "red-packet-server": {
+        "form": "server",
+        "pack": "red-packet.war",
+        "appdir": "tomcat-red-packet-server/webapps/red-packet",
+        "trunk": "codes/server/red-packet-server",
+        "tag": "codes/tag/{issue}/server/red-packet-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/red-packet-server"
+    },
+    "activity": {
         "form": "node",
-        "appdir": "ad-api"
+        "appdir": "activity",
+        "trunk": "codes/trunk/activity",
+        "tag": "codes/tag/{issue}/activity",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/activity"
     },
     "api": {
         "form": "node",
-        "appdir": "api"
+        "appdir": "api",
+        "trunk": "codes/trunk/api",
+        "tag": "codes/tag/{issue}/api",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/api"
     },
-    "auth": {
+    "count": {
         "form": "node",
-        "appdir": "auth"
+        "appdir": "count",
+        "trunk": "codes/trunk/count",
+        "tag": "codes/tag/{issue}/count",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/count"
+    },
+    "delivery": {
+        "form": "node",
+        "appdir": "delivery",
+        "trunk": "codes/trunk/delivery",
+        "tag": "codes/tag/{issue}/delivery",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/delivery"
+    },
+    "deliveryTimer": {
+        "form": "node",
+        "appdir": "deliveryTimer",
+        "trunk": "codes/trunk/deliveryTimer",
+        "tag": "codes/tag/{issue}/deliveryTimer",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/deliveryTimer"
     },
     "cms": {
         "form": "node",
-        "appdir": "cms"
+        "appdir": "cms",
+        "trunk": "codes/trunk/cms",
+        "tag": "codes/tag/{issue}/cms",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/cms"
     },
     "cmsTimer": {
         "form": "node",
-        "appdir": "cms"
+        "appdir": "cms",
+        "trunk": "codes/trunk/cms",
+        "tag": "codes/tag/{issue}/cms",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/cms"
     },
-    "data": {
+    "hotdata": {
         "form": "node",
-        "appdir": "ad_stats"
+        "appdir": "hotdata",
+        "trunk": "codes/trunk/hotdata",
+        "tag": "codes/tag/{issue}/hotdata",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/hotdata"
+    },
+    "main": {
+        "form": "node",
+        "appdir": "main",
+        "trunk": "codes/trunk/main",
+        "tag": "codes/tag/{issue}/main",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/main"
+    },
+    "mainTimer": {
+        "form": "node",
+        "appdir": "mainTimer",
+        "trunk": "codes/trunk/main",
+        "tag": "codes/tag/{issue}/main",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/main"
+    },
+    "monitor": {
+        "form": "node",
+        "appdir": "monitor",
+        "trunk": "codes/trunk/monitor",
+        "tag": "codes/tag/{issue}/monitor",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/monitor"
+    },
+    "periodGenerator": {
+        "form": "node",
+        "appdir": "periodGenerator",
+        "trunk": "codes/trunk/periodGenerator",
+        "tag": "codes/tag/{issue}/periodGenerator",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/periodGenerator"
+    },
+    "security": {
+        "form": "node",
+        "appdir": "security",
+        "trunk": "codes/trunk/security",
+        "tag": "codes/tag/{issue}/security",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/security"
+    },
+    "stats": {
+        "form": "node",
+        "appdir": "stats",
+        "trunk": "codes/trunk/stats",
+        "tag": "codes/tag/{issue}/stats",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/stats"
+    },
+    "statsTimer": {
+        "form": "node",
+        "appdir": "statsTimer",
+        "trunk": "codes/trunk/stats",
+        "tag": "codes/tag/{issue}/stats",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/stats"
     }
 }
