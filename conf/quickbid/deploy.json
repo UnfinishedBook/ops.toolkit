@@ -28,7 +28,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.203.145:7092",
+        "monitor": "172.18.203.145:7092/qbmonitor",
         "muser": "admin",
         "mpwd": "ab8b4bae3aa8d4ac95afc4a7d16d5b3ee818fd14ede1b57a6136ef4661323e2a",
         "deploy": {

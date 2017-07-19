@@ -2,6 +2,20 @@
 # -*- coding: UTF-8 -*-
 
 from gl import *
+from fabric.api import env,local,cd,run,execute
+from fabric.contrib.project import rsync_project
+
+def local_run(cmd):
+    local(cmd)
+
+def remote_run(cmd):
+    run(cmd)
+
+def test_run(ipList, cmdList, remote=False):
+    if remote:
+        execute(remote_run,)
+    else:
+        execute(local_run,)
 
 class Remote:
     
@@ -70,7 +84,7 @@ def parseJobs(page):
         status = pt4.findall(job[6])
         if len(status) > 0:
             job[6] = status[0][0].strip()
-        job.append(status[0][1])
+            job.append(status[0][1])
     return jobs
 
 def parseQueues(page):
@@ -93,7 +107,7 @@ def parseQueues(page):
         status = pt4.findall(q[4])
         if len(status) > 0:
             q[4] = status[0][0].strip()
-        q.append(status[0][1])
+            q.append(status[0][1])
     return queues
 
 

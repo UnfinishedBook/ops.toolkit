@@ -1,6 +1,9 @@
 {
     "test": {
         "intro": "测试环境",
+        "monitor": "10.104.197.116:7086/monitor",
+        "muser": "admin",
+        "mpwd": "ab8b4bae3aa8d4ac95afc4a7d16d5b3ee818fd14ede1b57a6136ef4661323e2a",
         "deploy": {
             "10.104.197.116": [
                 "activity-center",
@@ -38,8 +41,18 @@
     },
     "pro": {
         "intro": "生产环境",
+        "monitor": "10.104.254.114:7086/monitor",
+        "muser": "admin",
+        "mpwd": "ab8b4bae3aa8d4ac95afc4a7d16d5b3ee818fd14ede1b57a6136ef4661323e2a",
         "deploy": {
             "10.104.11.150": [
+                "caishen-center",
+                "caishen-center-2",
+                "lottery-server"
+            ],
+            "10.104.254.114": [
+                "caishen-center",
+                "caishen-center-2"
             ]
         }
     }

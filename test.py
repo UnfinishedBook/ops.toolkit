@@ -9,14 +9,24 @@ from Crypto.Cipher import AES
 from Crypto import Random
 from binascii import b2a_hex,a2b_hex
 
-GL.setEnv('test')
-password = getpass.getpass('请输入使用密码：')
-if verifyPwd(password) == False:
-    exit()
-GL.setPwd(password)
+from fabric.api import env,local,cd,run,execute
+from fabric.contrib.project import rsync_project
 
-m1 = Model('qbpay-server')
-print m1.deploy()
+def ftest():
+    run('hostname')
+    run('ifconfig')
+
+h = '10.104.23.52'
+execute(ftest, host=h)
+
+#GL.setEnv('test')
+#password = getpass.getpass('请输入使用密码：')
+#if verifyPwd(password) == False:
+    #exit()
+#GL.setPwd(password)
+
+#m1 = Model('qbpay-server')
+#print m1.deploy()
 
 #m1 = Model('quickbid-center')
 #print m1.name(),m1.form(),m1.deploy(),m1.appdir(),m1.cnfdir(),m1.bakdir()

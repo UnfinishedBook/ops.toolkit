@@ -165,10 +165,10 @@ def pm2(opt, mod=None):
 def getMonitor(s, mod):
     jobs = None
     queues = None
-    url = 'http://%s/qbmonitor/ljob_controller/get_online_ljobs' % GL.monitor()
+    url = 'http://%s/ljob_controller/get_online_ljobs' % GL.monitor()
     r = s.post(url)
     jobs = parseJobs(r.text)
-    url = 'http://%s/qbmonitor/lqueue_controller/get_online_lqueues.do' % GL.monitor()
+    url = 'http://%s/lqueue_controller/get_online_lqueues.do' % GL.monitor()
     r = s.post(url)
     queues = parseQueues(r.text)
     retJobs = []
@@ -184,7 +184,7 @@ def getMonitor(s, mod):
     return (retJobs,retQueues)
 
 def monitorJob(s, ip_id, ljobKey, start):
-    url = 'http://%s/qbmonitor/ljob_controller/send_ljob_status_request' % GL.monitor()
+    url = 'http://%s/ljob_controller/send_ljob_status_request' % GL.monitor()
     if start == True:
         status = '1'
     else:
@@ -197,7 +197,7 @@ def monitorJob(s, ip_id, ljobKey, start):
         print '失败'
 
 def monitorQueue(s, ip_id, lqueueKey, start):
-    url = 'http://%s/qbmonitor/lqueue_controller/send_lqueue_status_request.do' % GL.monitor()
+    url = 'http://%s/lqueue_controller/send_lqueue_status_request.do' % GL.monitor()
     if start == True:
         status = '1'
     else:
@@ -225,7 +225,7 @@ def monitorSave():
 
 def monitor(opt, mod):
     s = requests.session()
-    url = 'http://%s/qbmonitor/login_controller/do_login' % GL.monitor()
+    url = 'http://%s/login_controller/do_login' % GL.monitor()
     r = s.post(url, data={'loginName':GL.muser(),'password':GL.mpwd()})
     if '退出登录' not in r.text:
         LOG.error('登录失败')

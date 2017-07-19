@@ -194,17 +194,17 @@ class Loop(Cmd):
         if arg!=None and arg!='':
             print cipher(GL.pwd(),arg, False)
 
-    def do_set(self, arg):
-        args = arg.split(' ')
-        if len(args)==1 and arg=='show':
-            set(arg)
-        elif len(args) == 2:
-            set(args[0], args[1])
-        else:
-            self.help_set()
-
-    def help_set(self):
-        print '设置变量，当前只支持版本变量issue，用法：set <show/变量> [变量值]'
+    #def do_set(self, arg):
+        #args = arg.split(' ')
+        #if len(args)==1 and arg=='show':
+            #set(arg)
+        #elif len(args) == 2:
+            #set(args[0], args[1])
+        #else:
+            #self.help_set()
+##
+    #def help_set(self):
+        #print '设置变量，当前只支持版本变量issue，用法：set <show/变量> [变量值]'
         
 
 
