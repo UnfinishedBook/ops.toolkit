@@ -166,13 +166,6 @@
         "tag": "codes/tag/{issue}/main",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/main"
     },
-    "mainTimer": {
-        "form": "node",
-        "appdir": "mainTimer",
-        "trunk": "codes/trunk/main",
-        "tag": "codes/tag/{issue}/main",
-        "wcopy": "/mydata/maintenance/svn/tag/{issue}/main"
-    },
     "monitor": {
         "form": "node",
         "appdir": "monitor",
