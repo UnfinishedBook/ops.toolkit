@@ -14,10 +14,18 @@ from fabric.contrib.project import rsync_project
 
 def ftest():
     run('hostname')
-    run('ifconfig')
+    run('/mydata/maintenance/scripts/1.py')
 
-h = '10.104.23.52'
-execute(ftest, host=h)
+h = '10.104.197.116'
+#execute(ftest, host=h)
+envDict = os.environ
+if envDict.has_key('OPS'):
+    print envDict['OPS']
+    print cipher(envDict['OPS'], '100.135.151.420')
+    print cipher(envDict['OPS'], 'e7ac7a01924c98d06d0a8105b2377790', False)
+else:
+    print 'nothing'
+
 
 #GL.setEnv('test')
 #password = getpass.getpass('请输入使用密码：')

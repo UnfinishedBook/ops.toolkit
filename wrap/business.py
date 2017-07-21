@@ -42,13 +42,15 @@ def update(mod):
                 return
             if os.path.exists(src):
                 cmd = 'rm -rf %s' % src
-                LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+                LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
+                localCmd(cmd)
             cmd = 'tar -zxf %s -C %s' % (pk,GL.pkdir())
-            LOG.debug('解压wap的更新包，执行命令 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+            LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
+            localCmd(cmd)
             if os.path.exists(src) == False:
                 print '更新包与环境不匹配'
                 return
-            cmd = 'rsync -az %s/ root@%s:%s/ -e "ssh -i %s"' % (src,ip,mod.appdir(),GL.rsa())
+            cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
             print cmd
             return
         elif mod.form() == 'server':
@@ -84,7 +86,8 @@ def svn(mod, opt, path=None):
     elif opt == 'merge':
         #先更新本地拷贝
         cmd = 'svn up %s' % mod.workcopy()
-        LOG.debug('更新本地的工作拷贝，执行命令 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+        LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        localCmd(cmd)
         #svn路径信息
         if path == None:
             tag = mod.tag()
@@ -96,12 +99,14 @@ def svn(mod, opt, path=None):
             wcopy = '%s/%s' % (mod.workcopy(),path)
         #执行合并测试
         cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
-        LOG.debug('合并测试，执行命令 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+        LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
             cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
-            LOG.debug('执行实际的合并操作 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+            LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            localCmd(cmd)
     elif opt == 'ci':
         if path == None:
             wcopy = mod.workcopy()
@@ -110,7 +115,8 @@ def svn(mod, opt, path=None):
         instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
         if instr != '':
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            LOG.debug('执行提交操作 (%s)\n%s\n' % (cmd,commands.getoutput(cmd)))
+            LOG.debug('执行提交操作 (%s)' % cmd)
+            localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
         if path==None or path.startswith('svn')==False:

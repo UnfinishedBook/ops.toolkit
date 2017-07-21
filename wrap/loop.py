@@ -9,17 +9,23 @@ class Loop(Cmd):
     def __init__(self):
         Cmd.__init__(self)
 
-    #事件循环开始前执行
+    #事件循环开始时执行
     def preloop(self):
         #选择要管理的环境
         env = self.select(GL.deploy().keys())
         GL.setEnv(env)
 
         #验证管理密码
-        password = getpass.getpass('请输入使用密码：')
-        if verifyPwd(password) == False:
+        #password = getpass.getpass('请输入使用密码：')
+        #if verifyPwd(password) == False:
+            #exit()
+        #GL.setPwd(password)
+
+        #验证ssh-agent
+        output = commands.getoutput('ssh-add -l')
+        if 'maintenance_rsa' not in output:
+            print '必须先配置好ssh-agent: \nssh-agent bash\nssh-add /mydata/maintenance/identity/maintenance_rsa'
             exit()
-        GL.setPwd(password)
 
         intro = GL.deploy()[GL.env()]['intro']
         if GL.project() == 'quickbid':
@@ -32,10 +38,11 @@ class Loop(Cmd):
         self.intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (project,intro)
         self.prompt = "运维 %s %s ->> " % (project,intro)
 
-    #事件循环开始后执行
+    #事件循环结束时执行
     def postloop(self):
-        for ip,remote in GL.remote.items():
-            remote.logout()
+        #for ip,remote in GL.remote.items():
+            #remote.logout()
+        network.disconnect_all()
 
     #输入为空时啥都不做
     def emptyline(self):
@@ -188,11 +195,11 @@ class Loop(Cmd):
 
     def do_encrypt(self, arg):
         if arg!=None and arg!='':
-            print cipher(GL.pwd(),arg)
+            print cipher(GL.key(),arg)
 
     def do_decrypt(self, arg):
         if arg!=None and arg!='':
-            print cipher(GL.pwd(),arg, False)
+            print cipher(GL.key(),arg, False)
 
     #def do_set(self, arg):
         #args = arg.split(' ')

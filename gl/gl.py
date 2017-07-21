@@ -51,22 +51,22 @@ def ask(issue, opt, df=None):
         else:
             return instr
     
-#key    加解密时用的密钥字符串,长度不应该大于24
-#txt    加密时,待加密的字符串,长度不可以大于32;解密时为待解密的字符串
+#key    加解密时用的密钥字符串,长度不应该大于16
+#txt    加密时,待加密的字符串,长度不可以大于16;解密时为待解密的字符串
 #encrypt    True,加密;False,解密
 def cipher(key, txt, encrypt=True):
-    if len(key) > 24:
-        key = key[:23]
-    if len(key) < 24:
-        for n in range(24-len(key)):
+    if len(key) > 16:
+        key = key[:15]
+    if len(key) < 16:
+        for n in range(16-len(key)):
             key += ' '
     iv = Random.new().read(AES.block_size)
     obj = AES.new(key, AES.MODE_ECB, iv)
     if encrypt:
-        if len(txt) > 32:
-            txt = txt[:32]
-        if len(txt) < 32:
-            for n in range(32-len(txt)):
+        if len(txt) > 16:
+            txt = txt[:15]
+        if len(txt) < 16:
+            for n in range(16-len(txt)):
                 txt += ' '
         en = obj.encrypt(txt)
         return b2a_hex(en)
@@ -90,25 +90,25 @@ def getTimestamp():
     #return datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')
     return datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 
-def sshLogin(ip, user, pwd=None, rsa=None):
-    client = pxssh()
-    if pwd==None and rsa==None:
-        client.login(ip, user)
-    elif rsa == None:
-        client.login(ip, user, pwd)
-    elif pwd == None:
-        client.login(ip, user, ssh_key=rsa)
-    else:
-        client.login(ip, user, pwd, ssh_key=rsa)
-    return client
+#def sshLogin(ip, user, pwd=None, rsa=None):
+    #client = pxssh()
+    #if pwd==None and rsa==None:
+        #client.login(ip, user)
+    #elif rsa == None:
+        #client.login(ip, user, pwd)
+    #elif pwd == None:
+        #client.login(ip, user, ssh_key=rsa)
+    #else:
+        #client.login(ip, user, pwd, ssh_key=rsa)
+    #return client
 
-def sshExecute(client, cmd):
-    client.sendline(cmd)
-    client.prompt()
-    return client.before
+#def sshExecute(client, cmd):
+    #client.sendline(cmd)
+    #client.prompt()
+    #return client.before
 
-def sshLogout(client):
-    client.logout()
+#def sshLogout(client):
+    #client.logout()
 
 class Global:
     def __init__(self):
@@ -121,11 +121,11 @@ class Global:
         self.__deploy = loadJsonFile('%s/%s/deploy.json' % (self.__dirCfg,self.__project))
         self.__form = loadJsonFile('%s/%s/form.json' % (self.__dirCfg,self.__project))
         self.__proj = loadJsonFile('%s/%s/proj.json' % (self.__dirCfg,self.__project))
-        self.__rsa ='/mydata/maintenance/identity/maintenance_rsa'
+        #self.__rsa ='/mydata/maintenance/identity/maintenance_rsa'
         #self.__rsa ='/root/.ssh/id_rsa'
-        self.__pwd = None
+        self.__key = None   #用来给密码加密的key字符串
         self.__env = None
-        self.remote = {}
+        #self.remote = {}
         self.__monitor = None
         self.__muser = None
         self.__mpwd = None
@@ -151,14 +151,14 @@ class Global:
     def proj(self):
         return self.__proj
 
-    def rsa(self):
-        return self.__rsa
+    #def rsa(self):
+        #return self.__rsa
 
-    def pwd(self):
-        return self.__pwd
+    def key(self):
+        return self.__key
 
-    def setPwd(self, tmp):
-        self.__pwd = tmp
+    def setKey(self, tmp):
+        self.__key = tmp
 
     def env(self):
         return self.__env
@@ -191,7 +191,7 @@ class Global:
     def mpwd(self):
         if self.__mpwd == None:
             tmp = self.deploy()[self.env()]['mpwd']
-            self.__mpwd = cipher(GL.pwd(), tmp, False)
+            self.__mpwd = cipher(GL.key(), tmp, False)
         return self.__mpwd
 
     def setCloseJobs(self, tmp):
@@ -208,7 +208,7 @@ class Global:
 
     def svn(self):
         if self.__svn == None:
-            self.__svn = 'svn://%s' % cipher(self.pwd(), self.conf()['svn'], False)
+            self.__svn = 'svn://%s' % self.conf()['svn']
         return self.__svn
 
 
