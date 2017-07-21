@@ -85,6 +85,7 @@ class Model:
 
     def tag(self):
         if self.__tag == None:
+            print GL.svn()
             self.__tag = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['tag'].replace('{issue}', GL.issue()))
         return self.__tag
 

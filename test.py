@@ -16,7 +16,7 @@ def ftest():
     run('hostname')
 
 h = '10.104.197.116'
-execute(ftest, host=h)
+#execute(ftest, host=h)
 
 #GL.setEnv('test')
 #password = getpass.getpass('请输入使用密码：')
@@ -24,8 +24,8 @@ execute(ftest, host=h)
     #exit()
 #GL.setPwd(password)
 
-#m1 = Model('qbpay-server')
-#print m1.deploy()
+m1 = Model('api')
+print m1.tag()
 
 #m1 = Model('quickbid-center')
 #print m1.name(),m1.form(),m1.deploy(),m1.appdir(),m1.cnfdir(),m1.bakdir()

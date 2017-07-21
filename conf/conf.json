@@ -1,6 +1,12 @@
 {
-    "project": "duobao",
-    "issue": "v5.5.0",
-    "svn": "10.135.151.42",
-    "pkdir": "/mydata/maintenance/packages"
+    "duobao": {
+        "issue": "v5.5.0",
+        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "pkdir": "/mydata/maintenance/packages"
+    },
+    "quickbid": {
+        "issue": "1.8.0",
+        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "pkdir": "/mydata/maintenance/packages"
+    }
 }

@@ -112,18 +112,23 @@ def getTimestamp():
 
 class Global:
     def __init__(self):
+        #从环境变量读取加密key和当前系统
+        if os.environ.has_key('ops_key')==False or os.environ.has_key('ops_project')==False:
+            print '必须先配置好环境变量(建议配置到~/.bashrc)：\nops_key\nops_project'
+            exit()
+        self.__key = os.environ['ops_key']
+        self.__project = os.environ['ops_project']
         self.__dirMain = sys.path[0]    #程序的主目录
         self.__dirCfg = '%s/conf' % self.__dirMain  #配置文件目录
         self.__conf = loadJsonFile('%s/conf.json' % self.__dirCfg)
-        self.__project = self.__conf['project']
-        self.__issue = self.__conf['issue']
-        self.__pkdir = self.__conf['pkdir']
+        #self.__project = self.__conf['project']
+        self.__issue = self.__conf[self.__project]['issue']
+        self.__pkdir = self.__conf[self.__project]['pkdir']
         self.__deploy = loadJsonFile('%s/%s/deploy.json' % (self.__dirCfg,self.__project))
         self.__form = loadJsonFile('%s/%s/form.json' % (self.__dirCfg,self.__project))
         self.__proj = loadJsonFile('%s/%s/proj.json' % (self.__dirCfg,self.__project))
         #self.__rsa ='/mydata/maintenance/identity/maintenance_rsa'
         #self.__rsa ='/root/.ssh/id_rsa'
-        self.__key = None   #用来给密码加密的key字符串
         self.__env = None
         #self.remote = {}
         self.__monitor = None
@@ -156,9 +161,6 @@ class Global:
 
     def key(self):
         return self.__key
-
-    def setKey(self, tmp):
-        self.__key = tmp
 
     def env(self):
         return self.__env
@@ -208,7 +210,8 @@ class Global:
 
     def svn(self):
         if self.__svn == None:
-            self.__svn = 'svn://%s' % self.conf()['svn']
+            tmp = cipher(GL.key(), self.conf()[self.project()]['svn'], False)
+            self.__svn = 'svn://%s' % tmp
         return self.__svn
 
 
