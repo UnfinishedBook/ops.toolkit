@@ -49,7 +49,6 @@
             "172.18.27.6": [
                 "quickbid-center",
                 "qbinside-server",
-                "qbmonitor-server",
                 "qbpay-server",
                 "qbshield-server",
                 "quickbid-server"
@@ -57,7 +56,6 @@
             "172.18.203.145": [
                 "quickbid-center",
                 "qb-data-process",
-                "qbinside-server",
                 "qbmonitor-server",
                 "qbpay-server",
                 "quickbid-server"

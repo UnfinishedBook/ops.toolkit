@@ -5,7 +5,7 @@
         "pkdir": "/mydata/maintenance/packages"
     },
     "quickbid": {
-        "issue": "1.8.0",
+        "issue": "1.8.5",
         "svn": "3cbc98a586929ffb5030f5c5097159bd",
         "pkdir": "/mydata/maintenance/packages"
     }
