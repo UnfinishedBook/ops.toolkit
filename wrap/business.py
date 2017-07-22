@@ -130,15 +130,18 @@ def svn(mod, opt, path=None):
 
 def status(mod):
     for ip in mod.deploy():
-        cmd = "ps -ef|grep java|grep %s" % mod.pidname()
+        cmd = "ps -ef|grep java|grep %s|grep -v grep" % mod.pidname()
         remoteCmd(ip, cmd)
 
 def _stop(ip, mod):
+    if mod.form() == 'server':
+        remoteCmd(ip, mod.tomcatshutdown())
+        time.sleep(2)
     cmd = "ps -ef|grep %s|grep java|awk '{print $2}'|xargs kill -9" % mod.pidname()
     remoteCmd(ip, cmd)
 
 def _start(ip, mod):
-    remoteCmd(ip, mod.pidexe())
+    remoteCmd(ip, mod.pidexe(), False)
 
 def start(mod):
     for ip in mod.deploy():

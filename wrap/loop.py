@@ -129,6 +129,19 @@ class Loop(Cmd):
     def help_start(self):
         print '启动Java工程，用法：start <工程名>'
 
+    def do_stop(self, proj):
+        if proj!=None and proj!='':
+            mod = getMod(proj)
+            if mod!=None and mod.form()!='node':
+                stop(mod)
+            else:
+                self.help_stop()
+        else:
+            self.help_stop()
+
+    def help_stop(self):
+        print '停止Java工程，用法：stop <工程名>'
+
     def do_restart(self, proj):
         if proj!=None and proj!='':
             mod = getMod(proj)

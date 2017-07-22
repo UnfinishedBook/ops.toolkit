@@ -58,9 +58,9 @@ def localCmd(cmd):
     execute(local, cmd)
     LOG.info('本地执行命令 (%s) 结束' % cmd)
 
-def remoteCmd(ip, cmd):
+def remoteCmd(ip, cmd, _pty=True):
     LOG.info('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
-    execute(run, cmd, host=ip)
+    execute(run, cmd, host=ip, pty=_pty)
     LOG.info('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
 
 def parseJobs(page):

@@ -65,6 +65,12 @@ class Model:
         else:
             return None
 
+    def tomcatshutdown(self):
+        if self.form() == 'server':
+            return '%s/%s/bin/shutdown.sh' % (GL.form()[self.form()]['appdir'],self.pidname())
+        else:
+            return None
+
     def pidexe(self):   #启动文件
         if self.form() == 'server':
             return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.pidname())
