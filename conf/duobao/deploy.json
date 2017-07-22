@@ -43,14 +43,43 @@
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
             "10.104.11.150": [
+                "activity-center",
                 "caishen-center",
                 "caishen-center-2",
+                "coupon-process",
+                "free-process",
+                "integration-process",
+                "red-packet-process",
+                "activity-server",
                 "lottery-server",
-                "cms"
+                "pay-server",
+                "pk-server",
+                "red-packet-server",
+                "count",
+                "hotdata",
+                "main",
+                "delivery",
+                "deliveryTimer",
+                "cms",
+                "cmsTimer",
+                "stats",
+                "statsTimer",
+                "security"
             ],
             "10.104.254.114": [
+                "activity-center",
                 "caishen-center",
-                "caishen-center-2"
+                "caishen-center-2",
+                "activity-server",
+                "monitor-server",
+                "pay-server",
+                "pk-server",
+                "red-packet-server",
+                "api",
+                "activity",
+                "monitor",
+                "main",
+                "periodGenerator"
             ]
         }
     }
