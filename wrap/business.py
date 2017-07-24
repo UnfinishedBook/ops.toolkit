@@ -137,7 +137,8 @@ def _stop(ip, mod):
     if mod.form() == 'server':
         remoteCmd(ip, mod.tomcatshutdown())
         time.sleep(2)
-    cmd = "ps -ef|grep %s|grep java|awk '{print $2}'|xargs kill -9" % mod.pidname()
+    #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
+    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && kill -9 $tmpid; echo killed' % mod.pidname()
     remoteCmd(ip, cmd)
 
 def _start(ip, mod):
