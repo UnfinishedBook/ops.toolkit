@@ -34,7 +34,11 @@ class Model:
 
     def appdir(self):   #应用部署目录
         if self.__appdir == None:
-            self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],GL.proj()[self.name()]['appdir'])
+            tmp = GL.proj()[self.name()]['appdir']
+            if tmp.startswith('/'): #绝对路径,就直接使用
+                self.__appdir = tmp
+            else:   #相对路径,就要加上form中的appdir
+                self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],tmp)
         return self.__appdir
 
     def upappdir(self): #应用部署的上层目录

@@ -18,7 +18,7 @@
     "caishen-center-2": {
         "form": "center",
         "pack": "caishen-provider-0.1.0-assembly.zip",
-        "appdir": "caishen-provider-0.1.0",
+        "appdir": "/mydata/center-2/caishen-provider-0.1.0",
         "trunk": "codes/center/caishen-center",
         "tag": "codes/tag/{issue}/center/caishen-center",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/center/caishen-center"
