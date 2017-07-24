@@ -17,7 +17,7 @@ def backup(mod):
         dest = mod.bakdir()
         srcDir = src[:src.rfind('/')]   #源文件(夹)所在路径
         name = src[src.rfind('/')+1:]   #源文件(夹)名称
-        bakname = '%s-%s.tar' % (name,getTimestamp())   #备份文件的名字
+        bakname = '%s-%s.tar' % (mod.name(),getTimestamp())   #备份文件的名字
         LOG.info('backup %s to %s/%s' % (src,dest,bakname))
         cmd = 'tar -cf %s/%s -C %s %s' % (dest,bakname,srcDir,name)
         if mod.name() == 'cdn':
