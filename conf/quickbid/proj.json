@@ -137,6 +137,10 @@
         "tag": "codes/tag_quick/{issue}/wap",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/wap"
     },
+    "wap_cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
     "cdn": {
         "form": "static",
         "appdir": "cdn"

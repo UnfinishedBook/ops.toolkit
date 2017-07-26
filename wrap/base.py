@@ -54,14 +54,14 @@ from fabric.contrib.project import rsync_project
     #remote.execute(cmd)
 
 def localCmd(cmd):
-    LOG.info('本地执行命令 (%s) 开始' % cmd)
+    #LOG.info('本地执行命令 (%s) 开始' % cmd)
     execute(local, cmd)
-    LOG.info('本地执行命令 (%s) 结束' % cmd)
+    #LOG.info('本地执行命令 (%s) 结束' % cmd)
 
 def remoteCmd(ip, cmd, _pty=True):
-    LOG.info('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
+    #LOG.info('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
     execute(run, cmd, host=ip, pty=_pty)
-    LOG.info('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
+    #LOG.info('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
 
 def parseJobs(page):
     pt1 = re.compile(r'(?isu)<tr.*?>(.*?)</tr>')

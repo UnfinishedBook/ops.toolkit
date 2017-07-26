@@ -24,47 +24,90 @@ def backup(mod):
             cmd += ' --exclude=apks'
         remoteCmd(ip, cmd)
 
-def update(mod):
+def up_wap(mod):
+    pk = '%s/wap.tar.gz' % GL.pkdir()
+    if os.path.exists(pk) == False:
+        print '未发现更新包：%s' % pk
+        return
+    src = '%s/wap' % GL.pkdir()
+    if os.path.exists(src):
+        cmd = 'rm -rf %s/*' % src
+        LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
+        localCmd(cmd)
+    else:
+        localCmd('mkdir -p %s' % src)
+    cmd = 'tar -zxf %s -C %s' % (pk,src)
+    LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
+    localCmd(cmd)
+    if GL.env() == 'pro':
+        src = '%s/prod' % src
+    elif GL.env() == 'test':
+        src = '%s/test' % src
+    else:
+        print '该环境(%s)暂不支持wap的更新' % GL.env()
+        return
+    if os.path.exists(src) == False:
+        print '更新包与环境不匹配'
+        return
     for ip in mod.deploy():
-        cmd = None
-        if mod.name() == 'wap':
-            print mod
-            pk = '%s/wap.tar.gz' % GL.pkdir()
-            if os.path.exists(pk) == False:
-                print '未发现更新包：%s' % pk
-                return
-            if GL.env() == 'pro':
-                src = '%s/prod' % GL.pkdir()
-            elif GL.env() == 'test':
-                src = '%s/test' % GL.pkdir()
-            else:
-                print '该环境(%s)暂不支持wap的更新' % GL.env()
-                return
-            if os.path.exists(src):
-                cmd = 'rm -rf %s' % src
-                LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
-                localCmd(cmd)
-            cmd = 'tar -zxf %s -C %s' % (pk,GL.pkdir())
-            LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
-            localCmd(cmd)
-            if os.path.exists(src) == False:
-                print '更新包与环境不匹配'
-                return
-            cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
-            print cmd
-            return
-        elif mod.form() == 'server':
-            cmd = 'rm -rf %s*; cp %s %s' % (mod.appdir(),mod.pack(),mod.upappdir())
-        elif mod.form()=='center' or mod.form()=='process':
-            cmd = 'rm -rf %s; unzip %s -d %s' % (mod.appdir(),mod.pack(),mod.upappdir())
-        elif mod.form() == 'node':
-            LOG.warn('请使用本工具的svn命令更新node工程')
+        cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
 
-        if cmd != None:
-            #if GL.env() == 'pro':
+def up_wap_cdn(mod):
+    if GL.env() == 'pro':
+        src_wap = '%s/wap/prod' % GL.pkdir()
+    elif GL.env() == 'test':
+        src_wap = '%s/wap/test' % GL.pkdir()
+    else:
+        print '该环境(%s)暂不支持wap_cdn的更新' % GL.env()
+        return
+    if os.path.exists(src_wap) == False:
+        print '%s不存在' % src_wap
+        return
+    for ip in mod.deploy():
+        cmdlist = [
+            'rsync -azv %s/js/ root@%s:%s/js/' % (src_wap,ip,mod.appdir()),
+            'rsync -azv %s/css/ root@%s:%s/css/' % (src_wap,ip,mod.appdir()),
+            'rsync -azv %s/images/ root@%s:%s/images/' % (src_wap,ip,mod.appdir()),
+            'rsync -azv %s/fonts/ root@%s:%s/fonts/' % (src_wap,ip,mod.appdir())
+        ]
+        for cmd in cmdlist:
             out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
             if out == 'yes':
                 remoteCmd(ip, cmd)
+
+def up_server(mod):
+    for ip in mod.deploy():
+        cmd = 'rm -rf %s*; cp %s %s' % (mod.appdir(),mod.pack(),mod.upappdir())
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
+
+def up_center(mod):
+    for ip in mod.deploy():
+        cmd = 'rm -rf %s; unzip %s -d %s' % (mod.appdir(),mod.pack(),mod.upappdir())
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
+
+def up_process(mod):
+    up_center(mod)
+
+def update(mod):
+    if mod.name() == 'wap':
+        up_wap(mod)
+    elif mod.name() == 'wap_cdn':
+        up_wap_cdn(mod)
+    elif mod.form() == 'center':
+        up_center(mod)
+    elif mod.form() == 'process':
+        up_process(mod)
+    elif mod.form() == 'server':
+        up_server(mod)
+    else:
+        LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
 
 def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch':
