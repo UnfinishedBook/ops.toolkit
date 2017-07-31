@@ -124,6 +124,20 @@
         "tag": "codes/tag/{issue}/count",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/count"
     },
+    "data": {
+        "form": "node",
+        "appdir": "/mydata/project/data-analysis",
+        "trunk": "codes/backend/data-analysis",
+        "tag": "codes/tag/{issue}/data-analysis",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/data-analysis"
+    },
+    "cp": {
+        "form": "node",
+        "appdir": "cp",
+        "trunk": "codes/trunk/cp",
+        "tag": "codes/tag/{issue}/cp",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/cp"
+    },
     "delivery": {
         "form": "node",
         "appdir": "delivery",
