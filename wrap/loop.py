@@ -70,18 +70,20 @@ class Loop(Cmd):
             if GL.proj().has_key(args[0]):
                 mod = getMod(args[0])
                 if mod != None:
-                    cmd_mod(mod, args[1])
+                    cmd(mod.deploy(), args[1])
             elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
-                cmd_ip(args[0], args[1])
+                ip_list = [args[0],]
+                cmd(ip_list, args[1])
             elif args[0] == 'all':
-                cmd_all(args[1])
+                ip_list = GL.deploy()[GL.env()]['deploy'].keys()
+                cmd(ip_list, args[1])
             else:
-                pass
+                self.help_cmd()
         else:
             self.help_cmd()
 
     def help_cmd(self):
-        print '在指定工程所在主机执行命令，用法：cmd <工程名> <命令>'
+        print '在指定工程所在主机或指定IP的主机上执行命令，用法：cmd <工程名/ip/all> <命令>'
 
     def do_backup(self, proj):
         if proj!=None and proj!='':
@@ -260,7 +262,7 @@ class Loop(Cmd):
     
     def help_scp(self):
         print '''远程拷贝文件，用法：
-        scp <proj/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
+        scp <工程名/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
         '''
 
     #def do_set(self, arg):
