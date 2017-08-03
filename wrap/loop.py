@@ -85,6 +85,10 @@ class Loop(Cmd):
     def help_cmd(self):
         print '在指定工程所在主机或指定IP的主机上执行命令，用法：cmd <工程名/ip/all> <命令>'
 
+    def do_local(self, cmd):
+        if cmd!=None and cmd!='':
+            localCmd(cmd)
+
     def do_backup(self, proj):
         if proj!=None and proj!='':
             mod = getMod(proj)
@@ -263,6 +267,35 @@ class Loop(Cmd):
     def help_scp(self):
         print '''远程拷贝文件，用法：
         scp <工程名/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
+        '''
+
+    def do_rsync(self, arg):
+        args = arg.split(' ', 2)
+        if len(args) != 3:
+            self.help_rsync()
+            return
+        if (args[1].startswith(':') and args[2].startswith(':')) or (args[1].startswith(':')==False and args[2].startswith(':')==False):
+            self.help_rsync()
+            return
+        src = args[1]
+        dest = args[2]
+        if GL.proj().has_key(args[0]):
+            mod = getMod(args[0])
+            if mod != None:
+                ip_list = mod.deploy()
+                rsync(ip_list, src, dest)
+        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
+            ip_list = [args[0],]
+            rsync(ip_list, src, dest)
+        elif args[0] == 'all':
+            ip_list = GL.deploy()[GL.env()]['deploy'].keys()
+            rsync(ip_list, src, dest)
+        else:
+            self.help_rsync()
+    
+    def help_rsync(self):
+        print '''远程同步目录，用法：
+        rsync <工程名/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
         '''
 
     #def do_set(self, arg):

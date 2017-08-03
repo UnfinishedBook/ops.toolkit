@@ -19,6 +19,21 @@ def scp(ip_list, src, dest):
         else:
             pass
 
+def rsync(ip_list, src, dest):
+    if src.endswith('/') == False:
+        src += '/'
+    if dest.endswith('/') == False:
+        dest += '/'
+    for ip in ip_list:
+        if src.startswith(':'):
+            cmd = 'rsync -avz root@%s%s %s' % (ip,src,dest)
+            localCmd(cmd)
+        elif dest.startswith(':'):
+            cmd = 'rsync -avz %s root@%s%s' % (src,ip,dest)
+            localCmd(cmd)
+        else:
+            pass
+
 def backup(mod):
     for ip in mod.deploy():
         if mod.form() == 'server':
