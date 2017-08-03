@@ -15,6 +15,17 @@ def cmd_all(cmd):
     for ip in GL.deploy()[GL.env()]['deploy'].keys():
         remoteCmd(ip, cmd)
 
+def scp(ip_list, src, dest):
+    for ip in ip_list:
+        if src.startswith(':'):
+            cmd = 'scp -r root@%s%s %s' % (ip,src,dest)
+            localCmd(cmd)
+        elif dest.startswith(':'):
+            cmd = 'scp -r %s root@%s%s' % (src,ip,dest)
+            localCmd(cmd)
+        else:
+            pass
+
 def backup(mod):
     for ip in mod.deploy():
         if mod.form() == 'server':

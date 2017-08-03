@@ -234,6 +234,35 @@ class Loop(Cmd):
         else:
             pass
 
+    def do_scp(self, arg):
+        args = arg.split(' ', 2)
+        if len(args) != 3:
+            self.help_scp()
+            return
+        if (args[1].startswith(':') and args[2].startswith(':')) or (args[1].startswith(':')==False and args[2].startswith(':')==False):
+            self.help_scp()
+            return
+        src = args[1]
+        dest = args[2]
+        if GL.proj().has_key(args[0]):
+            mod = getMod(args[0])
+            if mod != None:
+                ip_list = mod.deploy()
+                scp(ip_list, src, dest)
+        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
+            ip_list = [args[0],]
+            scp(ip_list, src, dest)
+        elif args[0] == 'all':
+            ip_list = GL.deploy()[GL.env()]['deploy'].keys()
+            scp(ip_list, src, dest)
+        else:
+            self.help_scp()
+    
+    def help_scp(self):
+        print '''远程拷贝文件，用法：
+        scp <proj/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
+        '''
+
     #def do_set(self, arg):
         #args = arg.split(' ')
         #if len(args)==1 and arg=='show':
