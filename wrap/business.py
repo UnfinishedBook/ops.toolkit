@@ -4,8 +4,15 @@
 from base import *
 from model import *
 
-def cmd(mod, cmd):
+def cmd_mod(mod, cmd):
     for ip in mod.deploy():
+        remoteCmd(ip, cmd)
+
+def cmd_ip(ip, cmd):
+    remoteCmd(ip, cmd)
+
+def cmd_all(cmd):
+    for ip in GL.deploy()[GL.env()]['deploy'].keys():
         remoteCmd(ip, cmd)
 
 def backup(mod):

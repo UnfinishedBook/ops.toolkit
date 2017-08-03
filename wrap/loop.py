@@ -67,9 +67,16 @@ class Loop(Cmd):
     def do_cmd(self, arg):
         args = arg.split(' ', 1)
         if len(args) == 2:
-            mod = getMod(args[0])
-            if mod != None:
-                cmd(mod, args[1])
+            if GL.proj().has_key(args[0]):
+                mod = getMod(args[0])
+                if mod != None:
+                    cmd_mod(mod, args[1])
+            elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
+                cmd_ip(args[0], args[1])
+            elif args[0] == 'all':
+                cmd_all(args[1])
+            else:
+                pass
         else:
             self.help_cmd()
 
