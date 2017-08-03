@@ -221,6 +221,19 @@ class Loop(Cmd):
         if arg!=None and arg!='':
             print cipher(GL.key(),arg, False)
 
+    def do_info(self, arg):
+        if GL.proj().has_key(arg):
+            mod = getMod(arg)
+            if mod != None:
+                print dumpJson(mod.deploy())
+                print dumpJson(GL.proj()[arg])
+        elif GL.deploy()[GL.env()]['deploy'].has_key(arg):
+            print dumpJson(GL.deploy()[GL.env()]['deploy'][arg])
+        elif arg == 'all':
+            print dumpJson(GL.deploy()[GL.env()])
+        else:
+            pass
+
     #def do_set(self, arg):
         #args = arg.split(' ')
         #if len(args)==1 and arg=='show':
