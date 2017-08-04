@@ -7,6 +7,9 @@ from cmd2 import Cmd
 
 class Loop(Cmd):
     def __init__(self):
+        self.cmdask = False
+        #将变量纳入环境变量，就可以通过set命令修改和查询
+        self.settable['cmdask'] = 'whether to ask when cmd is called'
         Cmd.__init__(self)
 
     #事件循环开始时执行
@@ -74,13 +77,13 @@ class Loop(Cmd):
             if GL.proj().has_key(item):
                 mod = getMod(item)
                 if mod != None:
-                    cmd(mod.deploy(), drt)
+                    cmd(mod.deploy(), drt, self.cmdask)
             elif GL.deploy()[GL.env()]['deploy'].has_key(item):
                 ip_list = [item,]
-                cmd(ip_list, drt)
+                cmd(ip_list, drt, self.cmdask)
             elif item == 'all':
                 ip_list = GL.deploy()[GL.env()]['deploy'].keys()
-                cmd(ip_list, drt)
+                cmd(ip_list, drt, self.cmdask)
             else:
                 self.help_cmd()
         else:

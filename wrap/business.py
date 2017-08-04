@@ -4,8 +4,12 @@
 from base import *
 from model import *
 
-def cmd(ip_list, cmd):
+def cmd(ip_list, cmd, cmdask):
     for ip in ip_list:
+        if cmdask:
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            if out == 'no':
+                continue
         remoteCmd(ip, cmd)
 
 def scp(ip_list, src, dest):
