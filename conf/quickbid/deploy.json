@@ -82,7 +82,6 @@
             "172.18.27.6": [
                 "quickbid-center",
                 "qbinside-server",
-                "qbpay-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
@@ -90,10 +89,10 @@
                 "quickbid-center",
                 "qb-data-process",
                 "qbmonitor-server",
-                "qbpay-server",
                 "quickbid-server"
             ],
             "172.18.27.7": [
+                "qbpay-server",
                 "ad-api",
                 "api",
                 "auth",
@@ -101,6 +100,7 @@
                 "data"
             ],
             "172.18.203.146": [
+                "qbpay-server",
                 "ad-api",
                 "api",
                 "auth",
