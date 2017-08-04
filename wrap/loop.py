@@ -67,16 +67,20 @@ class Loop(Cmd):
     def do_cmd(self, arg):
         args = arg.split(' ', 1)
         if len(args) == 2:
-            if GL.proj().has_key(args[0]):
-                mod = getMod(args[0])
+            item = args[0]
+            drt = args[1]
+            if drt.startswith("'") and drt.endswith("'"):
+                drt = 'eval ' + drt
+            if GL.proj().has_key(item):
+                mod = getMod(item)
                 if mod != None:
-                    cmd(mod.deploy(), args[1])
-            elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
-                ip_list = [args[0],]
-                cmd(ip_list, args[1])
-            elif args[0] == 'all':
+                    cmd(mod.deploy(), drt)
+            elif GL.deploy()[GL.env()]['deploy'].has_key(item):
+                ip_list = [item,]
+                cmd(ip_list, drt)
+            elif item == 'all':
                 ip_list = GL.deploy()[GL.env()]['deploy'].keys()
-                cmd(ip_list, args[1])
+                cmd(ip_list, drt)
             else:
                 self.help_cmd()
         else:
@@ -87,6 +91,8 @@ class Loop(Cmd):
 
     def do_local(self, cmd):
         if cmd!=None and cmd!='':
+            if cmd.startswith("'") and cmd.endswith("'"):
+                cmd = 'eval ' + cmd
             localCmd(cmd)
 
     def do_backup(self, proj):

@@ -17,8 +17,8 @@ def ftest():
     run('tmpid=`ps -ef|grep tomcat-quickbid-server|grep java|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && kill -9 $tmpid; echo ok')
 
 #h = '10.104.197.116'
-h = '172.18.27.5'
-execute(ftest, host=h)
+#h = '172.18.27.5'
+#execute(ftest, host=h)
 
 #GL.setEnv('test')
 #password = getpass.getpass('请输入使用密码：')
