@@ -58,7 +58,8 @@
     "activity-server": {
         "form": "server",
         "pack": "activity.war",
-        "appdir": "tomcat-activity-server/webapps/activity",
+        "tomcat": "tomcat-activity-server",
+        "appdir": "webapps/activity",
         "trunk": "codes/server/activity-server",
         "tag": "codes/tag/{issue}/server/activity-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/activity-server"
@@ -66,7 +67,8 @@
     "lottery-server": {
         "form": "server",
         "pack": "lottery.war",
-        "appdir": "tomcat-lottery-server/webapps/monitor",
+        "tomcat": "tomcat-lottery-server",
+        "appdir": "webapps/monitor",
         "trunk": "codes/server/lottery-server",
         "tag": "codes/tag/{issue}/server/lottery-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/lottery-server"
@@ -74,7 +76,8 @@
     "monitor-server": {
         "form": "server",
         "pack": "monitor.war",
-        "appdir": "tomcat-monitor-server/webapps/monitor",
+        "tomcat": "tomcat-monitor-server",
+        "appdir": "webapps/monitor",
         "trunk": "codes/server/monitor-server",
         "tag": "codes/tag/{issue}/server/monitor-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/monitor-server"
@@ -82,7 +85,17 @@
     "pay-server": {
         "form": "server",
         "pack": "pay.war",
-        "appdir": "tomcat-pay-server/webapps/pay",
+        "tomcat": "tomcat-pay-server",
+        "appdir": "webapps/pay",
+        "trunk": "codes/server/pay-server",
+        "tag": "codes/tag/{issue}/server/pay-server",
+        "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/pay-server"
+    },
+    "pay-server-2": {
+        "form": "server",
+        "pack": "pay.war",
+        "tomcat": "tomcat-pay-server-02",
+        "appdir": "webapps/pay",
         "trunk": "codes/server/pay-server",
         "tag": "codes/tag/{issue}/server/pay-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/pay-server"
@@ -90,7 +103,8 @@
     "pk-server": {
         "form": "server",
         "pack": "pk.war",
-        "appdir": "tomcat-pk-server/webapps/pk",
+        "tomcat": "tomcat-pk-server",
+        "appdir": "webapps/pk",
         "trunk": "codes/server/pk-server",
         "tag": "codes/tag/{issue}/server/pk-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/pk-server"
@@ -98,7 +112,8 @@
     "red-packet-server": {
         "form": "server",
         "pack": "red-packet.war",
-        "appdir": "tomcat-red-packet-server/webapps/red-packet",
+        "tomcat": "tomcat-red-packet-server",
+        "appdir": "webapps/red-packet",
         "trunk": "codes/server/red-packet-server",
         "tag": "codes/tag/{issue}/server/red-packet-server",
         "wcopy": "/mydata/maintenance/svn/tag/{issue}/server/red-packet-server"

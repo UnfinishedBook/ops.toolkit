@@ -50,7 +50,8 @@
     "qbinside-server": {
         "form": "server",
         "pack": "qbinside.war",
-        "appdir": "tomcat-qbinside-server/webapps/qbinside",
+        "tomcat": "tomcat-qbinside-server",
+        "appdir": "webapps/qbinside",
         "trunk": "codes/server/qbinside-server",
         "tag": "codes/tag_quick/{issue}/server/qbinside-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbinside-server"
@@ -58,7 +59,8 @@
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
-        "appdir": "tomcat-qbmonitor-server/webapps/qbmonitor",
+        "tomcat": "tomcat-qbmonitor-server",
+        "appdir": "webapps/qbmonitor",
         "trunk": "codes/server/qbmonitor-server",
         "tag": "codes/tag_quick/{issue}/server/qbmonitor-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbmonitor-server"
@@ -66,7 +68,8 @@
     "qbpay-server": {
         "form": "server",
         "pack": "qbpay.war",
-        "appdir": "tomcat-qbpay-server/webapps/qbpay",
+        "tomcat": "tomcat-qbpay-server",
+        "appdir": "webapps/qbpay",
         "trunk": "codes/server/qbpay-server",
         "tag": "codes/tag_quick/{issue}/server/qbpay-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbpay-server"
@@ -74,7 +77,8 @@
     "qbshield-server": {
         "form": "server",
         "pack": "qbshield.war",
-        "appdir": "tomcat-qbshield-server/webapps/qbshield",
+        "tomcat": "tomcat-qbshield-server",
+        "appdir": "webapps/qbshield",
         "trunk": "codes/server/qbshield-server",
         "tag": "codes/tag_quick/{issue}/server/qbshield-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbshield-server"
@@ -82,7 +86,8 @@
     "quickbid-server": {
         "form": "server",
         "pack": "quickbid.war",
-        "appdir": "tomcat-quickbid-server/webapps/quickbid",
+        "tomcat": "tomcat-quickbid-server",
+        "appdir": "webapps/quickbid",
         "trunk": "codes/server/quickbid-server",
         "tag": "codes/tag_quick/{issue}/server/quickbid-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/quickbid-server"

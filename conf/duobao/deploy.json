@@ -54,7 +54,6 @@
                 "red-packet-process",
                 "activity-server",
                 "lottery-server",
-                "pay-server",
                 "pk-server",
                 "red-packet-server",
                 "count",
@@ -84,7 +83,8 @@
                 "periodGenerator"
             ],
             "10.104.225.127": [
-                "pay-server"
+                "pay-server",
+                "pay-server-2"
             ],
             "10.104.23.52": [
                 "data"

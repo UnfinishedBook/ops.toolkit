@@ -23,6 +23,9 @@ class Model:
     def form(self):
         return self.__form
 
+    def tomcat(self):
+        return GL.proj()[self.name()]['tomcat']
+
     def deploy(self):
         if len(self.__deploy) == 0:
             ips = GL.deploy()[GL.env()]['deploy']
@@ -38,6 +41,8 @@ class Model:
             if tmp.startswith('/'): #绝对路径,就直接使用
                 self.__appdir = tmp
             else:   #相对路径,就要加上form中的appdir
+                if self.form() == 'server':
+                    tmp = '%s/%s' % (self.tomcat(),tmp)
                 self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],tmp)
         return self.__appdir
 
@@ -63,21 +68,21 @@ class Model:
 
     def pidname(self):  #查询进程时用的字符串
         if self.form() == 'server':
-            return 'tomcat-%s' % self.name()
+            return '/%s/' % self.tomcat()
         elif self.form()=='center' or self.form()=='process':
-            return self.appdir()
+            return self.appdir() + '/'
         else:
             return None
 
     def tomcatshutdown(self):
         if self.form() == 'server':
-            return '%s/%s/bin/shutdown.sh' % (GL.form()[self.form()]['appdir'],self.pidname())
+            return '%s/%s/bin/shutdown.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
         else:
             return None
 
     def pidexe(self):   #启动文件
         if self.form() == 'server':
-            return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.pidname())
+            return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
         elif self.form()=='center' or self.form()=='process':
             if GL.env()!='pro' and self.form()=='center':
                 return '%s/bin/start-dev.sh' % self.appdir()
