@@ -76,6 +76,7 @@
                 "qb-proxy-process"
             ],
             "172.18.203.147": [
+                "qb-prizepool-process",
                 "quickbid-center",
                 "quickbid-process"
             ],

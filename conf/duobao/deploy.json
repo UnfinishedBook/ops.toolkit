@@ -75,7 +75,6 @@
                 "caishen-center-2",
                 "activity-server",
                 "monitor-server",
-                "pay-server",
                 "pk-server",
                 "red-packet-server",
                 "api",
@@ -83,6 +82,9 @@
                 "monitor",
                 "main",
                 "periodGenerator"
+            ],
+            "10.104.225.127": [
+                "pay-server"
             ],
             "10.104.23.52": [
                 "data"
