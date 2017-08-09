@@ -42,14 +42,22 @@ if sys.argv[2] == 'job':
             lines.append(line)
             line = '%s monitor.job[%s.running] %s\n' % (host, tt['{#NAME}'], tt['{#RUNNING}'])
             lines.append(line)
-            line = '%s monitor.job[%s.problem] %s\n' % (host, tt['{#NAME}'], 'None')
+            if True not in tt['{#RUNNING}']:
+                problem = '没有运行中的定时任务: %s' % tt['{#RUNNING}']
+            elif len(tt['{#DISTRIBUTED}'])>1 and False in tt['{#DISTRIBUTED}'] and tt['{#RUNNING}'].count(True)>1:
+                problem = '非分布式定时任务启动了不止一个 分布式(%s) 运行状态(%s)' % (tt['{#DISTRIBUTED}'],tt['{#RUNNING}'])
+            #elif len(tt['{#DISTRIBUTED}'])>1 and True in tt['{#DISTRIBUTED}'] and tt['{#RUNNING}'].count(True)!=len(tt['{#DISTRIBUTED}']):
+                #problem = '分布式定时任务未全部启动 分布式(%s) 运行状态(%s)' % (tt['{#DISTRIBUTED}'],tt['{#RUNNING}'])
+            else:
+                problem = 'None'
+            line = '%s monitor.job[%s.problem] %s\n' % (host, tt['{#NAME}'], problem)
             lines.append(line)
         fname = '/tmp/job.txt'
         f = open(fname, 'w')
         f.writelines(lines)
         f.close()
-        #output = commands.getoutput('zabbix_sender -z 127.0.0.1 -s monitor -i %s' % fname)
-        #LOG.info(output)
+        output = commands.getoutput('zabbix_sender -z 127.0.0.1 -s monitor -i %s' % fname)
+        LOG.info(output)
     elif sys.argv[3] == '--discover':
         print json.dumps(data, sort_keys=True, indent=4)
     else:
@@ -67,14 +75,18 @@ elif sys.argv[2] == 'queue':
             lines.append(line)
             line = '%s monitor.queue[%s.running] %s\n' % (host, tt['{#NAME}'], tt['{#RUNNING}'])
             lines.append(line)
-            line = '%s monitor.queue[%s.problem] %s\n' % (host, tt['{#NAME}'], 'None')
+            if True not in tt['{#RUNNING}']:
+                problem = '没有运行中的队列监控: %s' % tt['{#RUNNING}']
+            else:
+                problem = 'None'
+            line = '%s monitor.queue[%s.problem] %s\n' % (host, tt['{#NAME}'], problem)
             lines.append(line)
         fname = '/tmp/queue.txt'
         f = open(fname, 'w')
         f.writelines(lines)
         f.close()
-        #output = commands.getoutput('zabbix_sender -z 127.0.0.1 -i %s' % fname)
-        #LOG.info(output)
+        output = commands.getoutput('zabbix_sender -z 127.0.0.1 -i %s' % fname)
+        LOG.info(output)
     elif sys.argv[3] == '--discover':
         print json.dumps(data, sort_keys=True, indent=4)
     else:
