@@ -20,22 +20,14 @@ def ftest():
 #h = '172.18.27.5'
 #execute(ftest, host=h)
 
-GL.setEnv('pro')
+#GL.setEnv('pro')
 #password = getpass.getpass('请输入使用密码：')
 #if verifyPwd(password) == False:
     #exit()
 #GL.setPwd(password)
 
-m1 = Model('caishen-center')
-print m1.pidname(),m1.pack(),m1.appdir(),m1.upappdir(),m1.bakdir()
-print m1.tag(),m1.trunk(),m1.workcopy()
-m1 = Model('pay-server')
-print m1.pidname(),m1.pack(),m1.appdir(),m1.upappdir(),m1.bakdir()
-print m1.tomcatshutdown(),m1.pidexe()
-print m1.tag(),m1.trunk(),m1.workcopy()
-m1 = Model('api')
-print m1.pidname(),m1.pack(),m1.appdir(),m1.bakdir()
-print m1.tag(),m1.trunk(),m1.workcopy()
+#m1 = Model('caishen-center')
+#print m1.tag(),m1.trunk(),m1.workcopy()
 
 #m1 = Model('quickbid-center')
 #print m1.name(),m1.form(),m1.deploy(),m1.appdir(),m1.cnfdir(),m1.bakdir()

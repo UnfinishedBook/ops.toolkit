@@ -245,15 +245,21 @@ def pm2(opt, mod=None):
             if out == 'yes':
                 remoteCmd(ip, cmd)
 
-def getMonitor(s, mod):
-    jobs = None
-    queues = None
+def getJobs(s):
     url = 'http://%s/ljob_controller/get_online_ljobs' % GL.monitor()
     r = s.post(url)
     jobs = parseJobs(r.text)
+    return jobs
+
+def getQueues(s):
     url = 'http://%s/lqueue_controller/get_online_lqueues.do' % GL.monitor()
     r = s.post(url)
     queues = parseQueues(r.text)
+    return queues
+
+def getMonitor(s, mod):
+    jobs = getJobs(s)
+    queues = getQueues(s)
     retJobs = []
     retQueues = []
     if jobs != None:
@@ -309,10 +315,14 @@ def monitorSave():
 def monitor(opt, mod):
     s = requests.session()
     url = 'http://%s/login_controller/do_login' % GL.monitor()
-    r = s.post(url, data={'loginName':GL.muser(),'password':GL.mpwd()})
+    r = s.post(url, data={'loginName':GL.muser(),'password':GL.mpwd()}, timeout=3)
     if '退出登录' not in r.text:
         LOG.error('登录失败')
         return
+    if opt == 'all':    #给监控discover.py用的
+        jobs = getJobs(s)
+        queues = getQueues(s)
+        return (jobs,queues)
     if opt=='show' or opt=='save':
         (jobs,queues) = getMonitor(s, mod)
         tmp1 = []
@@ -359,6 +369,60 @@ def monitor(opt, mod):
                 print i,info,ip_id,lqueueKey,
                 i += 1
                 monitorQueue(s, ip_id, lqueueKey, status)
+
+def zabbix_monitor():
+    (jobs,queues) = monitor('all', None)
+    zabbix_job = {}
+    for job in jobs:
+        tmp = {}
+        name = '%s_%s' % (job[1],job[2])
+        if name in zabbix_job:
+            zabbix_job[name]['{#DEPLOY}'].append(job[0])
+            if job[3] == '是':
+                zabbix_job[name]['{#DISTRIBUTED}'].append(True)
+            else:
+                zabbix_job[name]['{#DISTRIBUTED}'].append(False)
+            zabbix_job[name]['{#HEARTBEAT}'].append(job[5])
+            if job[6] == '运行中':
+                zabbix_job[name]['{#RUNNING}'].append(True)
+            else:
+                zabbix_job[name]['{#RUNNING}'].append(False)
+        else:
+            zabbix_job[name] = {}
+            zabbix_job[name]['{#NAME}'] = name
+            zabbix_job[name]['{#DEPLOY}'] = [job[0],]
+            if job[3] == '是':
+                zabbix_job[name]['{#DISTRIBUTED}'] = [True,]
+            else:
+                zabbix_job[name]['{#DISTRIBUTED}'] = [False,]
+            #zabbix_job[name]['{#HEARTBEAT}'] = [time.strptime(job[5], '%Y-%m-%d %H:%M:%S'),]
+            zabbix_job[name]['{#HEARTBEAT}'] = [job[5],]
+            if job[6] == '运行中':
+                zabbix_job[name]['{#RUNNING}'] = [True,]
+            else:
+                zabbix_job[name]['{#RUNNING}'] = [False,]
+    zabbix_queue = {}
+    for queue in queues:
+        tmp = {}
+        name = '%s_%s' % (queue[1],queue[2])
+        if name in zabbix_queue:
+            zabbix_queue[name]['{#DEPLOY}'].append(queue[0])
+            zabbix_queue[name]['{#HEARTBEAT}'].append(queue[3])
+            if queue[4] == '运行中':
+                zabbix_queue[name]['{#RUNNING}'].append(True)
+            else:
+                zabbix_queue[name]['{#RUNNING}'].append(False)
+        else:
+            zabbix_queue[name] = {}
+            zabbix_queue[name]['{#NAME}'] = name
+            zabbix_queue[name]['{#DEPLOY}'] = [queue[0],]
+            #zabbix_queue[name]['{#HEARTBEAT}'] = [time.strptime(queue[5], '%Y-%m-%d %H:%M:%S'),]
+            zabbix_queue[name]['{#HEARTBEAT}'] = [queue[3],]
+            if queue[4] == '运行中':
+                zabbix_queue[name]['{#RUNNING}'] = [True,]
+            else:
+                zabbix_queue[name]['{#RUNNING}'] = [False,]
+    return (zabbix_job,zabbix_queue)
 
 def set(var, val=None):
     if var == 'show':
