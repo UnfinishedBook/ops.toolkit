@@ -63,7 +63,11 @@ class Model:
 
     def pack(self):   #更新包
         if self.__pack == None:
-            self.__pack = '%s/%s' % (GL.form()[self.form()]['updir'], GL.proj()[self.name()]['pack'])
+            tmp = GL.proj()[self.name()]['pack']
+            if tmp.startswith('/'): #绝对路径,就直接使用
+                self.__pack = tmp
+            else:   #相对路径,就要加上form中的updir
+                self.__pack = '%s/%s' % (GL.form()[self.form()]['updir'],tmp)
         return self.__pack
 
     def pidname(self):  #查询进程时用的字符串
