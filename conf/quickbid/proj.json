@@ -92,6 +92,13 @@
         "tag": "codes/tag_quick/{issue}/server/quickbid-server",
         "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/quickbid-server"
     },
+    "activity-api": {
+        "form": "node",
+        "appdir": "activity-api",
+        "trunk": "codes/trunk/shanpai/shanpai-activity",
+        "tag": "codes/tag_quick/{issue}/shanpai/shanpai-activity",
+        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/shanpai/shanpai-activity"
+    },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",

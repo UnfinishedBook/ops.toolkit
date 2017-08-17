@@ -17,6 +17,7 @@
                 "qbmonitor-server",
                 "qbpay-server",
                 "quickbid-server",
+                "activity-api",
                 "ad-api",
                 "api",
                 "auth",
@@ -44,6 +45,7 @@
                 "qbmonitor-server",
                 "qbpay-server",
                 "quickbid-server",
+                "activity-api",
                 "ad-api",
                 "api",
                 "auth",
@@ -94,6 +96,7 @@
             ],
             "172.18.27.7": [
                 "qbpay-server",
+                "activity-api",
                 "ad-api",
                 "api",
                 "auth",
@@ -102,6 +105,7 @@
             ],
             "172.18.203.146": [
                 "qbpay-server",
+                "activity-api",
                 "ad-api",
                 "api",
                 "auth",
