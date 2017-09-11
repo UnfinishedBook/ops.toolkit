@@ -3,151 +3,151 @@
         "form": "center",
         "pack": "quickbid-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-provider-0.1.0",
-        "trunk": "codes/center/quickbid-center",
-        "tag": "codes/tag_quick/{issue}/center/quickbid-center",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/center/quickbid-center"
+        "trunk": "codes/trunk_gogobids/server/center/quickbid-center",
+        "tag": "codes/tags_gogobids/{issue}/server/center/quickbid-center",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/center/quickbid-center"
     },
     "qb-data-process": {
         "form": "process",
         "pack": "qb-data-process-assembly.zip",
         "appdir": "qb-data-process",
-        "trunk": "codes/process/qb-data-process",
-        "tag": "codes/tag_quick/{issue}/process/qb-data-process",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/process/qb-data-process"
+        "trunk": "codes/trunk_gogobids/server/process/qb-data-process",
+        "tag": "codes/tags_gogobids/{issue}/server/process/qb-data-process",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/process/qb-data-process"
     },
     "qb-firewall-process": {
         "form": "process",
         "pack": "qb-firewall-process-assembly.zip",
         "appdir": "qb-firewall-process",
-        "trunk": "codes/process/qb-firewall-process",
-        "tag": "codes/tag_quick/{issue}/process/qb-firewall-process",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/process/qb-firewall-process"
+        "trunk": "codes/trunk_gogobids/server/process/qb-firewall-process",
+        "tag": "codes/tags_gogobids/{issue}/server/process/qb-firewall-process",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/process/qb-firewall-process"
     },
     "qb-prizepool-process": {
         "form": "process",
         "pack": "qb-prizepool-process-assembly.zip",
         "appdir": "qb-prizepool-process",
-        "trunk": "codes/process/qb-prizepool-process",
-        "tag": "codes/tag_quick/{issue}/process/qb-prizepool-process",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/process/qb-prizepool-process"
+        "trunk": "codes/trunk_gogobids/server/process/qb-prizepool-process",
+        "tag": "codes/tags_gogobids/{issue}/server/process/qb-prizepool-process",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/process/qb-prizepool-process"
     },
     "qb-proxy-process": {
         "form": "process",
         "pack": "qb-proxy-process-assembly.zip",
         "appdir": "qb-proxy-process",
-        "trunk": "codes/process/qb-proxy-process",
-        "tag": "codes/tag_quick/{issue}/process/qb-proxy-process",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/process/qb-proxy-process"
+        "trunk": "codes/trunk_gogobids/server/process/qb-proxy-process",
+        "tag": "codes/tags_gogobids/{issue}/server/process/qb-proxy-process",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/process/qb-proxy-process"
     },
     "quickbid-process": {
         "form": "process",
         "pack": "quickbid-process-assembly.zip",
         "appdir": "quickbid-process",
-        "trunk": "codes/process/quickbid-process",
-        "tag": "codes/tag_quick/{issue}/process/quickbid-process",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/process/quickbid-process"
+        "trunk": "codes/trunk_gogobids/server/process/quickbid-process",
+        "tag": "codes/tags_gogobids/{issue}/server/process/quickbid-process",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/process/quickbid-process"
     },
     "qbinside-server": {
         "form": "server",
         "pack": "qbinside.war",
         "tomcat": "tomcat-qbinside-server",
         "appdir": "webapps/qbinside",
-        "trunk": "codes/server/qbinside-server",
-        "tag": "codes/tag_quick/{issue}/server/qbinside-server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbinside-server"
+        "trunk": "codes/trunk_gogobids/server/server/qbinside-server",
+        "tag": "codes/tags_gogobids/{issue}/server/server/qbinside-server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/server/qbinside-server"
     },
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
         "tomcat": "tomcat-qbmonitor-server",
         "appdir": "webapps/qbmonitor",
-        "trunk": "codes/server/qbmonitor-server",
-        "tag": "codes/tag_quick/{issue}/server/qbmonitor-server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbmonitor-server"
+        "trunk": "codes/trunk_gogobids/server/server/qbmonitor-server",
+        "tag": "codes/tags_gogobids/{issue}/server/server/qbmonitor-server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/server/qbmonitor-server"
     },
     "qbpay-server": {
         "form": "server",
         "pack": "qbpay.war",
         "tomcat": "tomcat-qbpay-server",
         "appdir": "webapps/qbpay",
-        "trunk": "codes/server/qbpay-server",
-        "tag": "codes/tag_quick/{issue}/server/qbpay-server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbpay-server"
+        "trunk": "codes/trunk_gogobids/server/server/qbpay-server",
+        "tag": "codes/tags_gogobids/{issue}/server/server/qbpay-server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/server/qbpay-server"
     },
     "qbshield-server": {
         "form": "server",
         "pack": "qbshield.war",
         "tomcat": "tomcat-qbshield-server",
         "appdir": "webapps/qbshield",
-        "trunk": "codes/server/qbshield-server",
-        "tag": "codes/tag_quick/{issue}/server/qbshield-server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/qbshield-server"
+        "trunk": "codes/trunk_gogobids/server/server/qbshield-server",
+        "tag": "codes/tags_gogobids/{issue}/server/server/qbshield-server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/server/qbshield-server"
     },
     "quickbid-server": {
         "form": "server",
         "pack": "quickbid.war",
         "tomcat": "tomcat-quickbid-server",
         "appdir": "webapps/quickbid",
-        "trunk": "codes/server/quickbid-server",
-        "tag": "codes/tag_quick/{issue}/server/quickbid-server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/server/quickbid-server"
+        "trunk": "codes/trunk_gogobids/server/server/quickbid-server",
+        "tag": "codes/tags_gogobids/{issue}/server/server/quickbid-server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/server/quickbid-server"
     },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
-        "trunk": "codes/trunk/shanpai/shanpai-activity",
-        "tag": "codes/tag_quick/{issue}/shanpai/shanpai-activity",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/shanpai/shanpai-activity"
+        "trunk": "codes/trunk_gogobids/server/shanpai-activity",
+        "tag": "codes/tags_gogobids/{issue}/server/shanpai-activity",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/shanpai-activity"
     },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "trunk": "codes/trunk/shanpai/shanpai-ad",
-        "tag": "codes/tag_quick/{issue}/shanpai/shanpai-ad",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/shanpai/shanpai-ad"
+        "trunk": "codes/trunk_gogobids/ad/shanpai-ad",
+        "tag": "codes/tags_gogobids/{issue}/ad/shanpai-ad",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/ad/shanpai-ad"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "trunk": "codes/trunk/shanpai/shanpai",
-        "tag": "codes/tag_quick/{issue}/shanpai/shanpai",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/shanpai/shanpai"
+        "trunk": "codes/trunk_gogobids/server/shanpai",
+        "tag": "codes/tags_gogobids/{issue}/server/shanpai",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/shanpai"
     },
     "auth": {
         "form": "node",
         "appdir": "auth",
-        "trunk": "codes/trunk_quick/cms_login_server",
-        "tag": "codes/tag_quick/{issue}/cms_login_server",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/cms_login_server"
+        "trunk": "codes/trunk_gogobids/cms/cms_login_server",
+        "tag": "codes/tags_gogobids/{issue}/cms/cms_login_server",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/cms/cms_login_server"
     },
     "cms": {
         "form": "node",
         "appdir": "cms",
-        "trunk": "codes/trunk_quick/cms_system",
-        "tag": "codes/tag_quick/{issue}/cms_system",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/cms_system"
+        "trunk": "codes/trunk_gogobids/cms/cms_system",
+        "tag": "codes/tags_gogobids/{issue}/cms/cms_system",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/cms/cms_system"
     },
     "cmsTimer": {
         "form": "node",
         "appdir": "cms",
-        "trunk": "codes/trunk_quick/cms_system",
-        "tag": "codes/tag_quick/{issue}/cms_system",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/cms_system"
+        "trunk": "codes/trunk_gogobids/cms/cms_system",
+        "tag": "codes/tags_gogobids/{issue}/cms/cms_system",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/cms/cms_system"
     },
     "data": {
         "form": "node",
         "appdir": "ad_stats",
-        "trunk": "codes/trunk_quick/ad_stats",
-        "tag": "codes/tag_quick/{issue}/ad_stats",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/ad_stats"
+        "trunk": "codes/trunk_gogobids/ad/ad_stats",
+        "tag": "codes/tags_gogobids/{issue}/ad/ad_stats",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/ad/ad_stats"
     },
     "wap": {
         "form": "static",
         "pack": "wap.tar.gz",
         "appdir": "shanpai/www/wap",
-        "trunk": "codes/trunk_quick/wap",
-        "tag": "codes/tag_quick/{issue}/wap",
-        "wcopy": "/mydata/maintenance/svn/tag_quick/{issue}/wap"
+        "trunk": "codes/trunk_gogobids/wap",
+        "tag": "codes/tags_gogobids/{issue}/wap",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/wap"
     },
     "wap_cdn": {
         "form": "static",
