@@ -8,6 +8,7 @@
             "172.18.27.3": [
                 "wap",
                 "quickbid-center",
+                "quickbid-ad-center",
                 "qb-data-process",
                 "qb-firewall-process",
                 "qb-prizepool-process",
@@ -36,6 +37,7 @@
             "172.18.27.5": [
                 "wap",
                 "quickbid-center",
+                "quickbid-ad-center",
                 "qb-data-process",
                 "qb-firewall-process",
                 "qb-prizepool-process",
@@ -73,6 +75,7 @@
             ],
             "172.18.27.10": [
                 "quickbid-center",
+                "quickbid-ad-center",
                 "qb-firewall-process",
                 "qb-prizepool-process",
                 "qb-proxy-process"
@@ -80,6 +83,7 @@
             "172.18.203.147": [
                 "qb-prizepool-process",
                 "quickbid-center",
+                "quickbid-ad-center",
                 "quickbid-process"
             ],
             "172.18.27.6": [

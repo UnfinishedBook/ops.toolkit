@@ -7,6 +7,14 @@
         "tag": "codes/tags_gogobids/{issue}/server/center/quickbid-center",
         "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/center/quickbid-center"
     },
+    "quickbid-ad-center": {
+        "form": "center",
+        "pack": "quickbid-ad-provider-0.1.0-assembly.zip",
+        "appdir": "quickbid-ad-provider-0.1.0",
+        "trunk": "codes/trunk_gogobids/server/center/quickbid-ad-center",
+        "tag": "codes/tags_gogobids/{issue}/server/center/quickbid-ad-center",
+        "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}/server/center/quickbid-ad-center"
+    },
     "qb-data-process": {
         "form": "process",
         "pack": "qb-data-process-assembly.zip",
