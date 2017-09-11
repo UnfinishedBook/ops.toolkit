@@ -2,7 +2,7 @@
     "bakdir": "/mydata/maintenance/backup", 
     "center": {
         "appdir": "/mydata/center",
-        "cnfdir": "/data/config/server",
+        "cnfdir": "/data/config/center",
         "updir": "/mydata/center/zip"
     },
     "process": {
