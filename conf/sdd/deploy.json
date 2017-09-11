@@ -1,0 +1,91 @@
+{
+    "dev": {
+        "intro": "开发环境",
+        "monitor": "10.135.17.9:7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "10.135.17.9": [
+                "wap",
+                "quickbid-center",
+                "qb-data-process",
+                "qb-firewall-process",
+                "qb-prizepool-process",
+                "qb-proxy-process",
+                "quickbid-process",
+                "qbinside-server",
+                "qbmonitor-server",
+                "qbpay-server",
+                "quickbid-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data"
+            ]
+        }
+    },
+    "test": {
+        "intro": "测试环境",
+        "monitor": "10.104.197.116:7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "10.104.197.116": [
+                "wap",
+                "quickbid-center",
+                "qb-data-process",
+                "qb-firewall-process",
+                "qb-prizepool-process",
+                "qb-proxy-process",
+                "quickbid-process",
+                "qbinside-server",
+                "qbmonitor-server",
+                "qbpay-server",
+                "quickbid-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data"
+            ]
+        }
+    },
+    "pro": {
+        "intro": "生产环境",
+        "monitor": "172.18.203.145:7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "10.104.11.150": [
+                "cdn",
+                "wap",
+                "wap_cdn"
+            ],
+            "10.104.225.127": [
+            ],
+            "10.104.105.125": [
+            ],
+            "10.104.23.52": [
+            ],
+            "10.104.254.114": [
+            ],
+            "10.104.128.211": [
+            ],
+            "10.104.131.170": [
+            ],
+            "10.104.145.215": [
+            ],
+            "10.46.90.199": [
+            ],
+            "10.135.151.42": [
+            ],
+            "10.104.207.234": [
+            ]
+        }
+    }
+}
