@@ -35,6 +35,8 @@ class Loop(Cmd):
             project = '闪拍'
         elif GL.project() == 'duobao':
             project = '夺宝'
+        elif GL.project() == 'sdd':
+            project = '省多多'
         else:
             LOG.error('不支持的项目 %s' % GL.project())
             exit()

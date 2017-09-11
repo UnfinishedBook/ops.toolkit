@@ -10,17 +10,20 @@ elif len(sys.argv)==3 and (sys.argv[1]=='qb' or sys.argv[1]=='db') and sys.argv[
     pass
 else:
     print '''usage:
-    monitor.py <qb/db> <job/queue> --discover
-    monitor.py <qb/db> --up
+    monitor.py <qb/db/sdd> <job/queue> --discover
+    monitor.py <qb/db/sdd> --up
     '''
     exit()
 
 if sys.argv[1] == 'qb':
     os.environ['ops_project'] = 'quickbid'
     host = 'shanpai.monitor'
-else:
+elif sys.argv[1] == 'db':
     os.environ['ops_project'] = 'duobao'
     host = 'duobao.monitor'
+elif sys.argv[1] == 'sdd':
+    os.environ['ops_project'] = 'sdd'
+    host = 'sdd.monitor'
 os.environ['ops_key'] = 'maintenance'
 
 from gl import *
