@@ -41,7 +41,7 @@ class Model:
             if tmp.startswith('/'): #绝对路径,就直接使用
                 self.__appdir = tmp
             else:   #相对路径,就要加上form中的appdir
-                if self.form() == 'server':
+                if self.form()=='server' or self.form()=='module':
                     tmp = '%s/%s' % (self.tomcat(),tmp)
                 self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],tmp)
         return self.__appdir
@@ -71,7 +71,7 @@ class Model:
         return self.__pack
 
     def pidname(self):  #查询进程时用的字符串
-        if self.form() == 'server':
+        if self.form()=='server' or self.form()=='module':
             return '/%s/' % self.tomcat()
         elif self.form()=='center' or self.form()=='process':
             return self.appdir() + '/'
@@ -79,13 +79,13 @@ class Model:
             return None
 
     def tomcatshutdown(self):
-        if self.form() == 'server':
+        if self.form()=='server' or self.form()=='module':
             return '%s/%s/bin/shutdown.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
         else:
             return None
 
     def pidexe(self):   #启动文件
-        if self.form() == 'server':
+        if self.form()=='server' or self.form()=='module':
             return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
         elif self.form()=='center' or self.form()=='process':
             if GL.env()!='pro' and self.form()=='center':

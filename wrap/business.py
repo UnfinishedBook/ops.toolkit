@@ -134,7 +134,7 @@ def update(mod):
         up_center(mod)
     elif mod.form() == 'process':
         up_process(mod)
-    elif mod.form() == 'server':
+    elif mod.form()=='server' or mod.form()=='module':
         up_server(mod)
     else:
         LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
@@ -207,7 +207,7 @@ def status(mod):
         remoteCmd(ip, cmd)
 
 def _stop(ip, mod):
-    if mod.form() == 'server':
+    if mod.form()=='server' or mod.form()=='module':
         remoteCmd(ip, mod.tomcatshutdown())
         time.sleep(2)
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()

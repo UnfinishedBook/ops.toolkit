@@ -92,6 +92,15 @@
         "tag": "codes/tags_91khjy/{issue}/server/server/quickbid-server",
         "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/quickbid-server"
     },
+    "statistics-admonitor2": {
+        "form": "module",
+        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-admonitor2",
+        "appdir": "webapps/ad-monitor2*",
+        "trunk": "codes/trunk_91khjy/statistics/ad-monitor2",
+        "tag": "codes/tags_91khjy/{issue}/statistics/ad-monitor2",
+        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/statistics/ad-monitor2"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
