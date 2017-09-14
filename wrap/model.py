@@ -97,20 +97,25 @@ class Model:
         else:
             return None
 
+    def svnsuf(self):
+        return GL.proj()[self.name()]['svnsuf']
+
     def trunk(self):
         if self.__trunk == None:
-            self.__trunk = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['trunk'])
+            #self.__trunk = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['trunk'])
+            self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
         return self.__trunk
 
     def tag(self):
         if self.__tag == None:
-            print GL.svn()
-            self.__tag = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['tag'].replace('{issue}', GL.issue()))
+            #self.__tag = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['tag'].replace('{issue}', GL.issue()))
+            self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__tag
 
     def workcopy(self):
         if self.__workcopy == None:
-            self.__workcopy = GL.proj()[self.name()]['wcopy'].replace('{issue}', GL.issue())
+            #self.__workcopy = GL.proj()[self.name()]['wcopy'].replace('{issue}', GL.issue())
+            self.__workcopy = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__workcopy
 
 

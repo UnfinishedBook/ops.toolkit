@@ -3,160 +3,120 @@
         "form": "center",
         "pack": "quickbid-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-provider-0.1.0",
-        "trunk": "codes/trunk_91khjy/server/center/quickbid-center",
-        "tag": "codes/tags_91khjy/{issue}/server/center/quickbid-center",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/center/quickbid-center"
+        "svnsuf": "server/center/quickbid-center"
     },
     "qb-data-process": {
         "form": "process",
         "pack": "qb-data-process-assembly.zip",
         "appdir": "qb-data-process",
-        "trunk": "codes/trunk_91khjy/server/process/qb-data-process",
-        "tag": "codes/tags_91khjy/{issue}/server/process/qb-data-process",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/process/qb-data-process"
+        "svnsuf": "server/process/qb-data-process"
     },
     "qb-firewall-process": {
         "form": "process",
         "pack": "qb-firewall-process-assembly.zip",
         "appdir": "qb-firewall-process",
-        "trunk": "codes/trunk_91khjy/server/process/qb-firewall-process",
-        "tag": "codes/tags_91khjy/{issue}/server/process/qb-firewall-process",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/process/qb-firewall-process"
+        "svnsuf": "server/process/qb-firewall-process"
     },
     "qb-prizepool-process": {
         "form": "process",
         "pack": "qb-prizepool-process-assembly.zip",
         "appdir": "qb-prizepool-process",
-        "trunk": "codes/trunk_91khjy/server/process/qb-prizepool-process",
-        "tag": "codes/tags_91khjy/{issue}/server/process/qb-prizepool-process",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/process/qb-prizepool-process"
+        "svnsuf": "server/process/qb-prizepool-process"
     },
     "qb-proxy-process": {
         "form": "process",
         "pack": "qb-proxy-process-assembly.zip",
         "appdir": "qb-proxy-process",
-        "trunk": "codes/trunk_91khjy/server/process/qb-proxy-process",
-        "tag": "codes/tags_91khjy/{issue}/server/process/qb-proxy-process",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/process/qb-proxy-process"
+        "svnsuf": "server/process/qb-proxy-process"
     },
     "quickbid-process": {
         "form": "process",
         "pack": "quickbid-process-assembly.zip",
         "appdir": "quickbid-process",
-        "trunk": "codes/trunk_91khjy/server/process/quickbid-process",
-        "tag": "codes/tags_91khjy/{issue}/server/process/quickbid-process",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/process/quickbid-process"
+        "svnsuf": "server/process/quickbid-process"
     },
     "qbinside-server": {
         "form": "server",
         "pack": "qbinside.war",
         "tomcat": "tomcat-qbinside-server",
         "appdir": "webapps/qbinside",
-        "trunk": "codes/trunk_91khjy/server/server/qbinside-server",
-        "tag": "codes/tags_91khjy/{issue}/server/server/qbinside-server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/qbinside-server"
+        "svnsuf": "server/server/qbinside-server"
     },
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
         "tomcat": "tomcat-qbmonitor-server",
         "appdir": "webapps/qbmonitor",
-        "trunk": "codes/trunk_91khjy/server/server/qbmonitor-server",
-        "tag": "codes/tags_91khjy/{issue}/server/server/qbmonitor-server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/qbmonitor-server"
+        "svnsuf": "server/server/qbmonitor-server"
     },
     "qbpay-server": {
         "form": "server",
         "pack": "qbpay.war",
         "tomcat": "tomcat-qbpay-server",
         "appdir": "webapps/qbpay",
-        "trunk": "codes/trunk_91khjy/server/server/qbpay-server",
-        "tag": "codes/tags_91khjy/{issue}/server/server/qbpay-server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/qbpay-server"
+        "svnsuf": "server/server/qbpay-server"
     },
     "qbshield-server": {
         "form": "server",
         "pack": "qbshield.war",
         "tomcat": "tomcat-qbshield-server",
         "appdir": "webapps/qbshield",
-        "trunk": "codes/trunk_91khjy/server/server/qbshield-server",
-        "tag": "codes/tags_91khjy/{issue}/server/server/qbshield-server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/qbshield-server"
+        "svnsuf": "server/server/qbshield-server"
     },
     "quickbid-server": {
         "form": "server",
         "pack": "quickbid.war",
         "tomcat": "tomcat-quickbid-server",
         "appdir": "webapps/quickbid",
-        "trunk": "codes/trunk_91khjy/server/server/quickbid-server",
-        "tag": "codes/tags_91khjy/{issue}/server/server/quickbid-server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/server/quickbid-server"
+        "svnsuf": "server/server/quickbid-server"
     },
     "statistics-admonitor": {
         "form": "module",
         "pack": "ad-monitor-sdd-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
         "appdir": "webapps/ad-monitor-sdd*",
-        "trunk": "codes/trunk_91khjy/statistics/ad-monitor-sdd",
-        "tag": "codes/tags_91khjy/{issue}/statistics/ad-monitor-sdd",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/statistics/ad-monitor-sdd"
+        "svnsuf": "statistics/ad-monitor-sdd"
     },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
-        "trunk": "codes/trunk_91khjy/server/shanpai-activity",
-        "tag": "codes/tags_91khjy/{issue}/server/shanpai-activity",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/shanpai-activity"
+        "svnsuf": "server/shanpai-activity"
     },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "trunk": "codes/trunk_91khjy/ad/shanpai-ad",
-        "tag": "codes/tags_91khjy/{issue}/ad/shanpai-ad",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/ad/shanpai-ad"
+        "svnsuf": "ad/shanpai-ad"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "trunk": "codes/trunk_91khjy/server/shanpai",
-        "tag": "codes/tags_91khjy/{issue}/server/shanpai",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/server/shanpai"
+        "svnsuf": "server/shanpai"
     },
     "auth": {
         "form": "node",
         "appdir": "auth",
-        "trunk": "codes/trunk_91khjy/cms/cms_login_server",
-        "tag": "codes/tags_91khjy/{issue}/cms/cms_login_server",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/cms/cms_login_server"
+        "svnsuf": "cms/cms_login_server"
     },
     "cms": {
         "form": "node",
         "appdir": "cms",
-        "trunk": "codes/trunk_91khjy/cms/cms_system",
-        "tag": "codes/tags_91khjy/{issue}/cms/cms_system",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/cms/cms_system"
+        "svnsuf": "cms/cms_system"
     },
     "cmsTimer": {
         "form": "node",
         "appdir": "cms",
-        "trunk": "codes/trunk_91khjy/cms/cms_system",
-        "tag": "codes/tags_91khjy/{issue}/cms/cms_system",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/cms/cms_system"
+        "svnsuf": "cms/cms_system"
     },
     "data": {
         "form": "node",
         "appdir": "ad_stats",
-        "trunk": "codes/trunk_91khjy/ad/ad_stats",
-        "tag": "codes/tags_91khjy/{issue}/ad/ad_stats",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/ad/ad_stats"
+        "svnsuf": "ad/ad_stats"
     },
     "wap": {
         "form": "static",
         "pack": "wap.tar.gz",
         "appdir": "shanpai/www/wap",
-        "trunk": "codes/trunk_91khjy/wap",
-        "tag": "codes/tags_91khjy/{issue}/wap",
-        "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}/wap"
+        "svnsuf": "wap"
     },
     "wap_cdn": {
         "form": "static",

@@ -1,5 +1,8 @@
 {
     "bakdir": "/mydata/maintenance/backup", 
+    "trunk": "codes/trunk_91khjy",
+    "tag": "codes/tags_91khjy/{issue}",
+    "wcopy": "/mydata/maintenance/svn/tags_91khjy/{issue}",
     "center": {
         "appdir": "/mydata/center",
         "cnfdir": "/data/config/center",
