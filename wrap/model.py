@@ -16,6 +16,9 @@ class Model:
         self.__trunk = None
         self.__tag = None
         self.__workcopy = None
+        self.__trunk_cnf = None
+        self.__tag_cnf = None
+        self.__workcopy_cnf = None
 
     def name(self):
         return self.__name
@@ -102,22 +105,36 @@ class Model:
 
     def trunk(self):
         if self.__trunk == None:
-            #self.__trunk = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['trunk'])
             self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
         return self.__trunk
 
     def tag(self):
         if self.__tag == None:
-            #self.__tag = '%s/%s' % (GL.svn(),GL.proj()[self.name()]['tag'].replace('{issue}', GL.issue()))
             self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__tag
 
     def workcopy(self):
         if self.__workcopy == None:
-            #self.__workcopy = GL.proj()[self.name()]['wcopy'].replace('{issue}', GL.issue())
             self.__workcopy = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__workcopy
 
+    def cnfsuf(self):
+        return GL.proj()[self.name()]['cnfsuf']
+
+    def trunk_cnf(self):
+        if self.__trunk_cnf == None:
+            self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.cnfsuf())
+        return self.__trunk_cnf
+
+    def tag_cnf(self):
+        if self.__tag_cnf == None:
+            self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.cnfsuf())
+        return self.__tag_cnf
+
+    def workcopy_cnf(self):
+        if self.__workcopy_cnf == None:
+            self.__workcopy_cnf = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.cnfsuf())
+        return self.__workcopy_cnf
 
 #根据工程名获得一个Model实例
 def getMod(proj):

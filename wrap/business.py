@@ -31,10 +31,14 @@ def rsync(ip_list, src, dest):
     for ip in ip_list:
         if src.startswith(':'):
             cmd = 'rsync -avz root@%s%s %s' % (ip,src,dest)
-            localCmd(cmd)
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
         elif dest.startswith(':'):
             cmd = 'rsync -avz %s root@%s%s' % (src,ip,dest)
-            localCmd(cmd)
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
         else:
             pass
 
@@ -138,6 +142,49 @@ def update(mod):
         up_server(mod)
     else:
         LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
+
+def svncnf(mod, opt):
+    if opt!='up' and opt!='merge' and opt!='ci':
+        print '不支持的操作 %s' % opt
+        return
+    if opt == 'up':
+        src = '%s/%s' % (mod.workcopy_cnf(),GL.env())
+        dest = ':%s' % mod.cnfdir()
+        rsync(mod.deploy(),src,dest)
+        #cmd = 'svn %s %s' % (opt,dest)
+        #for ip in mod.deploy():
+            #if opt == 'up':
+                #out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+                #if out == 'yes':
+                    #remoteCmd(ip, cmd)
+            #else:
+                #remoteCmd(ip, cmd)
+    elif opt == 'merge':
+        #先更新本地拷贝
+        cmd = 'svn up %s' % mod.workcopy_cnf()
+        LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        localCmd(cmd)
+        #svn路径信息
+        tag = mod.tag_cnf()
+        trunk = mod.trunk_cnf()
+        wcopy = mod.workcopy_cnf()
+        #执行合并测试
+        cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
+        #LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        localCmd(cmd)
+        #合并
+        out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
+        if out == 'yes':
+            cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
+            LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            localCmd(cmd)
+    elif opt == 'ci':
+        wcopy = mod.workcopy_cnf()
+        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
+        if instr != '':
+            cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
+            LOG.debug('执行提交操作 (%s)' % cmd)
+            localCmd(cmd)
 
 def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch':

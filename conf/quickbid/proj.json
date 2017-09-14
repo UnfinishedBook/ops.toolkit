@@ -3,78 +3,90 @@
         "form": "center",
         "pack": "quickbid-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-provider-0.1.0",
-        "svnsuf": "server/center/quickbid-center"
+        "svnsuf": "server/center/quickbid-center",
+        "cnfsuf": "server/center/config/quickbid-center"
     },
     "quickbid-ad-center": {
         "form": "center",
         "pack": "quickbid-ad-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-ad-provider-0.1.0",
-        "svnsuf": "server/center/quickbid-ad-center"
+        "svnsuf": "server/center/quickbid-ad-center",
+        "cnfsuf": "server/center/config/quickbid-ad-center"
     },
     "qb-data-process": {
         "form": "process",
         "pack": "qb-data-process-assembly.zip",
         "appdir": "qb-data-process",
-        "svnsuf": "server/process/qb-data-process"
+        "svnsuf": "server/process/qb-data-process",
+        "cnfsuf": "server/process/config/qb-data-process"
     },
     "qb-firewall-process": {
         "form": "process",
         "pack": "qb-firewall-process-assembly.zip",
         "appdir": "qb-firewall-process",
-        "svnsuf": "server/process/qb-firewall-process"
+        "svnsuf": "server/process/qb-firewall-process",
+        "cnfsuf": "server/process/config/qb-firewall-process"
     },
     "qb-prizepool-process": {
         "form": "process",
         "pack": "qb-prizepool-process-assembly.zip",
         "appdir": "qb-prizepool-process",
-        "svnsuf": "server/process/qb-prizepool-process"
+        "svnsuf": "server/process/qb-prizepool-process",
+        "cnfsuf": "server/process/config/qb-prizepool-process"
     },
     "qb-proxy-process": {
         "form": "process",
         "pack": "qb-proxy-process-assembly.zip",
         "appdir": "qb-proxy-process",
-        "svnsuf": "server/process/qb-proxy-process"
+        "svnsuf": "server/process/qb-proxy-process",
+        "cnfsuf": "server/process/config/qb-proxy-process"
     },
     "quickbid-process": {
         "form": "process",
         "pack": "quickbid-process-assembly.zip",
         "appdir": "quickbid-process",
-        "svnsuf": "server/process/quickbid-process"
+        "svnsuf": "server/process/quickbid-process",
+        "cnfsuf": "server/process/config/quickbid-process"
     },
     "qbinside-server": {
         "form": "server",
         "pack": "qbinside.war",
         "tomcat": "tomcat-qbinside-server",
         "appdir": "webapps/qbinside",
-        "svnsuf": "server/server/qbinside-server"
+        "svnsuf": "server/server/qbinside-server",
+        "cnfsuf": "server/server/config/qbinside-server"
     },
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
         "tomcat": "tomcat-qbmonitor-server",
         "appdir": "webapps/qbmonitor",
-        "svnsuf": "server/server/qbmonitor-server"
+        "svnsuf": "server/server/qbmonitor-server",
+        "cnfsuf": "server/server/config/qbmonitor-server"
     },
     "qbpay-server": {
         "form": "server",
         "pack": "qbpay.war",
         "tomcat": "tomcat-qbpay-server",
         "appdir": "webapps/qbpay",
-        "svnsuf": "server/server/qbpay-server"
+        "svnsuf": "server/server/qbpay-server",
+        "cnfsuf": "server/server/config/qbpay-server"
     },
     "qbshield-server": {
         "form": "server",
         "pack": "qbshield.war",
         "tomcat": "tomcat-qbshield-server",
         "appdir": "webapps/qbshield",
-        "svnsuf": "server/server/qbshield-server"
+        "svnsuf": "server/server/qbshield-server",
+        "cnfsuf": "server/server/config/qbshield-server"
     },
     "quickbid-server": {
         "form": "server",
         "pack": "quickbid.war",
         "tomcat": "tomcat-quickbid-server",
         "appdir": "webapps/quickbid",
-        "svnsuf": "server/server/quickbid-server"
+        "svnsuf": "server/server/quickbid-server",
+        "cnfsuf": "server/server/config/quickbid-server"
     },
     "activity-api": {
         "form": "node",

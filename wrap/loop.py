@@ -136,9 +136,26 @@ class Loop(Cmd):
                     svn(mod, opt)
                 if len(args) == 3:
                     svn(mod, opt, args[2])
+            else:
+                self.help_svn()
 
     def help_svn(self):
         print '用法：svn <操作 [info/up/switch/merge/ci]> <工程名> [详细路径]'
+
+    def do_svncnf(self, arg):
+        args = arg.split(' ')
+        if len(args) != 2:
+            self.help_svncnf()
+        else:
+            mod = getMod(args[1])
+            if mod!=None and (mod.form()=='center' or mod.form()=='process' or mod.form()=='server'):
+                opt = args[0]
+                svncnf(mod, opt)
+            else:
+                self.help_svncnf()
+
+    def help_svncnf(self):
+        print '用法：svncnf <操作 [up/merge/ci]> <工程名> //注意当前只有center/process/server有配置文件'
 
     def do_start(self, proj):
         if proj!=None and proj!='':
