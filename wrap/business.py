@@ -52,7 +52,7 @@ def backup(mod):
         srcDir = src[:src.rfind('/')]   #源文件(夹)所在路径
         name = src[src.rfind('/')+1:]   #源文件(夹)名称
         bakname = '%s-%s.tar' % (mod.name(),getTimestamp())   #备份文件的名字
-        LOG.info('backup %s to %s/%s' % (src,dest,bakname))
+        GL.LOG.info('backup %s to %s/%s' % (src,dest,bakname))
         cmd = 'tar -cf %s/%s -C %s %s' % (dest,bakname,srcDir,name)
         if mod.name() == 'cdn':
             cmd += ' --exclude=apks'
@@ -66,12 +66,12 @@ def up_wap(mod):
     src = '%s/wap' % GL.pkdir()
     if os.path.exists(src):
         cmd = 'rm -rf %s/*' % src
-        LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
+        GL.LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
         localCmd(cmd)
     else:
         localCmd('mkdir -p %s' % src)
     cmd = 'tar -zxf %s -C %s' % (pk,src)
-    LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
+    GL.LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
     localCmd(cmd)
     if GL.env() == 'pro':
         src = '%s/prod' % src
@@ -141,7 +141,7 @@ def update(mod):
     elif mod.form()=='server' or mod.form()=='module':
         up_server(mod)
     else:
-        LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
+        GL.LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
 
 def svncnf(mod, opt):
     if opt!='up' and opt!='merge' and opt!='ci':
@@ -162,7 +162,7 @@ def svncnf(mod, opt):
     elif opt == 'merge':
         #先更新本地拷贝
         cmd = 'svn up %s' % mod.workcopy_cnf()
-        LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        GL.LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #svn路径信息
         tag = mod.tag_cnf()
@@ -170,20 +170,20 @@ def svncnf(mod, opt):
         wcopy = mod.workcopy_cnf()
         #执行合并测试
         cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
-        #LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        #GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
             cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
-            LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            GL.LOG.debug('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
         wcopy = mod.workcopy_cnf()
         instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
         if instr != '':
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            LOG.debug('执行提交操作 (%s)' % cmd)
+            GL.LOG.debug('执行提交操作 (%s)' % cmd)
             localCmd(cmd)
 
 def svn(mod, opt, path=None):
@@ -206,7 +206,7 @@ def svn(mod, opt, path=None):
     elif opt == 'merge':
         #先更新本地拷贝
         cmd = 'svn up %s' % mod.workcopy()
-        LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        GL.LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #svn路径信息
         if path == None:
@@ -219,13 +219,13 @@ def svn(mod, opt, path=None):
             wcopy = '%s/%s' % (mod.workcopy(),path)
         #执行合并测试
         cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
-        #LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        #GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
             cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
-            LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            GL.LOG.debug('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
         if path == None:
@@ -235,7 +235,7 @@ def svn(mod, opt, path=None):
         instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
         if instr != '':
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            LOG.debug('执行提交操作 (%s)' % cmd)
+            GL.LOG.debug('执行提交操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
@@ -364,7 +364,7 @@ def monitor(opt, mod):
     url = 'http://%s/login_controller/do_login' % GL.monitor()
     r = s.post(url, data={'loginName':GL.muser(),'password':GL.mpwd()}, timeout=3)
     if '退出登录' not in r.text:
-        LOG.error('登录失败')
+        GL.LOG.error('登录失败')
         return
     if opt == 'all':    #给监控discover.py用的
         jobs = getJobs(s)

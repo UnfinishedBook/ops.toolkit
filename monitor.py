@@ -92,11 +92,11 @@ if sys.argv[2] == '--up':
     job_txt = '/tmp/job.txt'
     job_up_data(job_data, job_txt)
     output = commands.getoutput('zabbix_sender -z 127.0.0.1 -i %s' % job_txt)
-    LOG.info('上传定时任务zabbix采集数据：\n' + output)
+    GL.LOG.info('上传定时任务zabbix采集数据：\n' + output)
     que_txt = '/tmp/queue.txt'
     queue_up_data(que_data, que_txt)
     output = commands.getoutput('zabbix_sender -z 127.0.0.1 -i %s' % que_txt)
-    LOG.info('上传队列监控zabbix采集数据：\n' + output)
+    GL.LOG.info('上传队列监控zabbix采集数据：\n' + output)
 elif sys.argv[2]=='job' and sys.argv[3] == '--discover':
     print json.dumps(job_data, sort_keys=True, indent=4)
 elif sys.argv[2]=='queue' and sys.argv[3] == '--discover':

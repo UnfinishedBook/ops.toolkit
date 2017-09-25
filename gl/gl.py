@@ -137,6 +137,7 @@ class Global:
         self.__closeJobs = None
         self.__closeQueues = None
         self.__svn = None
+        self.LOG = None
 
     def dirMain(self):
         return self.__dirMain

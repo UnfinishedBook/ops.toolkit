@@ -12,21 +12,21 @@ from fabric.contrib.project import rsync_project
         #self.__ip = ip
         #self.__user = 'root'
         #self.__ssh = sshLogin(ip, self.__user, GL.pwd(), GL.rsa())
-        #LOG.info('(%s) 远程登录 (%s) 成功' % (self.__user,ip))
+        #GL.LOG.info('(%s) 远程登录 (%s) 成功' % (self.__user,ip))
     #
     #def ip(self):
         #return self.__ip
     #
     #def execute(self, cmd):
-        #LOG.info('远程 (%s) 执行命令 (%s) 开始' % (self.__ip,cmd))
+        #GL.LOG.info('远程 (%s) 执行命令 (%s) 开始' % (self.__ip,cmd))
         #stdout = sshExecute(self.__ssh, cmd)
         #info = stdout[stdout.find('\n'):]   #第一行不是输出,只是发送的命令
-        #LOG.info('远程 (%s) 执行命令 (%s) 输出\n%s' % (self.__ip,cmd,info))
-        #LOG.info('远程 (%s) 执行命令 (%s) 结束' % (self.__ip,cmd))
+        #GL.LOG.info('远程 (%s) 执行命令 (%s) 输出\n%s' % (self.__ip,cmd,info))
+        #GL.LOG.info('远程 (%s) 执行命令 (%s) 结束' % (self.__ip,cmd))
     #
     #def logout(self):
         #sshLogout(self.__ssh)
-        #LOG.info('(%s) 已从远程 (%s) 注销' % (self.__user,self.__ip))
+        #GL.LOG.info('(%s) 已从远程 (%s) 注销' % (self.__user,self.__ip))
 
 #验证密码是否正确
 #def verifyPwd(pwd):
@@ -54,14 +54,14 @@ from fabric.contrib.project import rsync_project
     #remote.execute(cmd)
 
 def localCmd(cmd):
-    #LOG.info('本地执行命令 (%s) 开始' % cmd)
+    #GL.LOG.info('本地执行命令 (%s) 开始' % cmd)
     execute(local, cmd)
-    #LOG.info('本地执行命令 (%s) 结束' % cmd)
+    #GL.LOG.info('本地执行命令 (%s) 结束' % cmd)
 
 def remoteCmd(ip, cmd, _pty=True):
-    #LOG.info('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
+    #GL.LOG.info('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
     execute(run, cmd, host=ip, pty=_pty)
-    #LOG.info('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
+    #GL.LOG.info('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
 
 def parseJobs(page):
     pt1 = re.compile(r'(?isu)<tr.*?>(.*?)</tr>')

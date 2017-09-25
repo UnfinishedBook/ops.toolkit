@@ -29,6 +29,7 @@ class Loop(Cmd):
         #选择要管理的环境
         env = self.select(GL.deploy().keys())
         GL.setEnv(env)
+        GL.LOG = getLogger('TheLogger', 'ops-toolkit.log')
 
         intro = GL.deploy()[GL.env()]['intro']
         if GL.project() == 'quickbid':
@@ -38,7 +39,7 @@ class Loop(Cmd):
         elif GL.project() == 'sdd':
             project = '省多多'
         else:
-            LOG.error('不支持的项目 %s' % GL.project())
+            GL.LOG.error('不支持的项目 %s' % GL.project())
             exit()
         self.intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (project,intro)
         self.prompt = "运维 %s %s ->> " % (project,intro)
@@ -98,6 +99,7 @@ class Loop(Cmd):
         if cmd!=None and cmd!='':
             if cmd.startswith("'") and cmd.endswith("'"):
                 cmd = 'eval ' + cmd
+            GL.LOG.info('本地执行命令：%s' % cmd)
             localCmd(cmd)
 
     def do_backup(self, proj):
