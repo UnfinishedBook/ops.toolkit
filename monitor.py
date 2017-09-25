@@ -31,6 +31,7 @@ from wrap import *
 
 env = 'pro'
 GL.setEnv(env)
+GL.LOG = getLogger('TheLogger', 'ops-toolkit-monitor.log')
 
 def job_up_data(data, fname):
     lines = []
