@@ -272,13 +272,17 @@ def stop(mod):
     for ip in mod.deploy():
         _stop(ip, mod)
 
-def restart(mod):
+def restart(mod, theIP=None, asked=True):
     for ip in mod.deploy():
-        out = ask('将在 (%s) 重启 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
-        if out == 'yes':
-            _stop(ip, mod)
-            time.sleep(2)
-            _start(ip, mod)
+        if theIP!=None and theIP!=ip:   #指定ip的情况
+            continue
+        if asked:
+            out = ask('将在 (%s) 重启 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
+            if out != 'yes':
+                continue
+        _stop(ip, mod)
+        time.sleep(2)
+        _start(ip, mod)
 
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
