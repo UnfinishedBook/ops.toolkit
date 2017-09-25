@@ -68,13 +68,46 @@
                 "wap",
                 "wap_cdn"
             ],
+            "10.104.194.197": [
+                "qbpay-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "data"
+            ],
+            "10.135.0.203": [
+                "qbpay-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data"
+            ],
             "10.104.225.127": [
+                "quickbid-center",
+                "qbinside-server",
+                "qbshield-server",
+                "quickbid-server"
             ],
             "10.104.105.125": [
-            ],
-            "10.104.23.52": [
+                "quickbid-center",
+                "qb-data-process",
+                "qbmonitor-server",
+                "quickbid-server"
             ],
             "10.104.254.114": [
+                "quickbid-center",
+                "qb-firewall-process",
+                "qb-prizepool-process",
+                "qb-proxy-process"
+            ],
+            "10.104.23.52": [
+                "quickbid-center",
+                "quickbid-process"
             ],
             "10.104.128.211": [
             ],
