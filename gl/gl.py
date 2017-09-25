@@ -114,7 +114,7 @@ class Global:
     def __init__(self):
         #从环境变量读取加密key和当前系统
         if os.environ.has_key('ops_key')==False or os.environ.has_key('ops_project')==False:
-            print '必须先配置好环境变量(建议配置到~/.bashrc)：\nops_key\nops_project'
+            print "必须先配置好环境变量(建议配置到~/.bashrc),示例: \nexport ops_key='maintenance'\nexport ops_project='quickbid'"
             exit()
         self.__key = os.environ['ops_key']
         self.__project = os.environ['ops_project']

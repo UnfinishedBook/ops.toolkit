@@ -31,18 +31,10 @@ class Loop(Cmd):
         GL.setEnv(env)
         GL.LOG = getLogger('TheLogger', 'ops-toolkit.log')
 
-        intro = GL.deploy()[GL.env()]['intro']
-        if GL.project() == 'quickbid':
-            project = '闪拍'
-        elif GL.project() == 'duobao':
-            project = '夺宝'
-        elif GL.project() == 'sdd':
-            project = '省多多'
-        else:
-            GL.LOG.error('不支持的项目 %s' % GL.project())
-            exit()
-        self.intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (project,intro)
-        self.prompt = "运维 %s %s ->> " % (project,intro)
+        intro_pro = GL.conf()[GL.project()]['intro']
+        intro_env = GL.deploy()[GL.env()]['intro']
+        self.intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (intro_pro,intro_env)
+        self.prompt = "运维 %s %s ->> " % (intro_pro,intro_env)
 
     #事件循环结束时执行
     def postloop(self):

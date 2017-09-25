@@ -1,15 +1,18 @@
 {
     "duobao": {
+        "intro": "夺宝",
         "issue": "v5.5.0",
         "svn": "42d5a6b7aed9d364be7907cab59e0a77",
         "pkdir": "/mydata/maintenance/packages"
     },
     "quickbid": {
+        "intro": "闪拍",
         "issue": "1.8.5",
         "svn": "3cbc98a586929ffb5030f5c5097159bd",
         "pkdir": "/mydata/maintenance/packages"
     },
     "sdd": {
+        "intro": "省多多",
         "issue": "1.0.0",
         "svn": "42d5a6b7aed9d364be7907cab59e0a77",
         "pkdir": "/mydata/maintenance/packages"
