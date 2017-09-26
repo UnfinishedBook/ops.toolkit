@@ -111,7 +111,8 @@
             ],
             "10.135.144.182": [
                 "statistics-admonitor",
-                "statistics-csdb"
+                "statistics-csdb",
+                "statistics-logsystem"
             ]
         }
     }

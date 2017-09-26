@@ -95,6 +95,13 @@
         "appdir": "webapps/csdb-statistic-servlet*",
         "svnsuf": "statistics/csdb-statistic-servlet"
     },
+    "statistics-logsystem": {
+        "form": "module",
+        "pack": "logSystem.war",
+        "tomcat": "tomcat-statistics-logsystem",
+        "appdir": "webapps/logSystem*",
+        "svnsuf": "statistics/logSystem2"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
