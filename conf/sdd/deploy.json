@@ -59,7 +59,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.203.145:7092/qbmonitor",
+        "monitor": "10.104.105.125:7092/qbmonitor",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
@@ -109,17 +109,9 @@
                 "quickbid-center",
                 "quickbid-process"
             ],
-            "10.104.128.211": [
-            ],
-            "10.104.131.170": [
-            ],
-            "10.104.145.215": [
-            ],
-            "10.46.90.199": [
-            ],
-            "10.135.151.42": [
-            ],
-            "10.104.207.234": [
+            "10.135.144.182": [
+                "statistics-admonitor",
+                "statistics-csdb"
             ]
         }
     }

@@ -88,6 +88,13 @@
         "appdir": "webapps/ad-monitor-sdd*",
         "svnsuf": "statistics/ad-monitor-sdd"
     },
+    "statistics-csdb": {
+        "form": "module",
+        "pack": "csdb-statistic-servlet-1.0.0-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-csdb",
+        "appdir": "webapps/csdb-statistic-servlet*",
+        "svnsuf": "statistics/csdb-statistic-servlet"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
@@ -126,7 +133,7 @@
     "wap": {
         "form": "static",
         "pack": "wap.tar.gz",
-        "appdir": "shanpai/www/wap",
+        "appdir": "wap",
         "svnsuf": "wap"
     },
     "wap_cdn": {

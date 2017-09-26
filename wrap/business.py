@@ -66,28 +66,32 @@ def up_wap(mod):
     src = '%s/wap' % GL.pkdir()
     if os.path.exists(src):
         cmd = 'rm -rf %s/*' % src
-        GL.LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
+        #GL.LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
         localCmd(cmd)
     else:
         localCmd('mkdir -p %s' % src)
     cmd = 'tar -zxf %s -C %s' % (pk,src)
-    GL.LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
+    #GL.LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
     localCmd(cmd)
     if GL.env() == 'pro':
         src = '%s/prod' % src
     elif GL.env() == 'test':
         src = '%s/test' % src
     else:
-        print '该环境(%s)暂不支持wap的更新' % GL.env()
+        GL.LOG.error('该环境(%s)暂不支持wap的更新' % GL.env())
         return
     if os.path.exists(src) == False:
-        print '更新包与环境不匹配'
+        GL.LOG.error('更新包与环境不匹配')
         return
     for ip in mod.deploy():
         cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
-        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
         if out == 'yes':
-            remoteCmd(ip, cmd)
+            localCmd(cmd)
+            cmd = 'mkdir %s/logs && chown -R webuser:web %s && chmod 777 %s/logs' % (mod.appdir(),mod.appdir(),mod.appdir())
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            if out == 'yes':
+                remoteCmd(ip, cmd)
 
 def up_wap_cdn(mod):
     if GL.env() == 'pro':
@@ -108,9 +112,13 @@ def up_wap_cdn(mod):
             'rsync -azv %s/fonts/ root@%s:%s/fonts/' % (src_wap,ip,mod.appdir())
         ]
         for cmd in cmdlist:
-            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
             if out == 'yes':
-                remoteCmd(ip, cmd)
+                localCmd(cmd)
+        cmd = 'chown -R webuser:web %s' % mod.appdir()
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
 
 def up_server(mod):
     for ip in mod.deploy():
