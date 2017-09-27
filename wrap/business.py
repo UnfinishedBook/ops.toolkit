@@ -61,64 +61,45 @@ def backup(mod):
 def up_wap(mod):
     pk = '%s/wap.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
-        print '未发现更新包：%s' % pk
+        GL.LOG.error('未发现更新包：%s' % pk)
         return
-    src = '%s/wap' % GL.pkdir()
-    if os.path.exists(src):
-        cmd = 'rm -rf %s/*' % src
-        #GL.LOG.debug('清理wap旧的更新临时目录，执行命令 (%s)' % cmd)
-        localCmd(cmd)
-    else:
-        localCmd('mkdir -p %s' % src)
-    cmd = 'tar -zxf %s -C %s' % (pk,src)
-    #GL.LOG.debug('解压wap的更新包，执行命令 (%s)' % cmd)
-    localCmd(cmd)
+    tmp = '%s/wap' % GL.pkdir()
     if GL.env() == 'pro':
-        src = '%s/prod' % src
+        src = '%s/prod' % tmp
     elif GL.env() == 'test':
-        src = '%s/test' % src
+        src = '%s/test' % tmp
     else:
         GL.LOG.error('该环境(%s)暂不支持wap的更新' % GL.env())
         return
+    localCmd('mkdir -p %s' % tmp)
+    localCmd('rm -rf %s/*' % tmp)
+    localCmd('tar -zxf %s -C %s' % (pk,tmp))
     if os.path.exists(src) == False:
-        GL.LOG.error('更新包与环境不匹配')
+        GL.LOG.error('环境(%s)与解压出来的文件夹不匹配' % GL.env())
         return
     for ip in mod.deploy():
-        cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
+        cmd = 'rsync -azv %s/ webuser@%s:%s/' % (src,ip,mod.appdir())
         out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
         if out == 'yes':
             localCmd(cmd)
-            cmd = 'mkdir %s/logs && chown -R webuser:web %s && chmod 777 %s/logs' % (mod.appdir(),mod.appdir(),mod.appdir())
+
+def up_wap_cdn(mod):
+    if GL.env()!='pro' and GL.env()!='test':
+        GL.LOG.error('该环境(%s)暂不支持wap_cdn的更新' % GL.env())
+    #src_wap = '%s/wap/prod' % GL.pkdir()
+    mod_wap = getMod('wap')
+    for ip in mod.deploy():
+        cmdlist = [
+            'sudo -u webuser rsync -azv %s/js/ %s/js/' % (mod_wap.appdir(),mod.appdir()),
+            'sudo -u webuser rsync -azv %s/css/ %s/css/' % (mod_wap.appdir(),mod.appdir()),
+            'sudo -u webuser rsync -azv %s/images/ %s/images/' % (mod_wap.appdir(),mod.appdir()),
+            'sudo -u webuser rsync -azv %s/fonts/ %s/fonts/' % (mod_wap.appdir(),mod.appdir())
+            #'chown -R webuser:web %s' % mod.appdir()
+        ]
+        for cmd in cmdlist:
             out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
             if out == 'yes':
                 remoteCmd(ip, cmd)
-
-def up_wap_cdn(mod):
-    if GL.env() == 'pro':
-        src_wap = '%s/wap/prod' % GL.pkdir()
-    elif GL.env() == 'test':
-        src_wap = '%s/wap/test' % GL.pkdir()
-    else:
-        print '该环境(%s)暂不支持wap_cdn的更新' % GL.env()
-        return
-    if os.path.exists(src_wap) == False:
-        print '%s不存在' % src_wap
-        return
-    for ip in mod.deploy():
-        cmdlist = [
-            'rsync -azv %s/js/ root@%s:%s/js/' % (src_wap,ip,mod.appdir()),
-            'rsync -azv %s/css/ root@%s:%s/css/' % (src_wap,ip,mod.appdir()),
-            'rsync -azv %s/images/ root@%s:%s/images/' % (src_wap,ip,mod.appdir()),
-            'rsync -azv %s/fonts/ root@%s:%s/fonts/' % (src_wap,ip,mod.appdir())
-        ]
-        for cmd in cmdlist:
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
-        cmd = 'chown -R webuser:web %s' % mod.appdir()
-        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
-        if out == 'yes':
-            remoteCmd(ip, cmd)
 
 def up_server(mod):
     for ip in mod.deploy():
