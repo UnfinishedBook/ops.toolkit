@@ -103,7 +103,8 @@ def up_wap_cdn(mod):
 
 def up_server(mod):
     for ip in mod.deploy():
-        cmd = 'rm -rf %s*; cp %s %s' % (mod.appdir(),mod.pack(),mod.upappdir())
+        #cmd = 'rm -rf %s/%s; cp %s %s' % (mod.appdir(),GL.proj()[mod.name()]['pack'],mod.pack(),mod.upappdir())
+        cmd = 'cp %s %s' % (mod.pack(),mod.upappdir())
         out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
         if out == 'yes':
             remoteCmd(ip, cmd)
