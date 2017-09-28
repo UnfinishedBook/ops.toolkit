@@ -2,27 +2,27 @@
 # -*- coding: UTF-8 -*-
 
 #启动本程序: ssh-agent ./http.py
-#后台启动本程序: nohup ssh-agent ./http.py /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &
+#后台启动本程序: nohup ssh-agent ./http.py > /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &
 
 from gl import *
 from wrap import *
 from bottle import *
+import pexpect
+import traceback
 
-os.system('ssh-add /mydata/maintenance/identity/maintenance_rsa')
+f = open('/mydata/maintenance/identity/key')
+pwd = f.readline()
+f.close()
+ch = pexpect.spawn('ssh-add /mydata/maintenance/identity/maintenance_rsa')
+ch.expect('Enter passphrase for /mydata/maintenance/identity/maintenance_rsa: ')
+ch.sendline (pwd)
 output = commands.getoutput('ssh-add -l')
 if 'maintenance_rsa' not in output:
-    print '请使用ssh-agent命令启动本程序,示例: \nnohup ssh-agent ./http.py /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &'
+    print '请使用ssh-agent命令启动本程序,示例: \nnohup ssh-agent ./http.py > /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &'
     exit()
+ch.close()
 
-#选择要管理的环境
-env = 'test'
-GL.setEnv(env)
-GL.LOG = getLogger('SrvLogger', 'ops-toolkit-http.log')
-
-intro_pro = GL.conf()[GL.project()]['intro']
-intro_env = GL.deploy()[GL.env()]['intro']
-intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (intro_pro,intro_env)
-GL.LOG.info(intro)
+GL.LOG = getLogger('HttpLogger', 'ops-toolkit-http.log')
 
 @error(404)
 def error404(error):
@@ -33,20 +33,29 @@ def http_restart():
     try:
         ret = {'err':0, 'msg':''}
         keys = request.params.keys()
-        proj = request.params.get('proj')
+        env = request.params.get('env')
         ip = request.params.get('ip')
+        proj = request.params.get('proj')
+        GL.LOG.info('收到重启请求 (%s %s %s)' % (env,ip,proj))
+        GL.setEnv(env)
         mod = getMod(proj)
         if ip not in mod.deploy():
-            raise Exception('%s not deployed in %s' % (proj,ip))
+            raise Exception('%s not deployed in %s on %s' % (proj,ip,env))
         asked = False
         restart(mod, ip, asked)
+        #remoteCmd(ip, 'whoami')
+        GL.LOG.info('重启操作完成 (%s %s %s)' % (env,ip,proj))
         return ret
-    except Exception,e:
+    except Exception as e:
+        msg = traceback.format_exc()
         ret['err'] = 1
-        ret['msg'] = str(e)
+        ret['msg'] = msg
+        GL.LOG.error('重启操作异常 (%s %s %s) : \n%s' % (env,ip,proj,msg))
         return ret
+    finally:
+        GL.LOG.info('重启 finally')
+        network.disconnect_all()
 
 run(host='0.0.0.0', port=8887, debug=True)
-network.disconnect_all()
 
 
