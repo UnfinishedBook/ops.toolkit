@@ -107,6 +107,7 @@
             ],
             "10.104.23.52": [
                 "quickbid-center",
+                "qb-prizepool-process",
                 "quickbid-process"
             ],
             "10.135.144.182": [
