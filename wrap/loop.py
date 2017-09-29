@@ -241,6 +241,25 @@ class Loop(Cmd):
         monitor show <工程名>           显示指定工程的jobs和queues，和它们的运行状态
         monitor <start/close> <工程名>  开启/关闭已save中对应工程的jobs和queues'''
 
+    def do_dubbo(self, arg):
+        args = arg.split(' ', 2)
+        if len(args)==2 and (args[0]=='disable' or args[0]=='enable'):
+            mod = getMod(args[1])
+            if mod != None:
+                for ip in mod.deploy():
+                    dubboAdmin(mod, ip, args[0])
+        elif len(args)==3 and (args[0]=='disable' or args[0]=='enable'):
+            mod = getMod(args[1])
+            if mod != None:
+                dubboAdmin(mod, args[2], args[0])
+        else:
+            self.help_dubbo()
+
+    def help_dubbo(self):
+        print '''启用/禁用DubboAdmin,只用于center工程, 用法: 
+        dubbo enable/disable <工程名>
+        dubbo enable/disable <工程名> <ip>'''
+
     def do_encrypt(self, arg):
         if arg!=None and arg!='':
             print cipher(GL.key(),arg)
