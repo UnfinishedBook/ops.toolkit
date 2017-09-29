@@ -17,10 +17,10 @@ ch = pexpect.spawn('ssh-add /mydata/maintenance/identity/maintenance_rsa')
 ch.expect('Enter passphrase for /mydata/maintenance/identity/maintenance_rsa: ')
 ch.sendline (pwd)
 output = commands.getoutput('ssh-add -l')
+ch.close()
 if 'maintenance_rsa' not in output:
     print '请使用ssh-agent命令启动本程序,示例: \nnohup ssh-agent ./http.py > /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &'
     exit()
-ch.close()
 
 GL.LOG = getLogger('HttpLogger', 'ops-toolkit-http.log')
 

@@ -4,6 +4,7 @@
 from gl import *
 from wrap import *
 from cmd2 import Cmd
+import pexpect
 
 class Loop(Cmd):
     def __init__(self):
@@ -20,10 +21,21 @@ class Loop(Cmd):
             #exit()
         #GL.setPwd(password)
 
-        #验证ssh-agent
+        #给ssh-agent加入本程序需要的ssh key
+        if os.environ.has_key('SSH_AGENT_PID') == False:
+            print '启动方式: ssh-agent ./main.py'
+            exit()
+        f = open('/mydata/maintenance/identity/key')
+        pwd = f.readline()
+        f.close()
+        ch = pexpect.spawn('ssh-add /mydata/maintenance/identity/maintenance_rsa')
+        ch.expect('Enter passphrase for /mydata/maintenance/identity/maintenance_rsa: ')
+        ch.sendline (pwd)
         output = commands.getoutput('ssh-add -l')
+        ch.close()
         if 'maintenance_rsa' not in output:
-            print '必须先配置好ssh-agent: \nssh-agent bash\nssh-add /mydata/maintenance/identity/maintenance_rsa'
+            #print '需要先配置好ssh-agent: \nssh-agent bash\nssh-add /mydata/maintenance/identity/maintenance_rsa'
+            print '添加ssh key到ssh-agent失败, 请检查.'
             exit()
 
         #选择要管理的环境

@@ -280,19 +280,21 @@ def stop(mod):
             continue
         _stop(ip, mod)
 
+#theIP和asked用于提供的http请求, http.py
 def restart(mod, theIP=None, asked=True):
     for ip in mod.deploy():
         if theIP!=None and theIP!=ip:   #指定ip的情况
             continue
-        dubboAdmin(mod, ip, 'disable')
-        if asked:
+        if asked:   #在无人值守的http模式下不用询问，也不需禁用dubbo
+            dubboAdmin(mod, ip, 'disable')
             out = ask('将在 (%s) 重启 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
             if out != 'yes':
                 continue
         _stop(ip, mod)
         time.sleep(1)
         _start(ip, mod)
-        dubboAdmin(mod, ip, 'enable')
+        if asked:
+            dubboAdmin(mod, ip, 'enable')
 
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
