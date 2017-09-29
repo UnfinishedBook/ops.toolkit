@@ -4,14 +4,16 @@
         "pack": "quickbid-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-provider-0.1.0",
         "svnsuf": "server/center/quickbid-center",
-        "cnfsuf": "server/center/config/quickbid-center"
+        "cnfsuf": "server/center/config/quickbid-center",
+        "port": "20604"
     },
     "quickbid-ad-center": {
         "form": "center",
         "pack": "quickbid-ad-provider-0.1.0-assembly.zip",
         "appdir": "quickbid-ad-provider-0.1.0",
         "svnsuf": "server/center/quickbid-ad-center",
-        "cnfsuf": "server/center/config/quickbid-ad-center"
+        "cnfsuf": "server/center/config/quickbid-ad-center",
+        "port": "20605"
     },
     "qb-data-process": {
         "form": "process",

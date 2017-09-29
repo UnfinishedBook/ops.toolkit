@@ -21,6 +21,7 @@ class Model:
         self.__workcopy_cnf = None
         self.__gcdir = None
         self.__gcbakdir = None
+        self.__port = None
 
     def name(self):
         return self.__name
@@ -75,6 +76,11 @@ class Model:
         if self.__bakdir == None:
             self.__bakdir = GL.form()['bakdir']
         return self.__bakdir
+
+    def port(self):
+        if self.__port== None:
+            self.__port = GL.proj()[self.name()]['port']
+        return self.__port
 
     def pack(self):   #更新包
         if self.__pack == None:

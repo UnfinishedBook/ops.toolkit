@@ -266,16 +266,37 @@ def _start(ip, mod):
 
 def start(mod):
     for ip in mod.deploy():
+        out = ask('将在 (%s) 启动 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
+        if out != 'yes':
+            continue
         _start(ip, mod)
+        if mod.form() == 'center':
+            addr = '%s:%s' % (ip,mod.port())
+            out = ask('启用 DubboAdmin (%s), 确认立刻执行吗？' % addr, 'yes,no', 'no')
+            if out == 'yes':
+                dubboAdmin('enable', addr)
 
 def stop(mod):
     for ip in mod.deploy():
+        if mod.form() == 'center':
+            addr = '%s:%s' % (ip,mod.port())
+            out = ask('禁用 DubboAdmin (%s), 确认立刻执行吗？' % addr, 'yes,no', 'no')
+            if out == 'yes':
+                dubboAdmin('disable', addr)
+        out = ask('将在 (%s) 停止 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
+        if out != 'yes':
+            continue
         _stop(ip, mod)
 
 def restart(mod, theIP=None, asked=True):
     for ip in mod.deploy():
         if theIP!=None and theIP!=ip:   #指定ip的情况
             continue
+        if mod.form() == 'center':
+            addr = '%s:%s' % (ip,mod.port())
+            out = ask('禁用 DubboAdmin (%s), 确认立刻执行吗？' % addr, 'yes,no', 'no')
+            if out == 'yes':
+                dubboAdmin('disable', addr)
         if asked:
             out = ask('将在 (%s) 重启 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
             if out != 'yes':
@@ -283,6 +304,11 @@ def restart(mod, theIP=None, asked=True):
         _stop(ip, mod)
         time.sleep(1)
         _start(ip, mod)
+        if mod.form() == 'center':
+            addr = '%s:%s' % (ip,mod.port())
+            out = ask('启用 DubboAdmin (%s), 确认立刻执行吗？' % addr, 'yes,no', 'no')
+            if out == 'yes':
+                dubboAdmin('enable', addr)
 
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
@@ -420,6 +446,14 @@ def monitor(opt, mod):
                 print i,info,ip_id,lqueueKey,
                 i += 1
                 monitorQueue(s, ip_id, lqueueKey, status)
+
+#opt: enable/disable
+#addr: ip:port, eg: 172.18.27.3:20604
+def dubboAdmin(opt, addr):
+    url = 'http://%s/dubbo/control' % GL.monitor()
+    params = {'name':GL.muser(),'passwd':GL.mpwd(),'status':opt, 'addr':addr}
+    r = requests.post(url=url, params=params)
+    GL.LOG.info('DubboAdmin %s %s : %s %s' % (opt,addr,r.status_code,r.text))
 
 def zabbix_monitor():
     (jobs,queues) = monitor('all', None)

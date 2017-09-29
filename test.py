@@ -20,18 +20,18 @@ def ftest():
 #h = '172.18.27.5'
 #execute(ftest, host=h)
 
-GL.setEnv('test')
+GL.setEnv('dev')
 #password = getpass.getpass('请输入使用密码：')
 #if verifyPwd(password) == False:
     #exit()
 #GL.setPwd(password)
 
 m1 = Model('quickbid-center')
-print m1.gcdir()
-print m1.gcbakdir()
-m1 = Model('api')
-print m1.gcdir()
-print m1.gcbakdir()
+print m1.port()
+m1 = Model('quickbid-ad-center')
+print m1.port()
+dubboAdmin('enable', '172.18.27.3:20604')
+#dubboAdmin('enable', '172.18.27.3:20604')
 
 #m1 = Model('quickbid-center')
 #print m1.name(),m1.form(),m1.deploy(),m1.appdir(),m1.cnfdir(),m1.bakdir()
