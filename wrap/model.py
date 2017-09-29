@@ -19,6 +19,8 @@ class Model:
         self.__trunk_cnf = None
         self.__tag_cnf = None
         self.__workcopy_cnf = None
+        self.__gcdir = None
+        self.__gcbakdir = None
 
     def name(self):
         return self.__name
@@ -58,6 +60,16 @@ class Model:
         if self.__cnfdir == None:
             self.__cnfdir = '%s/%s' % (GL.form()[self.form()]['cnfdir'],self.name())
         return self.__cnfdir
+
+    def gcdir(self):    #gc日志目录
+        if self.__gcdir == None:
+            self.__gcdir = '%s/gc/%s/%s' % (GL.form()['logdir'],self.form(),self.name())
+        return self.__gcdir
+
+    def gcbakdir(self):    #gc日志的备份目录
+        if self.__gcbakdir == None:
+            self.__gcbakdir = '%s/logs/gc/%s/%s' % (GL.form()['bakdir'],self.form(),self.name())
+        return self.__gcbakdir
 
     def bakdir(self):   #备份目录
         if self.__bakdir == None:

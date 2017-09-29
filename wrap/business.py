@@ -243,6 +243,15 @@ def status(mod):
         cmd = "ps -ef|grep java|grep %s|grep -v grep" % mod.pidname()
         remoteCmd(ip, cmd)
 
+def bakgc(mod, ip):
+    gcdir = mod.gcdir()
+    gcfile = 'gc.log'
+    bakdir = mod.gcbakdir()
+    bakname = '%s-%s.tar.gz' % (gcfile,getTimestamp())
+
+    cmd = 'if [ -f "%s/%s" ];then mkdir -p %s; tar -zcf %s/%s -C %s %s ; echo "Backup gc file OK"; else echo "Not found gc file"; fi' % (gcdir,gcfile,bakdir,bakdir,bakname,gcdir,gcfile)
+    remoteCmd(ip, cmd)
+
 def _stop(ip, mod):
     if mod.form()=='server' or mod.form()=='module':
         remoteCmd(ip, mod.tomcatshutdown())
@@ -250,6 +259,7 @@ def _stop(ip, mod):
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
     cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && kill -9 $tmpid; echo killed' % mod.pidname()
     remoteCmd(ip, cmd)
+    bakgc(mod, ip)
 
 def _start(ip, mod):
     remoteCmd(ip, mod.pidexe(), False)
@@ -271,7 +281,7 @@ def restart(mod, theIP=None, asked=True):
             if out != 'yes':
                 continue
         _stop(ip, mod)
-        time.sleep(2)
+        time.sleep(1)
         _start(ip, mod)
 
 def pm2(opt, mod=None):
