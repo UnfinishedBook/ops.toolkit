@@ -44,7 +44,7 @@ def rsync(ip_list, src, dest):
 
 def backup(mod):
     for ip in mod.deploy():
-        if mod.form() == 'server':
+        if mod.form()=='server' or mod.form()=='module':
             src = mod.appdir() + '.war'
         else:
             src = mod.appdir()

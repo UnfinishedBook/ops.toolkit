@@ -86,21 +86,21 @@
         "form": "module",
         "pack": "ad-monitor-sdd-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
-        "appdir": "webapps/ad-monitor-sdd*",
+        "appdir": "webapps/ad-monitor-sdd-0.0.1-SNAPSHOT",
         "svnsuf": "statistics/ad-monitor-sdd"
     },
     "statistics-csdb": {
         "form": "module",
         "pack": "csdb-statistic-servlet-1.0.0-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-csdb",
-        "appdir": "webapps/csdb-statistic-servlet*",
+        "appdir": "webapps/csdb-statistic-servlet-1.0.0",
         "svnsuf": "statistics/csdb-statistic-servlet"
     },
     "statistics-logsystem": {
         "form": "module",
         "pack": "logSystem.war",
         "tomcat": "tomcat-statistics-logsystem",
-        "appdir": "webapps/logSystem*",
+        "appdir": "webapps/logSystem",
         "svnsuf": "statistics/logSystem2"
     },
     "activity-api": {
