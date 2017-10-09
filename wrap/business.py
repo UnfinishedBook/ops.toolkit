@@ -152,7 +152,7 @@ def svncnf(mod, opt):
     elif opt == 'merge':
         #先更新本地拷贝
         cmd = 'svn up %s' % mod.workcopy_cnf()
-        GL.LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        GL.LOG.info('更新本地的工作拷贝，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #svn路径信息
         tag = mod.tag_cnf()
@@ -160,20 +160,20 @@ def svncnf(mod, opt):
         wcopy = mod.workcopy_cnf()
         #执行合并测试
         cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
-        #GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
             cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
-            GL.LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            GL.LOG.info('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
         wcopy = mod.workcopy_cnf()
         instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
         if instr != '':
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            GL.LOG.debug('执行提交操作 (%s)' % cmd)
+            GL.LOG.info('执行提交操作 (%s)' % cmd)
             localCmd(cmd)
 
 def svn(mod, opt, path=None):
@@ -196,7 +196,7 @@ def svn(mod, opt, path=None):
     elif opt == 'merge':
         #先更新本地拷贝
         cmd = 'svn up %s' % mod.workcopy()
-        GL.LOG.debug('更新本地的工作拷贝，执行命令 (%s)' % cmd)
+        GL.LOG.info('更新本地的工作拷贝，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #svn路径信息
         if path == None:
@@ -209,13 +209,13 @@ def svn(mod, opt, path=None):
             wcopy = '%s/%s' % (mod.workcopy(),path)
         #执行合并测试
         cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
-        #GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
+        GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
             cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
-            GL.LOG.debug('执行实际的合并操作 (%s)' % cmd)
+            GL.LOG.info('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
         if path == None:
@@ -225,7 +225,7 @@ def svn(mod, opt, path=None):
         instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
         if instr != '':
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            GL.LOG.debug('执行提交操作 (%s)' % cmd)
+            GL.LOG.info('执行提交操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
