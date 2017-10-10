@@ -436,6 +436,8 @@ def monitor(opt, mod):
 #opt: enable/disable
 def dubboAdmin(mod, ip, opt):
     if mod.form() == 'center':
+        if opt == 'enable':  #启用前等待服务注册到dubboadmin
+            timekeeping(40)
         addr = '%s:%s' % (ip,mod.port())
         out = ask('%s DubboAdmin (%s), 确认立刻执行吗？' % (opt,addr), 'yes,no', 'no')
         if out == 'yes':
@@ -443,6 +445,8 @@ def dubboAdmin(mod, ip, opt):
             params = {'name':GL.muser(),'passwd':GL.mpwd(),'status':opt, 'addr':addr}
             r = requests.post(url=url, params=params)
             GL.LOG.info('DubboAdmin %s %s : %s %s' % (opt,addr,r.status_code,r.text))
+            if opt == 'disable':    #禁用后等待业务都执行完成
+                timekeeping(20)
 
 def zabbix_monitor():
     (jobs,queues) = monitor('all', None)

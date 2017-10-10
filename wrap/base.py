@@ -109,14 +109,13 @@ def parseQueues(page):
             q.append(status[0][1])
     return queues
 
-
-
-
-
-
-
-
-
+def timekeeping(sec):
+    for i in range(sec):
+        p = '\r%s' % str(i+1)
+        print p,
+        time.sleep(1)
+        sys.stdout.flush()
+    print
 
 
 
