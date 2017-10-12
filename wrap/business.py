@@ -58,13 +58,15 @@ def backup(mod):
             cmd += ' --exclude=apks'
         remoteCmd(ip, cmd)
 
-def up_wap(mod):
+def up_wap(mod, patch=False):
     pk = '%s/wap.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
         GL.LOG.error('未发现更新包：%s' % pk)
         return
     tmp = '%s/wap' % GL.pkdir()
-    if GL.env() == 'pro':
+    if patch:
+        src = '%s/patch' % tmp
+    elif GL.env() == 'pro':
         src = '%s/prod' % tmp
     elif GL.env() == 'test':
         src = '%s/test' % tmp
@@ -75,7 +77,7 @@ def up_wap(mod):
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
     if os.path.exists(src) == False:
-        GL.LOG.error('环境(%s)与解压出来的文件夹不匹配' % GL.env())
+        GL.LOG.error('未发现目录: %s' % src)
         return
     for ip in mod.deploy():
         cmd = 'rsync -azv %s/ webuser@%s:%s/' % (src,ip,mod.appdir())

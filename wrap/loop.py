@@ -130,6 +130,19 @@ class Loop(Cmd):
     def help_up(self):
         print '更新指定的工程(node请使用svn更新)，用法：up <工程名>'
 
+    def do_patch(self, proj):
+        if proj!=None and proj!='':
+            mod = getMod(proj)
+            if mod!=None and mod.name()=='wap':
+                up_wap(mod, True)
+            else:
+                self.help_patch()
+        else:
+            self.help_patch()
+
+    def help_patch(self):
+        print '更新指定的工程的补丁(当前只支持wap)，用法：patch <工程名>'
+
     def do_svn(self, arg):
         args = arg.split(' ')
         if len(args)!=2 and len(args)!=3:
