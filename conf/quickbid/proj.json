@@ -90,6 +90,13 @@
         "svnsuf": "server/server/quickbid-server",
         "cnfsuf": "server/server/config/quickbid-server"
     },
+    "statistics-admonitor": {
+        "form": "module",
+        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-admonitor",
+        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/ad-monitor2"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",

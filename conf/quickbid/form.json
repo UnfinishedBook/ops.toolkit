@@ -19,6 +19,10 @@
         "cnfdir": "/data/config/server",
         "updir": "/mydata/server/war" 
     },
+    "module": {
+        "appdir": "/mydata/module",
+        "updir": "/mydata/module/war" 
+    },
     "node": {
         "appdir": "/mydata/nodeproj"
     },
