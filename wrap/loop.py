@@ -159,7 +159,7 @@ class Loop(Cmd):
                 self.help_svn()
 
     def help_svn(self):
-        print '用法：svn <操作 [info/up/switch/merge/ci]> <工程名> [详细路径]'
+        print '用法：svn <操作 [info/up/switch/merge/cp/del/ls/ci]> <工程名> [详细路径]'
 
     def do_svncnf(self, arg):
         args = arg.split(' ')

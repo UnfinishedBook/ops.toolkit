@@ -179,7 +179,7 @@ def svncnf(mod, opt):
             localCmd(cmd)
 
 def svn(mod, opt, path=None):
-    if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch':
+    if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
         print '不支持的操作 %s' % opt
         return
     if (opt=='info' or opt=='up') and mod.form()=='node':
@@ -239,6 +239,46 @@ def svn(mod, opt, path=None):
                 out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
                 if out == 'yes':
                     remoteCmd(ip, cmd)
+    elif opt == 'ls':
+        if path == None:
+            tag = mod.tag()
+            trunk = mod.trunk()
+        else:
+            tag = '%s/%s' % (mod.tag(),path)
+            trunk = '%s/%s' % (mod.trunk(),path)
+        cmd = 'svn ls %s' % trunk
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+        cmd = 'svn ls %s' % tag
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+    elif opt == 'del':
+        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
+        if instr != '':
+            if path == None:
+                tag = mod.tag()
+            else:
+                tag = '%s/%s' % (mod.tag(),path)
+            cmd = 'svn del %s -m "%s"' % (tag,instr)
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
+    elif opt == 'cp':
+        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
+        if instr != '':
+            if path == None:
+                tag = mod.tag()
+                trunk = mod.trunk()
+            else:
+                tag = '%s/%s' % (mod.tag(),path)
+                trunk = '%s/%s' % (mod.trunk(),path)
+            tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+            cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
 
 def status(mod):
     for ip in mod.deploy():
