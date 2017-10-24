@@ -41,8 +41,9 @@ def http_restart():
         mod = getMod(proj)
         if ip not in mod.deploy():
             raise Exception('%s not deployed in %s on %s' % (proj,ip,env))
-        asked = False
-        restart(mod, ip, asked)
+        asked = False   #关闭交互
+        jstack = True   #重启前保存jstack的信息
+        restart(mod, ip, asked, jstack)
         #remoteCmd(ip, 'whoami')
         GL.LOG.info('重启操作完成 (%s %s %s)' % (env,ip,proj))
         return ret

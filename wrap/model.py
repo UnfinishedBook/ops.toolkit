@@ -22,6 +22,7 @@ class Model:
         self.__gcdir = None
         self.__gcbakdir = None
         self.__port = None
+        self.__jstackdir = None
 
     def name(self):
         return self.__name
@@ -71,6 +72,11 @@ class Model:
         if self.__gcbakdir == None:
             self.__gcbakdir = '%s/logs/gc/%s/%s' % (GL.form()['bakdir'],self.form(),self.name())
         return self.__gcbakdir
+
+    def jstackdir(self):    #jstack信息的保存目录
+        if self.__jstackdir == None:
+            self.__jstackdir = '%s/logs/jstack/%s/%s' % (GL.form()['bakdir'],self.form(),self.name())
+        return self.__jstackdir
 
     def bakdir(self):   #备份目录
         if self.__bakdir == None:

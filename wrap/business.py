@@ -286,18 +286,28 @@ def status(mod):
         remoteCmd(ip, cmd)
 
 def bakgc(mod, ip):
+    GL.LOG.info('在 (%s) 备份 (%s) 的gc日志' % (ip,mod.name()))
     gcdir = mod.gcdir()
     gcfile = 'gc.log'
     bakdir = mod.gcbakdir()
     bakname = '%s-%s.tar.gz' % (gcfile,getTimestamp())
-
     cmd = 'if [ -f "%s/%s" ];then mkdir -p %s; tar -zcf %s/%s -C %s %s ; echo "Backup gc file OK"; else echo "Not found gc file"; fi' % (gcdir,gcfile,bakdir,bakdir,bakname,gcdir,gcfile)
     remoteCmd(ip, cmd)
 
-def _stop(ip, mod):
+def savejstack(mod, ip):
+    GL.LOG.info('在 (%s) 保存 (%s) 的jstack信息' % (ip,mod.name()))
+    jsdir = mod.jstackdir()
+    cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
+    remoteCmd(ip, cmd)
+    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && jstack $tmpid > %s/jstack-$tmpid-%s.log' % (mod.pidname(), jsdir, getTimestamp())
+    remoteCmd(ip, cmd)
+
+def _stop(ip, mod, jstack=False):
     if mod.form()=='server' or mod.form()=='module':
         remoteCmd(ip, mod.tomcatshutdown())
         time.sleep(2)
+    if mod.form()=='center' and jstack==True:
+        savejstack(mod, ip)
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
     cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && kill -9 $tmpid; echo killed' % mod.pidname()
     remoteCmd(ip, cmd)
@@ -322,8 +332,8 @@ def stop(mod):
             continue
         _stop(ip, mod)
 
-#theIP和asked用于提供的http请求, http.py
-def restart(mod, theIP=None, asked=True):
+#theIP/asked/jstack用于提供的http请求, http.py
+def restart(mod, theIP=None, asked=True, jstack=False):
     for ip in mod.deploy():
         if theIP!=None and theIP!=ip:   #指定ip的情况
             continue
@@ -332,7 +342,7 @@ def restart(mod, theIP=None, asked=True):
             out = ask('将在 (%s) 重启 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
             if out != 'yes':
                 continue
-        _stop(ip, mod)
+        _stop(ip, mod, jstack)
         time.sleep(1)
         _start(ip, mod)
         if asked:
