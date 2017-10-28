@@ -7,6 +7,7 @@
         "deploy": {
             "172.18.27.3": [
                 "wap",
+                "wapv2",
                 "quickbid-center",
                 "quickbid-ad-center",
                 "qb-data-process",
@@ -37,6 +38,7 @@
         "deploy": {
             "172.18.27.5": [
                 "wap",
+                "wapv2",
                 "quickbid-center",
                 "quickbid-ad-center",
                 "qb-data-process",
@@ -49,6 +51,7 @@
                 "qbpay-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-recommendation",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -68,12 +71,16 @@
             "172.18.27.8": [
                 "cdn",
                 "wap",
-                "wap_cdn"
+                "wap_cdn",
+                "wapv2",
+                "wapv2_cdn"
             ],
             "172.18.27.14": [
                 "cdn",
                 "wap",
-                "wap_cdn"
+                "wap_cdn",
+                "wapv2",
+                "wapv2_cdn"
             ],
             "172.18.27.10": [
                 "quickbid-center",

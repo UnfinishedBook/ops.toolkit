@@ -97,6 +97,13 @@
         "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
         "svnsuf": "statistics/ad-monitor2"
     },
+    "statistics-recommendation": {
+        "form": "module",
+        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-recommendation",
+        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/quickbids-recommendation"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
@@ -141,6 +148,16 @@
     "wap_cdn": {
         "form": "static",
         "appdir": "cdn"
+    },
+    "wapv2": {
+        "form": "static",
+        "pack": "wapv2.tar.gz",
+        "appdir": "shanpai/www/wap/v2",
+        "svnsuf": "wap/sp_v2"
+    },
+    "wapv2_cdn": {
+        "form": "static",
+        "appdir": "cdn/v2"
     },
     "cdn": {
         "form": "static",

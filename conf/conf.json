@@ -7,7 +7,7 @@
     },
     "quickbid": {
         "intro": "闪拍",
-        "issue": "1.8.5",
+        "issue": "1.9.0",
         "svn": "3cbc98a586929ffb5030f5c5097159bd",
         "pkdir": "/mydata/maintenance/packages"
     },
