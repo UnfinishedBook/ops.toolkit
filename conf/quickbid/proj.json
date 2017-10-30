@@ -99,9 +99,9 @@
     },
     "statistics-recommendation": {
         "form": "module",
-        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "pack": "quickbids-recommendation-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-recommendation",
-        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "appdir": "webapps/quickbids-recommendation-0.0.1-SNAPSHOT",
         "svnsuf": "statistics/quickbids-recommendation"
     },
     "activity-api": {
