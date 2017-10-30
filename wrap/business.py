@@ -127,7 +127,7 @@ def up_wapv2_cdn(mod):
         GL.LOG.error('该环境(%s)暂不支持wapv2_cdn的更新' % GL.env())
     mod_wapv2 = getMod('wapv2')
     for ip in mod.deploy():
-        cmd = 'sudo -u webuser rsync -azv %s/static/ %s/' % (mod_wapv2.appdir(),mod.appdir())
+        cmd = 'sudo -u webuser rsync -azv %s/v2/ %s/' % (mod_wapv2.appdir(),mod.appdir())
         out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
         if out == 'yes':
             remoteCmd(ip, cmd)
@@ -155,7 +155,7 @@ def update(mod):
         up_wap(mod)
     elif mod.name() == 'wap_cdn':
         up_wap_cdn(mod)
-    if mod.name() == 'wapv2':
+    elif mod.name() == 'wapv2':
         up_wapv2(mod)
     elif mod.name() == 'wapv2_cdn':
         up_wapv2_cdn(mod)

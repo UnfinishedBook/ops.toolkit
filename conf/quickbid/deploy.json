@@ -58,7 +58,9 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "android",
+                "ios"
             ]
         }
     },

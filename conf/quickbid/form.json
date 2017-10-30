@@ -28,5 +28,7 @@
     },
     "static": {
         "appdir": "/mydata"
+    },
+    "mobile": {
     }
 }
