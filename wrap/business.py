@@ -347,6 +347,12 @@ def _stop(ip, mod, jstack=False):
     bakgc(mod, ip)
 
 def _start(ip, mod):
+    if mod.form() == 'module':
+        #若已存在对应文件夹,module的tomcat就不会自动更新war的内容,所以需要先删除
+        cmd = 'rm -rf %s' % mod.appdir()
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
     remoteCmd(ip, mod.pidexe(), False)
 
 def start(mod):
