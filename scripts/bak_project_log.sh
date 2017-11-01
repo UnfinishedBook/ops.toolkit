@@ -24,6 +24,12 @@ do
     tar -zcf $bak_dir/$bak_fn -C $dir $fn --remove-files
 done
 
+echo "开始清理空目录"
+EMP_DIR=`find $LOG_DIR -type d -empty | sort`
+EMP_DIR_NUM=`echo $EMP_DIR | wc -w`
+rm -rf $EMP_DIR
+echo -e "成功清理空目录${EMP_DIR_NUM}个:  \n$EMP_DIR"
+
 echo -e "Finish at \c"
 date '+%F %T'
 
