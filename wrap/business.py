@@ -98,9 +98,11 @@ def up_wap_cdn(mod):
             'sudo -u webuser rsync -azv %s/fonts/ %s/fonts/' % (mod_wap.appdir(),mod.appdir())
             #'chown -R webuser:web %s' % mod.appdir()
         ]
-        for cmd in cmdlist:
-            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
-            if out == 'yes':
+        for tmp in cmdlist:
+            print tmp
+        out = ask('将在 (%s) 运行命令上述 (%d) 条命令, 确认立刻执行吗？' % (ip,len(cmdlist)), 'yes,no', 'no')
+        if out == 'yes':
+            for cmd in cmdlist:
                 remoteCmd(ip, cmd)
 
 def up_wapv2(mod, patch=False):
