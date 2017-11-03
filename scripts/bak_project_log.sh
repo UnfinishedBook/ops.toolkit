@@ -24,11 +24,23 @@ do
     tar -zcf $bak_dir/$bak_fn -C $dir $fn --remove-files
 done
 
-echo "开始清理空目录"
+echo "开始清理超过60天的日志备份"
+EXPIRE_BAK=`find $BAK_DIR -name *.tar.gz -mtime +60 | sort`
+EXPIRE_BAK_NUM=`echo $EXPIRE_BAK | wc -w`
+rm -rf $EXPIRE_BAK
+echo -e "成功清理超过60天的日志备份${EXPIRE_BAK_NUM}个:  \n$EXPIRE_BAK"
+
+echo "开始清理原日志路径的空目录"
 EMP_DIR=`find $LOG_DIR -type d -empty | sort`
 EMP_DIR_NUM=`echo $EMP_DIR | wc -w`
 rm -rf $EMP_DIR
-echo -e "成功清理空目录${EMP_DIR_NUM}个:  \n$EMP_DIR"
+echo -e "成功清理原日志路径的空目录${EMP_DIR_NUM}个:  \n$EMP_DIR"
+
+echo "开始清理备份日志路径的空目录"
+EMP_DIR=`find $BAK_DIR -type d -empty | sort`
+EMP_DIR_NUM=`echo $EMP_DIR | wc -w`
+rm -rf $EMP_DIR
+echo -e "成功清理备份日志路径的空目录${EMP_DIR_NUM}个:  \n$EMP_DIR"
 
 echo -e "Finish at \c"
 date '+%F %T'
