@@ -24,6 +24,12 @@ do
     tar -zcf $bak_dir/$bak_fn -C $dir $fn --remove-files
 done
 
+echo "开始清理超过90天的日志备份,除去quickbid/api/qbpay三者"
+EXPIRE_BAK=`find $BAK_DIR -name *.tar.gz -mtime +90 | grep -Ev "quickbid|api|qbpay" | sort`
+EXPIRE_BAK_NUM=`echo $EXPIRE_BAK | wc -w`
+rm -rf $EXPIRE_BAK
+echo -e "成功清理超过90天的日志备份${EXPIRE_BAK_NUM}个:  \n$EXPIRE_BAK"
+
 echo -e "Finish at \c"
 date '+%F %T'
 
