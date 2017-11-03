@@ -109,6 +109,23 @@ def parseQueues(page):
             q.append(status[0][1])
     return queues
 
+def parseCenterSrv(page):
+    pt1 = re.compile(r'(?isu)<tr.*?>(.*?)</tr>')
+    pt2 = re.compile(r'(?isu)<td.*?>(.*?)</td>')
+    pt3 = re.compile(r'(?isu)(^.*?)<input.*?$')
+    srvs = []
+    for td in pt1.findall(page):
+        tds = []
+        for item in pt2.findall(td):
+            tds.append(item)
+        if len(tds) == 3:
+            srvs.append(tds)
+    for srv in srvs:
+        tmp = pt3.findall(srv[2])
+        if len(tmp) > 0:
+            srv[2] = tmp[0].strip()
+    return srvs
+
 def timekeeping(sec):
     for i in range(sec):
         p = '\r%s' % str(i+1)

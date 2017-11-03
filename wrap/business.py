@@ -413,6 +413,12 @@ def getQueues(s):
     queues = parseQueues(r.text)
     return queues
 
+#这里是center的监控服务
+def getCenterSrv(s):
+    url = 'http://%s/dubbo/get_check_servers.do' % GL.monitor()
+    r = s.post(url)
+    return parseCenterSrv(r.text)
+
 def getMonitor(s, mod):
     jobs = getJobs(s)
     queues = getQueues(s)
@@ -454,6 +460,19 @@ def monitorQueue(s, ip_id, lqueueKey, start):
     else:
         print '失败'
 
+def monitorCenterSrv(s, serverIP, status):
+    if status == '1':
+        info = '开启...'
+    else:
+        info = '关闭...'
+    url = 'http://%s/dubbo/change_check_status' % GL.monitor()
+    data = {'serverIP':serverIP,'status':status}
+    r = s.post(url, data=data)
+    if r.status_code == 200:
+        print '%s OK' % info
+    else:
+        print '%s 失败' % info
+
 def monitorSave():
     i = 1
     print '定时任务：'
@@ -479,7 +498,23 @@ def monitor(opt, mod):
         jobs = getJobs(s)
         queues = getQueues(s)
         return (jobs,queues)
-    if opt=='show' or opt=='save':
+    if mod.form() == 'center':
+        if opt == 'show':
+            srvs = getCenterSrv(s)
+            print 'center服务监控：'
+            for srv in srvs:
+                print srv[0],srv[1],srv[2]
+        elif opt=='start' or opt=='close':
+            if opt == 'start':
+                status = '1'
+            else:
+                status = '0'
+            srvs = getCenterSrv(s)
+            print 'center服务监控：'
+            for srv in srvs:
+                print srv[0],srv[1],srv[2],
+                monitorCenterSrv(s, srv[1], status)
+    elif opt=='show' or opt=='save':
         (jobs,queues) = getMonitor(s, mod)
         tmp1 = []
         tmp2 = []
