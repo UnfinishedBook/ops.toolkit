@@ -103,6 +103,13 @@
         "appdir": "webapps/logSystem",
         "svnsuf": "statistics/logSystem2"
     },
+    "statistics-search": {
+        "form": "module",
+        "pack": "search-engines-0.0.1.war",
+        "tomcat": "tomcat-statistics-search",
+        "appdir": "webapps/search-engines-0.0.1",
+        "svnsuf": "statistics/search-engines"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",

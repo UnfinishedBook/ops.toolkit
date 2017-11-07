@@ -20,6 +20,7 @@
                 "qbpay-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-search",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -52,6 +53,7 @@
                 "quickbid-server",
                 "statistics-admonitor",
                 "statistics-recommendation",
+                "statistics-search",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -131,7 +133,8 @@
             "172.18.27.12": [],
             "172.18.203.148": [
                 "statistics-admonitor",
-                "statistics-recommendation"
+                "statistics-recommendation",
+                "statistics-search",
             ],
             "172.18.203.151": [],
             "172.18.203.152": [],

@@ -18,6 +18,7 @@
                 "qbpay-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-search",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -47,6 +48,7 @@
                 "qbpay-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-search",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -113,7 +115,8 @@
             "10.135.144.182": [
                 "statistics-admonitor",
                 "statistics-csdb",
-                "statistics-logsystem"
+                "statistics-logsystem",
+                "statistics-search"
             ]
         }
     }
