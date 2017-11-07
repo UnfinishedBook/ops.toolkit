@@ -134,7 +134,7 @@
             "172.18.203.148": [
                 "statistics-admonitor",
                 "statistics-recommendation",
-                "statistics-search",
+                "statistics-search"
             ],
             "172.18.203.151": [],
             "172.18.203.152": [],
