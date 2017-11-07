@@ -174,7 +174,7 @@ class Loop(Cmd):
                 self.help_svncnf()
 
     def help_svncnf(self):
-        print '用法：svncnf <操作 [up/merge/ci]> <工程名> //注意当前只有center/process/server有配置文件'
+        print '用法：svncnf <操作 [up/merge/cp/del/ls/ci]> <工程名> //注意当前只有center/process/server有配置文件'
 
     def do_start(self, proj):
         if proj!=None and proj!='':

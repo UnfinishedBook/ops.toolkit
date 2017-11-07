@@ -171,7 +171,7 @@ def update(mod):
         GL.LOG.error('不支持的更新: %s %s' % (mod.form(),mod.name()))
 
 def svncnf(mod, opt):
-    if opt!='up' and opt!='merge' and opt!='ci':
+    if opt!='up' and opt!='merge' and opt!='ci' and opt!='cp' and opt!='del' and opt!='ls':
         print '不支持的操作 %s' % opt
         return
     if opt == 'up':
@@ -212,6 +212,62 @@ def svncnf(mod, opt):
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
             GL.LOG.info('执行提交操作 (%s)' % cmd)
             localCmd(cmd)
+    elif opt == 'ls':
+        tag = mod.tag_cnf()
+        trunk = mod.trunk_cnf()
+        cmd = 'svn ls %s' % trunk
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+        cmd = 'svn ls %s' % tag
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+    elif opt == 'del':
+        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
+        if instr != '':
+            tag = mod.tag_cnf()
+            cmd = 'svn del %s -m "%s"' % (tag,instr)
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
+    elif opt == 'cp':
+        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
+        if instr != '':
+            tag = mod.tag_cnf()
+            trunk = mod.trunk_cnf()
+            wcopy = mod.workcopy_cnf()
+            tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+            cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
+            cmd = 'svn up %s' % wcopy
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
+
+def status(mod):
+    for ip in mod.deploy():
+        cmd = "ps -ef|grep java|grep %s|grep -v grep" % mod.pidname()
+        remoteCmd(ip, cmd)
+
+def bakgc(mod, ip):
+    GL.LOG.info('在 (%s) 备份 (%s) 的gc日志' % (ip,mod.name()))
+    gcdir = mod.gcdir()
+    gcfile = 'gc.log'
+    bakdir = mod.gcbakdir()
+    bakname = '%s-%s.tar.gz' % (gcfile,getTimestamp())
+    cmd = 'if [ -f "%s/%s" ];then mkdir -p %s; tar -zcf %s/%s -C %s %s ; echo "Backup gc file OK"; else echo "Not found gc file"; fi' % (gcdir,gcfile,bakdir,bakdir,bakname,gcdir,gcfile)
+    remoteCmd(ip, cmd)
+
+def savejstack(mod, ip):
+    GL.LOG.info('在 (%s) 保存 (%s) 的jstack信息' % (ip,mod.name()))
+    jsdir = mod.jstackdir()
+    cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
+    remoteCmd(ip, cmd)
+    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && jstack $tmpid > %s/jstack-$tmpid-%s.log' % (mod.pidname(), jsdir, getTimestamp())
+    remoteCmd(ip, cmd)
 
 def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
@@ -306,11 +362,17 @@ def svn(mod, opt, path=None):
             if path == None:
                 tag = mod.tag()
                 trunk = mod.trunk()
+                wcopy = mod.workcopy()
             else:
                 tag = '%s/%s' % (mod.tag(),path)
                 trunk = '%s/%s' % (mod.trunk(),path)
+                wcopy = '%s/%s' % mod.workcopy()
             tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
             cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
+            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+            if out == 'yes':
+                localCmd(cmd)
+            cmd = 'svn up %s' % wcopy
             out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
             if out == 'yes':
                 localCmd(cmd)
