@@ -117,6 +117,17 @@ class Loop(Cmd):
     def help_backup(self):
         print '备份指定的工程，用法：backup <工程名>'
 
+    def do_clean(self, proj):
+        if proj!=None and proj!='':
+            mod = getMod(proj)
+            if mod != None:
+                clean(mod)
+        else:
+            self.help_clean()
+
+    def help_clean(self):
+        print '清理指定的工程的备份，用法：clean <工程名>'
+
     def do_up(self, proj):
         if proj!=None and proj!='':
             mod = getMod(proj)

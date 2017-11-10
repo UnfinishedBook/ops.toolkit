@@ -58,6 +58,21 @@ def backup(mod):
             cmd += ' --exclude=apks'
         remoteCmd(ip, cmd)
 
+def clean(mod):
+    exp = '%s/%s-*.tar' % (mod.bakdir(),mod.name())
+    print exp
+    for ip in mod.deploy():
+        cmd = 'ls %s | sort | tail -5; ls %s | wc -w' % (exp,exp)
+        remoteCmd(ip, cmd)
+        instr = raw_input('请输入要清理的数量: ')
+        if instr.isdigit() == False:
+            continue
+        num = int(instr)
+        cmd = 'rm -rf `ls %s | sort | head -%d`' % (exp,num)
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+        if out == 'yes':
+            remoteCmd(ip, cmd)
+
 def up_wap(mod, patch=False):
     pk = '%s/wap.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
