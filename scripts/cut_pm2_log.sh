@@ -18,7 +18,7 @@ do
     echo "[$n/$count] 重命名 ${file} 为 ${cutfile}"
     let n=n-1
 done
-pm2 reloadLogs
+/usr/local/bin/pm2 reloadLogs
 
 echo -e "Finish at \c"
 date '+%F %T'
