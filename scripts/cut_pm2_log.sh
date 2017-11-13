@@ -4,6 +4,8 @@
 echo -e "Start at \c"
 date '+%F %T'
 
+export PATH=/usr/local/bin:$PATH
+
 LOG_DIR=/mydata/logs
 
 list=`find $LOG_DIR -name '*.log' -size +200M | grep -E '/activity-api/|/ad-api/|/ad_stats/|/api/|/auth/|/cms/|/cmsTimer/|/data/' | grep -v 'rename'`
@@ -18,7 +20,7 @@ do
     echo "[$n/$count] 重命名 ${file} 为 ${cutfile}"
     let n=n-1
 done
-/usr/local/bin/pm2 reloadLogs
+pm2 reloadLogs
 
 echo -e "Finish at \c"
 date '+%F %T'
