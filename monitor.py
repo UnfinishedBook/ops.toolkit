@@ -16,14 +16,17 @@ else:
     exit()
 
 if sys.argv[1] == 'qb':
-    os.environ['ops_project'] = 'quickbid'
+    os.environ['ops_project'] = 'qb'
     host = 'shanpai.monitor'
 elif sys.argv[1] == 'db':
-    os.environ['ops_project'] = 'duobao'
-    host = 'duobao.monitor'
+    os.environ['ops_project'] = 'db'
+    host = 'db.monitor'
 elif sys.argv[1] == 'sdd':
     os.environ['ops_project'] = 'sdd'
     host = 'sdd.monitor'
+elif sys.argv[1] == 'hp':
+    os.environ['ops_project'] = 'hp'
+    host = 'hp.monitor'
 os.environ['ops_key'] = 'maintenance'
 
 from gl import *
