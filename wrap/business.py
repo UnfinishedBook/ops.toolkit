@@ -381,7 +381,7 @@ def svn(mod, opt, path=None):
             else:
                 tag = '%s/%s' % (mod.tag(),path)
                 trunk = '%s/%s' % (mod.trunk(),path)
-                wcopy = '%s/%s' % mod.workcopy()
+                wcopy = '%s/%s' % (mod.workcopy(),path)
             tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
             cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
             out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
