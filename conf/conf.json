@@ -16,5 +16,11 @@
         "issue": "1.0.0",
         "svn": "42d5a6b7aed9d364be7907cab59e0a77",
         "pkdir": "/mydata/maintenance/packages"
+    },
+    "hp": {
+        "intro": "惠拍优品",
+        "issue": "1.0.0",
+        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "pkdir": "/mydata/maintenance/packages"
     }
 }
