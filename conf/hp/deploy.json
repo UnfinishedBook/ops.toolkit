@@ -39,6 +39,7 @@
         "deploy": {
             "10.104.197.116": [
                 "wap",
+                "wapv2",
                 "hpyp-center",
                 "hpyp-ad-center",
                 "hpyp-data-process",
@@ -50,6 +51,7 @@
                 "qbinside-server",
                 "qbmonitor-server",
                 "qbpay-server",
+                "qbshield-server",
                 "quickbid-server",
                 "statistics-admonitor",
                 "statistics-search",
@@ -72,6 +74,7 @@
             "10.104.11.150": [
                 "cdn",
                 "wap",
+                "wapv2",
                 "wap_cdn"
             ],
             "10.104.194.197": [

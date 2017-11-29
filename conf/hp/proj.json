@@ -170,6 +170,12 @@
         "form": "static",
         "appdir": "cdn"
     },
+    "wapv2": {
+        "form": "static",
+        "pack": "wapv2.tar.gz",
+        "appdir": "wap/v2",
+        "svnsuf": "wap/hp_v2"
+    },
     "cdn": {
         "form": "static",
         "appdir": "cdn"
