@@ -20,6 +20,7 @@
                 "qbpay-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-recommendation",
                 "statistics-search",
                 "activity-api",
                 "ad-api",
@@ -54,6 +55,7 @@
                 "qbshield-server",
                 "quickbid-server",
                 "statistics-admonitor",
+                "statistics-recommendation",
                 "statistics-search",
                 "activity-api",
                 "ad-api",
@@ -74,8 +76,9 @@
             "10.104.11.150": [
                 "cdn",
                 "wap",
+                "wap_cdn",
                 "wapv2",
-                "wap_cdn"
+                "wapv2_cdn"
             ],
             "10.104.194.197": [
                 "qbpay-server",
@@ -98,14 +101,12 @@
             ],
             "10.104.225.127": [
                 "hpyp-center",
-                "hpyp-ad-center",
                 "qbinside-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
             "10.104.105.125": [
                 "hpyp-center",
-                "hpyp-ad-center",
                 "hpyp-data-process",
                 "qbmonitor-server",
                 "quickbid-server"
@@ -128,6 +129,7 @@
                 "statistics-admonitor",
                 "statistics-csdb",
                 "statistics-logsystem",
+                "statistics-recommendation",
                 "statistics-search"
             ]
         }
