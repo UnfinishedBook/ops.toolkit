@@ -4,9 +4,9 @@
 import os
 import sys
 
-if len(sys.argv)==4 and (sys.argv[1]=='qb' or sys.argv[1]=='db' or sys.argv[1]=='sdd') and (sys.argv[2]=='job' or sys.argv[2]=='queue') and sys.argv[3]=='--discover':
+if len(sys.argv)==4 and (sys.argv[1]=='qb' or sys.argv[1]=='db' or sys.argv[1]=='sdd' or sys.argv[1]=='hp') and (sys.argv[2]=='job' or sys.argv[2]=='queue') and sys.argv[3]=='--discover':
     pass
-elif len(sys.argv)==3 and (sys.argv[1]=='qb' or sys.argv[1]=='db' or sys.argv[1]=='sdd') and sys.argv[2]=='--up':
+elif len(sys.argv)==3 and (sys.argv[1]=='qb' or sys.argv[1]=='db' or sys.argv[1]=='sdd' or sys.argv[1]=='hp') and sys.argv[2]=='--up':
     pass
 else:
     print '''usage:
