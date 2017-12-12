@@ -25,7 +25,7 @@ do
 done
 
 echo "开始清理超过90天的日志备份"
-EXPIRE_BAK=`find $BAK_DIR -name *.tar.gz -mtime +90 | grep -v tengine | sort`
+EXPIRE_BAK=`find $BAK_DIR -name '*.tar.gz' -mtime +90 | grep -v tengine | sort`
 EXPIRE_BAK_NUM=`echo $EXPIRE_BAK | wc -w`
 rm -rf $EXPIRE_BAK
 echo -e "成功清理超过90天的日志备份${EXPIRE_BAK_NUM}个:  \n$EXPIRE_BAK"
