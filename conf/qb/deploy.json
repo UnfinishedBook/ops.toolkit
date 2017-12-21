@@ -12,6 +12,7 @@
                 "quickbid-ad-center",
                 "qb-data-process",
                 "qb-firewall-process",
+                "qb-nonstd-process",
                 "qb-prizepool-process",
                 "qb-proxy-process",
                 "quickbid-process",
@@ -44,6 +45,7 @@
                 "quickbid-ad-center",
                 "qb-data-process",
                 "qb-firewall-process",
+                "qb-nonstd-process",
                 "qb-prizepool-process",
                 "qb-proxy-process",
                 "quickbid-process",
@@ -90,6 +92,7 @@
                 "quickbid-center",
                 "quickbid-ad-center",
                 "qb-firewall-process",
+                "qb-nonstd-process",
                 "qb-prizepool-process",
                 "qb-proxy-process"
             ],

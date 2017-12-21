@@ -29,6 +29,13 @@
         "svnsuf": "server/process/qb-firewall-process",
         "cnfsuf": "server/process/config/qb-firewall-process"
     },
+    "qb-nonstd-process": {
+        "form": "process",
+        "pack": "qb-nonstd-process-assembly.zip",
+        "appdir": "qb-nonstd-process",
+        "svnsuf": "server/process/qb-nonstd-process",
+        "cnfsuf": "server/process/config/qb-nonstd-process"
+    },
     "qb-prizepool-process": {
         "form": "process",
         "pack": "qb-prizepool-process-assembly.zip",

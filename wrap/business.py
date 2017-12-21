@@ -56,6 +56,8 @@ def backup(mod):
         cmd = 'tar -cf %s/%s -C %s %s' % (dest,bakname,srcDir,name)
         if mod.name() == 'cdn':
             cmd += ' --exclude=apks'
+        if mod.name()=='cms' or mod.name()=='cmsTimer':
+            cmd += ' --exclude=document'
         remoteCmd(ip, cmd)
 
 def clean(mod):
