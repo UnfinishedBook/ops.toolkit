@@ -91,6 +91,7 @@
             "172.18.27.10": [
                 "quickbid-center",
                 "quickbid-ad-center",
+                "qb-data-process",
                 "qb-firewall-process",
                 "qb-nonstd-process",
                 "qb-prizepool-process",
@@ -110,7 +111,6 @@
             ],
             "172.18.203.145": [
                 "quickbid-center",
-                "qb-data-process",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
