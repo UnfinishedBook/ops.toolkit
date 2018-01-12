@@ -264,28 +264,6 @@ def svncnf(mod, opt):
             if out == 'yes':
                 localCmd(cmd)
 
-def status(mod):
-    for ip in mod.deploy():
-        cmd = "ps -ef|grep java|grep %s|grep -v grep" % mod.pidname()
-        remoteCmd(ip, cmd)
-
-def bakgc(mod, ip):
-    GL.LOG.info('在 (%s) 备份 (%s) 的gc日志' % (ip,mod.name()))
-    gcdir = mod.gcdir()
-    gcfile = 'gc.log'
-    bakdir = mod.gcbakdir()
-    bakname = '%s-%s.tar.gz' % (gcfile,getTimestamp())
-    cmd = 'if [ -f "%s/%s" ];then mkdir -p %s; tar -zcf %s/%s -C %s %s ; echo "Backup gc file OK"; else echo "Not found gc file"; fi' % (gcdir,gcfile,bakdir,bakdir,bakname,gcdir,gcfile)
-    remoteCmd(ip, cmd)
-
-def savejstack(mod, ip):
-    GL.LOG.info('在 (%s) 保存 (%s) 的jstack信息' % (ip,mod.name()))
-    jsdir = mod.jstackdir()
-    cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
-    remoteCmd(ip, cmd)
-    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && jstack $tmpid > %s/jstack-$tmpid-%s.log' % (mod.pidname(), jsdir, getTimestamp())
-    remoteCmd(ip, cmd)
-
 def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
         print '不支持的操作 %s' % opt
@@ -413,7 +391,7 @@ def savejstack(mod, ip):
     jsdir = mod.jstackdir()
     cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
     remoteCmd(ip, cmd)
-    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && jstack $tmpid > %s/jstack-$tmpid-%s.log' % (mod.pidname(), jsdir, getTimestamp())
+    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then jstack $tmpid > %s/jstack-$tmpid-%s.log; else echo "Not found pid"; fi' % (mod.pidname(), jsdir, getTimestamp())
     remoteCmd(ip, cmd)
 
 def _stop(ip, mod, jstack=False):
@@ -423,7 +401,7 @@ def _stop(ip, mod, jstack=False):
     if mod.form()=='center' and jstack==True:
         savejstack(mod, ip)
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
-    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; [ -n "$tmpid" ] && kill -9 $tmpid; echo killed' % mod.pidname()
+    cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill -9 $tmpid; else echo "Not found pid"; fi' % mod.pidname()
     remoteCmd(ip, cmd)
     bakgc(mod, ip)
 
