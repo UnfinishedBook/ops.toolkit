@@ -23,9 +23,9 @@ function stop()
     PIDS=`ps -ef | grep python | grep "$EXE_FILE" |awk '{print $2}'`
     if [ -z "$PIDS" ]; then
         echo "ERROR: The $SERVER_NAME not started!"
-        exit 1
+    else
+        kill -9 $PIDS
     fi
-    kill -9 $PIDS
 }
 
 

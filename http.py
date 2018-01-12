@@ -9,6 +9,8 @@ from wrap import *
 from bottle import *
 import pexpect
 import traceback
+import cherrypy
+from paramiko import SSHException
 
 f = open('/mydata/maintenance/identity/key')
 pwd = f.readline()
@@ -24,39 +26,46 @@ if 'maintenance_rsa' not in output:
 
 GL.LOG = getLogger('HttpLogger', 'ops-toolkit-http.log')
 
-@error(404)
-def error404(error):
-    return 'Nothing here, sorry\n'
-
-@route('/restart', method='POST')
-def http_restart():
-    try:
-        ret = {'err':0, 'msg':''}
-        keys = request.params.keys()
-        env = request.params.get('env')
-        ip = request.params.get('ip')
-        proj = request.params.get('proj')
+class MyServer(object):
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def restart(self, env, ip, proj):
         GL.LOG.info('收到重启请求 (%s %s %s)' % (env,ip,proj))
-        GL.setEnv(env)
-        mod = getMod(proj)
-        if ip not in mod.deploy():
-            raise Exception('%s not deployed in %s on %s' % (proj,ip,env))
-        asked = False   #关闭交互
-        jstack = True   #重启前保存jstack的信息
-        restart(mod, ip, asked, jstack)
-        #remoteCmd(ip, 'whoami')
-        GL.LOG.info('重启操作完成 (%s %s %s)' % (env,ip,proj))
+        ret = {'err':1, 'msg':'unknown'}
+        retry = 3
+        while (retry != 0):
+            try:
+                retry -= 1
+                GL.setEnv(env)
+                mod = getMod(proj)
+                if ip not in mod.deploy():
+                    raise Exception('%s not deployed in %s on %s' % (proj,ip,env))
+                asked = False   #关闭交互
+                jstack = True   #重启前保存jstack的信息
+                restart(mod, ip, asked, jstack)
+                #remoteCmd(ip, 'ping baidu.com -c 5')
+                ret['err'] = 0
+                ret['msg'] = ''
+                GL.LOG.info('重启操作完成 (%s %s %s)' % (env,ip,proj))
+                break
+            except (SystemExit,SSHException) as e:
+                msg = traceback.format_exc()
+                ret['err'] = 1
+                ret['msg'] = msg
+                GL.LOG.error('捕获到系统异常 (%s %s %s) : \n%s \n重试 %d ' % (env,ip,proj,msg,retry))
+            except Exception as e:
+                msg = traceback.format_exc()
+                ret['err'] = 1
+                ret['msg'] = msg
+                GL.LOG.error('捕获到普通异常 (%s %s %s) : \n%s \n不重试' % (env,ip,proj,msg))
+                retry = 0
+        GL.LOG.info('本次请求处理完毕')
         return ret
-    except Exception as e:
-        msg = traceback.format_exc()
-        ret['err'] = 1
-        ret['msg'] = msg
-        GL.LOG.error('重启操作异常 (%s %s %s) : \n%s' % (env,ip,proj,msg))
-        return ret
-    finally:
-        GL.LOG.info('重启 finally')
-        network.disconnect_all()
 
-run(host='0.0.0.0', port=8887, debug=True)
-
+conf = {
+        'server.socket_host': '0.0.0.0',
+        'server.socket_port': 8887
+       }
+cherrypy.config.update(conf)
+cherrypy.quickstart(MyServer())
 
