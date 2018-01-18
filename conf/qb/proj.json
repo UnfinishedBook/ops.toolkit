@@ -57,6 +57,14 @@
         "svnsuf": "server/process/quickbid-process",
         "cnfsuf": "server/process/config/quickbid-process"
     },
+    "commonbiz-server": {
+        "form": "server",
+        "pack": "commonbiz.war",
+        "tomcat": "tomcat-commonbiz-server",
+        "appdir": "webapps/commonbiz",
+        "svnsuf": "server/server/commonbiz-server",
+        "cnfsuf": "server/server/config/commonbiz-server"
+    },
     "qbinside-server": {
         "form": "server",
         "pack": "qbinside.war",

@@ -16,6 +16,7 @@
                 "qb-prizepool-process",
                 "qb-proxy-process",
                 "quickbid-process",
+                "commonbiz-server",
                 "qbinside-server",
                 "qbmonitor-server",
                 "qbpay-server",
@@ -49,6 +50,7 @@
                 "qb-prizepool-process",
                 "qb-proxy-process",
                 "quickbid-process",
+                "commonbiz-server",
                 "qbinside-server",
                 "qbmonitor-server",
                 "qbpay-server",
@@ -115,6 +117,7 @@
                 "quickbid-server"
             ],
             "172.18.27.7": [
+                "commonbiz-server",
                 "qbpay-server",
                 "activity-api",
                 "ad-api",
