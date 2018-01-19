@@ -432,6 +432,10 @@ def stop(mod):
 
 #theIP/asked/jstack用于提供的http请求, http.py
 def restart(mod, theIP=None, asked=True, jstack=False):
+    if mod.form()=='center' and asked==True:
+        out = ask('重启%s需要关闭前端对服务的监控, 确认立刻执行吗？' % mod.name(), 'yes,no', 'no')
+        if out == 'yes':
+            monitor('close', mod)
     for ip in mod.deploy():
         if theIP!=None and theIP!=ip:   #指定ip的情况
             continue
@@ -445,6 +449,10 @@ def restart(mod, theIP=None, asked=True, jstack=False):
         _start(ip, mod)
         if asked:
             dubboAdmin(mod, ip, 'enable')
+    if mod.form()=='center' and asked==True:
+        out = ask('重启%s完毕需要开启前端对服务的监控, 确认立刻执行吗？' % mod.name(), 'yes,no', 'no')
+        if out == 'yes':
+            monitor('start', mod)
 
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
