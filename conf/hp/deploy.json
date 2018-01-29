@@ -107,13 +107,13 @@
             ],
             "10.104.105.125": [
                 "hpyp-center",
-                "hpyp-data-process",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
             "10.104.254.114": [
                 "hpyp-center",
                 "hpyp-ad-center",
+                "hpyp-data-process",
                 "hpyp-firewall-process",
                 "hpyp-nonstd-process",
                 "hpyp-prizepool-process",
