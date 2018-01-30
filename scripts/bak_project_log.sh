@@ -24,11 +24,11 @@ do
     tar -zcf $bak_dir/$bak_fn -C $dir $fn --remove-files
 done
 
-echo "开始清理超过90天的日志备份"
-EXPIRE_BAK=`find $BAK_DIR -name '*.tar.gz' -mtime +90 | grep -v tengine | sort`
+echo "开始清理超过61天的日志备份"
+EXPIRE_BAK=`find $BAK_DIR -name '*.tar.gz' -mtime +61 | grep -v tengine | sort`
 EXPIRE_BAK_NUM=`echo $EXPIRE_BAK | wc -w`
 rm -rf $EXPIRE_BAK
-echo -e "成功清理超过90天的日志备份${EXPIRE_BAK_NUM}个:  \n$EXPIRE_BAK"
+echo -e "成功清理超过61天的日志备份${EXPIRE_BAK_NUM}个:  \n$EXPIRE_BAK"
 
 echo "开始清理原日志路径的空目录"
 EMP_DIR=`find $LOG_DIR -type d -empty | sort`
