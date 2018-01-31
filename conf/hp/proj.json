@@ -190,5 +190,13 @@
     "cdn": {
         "form": "static",
         "appdir": "cdn"
+    },
+    "android": {
+        "form": "mobile",
+        "svnsuf": "android"
+    },
+    "ios": {
+        "form": "mobile",
+        "svnsuf": "ios"
     }
 }
