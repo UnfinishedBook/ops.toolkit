@@ -11,13 +11,14 @@ import pexpect
 import traceback
 import cherrypy
 from paramiko import SSHException
+import thread
 
 f = open('/mydata/maintenance/identity/key')
 pwd = f.readline()
 f.close()
 ch = pexpect.spawn('ssh-add /mydata/maintenance/identity/maintenance_rsa')
 ch.expect('Enter passphrase for /mydata/maintenance/identity/maintenance_rsa: ')
-ch.sendline (pwd)
+ch.sendline(pwd)
 output = commands.getoutput('ssh-add -l')
 ch.close()
 if 'maintenance_rsa' not in output:
@@ -26,6 +27,12 @@ if 'maintenance_rsa' not in output:
 
 GL.LOG = getLogger('HttpLogger', 'ops-toolkit-http.log')
 
+def capturePkg(ip, hostip):
+    cmd = 'nohup tcpdump host %s -n -nn -c 200000 > /mydata/maintenance/logs/tcpdump-%s.log 2>&1 &' % (hostip,getTimestamp())
+    GL.LOG.info('抓包线程启动 : %s' % cmd)
+    remoteCmd(ip, cmd, False)
+    GL.LOG.info('抓包线程退出')
+
 class MyServer(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
@@ -33,10 +40,16 @@ class MyServer(object):
         GL.LOG.info('收到重启请求 (%s %s %s)' % (env,ip,proj))
         ret = {'err':1, 'msg':'unknown'}
         retry = 3
+        GL.setEnv(env)
+        if env=='pro' and GL.project()=='hp':
+            hostip = '10.66.154.6'
+            thread.start_new_thread(capturePkg, (ip,hostip))
+        #elif env=='pro' and GL.project()=='qb':
+            #hostip = 'rm-wz980pisxuvl0po6j.mysql.rds.aliyuncs.com'
+            #thread.start_new_thread(capturePkg, (ip,hostip))
         while (retry != 0):
             try:
                 retry -= 1
-                GL.setEnv(env)
                 mod = getMod(proj)
                 if ip not in mod.deploy():
                     raise Exception('%s not deployed in %s on %s' % (proj,ip,env))
