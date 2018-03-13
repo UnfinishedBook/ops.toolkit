@@ -3,6 +3,8 @@
     "trunk": "codes/trunk_gogobids",
     "tag": "codes/tags_gogobids/{issue}",
     "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}",
+    "test.branch": "codes/test_gogobids/{issue}",
+    "test.wcopy": "/mydata/maintenance/svn/test_gogobids/{issue}",
     "logdir": "/mydata/logs",
     "center": {
         "appdir": "/mydata/center",
