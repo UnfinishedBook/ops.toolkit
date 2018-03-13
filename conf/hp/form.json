@@ -3,6 +3,8 @@
     "trunk": "codes/trunk_hpyp",
     "tag": "codes/tags_hpyp/{issue}",
     "wcopy": "/mydata/maintenance/svn/tags_hpyp/{issue}",
+    "test.branch": "codes/test_hpyp/{issue}",
+    "test.wcopy": "/mydata/maintenance/svn/test_hpyp/{issue}",
     "logdir": "/mydata/logs",
     "center": {
         "appdir": "/mydata/center",

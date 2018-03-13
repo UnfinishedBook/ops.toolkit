@@ -129,17 +129,27 @@ class Model:
 
     def trunk(self):
         if self.__trunk == None:
-            self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
+            if GL.env() == 'pro':
+                #由于当前是从测试分支合并到生产tag进行发版，所以这里的trunk是获取测试分支
+                self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', GL.issue()),self.svnsuf())
+            else:
+                self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
         return self.__trunk
 
     def tag(self):
         if self.__tag == None:
-            self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.svnsuf())
+            if GL.env() == 'test':
+                self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', GL.issue()),self.svnsuf())
+            else:
+                self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__tag
 
     def workcopy(self):
         if self.__workcopy == None:
-            self.__workcopy = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.svnsuf())
+            if GL.env() == 'test':
+                self.__workcopy = '%s/%s' % (GL.form()['test.wcopy'].replace('{issue}', GL.issue()),self.svnsuf())
+            else:
+                self.__workcopy = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.svnsuf())
         return self.__workcopy
 
     def cnfsuf(self):
@@ -147,17 +157,27 @@ class Model:
 
     def trunk_cnf(self):
         if self.__trunk_cnf == None:
-            self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.cnfsuf())
+            if GL.env() == 'pro':
+                #由于当前是从测试分支合并到生产tag进行发版，所以这里的trunk是获取测试分支
+                self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', GL.issue()),self.cnfsuf())
+            else:
+                self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.cnfsuf())
         return self.__trunk_cnf
 
     def tag_cnf(self):
         if self.__tag_cnf == None:
-            self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.cnfsuf())
+            if GL.env() == 'test':
+                self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', GL.issue()),self.cnfsuf())
+            else:
+                self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', GL.issue()),self.cnfsuf())
         return self.__tag_cnf
 
     def workcopy_cnf(self):
         if self.__workcopy_cnf == None:
-            self.__workcopy_cnf = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.cnfsuf())
+            if GL.env() == 'test':
+                self.__workcopy_cnf = '%s/%s' % (GL.form()['test.wcopy'].replace('{issue}', GL.issue()),self.cnfsuf())
+            else:
+                self.__workcopy_cnf = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', GL.issue()),self.cnfsuf())
         return self.__workcopy_cnf
 
 #根据工程名获得一个Model实例

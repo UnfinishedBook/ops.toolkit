@@ -99,6 +99,12 @@
                 "cmsTimer",
                 "data"
             ],
+            "10.186.26.138": [
+                "api"
+            ],
+            "10.104.81.48": [
+                "api"
+            ],
             "10.104.225.127": [
                 "hpyp-center",
                 "qbinside-server",
