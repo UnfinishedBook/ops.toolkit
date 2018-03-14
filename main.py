@@ -1,8 +1,7 @@
 #!/usr/bin/python  
 # -*- coding: UTF-8 -*-
 
-#from gl import *
-from wrap import *
+from wrap import Loop
 
 loop = Loop()
 loop.cmdloop()
