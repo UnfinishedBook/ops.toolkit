@@ -22,5 +22,11 @@
         "issue": "1.2.5",
         "svn": "42d5a6b7aed9d364be7907cab59e0a77",
         "pkdir": "/mydata/maintenance/packages"
+    },
+    "gtc": {
+        "intro": "基因时代",
+        "issue": "1.0.0",
+        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "pkdir": "/mydata/maintenance/packages"
     }
 }
