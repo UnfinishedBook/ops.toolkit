@@ -1,0 +1,150 @@
+{
+    "gtc-center": {
+        "form": "center",
+        "pack": "gtc-provider-0.1.0-assembly.zip",
+        "appdir": "gtc-provider-0.1.0",
+        "svnsuf": "server/center/gtc-center",
+        "cnfsuf": "server/center/config/gtc-center",
+        "port": "20604"
+    },
+    "gtc-process": {
+        "form": "process",
+        "pack": "gtc-process-assembly.zip",
+        "appdir": "gtc-process",
+        "svnsuf": "server/process/gtc-process",
+        "cnfsuf": "server/process/config/gtc-process"
+    },
+    "gtc-queue-process": {
+        "form": "process",
+        "pack": "gtc-queue-process-assembly.zip",
+        "appdir": "gtc-queue-process",
+        "svnsuf": "server/process/gtc-queue-process",
+        "cnfsuf": "server/process/config/gtc-queue-process"
+    },
+    "gtc-inside-server": {
+        "form": "server",
+        "pack": "gtc-inside.war",
+        "tomcat": "tomcat-gtc-inside-server",
+        "appdir": "webapps/gtc-inside",
+        "svnsuf": "server/server/gtc-inside-server",
+        "cnfsuf": "server/server/config/gtc-inside-server"
+    },
+    "gtc-monitor-server": {
+        "form": "server",
+        "pack": "gtc-monitor.war",
+        "tomcat": "tomcat-gtc-monitor-server",
+        "appdir": "webapps/gtc-monitor",
+        "svnsuf": "server/server/gtc-monitor-server",
+        "cnfsuf": "server/server/config/gtc-monitor-server"
+    },
+    "gtc-server": {
+        "form": "server",
+        "pack": "gtc.war",
+        "tomcat": "tomcat-gtc-server",
+        "appdir": "webapps/gtc",
+        "svnsuf": "server/server/gtc-server",
+        "cnfsuf": "server/server/config/gtc-server"
+    },
+    "statistics-admonitor": {
+        "form": "module",
+        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-admonitor",
+        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/ad-monitor-hpyp"
+    },
+    "statistics-csdb": {
+        "form": "module",
+        "pack": "csdb-statistic-servlet-1.0.0-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-csdb",
+        "appdir": "webapps/csdb-statistic-servlet-1.0.0",
+        "svnsuf": "statistics/csdb-statistic-servlet"
+    },
+    "statistics-logsystem": {
+        "form": "module",
+        "pack": "logSystem.war",
+        "tomcat": "tomcat-statistics-logsystem",
+        "appdir": "webapps/logSystem",
+        "svnsuf": "statistics/logSystem2"
+    },
+    "statistics-recommendation": {
+        "form": "module",
+        "pack": "hpyp-recommendation-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-recommendation",
+        "appdir": "webapps/hpyp-recommendation-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/hpyp-recommendation"
+    },
+    "statistics-search": {
+        "form": "module",
+        "pack": "search-engines-0.0.1.war",
+        "tomcat": "tomcat-statistics-search",
+        "appdir": "webapps/search-engines-0.0.1",
+        "svnsuf": "statistics/search-engines"
+    },
+    "activity-api": {
+        "form": "node",
+        "appdir": "activity-api",
+        "svnsuf": "server/shanpai-activity"
+    },
+    "ad-api": {
+        "form": "node",
+        "appdir": "ad-api",
+        "svnsuf": "ad/shanpai-ad"
+    },
+    "api": {
+        "form": "node",
+        "appdir": "api",
+        "svnsuf": "server/shanpai"
+    },
+    "auth": {
+        "form": "node",
+        "appdir": "auth",
+        "svnsuf": "cms/cms_login_server"
+    },
+    "cms": {
+        "form": "node",
+        "appdir": "cms",
+        "svnsuf": "cms/cms_system"
+    },
+    "cmsTimer": {
+        "form": "node",
+        "appdir": "cms",
+        "svnsuf": "cms/cms_system"
+    },
+    "data": {
+        "form": "node",
+        "appdir": "ad_stats",
+        "svnsuf": "ad/ad_stats"
+    },
+    "wap": {
+        "form": "static",
+        "pack": "wap.tar.gz",
+        "appdir": "wap",
+        "svnsuf": "wap"
+    },
+    "wap_cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
+    "wapv2": {
+        "form": "static",
+        "pack": "wapv2.tar.gz",
+        "appdir": "wap/v2",
+        "svnsuf": "wap/hp_v2"
+    },
+    "wapv2_cdn": {
+        "form": "static",
+        "appdir": "cdn/v2"
+    },
+    "cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
+    "android": {
+        "form": "mobile",
+        "svnsuf": "android"
+    },
+    "ios": {
+        "form": "mobile",
+        "svnsuf": "ios"
+    }
+}

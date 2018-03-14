@@ -1,0 +1,36 @@
+{
+    "bakdir": "/mydata/maintenance/backup", 
+    "trunk": "codes/trunk_gtc",
+    "tag": "codes/tags_gtc/{issue}",
+    "wcopy": "/mydata/maintenance/svn/tags_gtc/{issue}",
+    "test.branch": "codes/trunk_gtc/{issue}",
+    "test.wcopy": "/mydata/maintenance/svn/trunk_gtc/{issue}",
+    "logdir": "/mydata/logs",
+    "center": {
+        "appdir": "/mydata/center",
+        "cnfdir": "/data/config/center",
+        "updir": "/mydata/center/zip"
+    },
+    "process": {
+        "appdir": "/mydata/process",
+        "cnfdir": "/data/config/process",
+        "updir": "/mydata/process/zip" 
+    },
+    "server": {
+        "appdir": "/mydata/server",
+        "cnfdir": "/data/config/server",
+        "updir": "/mydata/server/war" 
+    },
+    "module": {
+        "appdir": "/mydata/module",
+        "updir": "/mydata/module/war" 
+    },
+    "node": {
+        "appdir": "/mydata/nodeproj"
+    },
+    "static": {
+        "appdir": "/mydata"
+    },
+    "mobile": {
+    }
+}
