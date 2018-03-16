@@ -38,7 +38,8 @@
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
             "172.31.33.14": [
-                "wapv2"
+                "h5",
+                "php"
             ],
             "172.31.33.191": [
                 "gtc-center",

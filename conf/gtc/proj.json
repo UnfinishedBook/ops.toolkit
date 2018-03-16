@@ -115,21 +115,21 @@
         "appdir": "ad_stats",
         "svnsuf": "ad/ad_stats"
     },
-    "wap": {
+    "h5": {
         "form": "static",
-        "pack": "wap.tar.gz",
-        "appdir": "wap",
+        "pack": "h5.tar.gz",
+        "appdir": "gtch5",
         "svnsuf": "server/h5"
     },
     "wap_cdn": {
         "form": "static",
         "appdir": "cdn"
     },
-    "wapv2": {
+    "php": {
         "form": "static",
-        "pack": "wapv2.tar.gz",
-        "appdir": "gtch5",
-        "svnsuf": "server/h5"
+        "pack": "php.tar.gz",
+        "appdir": "gtch5/h5_php",
+        "svnsuf": "server/h5/h5_php"
     },
     "wapv2_cdn": {
         "form": "static",
