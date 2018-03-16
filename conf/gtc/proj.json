@@ -93,7 +93,7 @@
     "api": {
         "form": "node",
         "appdir": "api",
-        "svnsuf": "server/shanpai"
+        "svnsuf": "server/jiyin"
     },
     "auth": {
         "form": "node",
@@ -119,7 +119,7 @@
         "form": "static",
         "pack": "wap.tar.gz",
         "appdir": "wap",
-        "svnsuf": "wap"
+        "svnsuf": "server/h5"
     },
     "wap_cdn": {
         "form": "static",
@@ -128,8 +128,8 @@
     "wapv2": {
         "form": "static",
         "pack": "wapv2.tar.gz",
-        "appdir": "wap/v2",
-        "svnsuf": "wap/hp_v2"
+        "appdir": "gtch5",
+        "svnsuf": "server/h5"
     },
     "wapv2_cdn": {
         "form": "static",

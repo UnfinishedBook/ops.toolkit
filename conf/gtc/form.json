@@ -3,8 +3,8 @@
     "trunk": "codes/trunk_gtc",
     "tag": "codes/tags_gtc/{issue}",
     "wcopy": "/mydata/maintenance/svn/tags_gtc/{issue}",
-    "test.branch": "codes/trunk_gtc/{issue}",
-    "test.wcopy": "/mydata/maintenance/svn/trunk_gtc/{issue}",
+    "test.branch": "codes/trunk_gtc",
+    "test.wcopy": "/mydata/maintenance/svn/trunk_gtc",
     "logdir": "/mydata/logs",
     "center": {
         "appdir": "/mydata/center",
