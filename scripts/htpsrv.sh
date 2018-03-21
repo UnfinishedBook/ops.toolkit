@@ -4,7 +4,7 @@ cd `dirname $0`
 cd ..
 DEPLOY_DIR=`pwd`
 SERVER_NAME=ops.toolkit.http
-EXE_FILE=$DEPLOY_DIR/http.py
+EXE_FILE=$DEPLOY_DIR/htpsrv.py
 LOG_DIR=/mydata/maintenance/logs
 
 function start()
@@ -38,6 +38,6 @@ elif [ "$1" == "restart" ];then
     sleep 3
     start
 else
-    echo "http.sh [start/stop/restart]"
+    echo "htpsrv.sh [start/stop/restart]"
 fi
 

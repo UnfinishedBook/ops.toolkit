@@ -6,7 +6,7 @@
 
 from gl import *
 from wrap import *
-from bottle import *
+#from bottle import *
 import pexpect
 import traceback
 import cherrypy
@@ -41,9 +41,9 @@ class MyServer(object):
         ret = {'err':1, 'msg':'unknown'}
         retry = 3
         GL.setEnv(env)
-        if env=='pro' and GL.project()=='hp':
-            hostip = '10.66.154.6'
-            thread.start_new_thread(capturePkg, (ip,hostip))
+        #if env=='pro' and GL.project()=='hp':
+            #hostip = '10.66.154.6'
+            #thread.start_new_thread(capturePkg, (ip,hostip))
         #elif env=='pro' and GL.project()=='qb':
             #hostip = 'rm-wz980pisxuvl0po6j.mysql.rds.aliyuncs.com'
             #thread.start_new_thread(capturePkg, (ip,hostip))
