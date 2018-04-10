@@ -29,7 +29,8 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "data_channel"
             ]
         }
     },
@@ -65,6 +66,7 @@
                 "cms",
                 "cmsTimer",
                 "data",
+                "data_channel",
                 "android",
                 "ios"
             ]
@@ -124,7 +126,8 @@
                 "api",
                 "auth",
                 "cms",
-                "data"
+                "data",
+                "data_channel"
             ],
             "172.18.203.146": [
                 "qbpay-server",
@@ -134,7 +137,8 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "data_channel"
             ],
             "172.18.27.12": [],
             "172.18.203.148": [

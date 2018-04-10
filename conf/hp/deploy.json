@@ -28,7 +28,8 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "data_channel"
             ]
         }
     },
@@ -63,7 +64,8 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "data_channel"
             ]
         }
     },
@@ -87,7 +89,8 @@
                 "api",
                 "auth",
                 "cms",
-                "data"
+                "data",
+                "data_channel"
             ],
             "10.135.0.203": [
                 "qbpay-server",
@@ -97,7 +100,8 @@
                 "auth",
                 "cms",
                 "cmsTimer",
-                "data"
+                "data",
+                "data_channel"
             ],
             "10.104.225.127": [
                 "hpyp-center",

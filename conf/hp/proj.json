@@ -167,6 +167,11 @@
         "appdir": "ad_stats",
         "svnsuf": "ad/ad_stats"
     },
+    "data_channel": {
+        "form": "node",
+        "appdir": "data_channel",
+        "svnsuf": "ad/channel_stats"
+    },
     "wap": {
         "form": "static",
         "pack": "wap.tar.gz",
