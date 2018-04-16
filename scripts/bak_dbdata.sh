@@ -20,6 +20,12 @@ do
         fi
         for l2 in $list2
         do
+            t1=`stat -c %Y $LOG_DIR/$l1/$l2`
+            t2=`date +%s`
+            if [ $[ $t2 - $t1 ] -lt 86400 ]; then
+                echo "$LOG_DIR/$l1/$l2 在24小时内有修改 跳过"
+                continue
+            fi
             bak_fn=$l2-`date '+%Y%m%d%H%M%S'`.tgz
             tar -zcf $BAK_DIR/$l1/$bak_fn -C $LOG_DIR/$l1 $l2 --remove-files
             echo "[$n/$count] backup $LOG_DIR/$l1/$l2 to $BAK_DIR/$l1/$bak_fn"
