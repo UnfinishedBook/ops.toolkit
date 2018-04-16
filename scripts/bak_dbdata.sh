@@ -23,7 +23,8 @@ do
             t1=`stat -c %Y $LOG_DIR/$l1/$l2`
             t2=`date +%s`
             if [ $[ $t2 - $t1 ] -lt 86400 ]; then
-                echo "$LOG_DIR/$l1/$l2 在24小时内有修改 跳过"
+                echo "[$n/$count] $LOG_DIR/$l1/$l2 在24小时内有修改 跳过"
+                let n=n-1
                 continue
             fi
             bak_fn=$l2-`date '+%Y%m%d%H%M%S'`.tgz
