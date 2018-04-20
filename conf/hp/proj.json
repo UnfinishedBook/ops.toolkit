@@ -176,6 +176,7 @@
         "form": "static",
         "pack": "wap.tar.gz",
         "appdir": "wap",
+        "issue": "1.2.5",
         "svnsuf": "wap"
     },
     "wap_cdn": {
@@ -186,6 +187,7 @@
         "form": "static",
         "pack": "wapv2.tar.gz",
         "appdir": "wap/v2",
+        "issue": "1.2.5",
         "svnsuf": "wap/hp_v2"
     },
     "wapv2_cdn": {

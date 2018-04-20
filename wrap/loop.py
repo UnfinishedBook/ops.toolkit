@@ -8,10 +8,16 @@ import pexpect
 
 class Loop(Cmd):
     def __init__(self):
-        self.cmdask = False
         #将变量纳入环境变量，就可以通过set命令修改和查询
+        self.cmdask = False
         self.settable['cmdask'] = 'whether to ask when cmd is called'
+        self.branch = False
+        GL.setBranch(self.branch)
+        self.settable['branch'] = 'merge from branch, not trunk'
         Cmd.__init__(self)
+
+    def _onchange_branch(self, old, new):
+        GL.setBranch(new)
 
     #事件循环开始时执行
     def preloop(self):

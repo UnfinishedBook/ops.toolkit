@@ -1,6 +1,7 @@
 {
     "bakdir": "/mydata/maintenance/backup", 
     "trunk": "codes/trunk_gogobids",
+    "branch": "codes/branches_gogobids/{issue}",
     "tag": "codes/tags_gogobids/{issue}",
     "wcopy": "/mydata/maintenance/svn/tags_gogobids/{issue}",
     "test.branch": "codes/test_gogobids/{issue}",

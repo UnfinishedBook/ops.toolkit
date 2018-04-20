@@ -1,6 +1,7 @@
 {
     "bakdir": "/mydata/maintenance/backup", 
     "trunk": "codes/trunk_hpyp",
+    "branch": "codes/branches_hpyp/{issue}",
     "tag": "codes/tags_hpyp/{issue}",
     "wcopy": "/mydata/maintenance/svn/tags_hpyp/{issue}",
     "test.branch": "codes/test_hpyp/{issue}",

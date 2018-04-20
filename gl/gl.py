@@ -137,6 +137,7 @@ class Global:
         self.__closeJobs = None
         self.__closeQueues = None
         self.__svn = None
+        self.__branch = None
         self.LOG = None
 
     def dirMain(self):
@@ -215,6 +216,11 @@ class Global:
             self.__svn = 'svn://%s' % tmp
         return self.__svn
 
+    def setBranch(self, new):
+        self.__branch = new
+
+    def branch(self):
+        return self.__branch
 
 GL = Global()
 
