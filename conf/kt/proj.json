@@ -1,0 +1,222 @@
+{
+    "ktyp-center": {
+        "form": "center",
+        "pack": "ktyp-provider-0.1.0-assembly.zip",
+        "appdir": "ktyp-provider-0.1.0",
+        "svnsuf": "server/center/ktyp-center",
+        "cnfsuf": "server/center/config/ktyp-center",
+        "port": "20604"
+    },
+    "ktyp-ad-center": {
+        "form": "center",
+        "pack": "ktyp-ad-provider-0.1.0-assembly.zip",
+        "appdir": "ktyp-ad-provider-0.1.0",
+        "svnsuf": "server/center/ktyp-ad-center",
+        "cnfsuf": "server/center/config/ktyp-ad-center",
+        "port": "20605"
+    },
+    "ktyp-data-process": {
+        "form": "process",
+        "pack": "ktyp-data-process-assembly.zip",
+        "appdir": "ktyp-data-process",
+        "svnsuf": "server/process/ktyp-data-process",
+        "cnfsuf": "server/process/config/ktyp-data-process"
+    },
+    "ktyp-firewall-process": {
+        "form": "process",
+        "pack": "ktyp-firewall-process-assembly.zip",
+        "appdir": "ktyp-firewall-process",
+        "svnsuf": "server/process/ktyp-firewall-process",
+        "cnfsuf": "server/process/config/ktyp-firewall-process"
+    },
+    "ktyp-guide-process": {
+        "form": "process",
+        "pack": "ktyp-guide-process-assembly.zip",
+        "appdir": "ktyp-guide-process",
+        "svnsuf": "server/process/ktyp-guide-process",
+        "cnfsuf": "server/process/config/ktyp-guide-process"
+    },
+    "ktyp-nonstd-process": {
+        "form": "process",
+        "pack": "ktyp-nonstd-process-assembly.zip",
+        "appdir": "ktyp-nonstd-process",
+        "svnsuf": "server/process/ktyp-nonstd-process",
+        "cnfsuf": "server/process/config/ktyp-nonstd-process"
+    },
+    "ktyp-prizepool-process": {
+        "form": "process",
+        "pack": "ktyp-prizepool-process-assembly.zip",
+        "appdir": "ktyp-prizepool-process",
+        "svnsuf": "server/process/ktyp-prizepool-process",
+        "cnfsuf": "server/process/config/ktyp-prizepool-process"
+    },
+    "ktyp-proxy-process": {
+        "form": "process",
+        "pack": "ktyp-proxy-process-assembly.zip",
+        "appdir": "ktyp-proxy-process",
+        "svnsuf": "server/process/ktyp-proxy-process",
+        "cnfsuf": "server/process/config/ktyp-proxy-process"
+    },
+    "ktyp-process": {
+        "form": "process",
+        "pack": "ktyp-process-assembly.zip",
+        "appdir": "ktyp-process",
+        "svnsuf": "server/process/ktyp-process",
+        "cnfsuf": "server/process/config/ktyp-process"
+    },
+    "qbguide-server": {
+        "form": "server",
+        "pack": "qbguide.war",
+        "tomcat": "tomcat-qbguide-server",
+        "appdir": "webapps/qbguide",
+        "svnsuf": "server/server/qbguide-server",
+        "cnfsuf": "server/server/config/qbguide-server"
+    },
+    "qbinside-server": {
+        "form": "server",
+        "pack": "qbinside.war",
+        "tomcat": "tomcat-qbinside-server",
+        "appdir": "webapps/qbinside",
+        "svnsuf": "server/server/qbinside-server",
+        "cnfsuf": "server/server/config/qbinside-server"
+    },
+    "qbmonitor-server": {
+        "form": "server",
+        "pack": "qbmonitor.war",
+        "tomcat": "tomcat-qbmonitor-server",
+        "appdir": "webapps/qbmonitor",
+        "svnsuf": "server/server/qbmonitor-server",
+        "cnfsuf": "server/server/config/qbmonitor-server"
+    },
+    "qbpay-server": {
+        "form": "server",
+        "pack": "qbpay.war",
+        "tomcat": "tomcat-qbpay-server",
+        "appdir": "webapps/qbpay",
+        "svnsuf": "server/server/qbpay-server",
+        "cnfsuf": "server/server/config/qbpay-server"
+    },
+    "qbshield-server": {
+        "form": "server",
+        "pack": "qbshield.war",
+        "tomcat": "tomcat-qbshield-server",
+        "appdir": "webapps/qbshield",
+        "svnsuf": "server/server/qbshield-server",
+        "cnfsuf": "server/server/config/qbshield-server"
+    },
+    "quickbid-server": {
+        "form": "server",
+        "pack": "quickbid.war",
+        "tomcat": "tomcat-quickbid-server",
+        "appdir": "webapps/quickbid",
+        "svnsuf": "server/server/quickbid-server",
+        "cnfsuf": "server/server/config/quickbid-server"
+    },
+    "statistics-admonitor": {
+        "form": "module",
+        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-admonitor",
+        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/ad-monitor-ktyp"
+    },
+    "statistics-csdb": {
+        "form": "module",
+        "pack": "csdb-statistic-servlet-1.0.0-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-csdb",
+        "appdir": "webapps/csdb-statistic-servlet-1.0.0",
+        "svnsuf": "statistics/csdb-statistic-servlet"
+    },
+    "statistics-logsystem": {
+        "form": "module",
+        "pack": "logSystem.war",
+        "tomcat": "tomcat-statistics-logsystem",
+        "appdir": "webapps/logSystem",
+        "svnsuf": "statistics/logSystem2"
+    },
+    "statistics-recommendation": {
+        "form": "module",
+        "pack": "ktyp-recommendation-0.0.1-SNAPSHOT.war",
+        "tomcat": "tomcat-statistics-recommendation",
+        "appdir": "webapps/ktyp-recommendation-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/ktyp-recommendation"
+    },
+    "statistics-search": {
+        "form": "module",
+        "pack": "search-engines-0.0.1.war",
+        "tomcat": "tomcat-statistics-search",
+        "appdir": "webapps/search-engines-0.0.1",
+        "svnsuf": "statistics/search-engines"
+    },
+    "activity-api": {
+        "form": "node",
+        "appdir": "activity-api",
+        "svnsuf": "server/shanpai-activity"
+    },
+    "ad-api": {
+        "form": "node",
+        "appdir": "ad-api",
+        "svnsuf": "ad/shanpai-ad"
+    },
+    "api": {
+        "form": "node",
+        "appdir": "api",
+        "svnsuf": "server/shanpai"
+    },
+    "auth": {
+        "form": "node",
+        "appdir": "auth",
+        "svnsuf": "cms/cms_login_server"
+    },
+    "cms": {
+        "form": "node",
+        "appdir": "cms",
+        "svnsuf": "cms/cms_system"
+    },
+    "cmsTimer": {
+        "form": "node",
+        "appdir": "cms",
+        "svnsuf": "cms/cms_system"
+    },
+    "data": {
+        "form": "node",
+        "appdir": "ad_stats",
+        "svnsuf": "ad/ad_stats"
+    },
+    "data_channel": {
+        "form": "node",
+        "appdir": "data_channel",
+        "svnsuf": "ad/channel_stats"
+    },
+    "wap": {
+        "form": "static",
+        "pack": "wap.tar.gz",
+        "appdir": "wap",
+        "svnsuf": "wap"
+    },
+    "wap_cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
+    "wapv2": {
+        "form": "static",
+        "pack": "wapv2.tar.gz",
+        "appdir": "wap/v2",
+        "svnsuf": "wap/hp_v2"
+    },
+    "wapv2_cdn": {
+        "form": "static",
+        "appdir": "cdn/v2"
+    },
+    "cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
+    "android": {
+        "form": "mobile",
+        "svnsuf": "android"
+    },
+    "ios": {
+        "form": "mobile",
+        "svnsuf": "ios"
+    }
+}

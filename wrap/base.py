@@ -68,6 +68,7 @@ def parseJobs(page):
     pt2 = re.compile(r'(?isu)<td.*?>(.*?)</td>')
     pt3 = re.compile(r'(?isu)<span.*?>(.*?)</span>')
     pt4 = re.compile(r'(?isu)^(.*?)<br />.*?onclick="(.*?)"')
+    pt5 = re.compile(r'(?isu)^(.*?)<br />.*?onclick="(.*?)"')
     jobs = []
     for td in pt1.findall(page):
         tds = []

@@ -628,13 +628,16 @@ def monitor(opt, mod):
         i = 1
         print '定时任务：'
         for job in jobs:
-            print i,job[0],job[1],job[2],job[6]
+            if GL.project() == 'kt':
+                print '%d\t%s\t%s\t%-50s %s\t%s' % (i,job[0],job[1],job[2],job[6],job[8])
+            else:
+                print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
             i += 1
             tmp1.append(job)
         i = 1
         print '队列监控：'
         for q in queues:
-            print i,q[0],q[1],q[2],q[4]
+            print '%d\t%s\t%s\t%-50s %s' % (i,q[0],q[1],q[2],q[4])
             i += 1
             tmp2.append(q)
         if opt == 'save':

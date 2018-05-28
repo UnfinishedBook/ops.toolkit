@@ -1,0 +1,145 @@
+{
+    "dev": {
+        "intro": "开发环境",
+        "monitor": "172.18.27.17:7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "172.18.27.17": [
+                "wap",
+                "ktyp-center",
+                "ktyp-ad-center",
+                "ktyp-data-process",
+                "ktyp-firewall-process",
+                "ktyp-guide-process",
+                "ktyp-nonstd-process",
+                "ktyp-prizepool-process",
+                "ktyp-proxy-process",
+                "ktyp-process",
+                "qbguide-server",
+                "qbinside-server",
+                "qbmonitor-server",
+                "qbpay-server",
+                "quickbid-server",
+                "statistics-admonitor",
+                "statistics-recommendation",
+                "statistics-search",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel"
+            ]
+        }
+    },
+    "test": {
+        "intro": "测试环境",
+        "monitor": "172.18.27.28:7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "172.18.27.28": [
+                "wap",
+                "wapv2",
+                "ktyp-center",
+                "ktyp-ad-center",
+                "ktyp-data-process",
+                "ktyp-firewall-process",
+                "ktyp-guide-process",
+                "ktyp-nonstd-process",
+                "ktyp-prizepool-process",
+                "ktyp-proxy-process",
+                "ktyp-process",
+                "qbguide-server",
+                "qbinside-server",
+                "qbmonitor-server",
+                "qbpay-server",
+                "qbshield-server",
+                "quickbid-server",
+                "statistics-admonitor",
+                "statistics-recommendation",
+                "statistics-search",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel"
+            ]
+        }
+    },
+    "pro": {
+        "intro": "生产环境",
+        "monitor": ":7092/qbmonitor",
+        "muser": "admin",
+        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "deploy": {
+            "": [
+                "cdn",
+                "wap",
+                "wap_cdn",
+                "wapv2",
+                "wapv2_cdn"
+            ],
+            "": [
+                "qbpay-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "data",
+                "data_channel"
+            ],
+            "": [
+                "qbpay-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel"
+            ],
+            "": [
+                "ktyp-center",
+                "qbinside-server",
+                "qbshield-server",
+                "quickbid-server"
+            ],
+            "": [
+                "ktyp-center",
+                "qbmonitor-server",
+                "quickbid-server"
+            ],
+            "": [
+                "ktyp-center",
+                "ktyp-ad-center",
+                "ktyp-data-process",
+                "ktyp-firewall-process",
+                "ktyp-nonstd-process",
+                "ktyp-prizepool-process",
+                "ktyp-proxy-process"
+            ],
+            "": [
+                "ktyp-center",
+                "ktyp-ad-center",
+                "ktyp-prizepool-process",
+                "ktyp-process"
+            ],
+            "": [
+                "statistics-admonitor",
+                "statistics-csdb",
+                "statistics-logsystem",
+                "statistics-recommendation",
+                "statistics-search"
+            ]
+        }
+    }
+}
