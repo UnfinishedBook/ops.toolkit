@@ -170,6 +170,7 @@
     "data_channel": {
         "form": "node",
         "appdir": "data_channel",
+        "issue": "1.2.5",
         "svnsuf": "ad/channel_stats"
     },
     "wap": {
