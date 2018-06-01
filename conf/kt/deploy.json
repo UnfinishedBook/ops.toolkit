@@ -6,7 +6,6 @@
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
             "172.18.27.17": [
-                "wap",
                 "ktyp-center",
                 "ktyp-ad-center",
                 "ktyp-data-process",
@@ -42,8 +41,7 @@
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
             "172.18.27.28": [
-                "wap",
-                "wapv2",
+                "webv2",
                 "ktyp-center",
                 "ktyp-ad-center",
                 "ktyp-data-process",
@@ -70,23 +68,37 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
+            ],
+            "172.18.27.30": [
+                "statistics-admonitor",
+                "statistics-logsystem",
+                "statistics-recommendation",
+                "statistics-reptile"
+            ],
+            "172.18.203.156": [
+                "hadoop"
+            ],
+            "172.18.203.157": [
+                "hadoop"
+            ],
+            "172.18.203.158": [
+                "hadoop"
             ]
         }
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": ":7092/qbmonitor",
+        "monitor": "172.18.27.25:7092/qbmonitor",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
-            "": [
+            "172.18.27.16": [
                 "cdn",
-                "wap",
-                "wap_cdn",
-                "wapv2",
-                "wapv2_cdn"
+                "webv2",
+                "webv2_cdn"
             ],
-            "": [
+            "172.18.203.159": [
+                "qbguide-server",
                 "qbpay-server",
                 "activity-api",
                 "ad-api",
@@ -96,7 +108,8 @@
                 "data",
                 "data_channel"
             ],
-            "": [
+            "172.18.27.24": [
+                "qbguide-server",
                 "qbpay-server",
                 "activity-api",
                 "ad-api",
@@ -107,39 +120,50 @@
                 "data",
                 "data_channel"
             ],
-            "": [
+            "172.18.203.162": [
                 "ktyp-center",
                 "qbinside-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
-            "": [
+            "172.18.27.25": [
                 "ktyp-center",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
-            "": [
+            "172.18.203.160": [
                 "ktyp-center",
                 "ktyp-ad-center",
                 "ktyp-data-process",
                 "ktyp-firewall-process",
+                "ktyp-guide-process",
                 "ktyp-nonstd-process",
                 "ktyp-prizepool-process",
                 "ktyp-proxy-process"
             ],
-            "": [
+            "172.18.27.22": [
                 "ktyp-center",
                 "ktyp-ad-center",
                 "ktyp-prizepool-process",
                 "ktyp-process"
             ],
-            "": [
+            "172.18.203.161": [
                 "statistics-admonitor",
-                "statistics-csdb",
                 "statistics-logsystem",
                 "statistics-recommendation",
-                "statistics-search"
-            ]
+                "statistics-reptile"
+            ],
+            "172.18.27.23": [
+            ],
+            "172.18.27.21": [
+                "hadoop"
+            ], 
+            "172.18.27.27": [
+                "hadoop"
+            ], 
+            "172.18.27.26": [
+                "hadoop"
+            ] 
         }
     }
 }

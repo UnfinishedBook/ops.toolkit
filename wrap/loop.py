@@ -184,7 +184,7 @@ class Loop(Cmd):
             self.help_svncnf()
         else:
             mod = getMod(args[1])
-            if mod!=None and (mod.form()=='center' or mod.form()=='process' or mod.form()=='server'):
+            if mod!=None and (mod.form()=='center' or mod.form()=='process' or mod.form()=='server' or mod.form()=='module'):
                 opt = args[0]
                 svncnf(mod, opt)
             else:
