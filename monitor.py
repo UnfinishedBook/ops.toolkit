@@ -18,7 +18,6 @@ else:
 if sys.argv[1] == 'qb':
     os.environ['ops_project'] = 'qb'
     host = 'shanpai.monitor'
-    host = 'db.monitor'
 elif sys.argv[1] == 'kt':
     os.environ['ops_project'] = 'kt'
     host = 'kt.monitor'
