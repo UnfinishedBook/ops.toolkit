@@ -31,6 +31,12 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
+            ],
+            "172.18.27.20": [
+                "statistics-admonitor",
+                "statistics-logsystem",
+                "statistics-recommendation",
+                "statistics-reptile"
             ]
         }
     },
