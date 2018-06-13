@@ -78,13 +78,6 @@
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
-            "172.18.27.8": [
-                "cdn",
-                "wap",
-                "wap_cdn",
-                "wapv2",
-                "wapv2_cdn"
-            ],
             "172.18.27.14": [
                 "cdn",
                 "wap",
