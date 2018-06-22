@@ -21,6 +21,8 @@
                 "data_channel"
             ],
             "172.18.27.20": [
+                "yh798-stats-center",
+                "yh798-stats-process",
                 "statistics-admonitor",
                 "statistics-logsystem",
                 "statistics-recommendation",
@@ -51,6 +53,8 @@
                 "data_channel"
             ],
             "172.18.27.30": [
+                "yh798-stats-center",
+                "yh798-stats-process",
                 "statistics-admonitor",
                 "statistics-logsystem",
                 "statistics-recommendation",

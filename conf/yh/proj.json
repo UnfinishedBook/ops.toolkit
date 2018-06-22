@@ -15,47 +15,13 @@
         "cnfsuf": "server/center/config/coupon798-ad-center",
         "port": "20605"
     },
-    "coupon798-data-process": {
-        "form": "process",
-        "pack": "coupon798-data-process-assembly.zip",
-        "appdir": "coupon798-data-process",
-        "svnsuf": "server/process/coupon798-data-process",
-        "cnfsuf": "server/process/config/coupon798-data-process"
-    },
-    "coupon798-firewall-process": {
-        "form": "process",
-        "pack": "coupon798-firewall-process-assembly.zip",
-        "appdir": "coupon798-firewall-process",
-        "svnsuf": "server/process/coupon798-firewall-process",
-        "cnfsuf": "server/process/config/coupon798-firewall-process"
-    },
-    "coupon798-guide-process": {
-        "form": "process",
-        "pack": "coupon798-guide-process-assembly.zip",
-        "appdir": "coupon798-guide-process",
-        "svnsuf": "server/process/coupon798-guide-process",
-        "cnfsuf": "server/process/config/coupon798-guide-process"
-    },
-    "coupon798-nonstd-process": {
-        "form": "process",
-        "pack": "coupon798-nonstd-process-assembly.zip",
-        "appdir": "coupon798-nonstd-process",
-        "svnsuf": "server/process/coupon798-nonstd-process",
-        "cnfsuf": "server/process/config/coupon798-nonstd-process"
-    },
-    "coupon798-prizepool-process": {
-        "form": "process",
-        "pack": "coupon798-prizepool-process-assembly.zip",
-        "appdir": "coupon798-prizepool-process",
-        "svnsuf": "server/process/coupon798-prizepool-process",
-        "cnfsuf": "server/process/config/coupon798-prizepool-process"
-    },
-    "coupon798-proxy-process": {
-        "form": "process",
-        "pack": "coupon798-proxy-process-assembly.zip",
-        "appdir": "coupon798-proxy-process",
-        "svnsuf": "server/process/coupon798-proxy-process",
-        "cnfsuf": "server/process/config/coupon798-proxy-process"
+    "yh798-stats-center": {
+        "form": "center",
+        "pack": "yh798-stats-provider-0.1.0-assembly.zip",
+        "appdir": "yh798-stats-provider-0.1.0",
+        "svnsuf": "server/center/yh798-stats-center",
+        "cnfsuf": "server/center/config/yh798-stats-center",
+        "port": "20606"
     },
     "coupon798-process": {
         "form": "process",
@@ -63,6 +29,13 @@
         "appdir": "coupon798-process",
         "svnsuf": "server/process/coupon798-process",
         "cnfsuf": "server/process/config/coupon798-process"
+    },
+    "yh798-stats-process": {
+        "form": "process",
+        "pack": "yh798-stats-process-assembly.zip",
+        "appdir": "yh798-stats-process",
+        "svnsuf": "server/process/yh798-stats-process",
+        "cnfsuf": "server/process/config/yh798-stats-process"
     },
     "coupon-server": {
         "form": "newserver",
@@ -202,7 +175,7 @@
     },
     "data": {
         "form": "node",
-        "appdir": "ad_stats",
+        "appdir": "data",
         "svnsuf": "ad/ad_stats"
     },
     "data_channel": {
