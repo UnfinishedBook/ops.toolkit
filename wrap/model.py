@@ -101,7 +101,7 @@ class Model:
     def pidname(self):  #查询进程时用的字符串
         if self.form()=='server' or self.form()=='module':
             return '/%s/' % self.tomcat()
-        elif self.form()=='center' or self.form()=='process':
+        elif self.form()=='center' or self.form()=='process' or self.form()=='newserver':
             return self.appdir() + '/'
         else:
             return None
@@ -115,11 +115,13 @@ class Model:
     def pidexe(self):   #启动文件
         if self.form()=='server' or self.form()=='module':
             return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
-        elif self.form()=='center' or self.form()=='process':
+        elif self.form()=='center' or self.form()=='process' or self.form()=='newserver':
             if GL.env()!='pro' and self.form()=='center':
                 return '%s/bin/start-dev.sh' % self.appdir()
             if GL.env()!='pro' and self.form()=='process':
                 return '%s/bin/lowstart.sh' % self.appdir()
+            if GL.env()!='pro' and self.form()=='newserver':
+                return '%s/bin/start-dev.sh' % self.appdir()
             else:
                 return '%s/bin/start.sh' % self.appdir()
         else:

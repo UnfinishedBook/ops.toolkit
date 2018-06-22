@@ -237,9 +237,6 @@ def up_center(mod):
         if out == 'yes':
             remoteCmd(ip, cmd)
 
-def up_process(mod):
-    up_center(mod)
-
 def update(mod):
     if mod.name() == 'wap':
         up_wap(mod)
@@ -257,10 +254,8 @@ def update(mod):
         up_h5(mod)
     elif mod.name() == 'php':
         up_php(mod)
-    elif mod.form() == 'center':
+    elif mod.form()=='center' or mod.form()=='process' or mod.form()=='newserver':
         up_center(mod)
-    elif mod.form() == 'process':
-        up_process(mod)
     elif mod.form()=='server' or mod.form()=='module':
         up_server(mod)
     else:

@@ -17,6 +17,11 @@
         "cnfdir": "/data/config/process",
         "updir": "/mydata/process/zip" 
     },
+    "newserver": {
+        "appdir": "/mydata/server",
+        "cnfdir": "/data/config/server",
+        "updir": "/mydata/server/zip" 
+    },
     "server": {
         "appdir": "/mydata/server",
         "cnfdir": "/data/config/server",

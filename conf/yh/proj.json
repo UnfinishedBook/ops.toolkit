@@ -64,6 +64,27 @@
         "svnsuf": "server/process/coupon798-process",
         "cnfsuf": "server/process/config/coupon798-process"
     },
+    "coupon-server": {
+        "form": "newserver",
+        "pack": "coupon-server-assembly.zip",
+        "appdir": "coupon-server",
+        "svnsuf": "server/server/coupon-server",
+        "cnfsuf": "server/server/config/coupon-server"
+    },
+    "monitor-server": {
+        "form": "newserver",
+        "pack": "monitor-server-assembly.zip",
+        "appdir": "monitor-server",
+        "svnsuf": "server/server/monitor-server",
+        "cnfsuf": "server/server/config/monitor-server"
+    },
+    "weixin-server": {
+        "form": "newserver",
+        "pack": "weixin-server-assembly.zip",
+        "appdir": "weixin-server",
+        "svnsuf": "server/server/weixin-server",
+        "cnfsuf": "server/server/config/weixin-server"
+    },
     "qbguide-server": {
         "form": "server",
         "pack": "qbguide.war",
@@ -152,17 +173,17 @@
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
-        "svnsuf": "server/shanpai-activity"
+        "svnsuf": "server/coupon798-activity"
     },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "svnsuf": "ad/shanpai-ad"
+        "svnsuf": "ad/coupon798-ad"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "svnsuf": "server/shanpai"
+        "svnsuf": "server/coupon798"
     },
     "auth": {
         "form": "node",
@@ -189,15 +210,15 @@
         "appdir": "data_channel",
         "svnsuf": "ad/channel_stats"
     },
-    "webv2": {
+    "webv1": {
         "form": "static",
-        "pack": "webv2.tar.gz",
-        "appdir": "wap",
-        "svnsuf": "web/v2"
+        "pack": "webv1.tar.gz",
+        "appdir": "web/v1",
+        "svnsuf": "web/v1"
     },
-    "webv2_cdn": {
+    "webv1_cdn": {
         "form": "static",
-        "appdir": "cdn/v2"
+        "appdir": "cdn/v1"
     },
     "cdn": {
         "form": "static",
