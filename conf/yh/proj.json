@@ -1,68 +1,68 @@
 {
-    "ktyp-center": {
+    "coupon798-center": {
         "form": "center",
-        "pack": "ktyp-provider-0.1.0-assembly.zip",
-        "appdir": "ktyp-provider-0.1.0",
-        "svnsuf": "server/center/ktyp-center",
-        "cnfsuf": "server/center/config/ktyp-center",
+        "pack": "coupon798-provider-0.1.0-assembly.zip",
+        "appdir": "coupon798-provider-0.1.0",
+        "svnsuf": "server/center/coupon798-center",
+        "cnfsuf": "server/center/config/coupon798-center",
         "port": "20604"
     },
-    "ktyp-ad-center": {
+    "coupon798-ad-center": {
         "form": "center",
-        "pack": "ktyp-ad-provider-0.1.0-assembly.zip",
-        "appdir": "ktyp-ad-provider-0.1.0",
-        "svnsuf": "server/center/ktyp-ad-center",
-        "cnfsuf": "server/center/config/ktyp-ad-center",
+        "pack": "coupon798-ad-provider-0.1.0-assembly.zip",
+        "appdir": "coupon798-ad-provider-0.1.0",
+        "svnsuf": "server/center/coupon798-ad-center",
+        "cnfsuf": "server/center/config/coupon798-ad-center",
         "port": "20605"
     },
-    "ktyp-data-process": {
+    "coupon798-data-process": {
         "form": "process",
-        "pack": "ktyp-data-process-assembly.zip",
-        "appdir": "ktyp-data-process",
-        "svnsuf": "server/process/ktyp-data-process",
-        "cnfsuf": "server/process/config/ktyp-data-process"
+        "pack": "coupon798-data-process-assembly.zip",
+        "appdir": "coupon798-data-process",
+        "svnsuf": "server/process/coupon798-data-process",
+        "cnfsuf": "server/process/config/coupon798-data-process"
     },
-    "ktyp-firewall-process": {
+    "coupon798-firewall-process": {
         "form": "process",
-        "pack": "ktyp-firewall-process-assembly.zip",
-        "appdir": "ktyp-firewall-process",
-        "svnsuf": "server/process/ktyp-firewall-process",
-        "cnfsuf": "server/process/config/ktyp-firewall-process"
+        "pack": "coupon798-firewall-process-assembly.zip",
+        "appdir": "coupon798-firewall-process",
+        "svnsuf": "server/process/coupon798-firewall-process",
+        "cnfsuf": "server/process/config/coupon798-firewall-process"
     },
-    "ktyp-guide-process": {
+    "coupon798-guide-process": {
         "form": "process",
-        "pack": "ktyp-guide-process-assembly.zip",
-        "appdir": "ktyp-guide-process",
-        "svnsuf": "server/process/ktyp-guide-process",
-        "cnfsuf": "server/process/config/ktyp-guide-process"
+        "pack": "coupon798-guide-process-assembly.zip",
+        "appdir": "coupon798-guide-process",
+        "svnsuf": "server/process/coupon798-guide-process",
+        "cnfsuf": "server/process/config/coupon798-guide-process"
     },
-    "ktyp-nonstd-process": {
+    "coupon798-nonstd-process": {
         "form": "process",
-        "pack": "ktyp-nonstd-process-assembly.zip",
-        "appdir": "ktyp-nonstd-process",
-        "svnsuf": "server/process/ktyp-nonstd-process",
-        "cnfsuf": "server/process/config/ktyp-nonstd-process"
+        "pack": "coupon798-nonstd-process-assembly.zip",
+        "appdir": "coupon798-nonstd-process",
+        "svnsuf": "server/process/coupon798-nonstd-process",
+        "cnfsuf": "server/process/config/coupon798-nonstd-process"
     },
-    "ktyp-prizepool-process": {
+    "coupon798-prizepool-process": {
         "form": "process",
-        "pack": "ktyp-prizepool-process-assembly.zip",
-        "appdir": "ktyp-prizepool-process",
-        "svnsuf": "server/process/ktyp-prizepool-process",
-        "cnfsuf": "server/process/config/ktyp-prizepool-process"
+        "pack": "coupon798-prizepool-process-assembly.zip",
+        "appdir": "coupon798-prizepool-process",
+        "svnsuf": "server/process/coupon798-prizepool-process",
+        "cnfsuf": "server/process/config/coupon798-prizepool-process"
     },
-    "ktyp-proxy-process": {
+    "coupon798-proxy-process": {
         "form": "process",
-        "pack": "ktyp-proxy-process-assembly.zip",
-        "appdir": "ktyp-proxy-process",
-        "svnsuf": "server/process/ktyp-proxy-process",
-        "cnfsuf": "server/process/config/ktyp-proxy-process"
+        "pack": "coupon798-proxy-process-assembly.zip",
+        "appdir": "coupon798-proxy-process",
+        "svnsuf": "server/process/coupon798-proxy-process",
+        "cnfsuf": "server/process/config/coupon798-proxy-process"
     },
-    "ktyp-process": {
+    "coupon798-process": {
         "form": "process",
-        "pack": "ktyp-process-assembly.zip",
-        "appdir": "ktyp-process",
-        "svnsuf": "server/process/ktyp-process",
-        "cnfsuf": "server/process/config/ktyp-process"
+        "pack": "coupon798-process-assembly.zip",
+        "appdir": "coupon798-process",
+        "svnsuf": "server/process/coupon798-process",
+        "cnfsuf": "server/process/config/coupon798-process"
     },
     "qbguide-server": {
         "form": "server",
@@ -114,26 +114,26 @@
     },
     "statistics-admonitor": {
         "form": "module",
-        "pack": "ad-monitor-ktyp-0.0.1-SNAPSHOT.war",
+        "pack": "ad-monitor-coupon798-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
-        "appdir": "webapps/ad-monitor-ktyp-0.0.1-SNAPSHOT",
-        "svnsuf": "server/statistics/ad-monitor-ktyp",
-        "cnfsuf": "server/statistics/config/ad-monitor-ktyp"
+        "appdir": "webapps/ad-monitor-coupon798-0.0.1-SNAPSHOT",
+        "svnsuf": "server/statistics/ad-monitor-coupon798",
+        "cnfsuf": "server/statistics/config/ad-monitor-coupon798"
     },
     "statistics-logsystem": {
         "form": "module",
         "pack": "log-system.war",
         "tomcat": "tomcat-statistics-logsystem",
         "appdir": "webapps/log-system",
-        "svnsuf": "server/statistics/log-system-ktyp"
+        "svnsuf": "server/statistics/log-system-coupon798"
     },
     "statistics-recommendation": {
         "form": "module",
-        "pack": "ktyp-recommendation-0.0.1-SNAPSHOT.war",
+        "pack": "coupon798-recommendation-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-recommendation",
-        "appdir": "webapps/ktyp-recommendation-0.0.1-SNAPSHOT",
-        "svnsuf": "server/statistics/ktyp-recommendation",
-        "cnfsuf": "server/statistics/config/ktyp-recommendation"
+        "appdir": "webapps/coupon798-recommendation-0.0.1-SNAPSHOT",
+        "svnsuf": "server/statistics/coupon798-recommendation",
+        "cnfsuf": "server/statistics/config/coupon798-recommendation"
     },
     "statistics-reptile": {
         "form": "module",

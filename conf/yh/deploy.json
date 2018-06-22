@@ -1,20 +1,20 @@
 {
     "dev": {
         "intro": "开发环境",
-        "monitor": "172.18.27.17:7092",
+        "monitor": "172.18.203.163:7092",
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
-            "172.18.27.17": [
-                "ktyp-center",
-                "ktyp-ad-center",
-                "ktyp-data-process",
-                "ktyp-firewall-process",
-                "ktyp-guide-process",
-                "ktyp-nonstd-process",
-                "ktyp-prizepool-process",
-                "ktyp-proxy-process",
-                "ktyp-process",
+            "172.18.203.163": [
+                "coupon798-center",
+                "coupon798-ad-center",
+                "coupon798-data-process",
+                "coupon798-firewall-process",
+                "coupon798-guide-process",
+                "coupon798-nonstd-process",
+                "coupon798-prizepool-process",
+                "coupon798-proxy-process",
+                "coupon798-process",
                 "qbguide-server",
                 "qbinside-server",
                 "qbmonitor-server",
@@ -42,21 +42,21 @@
     },
     "test": {
         "intro": "测试环境",
-        "monitor": "172.18.27.28:7092/qbmonitor",
+        "monitor": "172.18.27.17:7092/qbmonitor",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
-            "172.18.27.28": [
+            "172.18.27.17": [
                 "webv2",
-                "ktyp-center",
-                "ktyp-ad-center",
-                "ktyp-data-process",
-                "ktyp-firewall-process",
-                "ktyp-guide-process",
-                "ktyp-nonstd-process",
-                "ktyp-prizepool-process",
-                "ktyp-proxy-process",
-                "ktyp-process",
+                "coupon798-center",
+                "coupon798-ad-center",
+                "coupon798-data-process",
+                "coupon798-firewall-process",
+                "coupon798-guide-process",
+                "coupon798-nonstd-process",
+                "coupon798-prizepool-process",
+                "coupon798-proxy-process",
+                "coupon798-process",
                 "qbguide-server",
                 "qbinside-server",
                 "qbmonitor-server",
@@ -127,31 +127,31 @@
                 "data_channel"
             ],
             "172.18.203.162": [
-                "ktyp-center",
+                "coupon798-center",
                 "qbinside-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
             "172.18.27.25": [
-                "ktyp-center",
+                "coupon798-center",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
             "172.18.203.160": [
-                "ktyp-center",
-                "ktyp-ad-center",
-                "ktyp-data-process",
-                "ktyp-firewall-process",
-                "ktyp-guide-process",
-                "ktyp-nonstd-process",
-                "ktyp-prizepool-process",
-                "ktyp-proxy-process"
+                "coupon798-center",
+                "coupon798-ad-center",
+                "coupon798-data-process",
+                "coupon798-firewall-process",
+                "coupon798-guide-process",
+                "coupon798-nonstd-process",
+                "coupon798-prizepool-process",
+                "coupon798-proxy-process"
             ],
             "172.18.27.22": [
-                "ktyp-center",
-                "ktyp-ad-center",
-                "ktyp-prizepool-process",
-                "ktyp-process"
+                "coupon798-center",
+                "coupon798-ad-center",
+                "coupon798-prizepool-process",
+                "coupon798-process"
             ],
             "172.18.203.161": [
                 "statistics-admonitor",
