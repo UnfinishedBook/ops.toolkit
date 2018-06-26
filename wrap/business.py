@@ -541,20 +541,20 @@ def pm2(opt, mod=None):
                 remoteCmd(ip, cmd)
 
 def getJobs(s):
-    url = 'http://%s/ljob_controller/get_online_ljobs' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mget_job())
     r = s.post(url)
     jobs = parseJobs(r.text)
     return jobs
 
 def getQueues(s):
-    url = 'http://%s/lqueue_controller/get_online_lqueues.do' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mget_queue())
     r = s.post(url)
     queues = parseQueues(r.text)
     return queues
 
 #这里是center的监控服务
 def getCenterSrv(s):
-    url = 'http://%s/dubbo/get_check_servers.do' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mget_dubbo())
     r = s.post(url)
     return parseCenterSrv(r.text)
 
@@ -574,7 +574,7 @@ def getMonitor(s, mod):
     return (retJobs,retQueues)
 
 def monitorJob(s, ip_id, ljobKey, start):
-    url = 'http://%s/ljob_controller/send_ljob_status_request' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mctl_job())
     if start == True:
         status = '1'
     else:
@@ -587,7 +587,7 @@ def monitorJob(s, ip_id, ljobKey, start):
         print '失败'
 
 def monitorQueue(s, ip_id, lqueueKey, start):
-    url = 'http://%s/lqueue_controller/send_lqueue_status_request.do' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mctl_queue())
     if start == True:
         status = '1'
     else:
@@ -604,7 +604,7 @@ def monitorCenterSrv(s, serverIP, status):
         info = '开启...'
     else:
         info = '关闭...'
-    url = 'http://%s/dubbo/change_check_status' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mctl_dubbo())
     data = {'serverIP':serverIP,'status':status}
     r = s.post(url, data=data)
     if r.status_code == 200:
@@ -628,7 +628,7 @@ def monitorSave():
 
 def monitor(opt, mod):
     s = requests.session()
-    url = 'http://%s/login_controller/do_login' % GL.monitor()
+    url = 'http://%s/%s' % (GL.monitor(),GL.mlogin())
     r = s.post(url, data={'loginName':GL.muser(),'password':GL.mpwd()}, timeout=3)
     if '退出登录' not in r.text:
         GL.LOG.error('登录失败')

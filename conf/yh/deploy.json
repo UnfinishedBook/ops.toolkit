@@ -2,6 +2,13 @@
     "dev": {
         "intro": "开发环境",
         "monitor": "172.18.203.163:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_dubbo": "dubbo/get_check_servers",
+        "mctl_dubbo": "dubbo/change_check_status",
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
@@ -32,9 +39,16 @@
     },
     "test": {
         "intro": "测试环境",
-        "monitor": "172.18.27.17:7092/qbmonitor",
-        "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "monitor": "172.18.27.17:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_dubbo": "dubbo/get_check_servers",
+        "mctl_dubbo": "dubbo/change_check_status",
+        "muser": "root",
+        "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
             "172.18.27.17": [
                 "webv1",
@@ -74,9 +88,16 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.27.25:7092/qbmonitor",
-        "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "monitor": "172.18.203.162:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_dubbo": "dubbo/get_check_servers",
+        "mctl_dubbo": "dubbo/change_check_status",
+        "muser": "root",
+        "mpwd": "85dae7cb22252d3da5af4d23515b120e",
         "deploy": {
             "172.18.27.16": [
                 "cdn",

@@ -132,6 +132,13 @@ class Global:
         self.__env = None
         #self.remote = {}
         self.__monitor = None
+        self.__mlogin = None
+        self.__mget_job = None
+        self.__mget_queue = None
+        self.__mctl_job = None
+        self.__mctl_queue = None
+        self.__mget_dubbo = None
+        self.__mctl_dubbo = None
         self.__muser = None
         self.__mpwd = None
         self.__closeJobs = None
@@ -186,6 +193,41 @@ class Global:
         if self.__monitor == None:
             self.__monitor = self.deploy()[self.env()]['monitor']
         return self.__monitor
+
+    def mlogin(self):
+        if self.__mlogin == None:
+            self.__mlogin = self.deploy()[self.env()]['mlogin']
+        return self.__mlogin
+
+    def mget_job(self):
+        if self.__mget_job == None:
+            self.__mget_job = self.deploy()[self.env()]['mget_job']
+        return self.__mget_job
+
+    def mget_queue(self):
+        if self.__mget_queue == None:
+            self.__mget_queue = self.deploy()[self.env()]['mget_queue']
+        return self.__mget_queue
+
+    def mctl_job(self):
+        if self.__mctl_job == None:
+            self.__mctl_job = self.deploy()[self.env()]['mctl_job']
+        return self.__mctl_job
+
+    def mctl_queue(self):
+        if self.__mctl_queue == None:
+            self.__mctl_queue = self.deploy()[self.env()]['mctl_queue']
+        return self.__mctl_queue
+
+    def mget_dubbo(self):
+        if self.__mget_dubbo == None:
+            self.__mget_dubbo = self.deploy()[self.env()]['mget_dubbo']
+        return self.__mget_dubbo
+
+    def mctl_dubbo(self):
+        if self.__mctl_dubbo == None:
+            self.__mctl_dubbo = self.deploy()[self.env()]['mctl_dubbo']
+        return self.__mctl_dubbo
 
     def muser(self):
         if self.__muser == None:
