@@ -85,6 +85,10 @@ def parseJobs(page):
         if len(status) > 0:
             job[6] = status[0][0].strip()
             job.append(status[0][1])
+        isrun = pt5.findall(job[7])
+        if len(isrun) > 0:
+            job[7] = isrun[0][0].strip()
+            job.append(isrun[0][1])
     return jobs
 
 def parseQueues(page):
