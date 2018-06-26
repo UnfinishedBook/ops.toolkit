@@ -37,9 +37,10 @@
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
             "172.18.27.17": [
-                "webv2",
+                "webv1",
                 "coupon798-center",
                 "coupon798-process",
+                "weixin-process",
                 "coupon-server",
                 "monitor-server",
                 "weixin-server",
@@ -79,12 +80,11 @@
         "deploy": {
             "172.18.27.16": [
                 "cdn",
-                "webv2",
-                "webv2_cdn"
+                "webv1",
+                "webv1_cdn"
             ],
             "172.18.203.159": [
-                "qbguide-server",
-                "qbpay-server",
+                "coupon-server",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -94,8 +94,7 @@
                 "data_channel"
             ],
             "172.18.27.24": [
-                "qbguide-server",
-                "qbpay-server",
+                "coupon-server",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -107,21 +106,19 @@
             ],
             "172.18.203.162": [
                 "coupon798-center",
-                "qbinside-server",
-                "qbshield-server",
-                "quickbid-server"
+                "weixin-server",
+                "monitor-server"
             ],
             "172.18.27.25": [
                 "coupon798-center",
-                "qbmonitor-server",
-                "quickbid-server"
+                "coupon798-ad-center",
+                "weixin-server"
             ],
             "172.18.203.160": [
-                "coupon798-center"
-            ],
-            "172.18.27.22": [
                 "coupon798-center",
-                "coupon798-process"
+                "coupon798-ad-center",
+                "coupon798-process",
+                "weixin-process"
             ],
             "172.18.203.161": [
                 "statistics-admonitor",

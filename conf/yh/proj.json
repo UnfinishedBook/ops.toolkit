@@ -1,16 +1,16 @@
 {
     "coupon798-center": {
         "form": "center",
-        "pack": "coupon798-provider-0.1.0-assembly.zip",
-        "appdir": "coupon798-provider-0.1.0",
+        "pack": "coupon798-provider-1.0.0-assembly.zip",
+        "appdir": "coupon798-provider-1.0.0",
         "svnsuf": "server/center/coupon798-center",
         "cnfsuf": "server/center/config/coupon798-center",
         "port": "20604"
     },
     "coupon798-ad-center": {
         "form": "center",
-        "pack": "coupon798-ad-provider-0.1.0-assembly.zip",
-        "appdir": "coupon798-ad-provider-0.1.0",
+        "pack": "coupon798-ad-provider-1.0.0-assembly.zip",
+        "appdir": "coupon798-ad-provider-1.0.0",
         "svnsuf": "server/center/coupon798-ad-center",
         "cnfsuf": "server/center/config/coupon798-ad-center",
         "port": "20605"
@@ -29,6 +29,13 @@
         "appdir": "coupon798-process",
         "svnsuf": "server/process/coupon798-process",
         "cnfsuf": "server/process/config/coupon798-process"
+    },
+    "weixin-process": {
+        "form": "process",
+        "pack": "weixin-process-assembly.zip",
+        "appdir": "weixin-process",
+        "svnsuf": "server/process/weixin-process",
+        "cnfsuf": "server/process/config/weixin-process"
     },
     "yh798-stats-process": {
         "form": "process",
@@ -57,54 +64,6 @@
         "appdir": "weixin-server",
         "svnsuf": "server/server/weixin-server",
         "cnfsuf": "server/server/config/weixin-server"
-    },
-    "qbguide-server": {
-        "form": "server",
-        "pack": "qbguide.war",
-        "tomcat": "tomcat-qbguide-server",
-        "appdir": "webapps/qbguide",
-        "svnsuf": "server/server/qbguide-server",
-        "cnfsuf": "server/server/config/qbguide-server"
-    },
-    "qbinside-server": {
-        "form": "server",
-        "pack": "qbinside.war",
-        "tomcat": "tomcat-qbinside-server",
-        "appdir": "webapps/qbinside",
-        "svnsuf": "server/server/qbinside-server",
-        "cnfsuf": "server/server/config/qbinside-server"
-    },
-    "qbmonitor-server": {
-        "form": "server",
-        "pack": "qbmonitor.war",
-        "tomcat": "tomcat-qbmonitor-server",
-        "appdir": "webapps/qbmonitor",
-        "svnsuf": "server/server/qbmonitor-server",
-        "cnfsuf": "server/server/config/qbmonitor-server"
-    },
-    "qbpay-server": {
-        "form": "server",
-        "pack": "qbpay.war",
-        "tomcat": "tomcat-qbpay-server",
-        "appdir": "webapps/qbpay",
-        "svnsuf": "server/server/qbpay-server",
-        "cnfsuf": "server/server/config/qbpay-server"
-    },
-    "qbshield-server": {
-        "form": "server",
-        "pack": "qbshield.war",
-        "tomcat": "tomcat-qbshield-server",
-        "appdir": "webapps/qbshield",
-        "svnsuf": "server/server/qbshield-server",
-        "cnfsuf": "server/server/config/qbshield-server"
-    },
-    "quickbid-server": {
-        "form": "server",
-        "pack": "quickbid.war",
-        "tomcat": "tomcat-quickbid-server",
-        "appdir": "webapps/quickbid",
-        "svnsuf": "server/server/quickbid-server",
-        "cnfsuf": "server/server/config/quickbid-server"
     },
     "statistics-admonitor": {
         "form": "module",

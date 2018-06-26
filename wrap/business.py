@@ -494,11 +494,11 @@ def start(mod):
         if out != 'yes':
             continue
         _start(ip, mod)
-        dubboAdmin(mod, ip, 'enable')
+        #dubboAdmin(mod, ip, 'enable')
 
 def stop(mod):
     for ip in mod.deploy():
-        dubboAdmin(mod, ip, 'disable')
+        #dubboAdmin(mod, ip, 'disable')
         out = ask('将在 (%s) 停止 (%s), 确认立刻执行吗？' % (ip,mod.name()), 'yes,no', 'no')
         if out != 'yes':
             continue
