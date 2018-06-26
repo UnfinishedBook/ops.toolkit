@@ -150,7 +150,7 @@
     },
     "webv1_cdn": {
         "form": "static",
-        "appdir": "cdn/v1"
+        "appdir": "cdn"
     },
     "cdn": {
         "form": "static",

@@ -141,6 +141,25 @@ def up_wapv2(mod, patch=False):
         if out == 'yes':
             localCmd(cmd)
 
+def up_webv1(mod, patch=False):
+    pk = '%s/webv1.tar.gz' % GL.pkdir()
+    if os.path.exists(pk) == False:
+        GL.LOG.error('未发现更新包：%s' % pk)
+        return
+    tmp = '%s/webv1' % GL.pkdir()
+    localCmd('mkdir -p %s' % tmp)
+    localCmd('rm -rf %s/*' % tmp)
+    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    src = '%s/dist' % tmp
+    if os.path.exists(src) == False:
+        GL.LOG.error('未发现目录: %s' % src)
+        return
+    for ip in mod.deploy():
+        cmd = 'rsync -azv %s/ webuser@%s:%s/' % (src,ip,mod.appdir())
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+
 def up_webv2(mod, patch=False):
     pk = '%s/webv2.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
@@ -208,6 +227,25 @@ def up_wapv2_cdn(mod):
         if out == 'yes':
             remoteCmd(ip, cmd)
 
+def up_webv1_cdn(mod):
+    if GL.env()!='pro' and GL.env()!='test':
+        GL.LOG.error('该环境(%s)暂不支持webv1_cdn的更新' % GL.env())
+    #src_wap = '%s/wap/prod' % GL.pkdir()
+    mod_v1 = getMod('webv1')
+    for ip in mod.deploy():
+        cmdlist = [
+            'sudo -u webuser rsync -azv %s/css/ %s/css/' % (mod_v1.appdir(),mod.appdir()),
+            'sudo -u webuser rsync -azv %s/img/ %s/img/' % (mod_v1.appdir(),mod.appdir()),
+            'sudo -u webuser rsync -azv %s/js/ %s/js/' % (mod_v1.appdir(),mod.appdir())
+            #'chown -R webuser:web %s' % mod.appdir()
+        ]
+        for tmp in cmdlist:
+            print tmp
+        out = ask('将在 (%s) 运行命令上述 (%d) 条命令, 确认立刻执行吗？' % (ip,len(cmdlist)), 'yes,no', 'no')
+        if out == 'yes':
+            for cmd in cmdlist:
+                remoteCmd(ip, cmd)
+
 def up_webv2_cdn(mod):
     if GL.env()!='pro' and GL.env()!='test':
         GL.LOG.error('该环境(%s)暂不支持webv2_cdn的更新' % GL.env())
@@ -246,6 +284,10 @@ def update(mod):
         up_wapv2(mod)
     elif mod.name() == 'wapv2_cdn':
         up_wapv2_cdn(mod)
+    elif mod.name() == 'webv1':
+        up_webv1(mod)
+    elif mod.name() == 'webv1_cdn':
+        up_webv1_cdn(mod)
     elif mod.name() == 'webv2':
         up_webv2(mod)
     elif mod.name() == 'webv2_cdn':
