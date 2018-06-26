@@ -4,14 +4,14 @@
 import os
 import sys
 
-if len(sys.argv)==4 and (sys.argv[1]=='qb' or sys.argv[1]=='kt' or sys.argv[1]=='hp') and (sys.argv[2]=='job' or sys.argv[2]=='queue') and sys.argv[3]=='--discover':
+if len(sys.argv)==4 and (sys.argv[1]=='qb' or sys.argv[1]=='kt' or sys.argv[1]=='yh' or sys.argv[1]=='hp') and (sys.argv[2]=='job' or sys.argv[2]=='queue') and sys.argv[3]=='--discover':
     pass
-elif len(sys.argv)==3 and (sys.argv[1]=='qb' or sys.argv[1]=='kt' or sys.argv[1]=='hp') and sys.argv[2]=='--up':
+elif len(sys.argv)==3 and (sys.argv[1]=='qb' or sys.argv[1]=='kt' or sys.argv[1]=='yh' or sys.argv[1]=='hp') and sys.argv[2]=='--up':
     pass
 else:
     print '''usage:
-    monitor.py <qb/hp/kt> <job/queue> --discover
-    monitor.py <qb/hp/kt> --up
+    monitor.py <qb/hp/kt/yh> <job/queue> --discover
+    monitor.py <qb/hp/kt/yh> --up
     '''
     exit()
 
@@ -21,6 +21,9 @@ if sys.argv[1] == 'qb':
 elif sys.argv[1] == 'kt':
     os.environ['ops_project'] = 'kt'
     host = 'kt.monitor'
+elif sys.argv[1] == 'yh':
+    os.environ['ops_project'] = 'yh'
+    host = 'yh.monitor'
 elif sys.argv[1] == 'hp':
     os.environ['ops_project'] = 'hp'
     host = 'hp.monitor'
