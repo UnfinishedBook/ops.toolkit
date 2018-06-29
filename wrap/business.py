@@ -599,7 +599,7 @@ def getQueues(s):
 
 #这里是center的监控服务
 def getCenterSrv(s):
-    url = 'http://%s/%s' % (GL.monitor(),GL.mget_dubbo())
+    url = 'http://%s/%s' % (GL.monitor(),GL.mget_center())
     r = s.post(url)
     return parseCenterSrv(r.text)
 
@@ -649,7 +649,7 @@ def monitorCenterSrv(s, serverIP, status):
         info = '开启...'
     else:
         info = '关闭...'
-    url = 'http://%s/%s' % (GL.monitor(),GL.mctl_dubbo())
+    url = 'http://%s/%s' % (GL.monitor(),GL.mctl_center())
     data = {'serverIP':serverIP,'status':status}
     r = s.post(url, data=data)
     if r.status_code == 200:

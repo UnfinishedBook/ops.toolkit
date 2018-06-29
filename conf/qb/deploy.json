@@ -7,8 +7,8 @@
         "mget_queue": "lqueue_controller/get_online_lqueues.do",
         "mctl_job": "ljob_controller/send_ljob_status_request",
         "mctl_queue": "lqueue_controller/send_lqueue_status_request.do",
-        "mget_dubbo": "dubbo/get_check_servers.do",
-        "mctl_dubbo": "dubbo/change_check_status",
+        "mget_center": "dubbo/get_check_servers.do",
+        "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
@@ -49,8 +49,8 @@
         "mget_queue": "lqueue_controller/get_online_lqueues.do",
         "mctl_job": "ljob_controller/send_ljob_status_request",
         "mctl_queue": "lqueue_controller/send_lqueue_status_request.do",
-        "mget_dubbo": "dubbo/get_check_servers.do",
-        "mctl_dubbo": "dubbo/change_check_status",
+        "mget_center": "dubbo/get_check_servers.do",
+        "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {
@@ -94,8 +94,8 @@
         "mget_queue": "lqueue_controller/get_online_lqueues.do",
         "mctl_job": "ljob_controller/send_ljob_status_request",
         "mctl_queue": "lqueue_controller/send_lqueue_status_request.do",
-        "mget_dubbo": "dubbo/get_check_servers.do",
-        "mctl_dubbo": "dubbo/change_check_status",
+        "mget_center": "dubbo/get_check_servers.do",
+        "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
         "deploy": {

@@ -137,8 +137,8 @@ class Global:
         self.__mget_queue = None
         self.__mctl_job = None
         self.__mctl_queue = None
-        self.__mget_dubbo = None
-        self.__mctl_dubbo = None
+        self.__mget_center = None
+        self.__mctl_center = None
         self.__muser = None
         self.__mpwd = None
         self.__closeJobs = None
@@ -219,15 +219,15 @@ class Global:
             self.__mctl_queue = self.deploy()[self.env()]['mctl_queue']
         return self.__mctl_queue
 
-    def mget_dubbo(self):
-        if self.__mget_dubbo == None:
-            self.__mget_dubbo = self.deploy()[self.env()]['mget_dubbo']
-        return self.__mget_dubbo
+    def mget_center(self):
+        if self.__mget_center == None:
+            self.__mget_center = self.deploy()[self.env()]['mget_center']
+        return self.__mget_center
 
-    def mctl_dubbo(self):
-        if self.__mctl_dubbo == None:
-            self.__mctl_dubbo = self.deploy()[self.env()]['mctl_dubbo']
-        return self.__mctl_dubbo
+    def mctl_center(self):
+        if self.__mctl_center == None:
+            self.__mctl_center = self.deploy()[self.env()]['mctl_center']
+        return self.__mctl_center
 
     def muser(self):
         if self.__muser == None:
