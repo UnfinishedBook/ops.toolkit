@@ -30,11 +30,7 @@
             ],
             "172.18.27.20": [
                 "yh798-stats-center",
-                "yh798-stats-process",
-                "statistics-admonitor",
-                "statistics-logsystem",
-                "statistics-recommendation",
-                "statistics-reptile"
+                "yh798-stats-process"
             ]
         }
     },
@@ -71,11 +67,7 @@
             ],
             "172.18.27.30": [
                 "yh798-stats-center",
-                "yh798-stats-process",
-                "statistics-admonitor",
-                "statistics-logsystem",
-                "statistics-recommendation",
-                "statistics-reptile"
+                "yh798-stats-process"
             ],
             "172.18.203.156": [
                 "hadoop"
@@ -144,12 +136,11 @@
                 "weixin-process"
             ],
             "172.18.203.161": [
-                "statistics-admonitor",
-                "statistics-logsystem",
-                "statistics-recommendation",
-                "statistics-reptile"
+                "yh798-stats-center",
+                "yh798-stats-process"
             ],
             "172.18.27.23": [
+                "yh798-stats-center"
             ],
             "172.18.27.21": [
                 "hadoop"
