@@ -340,11 +340,13 @@ def svncnf(mod, opt):
             localCmd(cmd)
     elif opt == 'ci':
         wcopy = mod.workcopy_cnf()
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        if instr == '':
+            cmd = 'svn ci %s' % wcopy
+        else:
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            GL.LOG.info('执行提交操作 (%s)' % cmd)
-            localCmd(cmd)
+        GL.LOG.info('执行提交操作 (%s)' % cmd)
+        localCmd(cmd)
     elif opt == 'ls':
         tag = mod.tag_cnf()
         trunk = mod.trunk_cnf()
@@ -357,28 +359,32 @@ def svncnf(mod, opt):
         if out == 'yes':
             localCmd(cmd)
     elif opt == 'del':
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
-            tag = mod.tag_cnf()
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        tag = mod.tag_cnf()
+        if instr == '':
+            cmd = 'svn del %s' % tag
+        else:
             cmd = 'svn del %s -m "%s"' % (tag,instr)
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
     elif opt == 'cp':
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
-            tag = mod.tag_cnf()
-            trunk = mod.trunk_cnf()
-            wcopy = mod.workcopy_cnf()
-            tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        tag = mod.tag_cnf()
+        trunk = mod.trunk_cnf()
+        wcopy = mod.workcopy_cnf()
+        tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+        if instr == '':
+            cmd = 'svn cp %s %s' % (trunk,tag)
+        else:
             cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
-            cmd = 'svn up %s' % wcopy
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+        cmd = 'svn up %s' % wcopy
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
 
 def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
@@ -426,11 +432,13 @@ def svn(mod, opt, path=None):
             wcopy = mod.workcopy()
         else:
             wcopy = '%s/%s' % (mod.workcopy(),path)
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        if instr == '':
+            cmd = 'svn ci %s' % wcopy
+        else:
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
-            GL.LOG.info('执行提交操作 (%s)' % cmd)
-            localCmd(cmd)
+        GL.LOG.info('执行提交操作 (%s)' % cmd)
+        localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
         if path==None or path.startswith('svn')==False:
@@ -457,36 +465,40 @@ def svn(mod, opt, path=None):
         if out == 'yes':
             localCmd(cmd)
     elif opt == 'del':
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
-            if path == None:
-                tag = mod.tag()
-            else:
-                tag = '%s/%s' % (mod.tag(),path)
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        if path == None:
+            tag = mod.tag()
+        else:
+            tag = '%s/%s' % (mod.tag(),path)
+        if instr == '':
+            cmd = 'svn del %s' % tag
+        else:
             cmd = 'svn del %s -m "%s"' % (tag,instr)
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
     elif opt == 'cp':
-        instr = raw_input('确认提交请输入提交日志，否则请直接回车: ')
-        if instr != '':
-            if path == None:
-                tag = mod.tag()
-                trunk = mod.trunk()
-                wcopy = mod.workcopy()
-            else:
-                tag = '%s/%s' % (mod.tag(),path)
-                trunk = '%s/%s' % (mod.trunk(),path)
-                wcopy = '%s/%s' % (mod.workcopy(),path)
-            tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        if path == None:
+            tag = mod.tag()
+            trunk = mod.trunk()
+            wcopy = mod.workcopy()
+        else:
+            tag = '%s/%s' % (mod.tag(),path)
+            trunk = '%s/%s' % (mod.trunk(),path)
+            wcopy = '%s/%s' % (mod.workcopy(),path)
+        tag = tag[:tag.rfind('/')]  #拷贝的目的地应该是上层目录
+        if instr == '':
+            cmd = 'svn cp %s %s' % (trunk,tag)
+        else:
             cmd = 'svn cp %s %s -m "%s"' % (trunk,tag,instr)
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
-            cmd = 'svn up %s' % wcopy
-            out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
-            if out == 'yes':
-                localCmd(cmd)
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+        cmd = 'svn up %s' % wcopy
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
 
 def status(mod):
     for ip in mod.deploy():
