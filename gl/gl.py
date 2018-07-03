@@ -145,6 +145,7 @@ class Global:
         self.__closeQueues = None
         self.__svn = None
         self.__branch = None
+        self.__default_proj = None
         self.LOG = None
 
     def dirMain(self):
@@ -263,6 +264,12 @@ class Global:
 
     def branch(self):
         return self.__branch
+
+    def defaultProj(self):
+        return self.__default_proj
+
+    def setDefaultProj(self, proj):
+        self.__default_proj = proj
 
 GL = Global()
 

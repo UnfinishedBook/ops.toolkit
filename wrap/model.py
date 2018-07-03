@@ -202,6 +202,10 @@ class Model:
 
 #根据工程名获得一个Model实例
 def getMod(proj):
+    if proj == '!$':
+        proj = GL.defaultProj()
+    else:
+        GL.setDefaultProj(proj)
     if GL.proj().has_key(proj):
         return Model(proj)
     else:
