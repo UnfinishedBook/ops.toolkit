@@ -135,19 +135,20 @@ class Model:
             if GL.env() == 'pro':
                 #由于当前是从测试分支合并到生产tag进行发版，所以这里的trunk是获取测试分支
                 self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', self.issue()),self.svnsuf())
-            elif GL.branch():
-                #从分支合并而不是主干，所以这里的trunk是获取分支路径
-                self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['branch'].replace('{issue}', self.issue()),self.svnsuf())
-            else:
-                #从主干合并
-                self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
+            elif GL.env() == 'test':
+                if GL.branch():
+                    #从分支合并而不是主干，所以这里的trunk是获取分支路径
+                    self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['branch'].replace('{issue}', self.issue()),self.svnsuf())
+                else:
+                    #从主干合并
+                    self.__trunk = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.svnsuf())
         return self.__trunk
 
     def tag(self):
         if self.__tag == None:
             if GL.env() == 'test':
                 self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', self.issue()),self.svnsuf())
-            else:
+            elif GL.env() == 'pro':
                 self.__tag = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', self.issue()),self.svnsuf())
         return self.__tag
 
@@ -155,7 +156,7 @@ class Model:
         if self.__workcopy == None:
             if GL.env() == 'test':
                 self.__workcopy = '%s/%s' % (GL.form()['test.wcopy'].replace('{issue}', self.issue()),self.svnsuf())
-            else:
+            elif GL.env() == 'pro':
                 self.__workcopy = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', self.issue()),self.svnsuf())
         return self.__workcopy
 
@@ -167,19 +168,20 @@ class Model:
             if GL.env() == 'pro':
                 #由于当前是从测试分支合并到生产tag进行发版，所以这里的trunk是获取测试分支
                 self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', self.issue()),self.cnfsuf())
-            elif GL.branch():
-                #从分支合并而不是主干，所以这里的trunk是获取分支路径
-                self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['branch'].replace('{issue}', self.issue()),self.cnfsuf())
-            else:
-                #从主干合并
-                self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.cnfsuf())
+            elif GL.env() == 'test':
+                if GL.branch():
+                    #从分支合并而不是主干，所以这里的trunk是获取分支路径
+                    self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['branch'].replace('{issue}', self.issue()),self.cnfsuf())
+                else:
+                    #从主干合并
+                    self.__trunk_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['trunk'],self.cnfsuf())
         return self.__trunk_cnf
 
     def tag_cnf(self):
         if self.__tag_cnf == None:
             if GL.env() == 'test':
                 self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['test.branch'].replace('{issue}', self.issue()),self.cnfsuf())
-            else:
+            elif GL.env() == 'pro':
                 self.__tag_cnf = '%s/%s/%s' % (GL.svn(),GL.form()['tag'].replace('{issue}', self.issue()),self.cnfsuf())
         return self.__tag_cnf
 
@@ -187,7 +189,7 @@ class Model:
         if self.__workcopy_cnf == None:
             if GL.env() == 'test':
                 self.__workcopy_cnf = '%s/%s' % (GL.form()['test.wcopy'].replace('{issue}', self.issue()),self.cnfsuf())
-            else:
+            elif GL.env() == 'pro':
                 self.__workcopy_cnf = '%s/%s' % (GL.form()['wcopy'].replace('{issue}', self.issue()),self.cnfsuf())
         return self.__workcopy_cnf
 

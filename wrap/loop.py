@@ -161,6 +161,9 @@ class Loop(Cmd):
         print '更新指定的工程的补丁(当前只支持wap)，用法：patch <工程名>'
 
     def do_svn(self, arg):
+        if GL.env() == 'dev':
+            GL.LOG.error('开发环境不需要svn操作')
+            return
         args = arg.split(' ')
         if len(args)!=2 and len(args)!=3:
             self.help_svn()
@@ -179,6 +182,9 @@ class Loop(Cmd):
         print '用法：svn <操作 [info/up/switch/merge/cp/del/ls/ci]> <工程名> [详细路径]'
 
     def do_svncnf(self, arg):
+        if GL.env() == 'dev':
+            GL.LOG.error('开发环境不需要svn操作')
+            return
         args = arg.split(' ')
         if len(args) != 2:
             self.help_svncnf()
