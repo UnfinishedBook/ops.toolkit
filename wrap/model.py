@@ -206,9 +206,8 @@ class Model:
 def getMod(proj):
     if proj == '!$':
         proj = GL.defaultProj()
-    else:
-        GL.setDefaultProj(proj)
     if GL.proj().has_key(proj):
+        GL.setDefaultProj(proj)
         return Model(proj)
     else:
         print '未发现 (%s/%s) 的部署信息' % (GL.env(),proj)
