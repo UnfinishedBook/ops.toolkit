@@ -87,7 +87,7 @@ class Loop(Cmd):
             drt = args[1]
             if drt.startswith("'") and drt.endswith("'"):
                 drt = 'eval ' + drt
-            if GL.proj().has_key(item):
+            if GL.proj().has_key(item) or item=='!$':
                 mod = getMod(item)
                 if mod != None:
                     cmd(mod.deploy(), drt, self.cmdask)
@@ -333,7 +333,7 @@ class Loop(Cmd):
             return
         src = args[1]
         dest = args[2]
-        if GL.proj().has_key(args[0]):
+        if GL.proj().has_key(args[0]) or args[0]=='!$':
             mod = getMod(args[0])
             if mod != None:
                 ip_list = mod.deploy()
@@ -362,7 +362,7 @@ class Loop(Cmd):
             return
         src = args[1]
         dest = args[2]
-        if GL.proj().has_key(args[0]):
+        if GL.proj().has_key(args[0]) or args[0]=='!$':
             mod = getMod(args[0])
             if mod != None:
                 ip_list = mod.deploy()
