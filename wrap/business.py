@@ -387,7 +387,7 @@ def svncnf(mod, opt):
             localCmd(cmd)
 
 def svn(mod, opt, path=None):
-    if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
+    if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='cii' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
         print '不支持的操作 %s' % opt
         return
     if (opt=='info' or opt=='up') and mod.form()=='node':
@@ -439,6 +439,22 @@ def svn(mod, opt, path=None):
             cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
         GL.LOG.info('执行提交操作 (%s)' % cmd)
         localCmd(cmd)
+    elif opt == 'cii':  #只提交部分文件
+        wcopy = mod.workcopy()
+        f = '/tmp/ops.txt'
+        cmd = 'rm -rf %s;vim %s' % (f,f)
+        localCmd(cmd)
+        fp = open(f)
+        lines = fp.read().splitlines()
+        fp.close()
+        cmd = 'svn ci'
+        for line in lines:
+            line = ' %s/%s' % (wcopy,line)
+            cmd += line
+            print '\t%s' % line
+        out = ask('将提交上述文件, 确认立刻执行吗？', 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
         if path==None or path.startswith('svn')==False:
