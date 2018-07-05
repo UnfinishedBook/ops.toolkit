@@ -455,6 +455,10 @@ def svn(mod, opt, path=None):
         out = ask('将提交上述文件, 确认立刻执行吗？', 'yes,no', 'no')
         if out == 'yes':
             localCmd(cmd)
+        cmd = 'svn revert -R %s' % wcopy
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
     elif opt == 'switch':
         dest = mod.appdir()
         if path==None or path.startswith('svn')==False:
