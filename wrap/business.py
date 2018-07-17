@@ -340,11 +340,12 @@ def svncnf(mod, opt):
             localCmd(cmd)
     elif opt == 'ci':
         wcopy = mod.workcopy_cnf()
-        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
-        if instr == '':
-            cmd = 'svn ci %s' % wcopy
-        else:
-            cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
+        #instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        #if instr == '':
+            #cmd = 'svn ci %s' % wcopy
+        #else:
+            #cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
+        cmd = 'svn ci %s --editor-cmd vim' % wcopy
         GL.LOG.info('执行提交操作 (%s)' % cmd)
         localCmd(cmd)
     elif opt == 'ls':
@@ -432,11 +433,12 @@ def svn(mod, opt, path=None):
             wcopy = mod.workcopy()
         else:
             wcopy = '%s/%s' % (mod.workcopy(),path)
-        instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
-        if instr == '':
-            cmd = 'svn ci %s' % wcopy
-        else:
-            cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
+        #instr = raw_input('(回车进入editor,ctl+c退出) 提交日志: ')
+        #if instr == '':
+            #cmd = 'svn ci %s' % wcopy
+        #else:
+            #cmd = 'svn ci %s -m "%s"' % (wcopy, instr)
+        cmd = 'svn ci %s --editor-cmd vim' % wcopy
         GL.LOG.info('执行提交操作 (%s)' % cmd)
         localCmd(cmd)
     elif opt == 'cii':  #只提交部分文件
@@ -449,6 +451,8 @@ def svn(mod, opt, path=None):
         fp.close()
         cmd = 'svn ci'
         for line in lines:
+            if line == '':
+                continue
             line = ' %s/%s' % (wcopy,line)
             cmd += line
             print '\t%s' % line
