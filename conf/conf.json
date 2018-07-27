@@ -30,8 +30,8 @@
         "pkdir": "/mydata/maintenance/packages"
     },
     "yh": {
-        "intro": "优惠头条",
-        "issue": "1.0.0",
+        "intro": "AI优惠",
+        "issue": "",
         "svn": "3cbc98a586929ffb5030f5c5097159bd",
         "pkdir": "/mydata/maintenance/packages"
     },

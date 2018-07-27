@@ -67,7 +67,10 @@
             ],
             "172.18.27.30": [
                 "yh798-stats-center",
-                "yh798-stats-process"
+                "yh798-adsms-center",
+                "yh798-stats-process",
+                "yh798-adsms-process",
+                "yh798-stats-server"
             ],
             "172.18.203.156": [
                 "hadoop"
@@ -137,10 +140,15 @@
             ],
             "172.18.203.161": [
                 "yh798-stats-center",
-                "yh798-stats-process"
+                "yh798-adsms-center",
+                "yh798-stats-process",
+                "yh798-stats-server"
             ],
             "172.18.27.23": [
-                "yh798-stats-center"
+                "yh798-stats-center",
+                "yh798-adsms-center",
+                "yh798-adsms-process",
+                "yh798-stats-server"
             ],
             "172.18.27.21": [
                 "hadoop"

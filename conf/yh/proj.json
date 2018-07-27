@@ -23,6 +23,14 @@
         "cnfsuf": "server/center/config/yh798-stats-center",
         "port": "20606"
     },
+    "yh798-adsms-center": {
+        "form": "center",
+        "pack": "yh798-adsms-provider-1.0-assembly.zip",
+        "appdir": "yh798-adsms-provider-1.0",
+        "svnsuf": "server/center/yh798-adsms-center",
+        "cnfsuf": "server/center/config/yh798-adsms-center",
+        "port": "20610"
+    },
     "coupon798-process": {
         "form": "process",
         "pack": "coupon798-process-assembly.zip",
@@ -44,6 +52,13 @@
         "svnsuf": "server/process/yh798-stats-process",
         "cnfsuf": "server/process/config/yh798-stats-process"
     },
+    "yh798-adsms-process": {
+        "form": "process",
+        "pack": "yh798-adsms-process-assembly.zip",
+        "appdir": "yh798-adsms-process",
+        "svnsuf": "server/process/yh798-adsms-process",
+        "cnfsuf": "server/process/config/yh798-adsms-process"
+    },
     "coupon-server": {
         "form": "newserver",
         "pack": "coupon-server-assembly.zip",
@@ -64,6 +79,13 @@
         "appdir": "weixin-server",
         "svnsuf": "server/server/weixin-server",
         "cnfsuf": "server/server/config/weixin-server"
+    },
+    "yh798-stats-server": {
+        "form": "newserver",
+        "pack": "yh798-stats-server-assembly.zip",
+        "appdir": "yh798-stats-server",
+        "svnsuf": "server/server/yh798-stats-server",
+        "cnfsuf": "server/server/config/yh798-stats-server"
     },
     "statistics-admonitor": {
         "form": "module",
