@@ -35,6 +35,12 @@
         "svn": "3cbc98a586929ffb5030f5c5097159bd",
         "pkdir": "/mydata/maintenance/packages"
     },
+    "90s": {
+        "intro": "90秒",
+        "issue": "",
+        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "pkdir": "/mydata/maintenance/packages"
+    },
     "gtc": {
         "intro": "基因时代",
         "issue": "1.0.0",
