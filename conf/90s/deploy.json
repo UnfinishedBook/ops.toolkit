@@ -1,7 +1,7 @@
 {
     "dev": {
         "intro": "开发环境",
-        "monitor": "172.18.203.163:7092",
+        "monitor": "172.18.27.36:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -12,7 +12,7 @@
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
-            "172.18.203.163": [
+            "172.18.27.36": [
                 "coupon798-ad-center",
                 "coupon798-center",
                 "coupon798-process",
@@ -27,16 +27,12 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
-            ],
-            "172.18.27.20": [
-                "yh798-stats-center",
-                "yh798-stats-process"
             ]
         }
     },
     "test": {
         "intro": "测试环境",
-        "monitor": "172.18.27.17:7092",
+        "monitor": "172.18.203.167:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -47,8 +43,9 @@
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
-            "172.18.27.17": [
+            "172.18.203.167": [
                 "webv1",
+                "webcms",
                 "coupon798-ad-center",
                 "coupon798-center",
                 "coupon798-process",
@@ -96,23 +93,13 @@
         "muser": "root",
         "mpwd": "85dae7cb22252d3da5af4d23515b120e",
         "deploy": {
-            "172.18.27.16": [
+            "172.18.27.40": [
                 "cdn",
+                "webcms",
                 "webv1",
                 "webv1_cdn"
             ],
-            "172.18.203.159": [
-                "coupon-server",
-                "activity-api",
-                "ad-api",
-                "api",
-                "auth",
-                "cms",
-                "data",
-                "data_channel"
-            ],
-            "172.18.27.24": [
-                "coupon-server",
+            "172.18.27.41": [
                 "activity-api",
                 "ad-api",
                 "api",
@@ -121,43 +108,6 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
-            ],
-            "172.18.203.162": [
-                "coupon798-center",
-                "weixin-server",
-                "monitor-server"
-            ],
-            "172.18.27.25": [
-                "coupon798-center",
-                "coupon798-ad-center",
-                "weixin-server"
-            ],
-            "172.18.203.160": [
-                "coupon798-center",
-                "coupon798-ad-center",
-                "coupon798-process",
-                "weixin-process"
-            ],
-            "172.18.203.161": [
-                "yh798-stats-center",
-                "yh798-adsms-center",
-                "yh798-stats-process",
-                "yh798-stats-server"
-            ],
-            "172.18.27.23": [
-                "yh798-stats-center",
-                "yh798-adsms-center",
-                "yh798-adsms-process",
-                "yh798-stats-server"
-            ],
-            "172.18.27.21": [
-                "hadoop"
-            ], 
-            "172.18.27.27": [
-                "hadoop"
-            ], 
-            "172.18.27.26": [
-                "hadoop"
             ] 
         }
     }

@@ -1,11 +1,11 @@
 {
     "bakdir": "/mydata/maintenance/backup", 
-    "trunk": "codes/trunk_coupon798",
-    "branch": "codes/branches_coupon798/{issue}",
-    "tag": "codes/tags_coupon798/{issue}",
-    "wcopy": "/mydata/maintenance/svn/tags_coupon798/{issue}",
-    "test.branch": "codes/test_coupon798/{issue}",
-    "test.wcopy": "/mydata/maintenance/svn/test_coupon798/{issue}",
+    "trunk": "codes/trunk_90bid",
+    "branch": "codes/branches_90bid/{issue}",
+    "tag": "codes/tags_90bid/{issue}",
+    "wcopy": "/mydata/maintenance/svn/tags_90bid/{issue}",
+    "test.branch": "codes/test_90bid/{issue}",
+    "test.wcopy": "/mydata/maintenance/svn/test_90bid/{issue}",
     "logdir": "/mydata/logs",
     "center": {
         "appdir": "/mydata/center",
