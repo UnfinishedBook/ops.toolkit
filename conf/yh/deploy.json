@@ -85,7 +85,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.203.162:7092",
+        "monitor": "172.18.203.160:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -109,7 +109,8 @@
                 "auth",
                 "cms",
                 "data",
-                "data_channel"
+                "data_channel",
+                "weixin-server"
             ],
             "172.18.27.24": [
                 "coupon-server",
@@ -120,35 +121,34 @@
                 "cms",
                 "cmsTimer",
                 "data",
-                "data_channel"
+                "data_channel",
+                "weixin-server"
             ],
             "172.18.203.162": [
-                "coupon798-center",
-                "weixin-server",
-                "monitor-server"
             ],
             "172.18.27.25": [
+                "yh798-stats-center",
+                "yh798-adsms-center",
                 "coupon798-center",
                 "coupon798-ad-center",
-                "weixin-server"
+                "weixin-server",
+                "yh798-stats-server"
             ],
             "172.18.203.160": [
                 "coupon798-center",
                 "coupon798-ad-center",
                 "coupon798-process",
-                "weixin-process"
+                "weixin-process",
+                "monitor-server"
             ],
             "172.18.203.161": [
                 "yh798-stats-center",
                 "yh798-adsms-center",
                 "yh798-stats-process",
+                "yh798-adsms-process",
                 "yh798-stats-server"
             ],
             "172.18.27.23": [
-                "yh798-stats-center",
-                "yh798-adsms-center",
-                "yh798-adsms-process",
-                "yh798-stats-server"
             ],
             "172.18.27.21": [
                 "hadoop"
