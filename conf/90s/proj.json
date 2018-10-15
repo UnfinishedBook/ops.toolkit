@@ -177,8 +177,12 @@
     "webcms": {
         "form": "static",
         "pack": "webcms.tar.gz",
-        "appdir": "web/90scms",
+        "appdir": "web/cms",
         "svnsuf": "web/90scms"
+    },
+    "webcms_cdn": {
+        "form": "static",
+        "appdir": "cdn"
     },
     "cdn": {
         "form": "static",
