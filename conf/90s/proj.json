@@ -1,26 +1,26 @@
 {
-    "coupon798-center": {
+    "90bid-center": {
         "form": "center",
-        "pack": "coupon798-provider-1.0.0-assembly.zip",
-        "appdir": "coupon798-provider-1.0.0",
-        "svnsuf": "server/center/coupon798-center",
-        "cnfsuf": "server/center/config/coupon798-center",
+        "pack": "90bid-provider-1.0.0-assembly.zip",
+        "appdir": "90bid-provider-1.0.0",
+        "svnsuf": "server/center/90bid-center",
+        "cnfsuf": "server/center/config/90bid-center",
         "port": "20604"
     },
-    "coupon798-ad-center": {
+    "90bid-ad-center": {
         "form": "center",
-        "pack": "coupon798-ad-provider-1.0.0-assembly.zip",
-        "appdir": "coupon798-ad-provider-1.0.0",
-        "svnsuf": "server/center/coupon798-ad-center",
-        "cnfsuf": "server/center/config/coupon798-ad-center",
+        "pack": "90bid-ad-provider-1.0.0-assembly.zip",
+        "appdir": "90bid-ad-provider-1.0.0",
+        "svnsuf": "server/center/90bid-ad-center",
+        "cnfsuf": "server/center/config/90bid-ad-center",
         "port": "20605"
     },
-    "yh798-stats-center": {
+    "90bid-stats-center": {
         "form": "center",
-        "pack": "yh798-stats-provider-0.1.0-assembly.zip",
-        "appdir": "yh798-stats-provider-0.1.0",
-        "svnsuf": "server/center/yh798-stats-center",
-        "cnfsuf": "server/center/config/yh798-stats-center",
+        "pack": "90bid-stats-provider-0.1.0-assembly.zip",
+        "appdir": "90bid-stats-provider-0.1.0",
+        "svnsuf": "server/center/90bid-stats-center",
+        "cnfsuf": "server/center/config/90bid-stats-center",
         "port": "20606"
     },
     "yh798-adsms-center": {
@@ -31,12 +31,61 @@
         "cnfsuf": "server/center/config/yh798-adsms-center",
         "port": "20610"
     },
-    "coupon798-process": {
+    "bid-process": {
         "form": "process",
-        "pack": "coupon798-process-assembly.zip",
-        "appdir": "coupon798-process",
-        "svnsuf": "server/process/coupon798-process",
-        "cnfsuf": "server/process/config/coupon798-process"
+        "pack": "bid-process-assembly.zip",
+        "appdir": "bid-process",
+        "svnsuf": "server/process/bid-process",
+        "cnfsuf": "server/process/config/bid-process"
+    },
+    "commonbiz-process": {
+        "form": "process",
+        "pack": "commonbiz-process-assembly.zip",
+        "appdir": "commonbiz-process",
+        "svnsuf": "server/process/commonbiz-process",
+        "cnfsuf": "server/process/config/commonbiz-process"
+    },
+    "data-process": {
+        "form": "process",
+        "pack": "data-process-assembly.zip",
+        "appdir": "data-process",
+        "svnsuf": "server/process/data-process",
+        "cnfsuf": "server/process/config/data-process"
+    },
+    "order-process": {
+        "form": "process",
+        "pack": "order-process-assembly.zip",
+        "appdir": "order-process",
+        "svnsuf": "server/process/order-process",
+        "cnfsuf": "server/process/config/order-process"
+    },
+    "prizepool-process": {
+        "form": "process",
+        "pack": "prizepool-process-assembly.zip",
+        "appdir": "prizepool-process",
+        "svnsuf": "server/process/prizepool-process",
+        "cnfsuf": "server/process/config/prizepool-process"
+    },
+    "recommend-process": {
+        "form": "process",
+        "pack": "recommend-process-assembly.zip",
+        "appdir": "recommend-process",
+        "svnsuf": "server/process/recommend-process",
+        "cnfsuf": "server/process/config/recommend-process"
+    },
+    "rc-process": {
+        "form": "process",
+        "pack": "rc-process-assembly.zip",
+        "appdir": "rc-process",
+        "svnsuf": "server/process/rc-process",
+        "cnfsuf": "server/process/config/rc-process"
+    },
+    "seckill-process": {
+        "form": "process",
+        "pack": "seckill-process-assembly.zip",
+        "appdir": "seckill-process",
+        "svnsuf": "server/process/seckill-process",
+        "cnfsuf": "server/process/config/seckill-process"
     },
     "weixin-process": {
         "form": "process",
@@ -45,26 +94,19 @@
         "svnsuf": "server/process/weixin-process",
         "cnfsuf": "server/process/config/weixin-process"
     },
-    "yh798-stats-process": {
+    "90bid-stats-process": {
         "form": "process",
-        "pack": "yh798-stats-process-assembly.zip",
-        "appdir": "yh798-stats-process",
-        "svnsuf": "server/process/yh798-stats-process",
-        "cnfsuf": "server/process/config/yh798-stats-process"
+        "pack": "90bid-stats-process-assembly.zip",
+        "appdir": "90bid-stats-process",
+        "svnsuf": "server/process/90bid-stats-process",
+        "cnfsuf": "server/process/config/90bid-stats-process"
     },
-    "yh798-adsms-process": {
-        "form": "process",
-        "pack": "yh798-adsms-process-assembly.zip",
-        "appdir": "yh798-adsms-process",
-        "svnsuf": "server/process/yh798-adsms-process",
-        "cnfsuf": "server/process/config/yh798-adsms-process"
-    },
-    "coupon-server": {
+    "bid-server": {
         "form": "newserver",
-        "pack": "coupon-server-assembly.zip",
-        "appdir": "coupon-server",
-        "svnsuf": "server/server/coupon-server",
-        "cnfsuf": "server/server/config/coupon-server"
+        "pack": "bid-server-assembly.zip",
+        "appdir": "bid-server",
+        "svnsuf": "server/server/bid-server",
+        "cnfsuf": "server/server/config/bid-server"
     },
     "monitor-server": {
         "form": "newserver",
@@ -73,6 +115,13 @@
         "svnsuf": "server/server/monitor-server",
         "cnfsuf": "server/server/config/monitor-server"
     },
+    "pay-server": {
+        "form": "newserver",
+        "pack": "pay-server-assembly.zip",
+        "appdir": "pay-server",
+        "svnsuf": "server/server/pay-server",
+        "cnfsuf": "server/server/config/pay-server"
+    },
     "weixin-server": {
         "form": "newserver",
         "pack": "weixin-server-assembly.zip",
@@ -80,64 +129,20 @@
         "svnsuf": "server/server/weixin-server",
         "cnfsuf": "server/server/config/weixin-server"
     },
-    "yh798-stats-server": {
-        "form": "newserver",
-        "pack": "yh798-stats-server-assembly.zip",
-        "appdir": "yh798-stats-server",
-        "svnsuf": "server/server/yh798-stats-server",
-        "cnfsuf": "server/server/config/yh798-stats-server"
-    },
-    "statistics-admonitor": {
-        "form": "module",
-        "pack": "ad-monitor-coupon798-0.0.1-SNAPSHOT.war",
-        "tomcat": "tomcat-statistics-admonitor",
-        "appdir": "webapps/ad-monitor-coupon798-0.0.1-SNAPSHOT",
-        "svnsuf": "server/statistics/ad-monitor-coupon798",
-        "cnfsuf": "server/statistics/config/ad-monitor-coupon798"
-    },
-    "statistics-logsystem": {
-        "form": "module",
-        "pack": "log-system.war",
-        "tomcat": "tomcat-statistics-logsystem",
-        "appdir": "webapps/log-system",
-        "svnsuf": "server/statistics/log-system-coupon798"
-    },
-    "statistics-recommendation": {
-        "form": "module",
-        "pack": "coupon798-recommendation-0.0.1-SNAPSHOT.war",
-        "tomcat": "tomcat-statistics-recommendation",
-        "appdir": "webapps/coupon798-recommendation-0.0.1-SNAPSHOT",
-        "svnsuf": "server/statistics/coupon798-recommendation",
-        "cnfsuf": "server/statistics/config/coupon798-recommendation"
-    },
-    "statistics-reptile": {
-        "form": "module",
-        "pack": "/mydata/stats/war/reptile*",
-        "appdir": "/mydata/stats/reptile/reptile",
-        "svnsuf": "server/statistics/reptile",
-        "cnfsuf": "server/statistics/config/reptile"
-    },
-    "statistics-exposure": {
-        "form": "module",
-        "pack": "/mydata/workspace/zip/product-exposure-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
-        "appdir": "/mydata/workspace/spark/product-exposure",
-        "svnsuf": "server/statistics/product-exposure",
-        "cnfsuf": "server/statistics/config/product-exposure"
-    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
-        "svnsuf": "server/coupon798-activity"
+        "svnsuf": "server/90bid-activity"
     },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "svnsuf": "ad/coupon798-ad"
+        "svnsuf": "ad/90bid-ad"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "svnsuf": "server/coupon798"
+        "svnsuf": "server/90bid"
     },
     "auth": {
         "form": "node",
@@ -164,13 +169,23 @@
         "appdir": "data_channel",
         "svnsuf": "ad/channel_stats"
     },
-    "webv1": {
+    "webwap": {
         "form": "static",
-        "pack": "webv1.tar.gz",
-        "appdir": "web/v1",
-        "svnsuf": "web/v1"
+        "pack": "wap.tar.gz",
+        "appdir": "web/wap",
+        "svnsuf": "web/web"
     },
-    "webv1_cdn": {
+    "webwap_cdn": {
+        "form": "static",
+        "appdir": "cdn"
+    },
+    "weblandpage": {
+        "form": "static",
+        "pack": "landpage.tar.gz",
+        "appdir": "web/landingpage",
+        "svnsuf": "web/landpage"
+    },
+    "weblandpage_cdn": {
         "form": "static",
         "appdir": "cdn"
     },
@@ -198,5 +213,17 @@
     },
     "hadoop": {
         "form": "static"
+    },
+    "90s-data-clean": {
+        "form": "data",
+        "svnsuf": "server/data/90s-data-clean"
+    },
+    "rc-spark-realtime": {
+        "form": "data",
+        "svnsuf": "server/data/rc-spark-realtime"
+    },
+    "rc-spark": {
+        "form": "data",
+        "svnsuf": "server/data/rc-spark"
     }
 }

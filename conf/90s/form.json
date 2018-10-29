@@ -37,6 +37,9 @@
     "static": {
         "appdir": "/mydata"
     },
+    "data": {
+        "appdir": "/mydata/stats"
+    },
     "mobile": {
     }
 }

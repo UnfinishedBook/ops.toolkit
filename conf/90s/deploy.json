@@ -13,9 +13,9 @@
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
             "172.18.27.36": [
-                "coupon798-ad-center",
-                "coupon798-center",
-                "coupon798-process",
+                "90bid-ad-center",
+                "90bid-center",
+                "bid-process",
                 "coupon-server",
                 "monitor-server",
                 "weixin-server",
@@ -44,14 +44,23 @@
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
             "172.18.203.167": [
-                "webv1",
                 "webcms",
-                "coupon798-ad-center",
-                "coupon798-center",
-                "coupon798-process",
+                "webwap",
+                "weblandpage",
+                "90bid-ad-center",
+                "90bid-center",
+                "bid-process",
+                "commonbiz-process",
+                "data-process",
+                "order-process",
+                "prizepool-process",
+                "recommend-process",
+                "rc-process",
+                "seckill-process",
                 "weixin-process",
-                "coupon-server",
+                "bid-server",
                 "monitor-server",
+                "pay-server",
                 "weixin-server",
                 "activity-api",
                 "ad-api",
@@ -82,7 +91,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.203.162:7092",
+        "monitor": "172.18.203.168:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -99,6 +108,25 @@
                 "webv1",
                 "webv1_cdn"
             ],
+            "172.18.27.47": [
+            ],
+            "172.18.203.171": [
+            ],
+            "172.18.203.168": [
+                "90bid-center",
+                "monitor-server"
+            ],
+            "172.18.27.44": [
+            ],
+            "172.18.27.45": [
+                "90bid-stats-center",
+                "90bid-stats-process"
+            ],
+            "172.18.203.169": [
+                "90bid-stats-center",
+                "data-process",
+                "rc-process"
+            ],
             "172.18.27.41": [
                 "activity-api",
                 "ad-api",
@@ -106,6 +134,15 @@
                 "auth",
                 "cms",
                 "cmsTimer",
+                "data",
+                "data_channel"
+            ], 
+            "172.18.203.170": [
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
                 "data",
                 "data_channel"
             ] 
