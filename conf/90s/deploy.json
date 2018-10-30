@@ -114,8 +114,18 @@
                 "rc-process"
             ],
             "host-90s-pro-java-01": [
+                "90bid-center",
+                "90bid-ad-center",
+                "bid-server",
+                "pay-server",
+                "weixin-server"
             ],
             "host-90s-pro-java-02": [
+                "90bid-center",
+                "90bid-ad-center",
+                "bid-server",
+                "pay-server",
+                "weixin-server"
             ],
             "host-90s-pro-node-01": [
                 "activity-api",
@@ -138,9 +148,17 @@
             ], 
             "host-90s-pro-robot-01": [
                 "90bid-center",
+                "bid-process",
+                "commonbiz-process",
+                "recommend-process",
+                "weixin-process",
                 "monitor-server"
             ],
             "host-90s-pro-robot-02": [
+                "90bid-center",
+                "order-process",
+                "prizepool-process",
+                "seckill-process"
             ],
             "host-90s-pro-hadoop-01": [
                 "90s-data-clean",
