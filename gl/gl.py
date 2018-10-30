@@ -121,6 +121,7 @@ class Global:
         self.__dirMain = sys.path[0]    #程序的主目录
         self.__dirCfg = '%s/conf' % self.__dirMain  #配置文件目录
         self.__conf = loadJsonFile('%s/conf.json' % self.__dirCfg)
+        self.__hosts = loadJsonFile('%s/hosts.json' % self.__dirCfg)
         #self.__project = self.__conf['project']
         self.__issue = self.__conf[self.__project]['issue']
         self.__pkdir = self.__conf[self.__project]['pkdir']
@@ -156,6 +157,9 @@ class Global:
 
     def conf(self):
         return self.__conf
+
+    def hosts(self):
+        return self.__hosts
 
     def deploy(self):
         return self.__deploy
@@ -270,6 +274,11 @@ class Global:
 
     def setDefaultProj(self, proj):
         self.__default_proj = proj
+
+    def getRealIP(self, ip):
+        if GL.hosts().has_key(ip):
+            ip = self.hosts()[ip]
+        return ip
 
 GL = Global()
 

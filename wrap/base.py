@@ -60,6 +60,7 @@ def localCmd(cmd):
 
 def remoteCmd(ip, cmd, _pty=True):
     GL.LOG.debug('远程 (%s) 执行命令 (%s) 开始' % (ip,cmd))
+    ip = GL.getRealIP(ip)
     execute(run, cmd, host=ip, pty=_pty)
     GL.LOG.debug('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
 

@@ -43,7 +43,7 @@
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
         "deploy": {
-            "172.18.203.167": [
+            "host-90s-test": [
                 "webcms",
                 "webwap",
                 "weblandpage",
@@ -71,13 +71,6 @@
                 "data",
                 "data_channel"
             ],
-            "172.18.27.30": [
-                "yh798-stats-center",
-                "yh798-adsms-center",
-                "yh798-stats-process",
-                "yh798-adsms-process",
-                "yh798-stats-server"
-            ],
             "172.18.203.156": [
                 "hadoop"
             ],
@@ -102,7 +95,7 @@
         "muser": "root",
         "mpwd": "85dae7cb22252d3da5af4d23515b120e",
         "deploy": {
-            "172.18.27.40": [
+            "host-90s-pro-nginx": [
                 "cdn",
                 "webcms",
                 "webcms_cdn",
@@ -111,26 +104,20 @@
                 "webwap",
                 "webwap_cdn"
             ],
-            "172.18.27.47": [
-            ],
-            "172.18.203.171": [
-            ],
-            "172.18.203.168": [
-                "90bid-center",
-                "monitor-server"
-            ],
-            "172.18.27.44": [
-            ],
-            "172.18.27.45": [
+            "host-90s-pro-data-01": [
                 "90bid-stats-center",
                 "90bid-stats-process"
             ],
-            "172.18.203.169": [
+            "host-90s-pro-data-02": [
                 "90bid-stats-center",
                 "data-process",
                 "rc-process"
             ],
-            "172.18.27.41": [
+            "host-90s-pro-java-01": [
+            ],
+            "host-90s-pro-java-02": [
+            ],
+            "host-90s-pro-node-01": [
                 "activity-api",
                 "ad-api",
                 "api",
@@ -140,7 +127,7 @@
                 "data",
                 "data_channel"
             ], 
-            "172.18.203.170": [
+            "host-90s-pro-node-02": [
                 "activity-api",
                 "ad-api",
                 "api",
@@ -149,7 +136,13 @@
                 "data",
                 "data_channel"
             ], 
-            "172.18.27.21": [
+            "host-90s-pro-robot-01": [
+                "90bid-center",
+                "monitor-server"
+            ],
+            "host-90s-pro-robot-02": [
+            ],
+            "host-90s-pro-hadoop-01": [
                 "90s-data-clean",
                 "rc-spark",
                 "rc-spark-realtime"

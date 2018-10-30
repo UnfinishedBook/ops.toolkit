@@ -42,6 +42,7 @@ class Model:
             for ip in ips:
                 for t in ips[ip]:
                     if t == self.name():
+                        ip = GL.getRealIP(ip)
                         self.__deploy.append(ip)
         return self.__deploy
 
