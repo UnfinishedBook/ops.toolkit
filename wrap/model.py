@@ -12,6 +12,8 @@ class Model:
         self.__upappdir = None
         self.__cnfdir = None
         self.__bakdir = None
+        self.__pkName = None
+        self.__pk = None
         self.__pack = None
         self.__trunk = None
         self.__tag = None
@@ -89,7 +91,17 @@ class Model:
             self.__port = GL.proj()[self.name()]['port']
         return self.__port
 
-    def pack(self):   #更新包
+    def pkName(self):   #更新包的文件名
+        if self._pkName == None:
+            self._pkName = GL.proj()[self.name()]['pack']    
+        return self._pkName
+
+    def pk(self):   #统一放到maintenance下的更新包
+        if self.__pk == None:
+            self._pk = '%s/%s' % (GL.pkdir(),GL.proj()[self.name()]['pack'])
+        return self._pk
+
+    def pack(self):   #工程目录下的更新包
         if self.__pack == None:
             tmp = GL.proj()[self.name()]['pack']
             if tmp.startswith('/'): #绝对路径,就直接使用
@@ -101,10 +113,8 @@ class Model:
     def pidname(self):  #查询进程时用的字符串
         if self.form()=='server' or self.form()=='module':
             return '/%s/' % self.tomcat()
-        elif self.form()=='center' or self.form()=='process' or self.form()=='newserver':
-            return self.appdir() + '/'
         else:
-            return None
+            return self.appdir() + '/'
 
     def tomcatshutdown(self):
         if self.form()=='server' or self.form()=='module':
@@ -115,7 +125,7 @@ class Model:
     def pidexe(self):   #启动文件
         if self.form()=='server' or self.form()=='module':
             return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
-        elif self.form()=='center' or self.form()=='process' or self.form()=='newserver':
+        else:
             if GL.env()!='pro' and self.form()=='center':
                 return '%s/bin/start-dev.sh' % self.appdir()
             if GL.env()!='pro' and self.form()=='process':
@@ -124,8 +134,6 @@ class Model:
                 return '%s/bin/start-dev.sh' % self.appdir()
             else:
                 return '%s/bin/start.sh' % self.appdir()
-        else:
-            return None
 
     def svnsuf(self):
         return GL.proj()[self.name()]['svnsuf']

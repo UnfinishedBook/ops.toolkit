@@ -105,8 +105,11 @@
             "172.18.27.40": [
                 "cdn",
                 "webcms",
-                "webv1",
-                "webv1_cdn"
+                "webcms_cdn",
+                "weblandpage",
+                "weblandpage_cdn",
+                "webwap",
+                "webwap_cdn"
             ],
             "172.18.27.47": [
             ],
@@ -145,7 +148,12 @@
                 "cms",
                 "data",
                 "data_channel"
-            ] 
+            ], 
+            "172.18.27.21": [
+                "90s-data-clean",
+                "rc-spark",
+                "rc-spark-realtime"
+            ]
         }
     }
 }

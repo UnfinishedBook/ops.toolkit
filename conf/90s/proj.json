@@ -171,7 +171,7 @@
     },
     "webwap": {
         "form": "static",
-        "pack": "wap.tar.gz",
+        "pack": "webwap.tar.gz",
         "appdir": "web/wap",
         "svnsuf": "web/web"
     },
@@ -181,7 +181,7 @@
     },
     "weblandpage": {
         "form": "static",
-        "pack": "landpage.tar.gz",
+        "pack": "weblandpage.tar.gz",
         "appdir": "web/landingpage",
         "svnsuf": "web/landpage"
     },
@@ -216,14 +216,20 @@
     },
     "90s-data-clean": {
         "form": "data",
+        "pack": "90s-data-clean-0.0.1-assembly.zip",
+        "appdir": "90s-data-clean-0.0.1",
         "svnsuf": "server/data/90s-data-clean"
     },
     "rc-spark-realtime": {
         "form": "data",
+        "pack": "rc-spark-realtime-1.0.0-assembly.zip",
+        "appdir": "rc-spark-realtime-1.0.0",
         "svnsuf": "server/data/rc-spark-realtime"
     },
     "rc-spark": {
         "form": "data",
+        "pack": "rc-spark-1.0.0-assembly.zip",
+        "appdir": "rc-spark-1.0.0",
         "svnsuf": "server/data/rc-spark"
     }
 }

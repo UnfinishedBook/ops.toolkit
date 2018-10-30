@@ -179,15 +179,14 @@ def up_webv2(mod, patch=False):
         if out == 'yes':
             localCmd(cmd)
 
-def up_webcms(mod, patch=False):
-    pk = '%s/webcms.tar.gz' % GL.pkdir()
-    if os.path.exists(pk) == False:
-        GL.LOG.error('未发现更新包：%s' % pk)
+def up_web(mod, patch=False):
+    if os.path.exists(mod.pk()) == False:
+        GL.LOG.error('未发现更新包：%s' % mod.pk())
         return
-    tmp = '%s/webcms' % GL.pkdir()
+    tmp = '%s/%s' % (GL.pkdir(),mod.name())
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -zxf %s -C %s' % (mod.pk(),tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -330,13 +329,13 @@ def update(mod):
         up_webv2(mod)
     elif mod.name() == 'webv2_cdn':
         up_webv2_cdn(mod)
-    elif mod.name() == 'webcms':
-        up_webcms(mod)
+    elif mod.name()=='webcms' or mod.name()=='weblandingpage' or mod.name()=='webwap':
+        up_web(mod)
     elif mod.name() == 'h5':
         up_h5(mod)
     elif mod.name() == 'php':
         up_php(mod)
-    elif mod.form()=='center' or mod.form()=='process' or mod.form()=='newserver':
+    elif mod.form()=='center' or mod.form()=='process' or mod.form()=='newserver' or mod.form()=='data':
         up_center(mod)
     elif mod.form()=='server' or mod.form()=='module':
         up_server(mod)
@@ -590,10 +589,10 @@ def _stop(ip, mod, jstack=False):
     if mod.form()=='server' or mod.form()=='module':
         remoteCmd(ip, mod.tomcatshutdown())
         time.sleep(2)
-    if mod.form()=='center' and jstack==True:
+    elif mod.form()=='center' and jstack==True:
         savejstack(mod, ip)
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
-    if mod.form() == 'process':
+    elif mod.form() == 'process':
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill $tmpid; else echo "Not found pid"; fi' % mod.pidname()
     else:
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill -9 $tmpid; else echo "Not found pid"; fi' % mod.pidname()
