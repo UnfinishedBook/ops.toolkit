@@ -70,15 +70,17 @@ class Loop(Cmd):
 
     #自定义指令中默认的自动补全内容
     def completedefault(self, text, line, begidx, endidx):
-        projs = GL.proj().keys()
+        lst = GL.proj().keys()
+        hosts = GL.hosts().keys()
+        lst.extend(hosts)
         if text==None or text=='':
-            return projs
+            return lst
         else:
             ret = []
-            for proj in projs:
-                if proj.startswith(text):
-                    ret.append(proj)
-        return ret
+            for l in lst:
+                if l.startswith(text):
+                    ret.append(l)
+            return ret
 
     def do_cmd(self, arg):
         args = arg.split(' ', 1)
@@ -344,7 +346,11 @@ class Loop(Cmd):
             if mod != None:
                 ip_list = mod.deploy()
                 scp(ip_list, src, dest)
-        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
+        elif GL.hosts().has_key(args[0]):
+            ip = GL.getRealIP(args[0])
+            ip_list = [ip,]
+            scp(ip_list, src, dest)
+        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]) or GL.ipHosts().has_key(args[0]):
             ip_list = [args[0],]
             scp(ip_list, src, dest)
         elif args[0] == 'all':
@@ -373,7 +379,11 @@ class Loop(Cmd):
             if mod != None:
                 ip_list = mod.deploy()
                 rsync(ip_list, src, dest)
-        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]):
+        elif GL.hosts().has_key(args[0]):
+            ip = GL.getRealIP(args[0])
+            ip_list = [ip,]
+            rsync(ip_list, src, dest)
+        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]) or GL.ipHosts().has_key(args[0]):
             ip_list = [args[0],]
             rsync(ip_list, src, dest)
         elif args[0] == 'all':

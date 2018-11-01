@@ -64,6 +64,11 @@ def remoteCmd(ip, cmd, _pty=True):
     execute(run, cmd, host=ip, pty=_pty)
     GL.LOG.debug('远程 (%s) 执行命令 (%s) 结束' % (ip,cmd))
 
+#def remoteCmds(ips, cmd, _pty=True):
+    #GL.LOG.debug('远程 (%s) 执行命令 (%s) 开始' % (ips,cmd))
+    #execute(run, cmd, '-P', hosts=ips, pty=_pty)
+    #GL.LOG.debug('远程 (%s) 执行命令 (%s) 结束' % (ips,cmd))
+
 def parseJobs(page):
     pt1 = re.compile(r'(?isu)<tr.*?>(.*?)</tr>')
     pt2 = re.compile(r'(?isu)<td.*?>(.*?)</td>')

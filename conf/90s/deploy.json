@@ -95,7 +95,7 @@
         "muser": "root",
         "mpwd": "85dae7cb22252d3da5af4d23515b120e",
         "deploy": {
-            "host-90s-pro-nginx": [
+            "host-90s-pro-tengine": [
                 "cdn",
                 "webcms",
                 "webcms_cdn",
