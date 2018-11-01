@@ -283,9 +283,9 @@ class Global:
     def setDefaultProj(self, proj):
         self.__default_proj = proj
 
-    def getRealIP(self, host):
-        if GL.hosts().has_key(host):
-            ip = self.hosts()[host]
+    def getRealIP(self, ip):
+        if GL.hosts().has_key(ip):
+            ip = self.hosts()[ip]
         return ip
 
 GL = Global()
