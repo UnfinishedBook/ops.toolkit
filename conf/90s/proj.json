@@ -177,7 +177,7 @@
     },
     "webwap_cdn": {
         "form": "static",
-        "appdir": "cdn"
+        "appdir": "cdn/wap"
     },
     "weblandpage": {
         "form": "static",
@@ -187,17 +187,13 @@
     },
     "weblandpage_cdn": {
         "form": "static",
-        "appdir": "cdn"
+        "appdir": "cdn/landingpage"
     },
     "webcms": {
         "form": "static",
         "pack": "webcms.tar.gz",
         "appdir": "web/cms",
         "svnsuf": "web/90scms"
-    },
-    "webcms_cdn": {
-        "form": "static",
-        "appdir": "cdn"
     },
     "cdn": {
         "form": "static",

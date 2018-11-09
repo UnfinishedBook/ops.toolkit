@@ -264,16 +264,13 @@ def up_webv1_cdn(mod):
             for cmd in cmdlist:
                 remoteCmd(ip, cmd)
 
-def up_webcms_cdn(mod):
+def up_web_cdn(mod):
     if GL.env()!='pro' and GL.env()!='test':
-        GL.LOG.error('该环境(%s)暂不支持webcms_cdn的更新' % GL.env())
-    #src_wap = '%s/wap/prod' % GL.pkdir()
-    mod_cms = getMod('webcms')
+        GL.LOG.error('该环境(%s)暂不支持web_cdn的更新' % GL.env())
+    mod_proj = getMod(mod.name().replace('_cdn',''))
     for ip in mod.deploy():
         cmdlist = [
-            'sudo -u webuser rsync -azv %s/css/ %s/css/' % (mod_cms.appdir(),mod.appdir()),
-            'sudo -u webuser rsync -azv %s/img/ %s/img/' % (mod_cms.appdir(),mod.appdir()),
-            'sudo -u webuser rsync -azv %s/js/ %s/js/' % (mod_cms.appdir(),mod.appdir())
+            'rsync -azv %s/ %s/' % (mod_proj.appdir(),mod.appdir()),
             #'chown -R webuser:web %s' % mod.appdir()
         ]
         for tmp in cmdlist:
@@ -329,8 +326,10 @@ def update(mod):
         up_webv2(mod)
     elif mod.name() == 'webv2_cdn':
         up_webv2_cdn(mod)
-    elif mod.name()=='webcms' or mod.name()=='weblandingpage' or mod.name()=='webwap':
+    elif mod.name()=='webcms' or mod.name()=='weblandpage' or mod.name()=='webwap':
         up_web(mod)
+    elif mod.name()=='weblandpage_cdn' or mod.name()=='webwap_cdn':
+        up_web_cdn(mod)
     elif mod.name() == 'h5':
         up_h5(mod)
     elif mod.name() == 'php':
