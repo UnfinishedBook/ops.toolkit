@@ -150,6 +150,7 @@
     "auth": {
         "form": "node",
         "appdir": "auth",
+        "issue": "1.2.5",
         "svnsuf": "cms/cms_login_server"
     },
     "cms": {
