@@ -84,7 +84,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.203.168:7092",
+        "monitor": "172.18.27.47:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -118,6 +118,7 @@
                 "90bid-ad-center",
                 "bid-server",
                 "pay-server",
+                "monitor-server",
                 "weixin-server"
             ],
             "host-90s-pro-java-02": [
@@ -149,13 +150,12 @@
             "host-90s-pro-robot-01": [
                 "90bid-center",
                 "bid-process",
-                "commonbiz-process",
                 "recommend-process",
-                "weixin-process",
-                "monitor-server"
+                "weixin-process"
             ],
             "host-90s-pro-robot-02": [
                 "90bid-center",
+                "commonbiz-process",
                 "order-process",
                 "prizepool-process",
                 "seckill-process"

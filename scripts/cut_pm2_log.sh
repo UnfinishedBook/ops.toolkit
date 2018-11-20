@@ -8,7 +8,7 @@ export PATH=/usr/local/bin:$PATH
 
 LOG_DIR=/mydata/logs
 
-list=`find $LOG_DIR -name '*.log' -size +200M | grep -E '/activity-api/|/ad-api/|/ad_stats/|/api/|/auth/|/cms/|/cmsTimer/|/data/' | grep -v 'rename'`
+list=`find $LOG_DIR -name '*.log' -size +200M | grep -E '/activity-api/|/ad-api/|/ad_stats/|/api/|/auth/|/cms/|/cmsTimer/|/data/|/data_channel/' | grep -v 'rename'`
 count=`echo $list | wc -w`
 tm=`date '+%F'`
 n=$count

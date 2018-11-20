@@ -354,7 +354,8 @@ class Loop(Cmd):
             ip_list = [args[0],]
             scp(ip_list, src, dest)
         elif args[0] == 'all':
-            ip_list = GL.deploy()[GL.env()]['deploy'].keys()
+            lst = GL.deploy()[GL.env()]['deploy'].keys()
+            ip_list = GL.getRealIPs(lst)
             scp(ip_list, src, dest)
         else:
             self.help_scp()
@@ -387,7 +388,8 @@ class Loop(Cmd):
             ip_list = [args[0],]
             rsync(ip_list, src, dest)
         elif args[0] == 'all':
-            ip_list = GL.deploy()[GL.env()]['deploy'].keys()
+            lst = GL.deploy()[GL.env()]['deploy'].keys()
+            ip_list = GL.getRealIPs(lst)
             rsync(ip_list, src, dest)
         else:
             self.help_rsync()

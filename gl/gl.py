@@ -288,6 +288,13 @@ class Global:
             ip = self.hosts()[ip]
         return ip
 
+    def getRealIPs(self, ips):
+        ip_list = []
+        for ip in ips:
+            if GL.hosts().has_key(ip):
+                ip_list.append(self.hosts()[ip])
+        return ip_list
+
 GL = Global()
 
 
