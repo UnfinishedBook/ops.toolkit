@@ -101,17 +101,6 @@
                 "webv1",
                 "webv1_cdn"
             ],
-            "172.18.203.159": [
-                "coupon-server",
-                "activity-api",
-                "ad-api",
-                "api",
-                "auth",
-                "cms",
-                "data",
-                "data_channel",
-                "weixin-server"
-            ],
             "172.18.27.24": [
                 "coupon-server",
                 "activity-api",
