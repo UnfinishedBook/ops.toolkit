@@ -68,6 +68,7 @@
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
+        "issue": "1.0.0",
         "tomcat": "tomcat-qbmonitor-server",
         "appdir": "webapps/qbmonitor",
         "svnsuf": "server/server/qbmonitor-server",
