@@ -49,6 +49,7 @@
                 "weblandpage",
                 "90bid-ad-center",
                 "90bid-center",
+                "90bid-toutiao-process",
                 "bid-process",
                 "commonbiz-process",
                 "data-process",
@@ -59,6 +60,7 @@
                 "seckill-process",
                 "weixin-process",
                 "bid-server",
+                "data-server",
                 "monitor-server",
                 "pay-server",
                 "weixin-server",
@@ -106,12 +108,15 @@
             ],
             "host-90s-pro-data-01": [
                 "90bid-stats-center",
-                "90bid-stats-process"
+                "90bid-stats-process",
+                "90bid-toutiao-process",
+                "data-server"
             ],
             "host-90s-pro-data-02": [
                 "90bid-stats-center",
                 "data-process",
-                "rc-process"
+                "rc-process",
+                "data-server"
             ],
             "host-90s-pro-java-01": [
                 "90bid-center",
@@ -162,8 +167,10 @@
             ],
             "host-90s-pro-hadoop-01": [
                 "90s-data-clean",
+                "exposure-spark",
                 "rc-spark",
-                "rc-spark-realtime"
+                "rc-spark-realtime",
+                "rc-timer"
             ]
         }
     }

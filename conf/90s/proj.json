@@ -101,12 +101,26 @@
         "svnsuf": "server/process/90bid-stats-process",
         "cnfsuf": "server/process/config/90bid-stats-process"
     },
+    "90bid-toutiao-process": {
+        "form": "process",
+        "pack": "90bid-toutiao-process-assembly.zip",
+        "appdir": "90bid-toutiao-process",
+        "svnsuf": "server/process/90bid-toutiao-process",
+        "cnfsuf": "server/process/config/90bid-toutiao-process"
+    },
     "bid-server": {
         "form": "newserver",
         "pack": "bid-server-assembly.zip",
         "appdir": "bid-server",
         "svnsuf": "server/server/bid-server",
         "cnfsuf": "server/server/config/bid-server"
+    },
+    "data-server": {
+        "form": "newserver",
+        "pack": "data-server-assembly.zip",
+        "appdir": "data-server",
+        "svnsuf": "server/server/data-server",
+        "cnfsuf": "server/server/config/data-server"
     },
     "monitor-server": {
         "form": "newserver",
@@ -167,7 +181,7 @@
     "data_channel": {
         "form": "node",
         "appdir": "data_channel",
-        "svnsuf": "ad/channel_stats"
+        "svnsuf": "ad/ad_stats_channel"
     },
     "webwap": {
         "form": "static",
@@ -216,6 +230,12 @@
         "appdir": "90s-data-clean-0.0.1",
         "svnsuf": "server/data/90s-data-clean"
     },
+    "exposure-spark": {
+        "form": "data",
+        "pack": "exposure-spark-0.0.1-assembly.zip",
+        "appdir": "exposure-spark-0.0.1",
+        "svnsuf": "server/data/exposure-spark"
+    },
     "rc-spark-realtime": {
         "form": "data",
         "pack": "rc-spark-realtime-1.0.0-assembly.zip",
@@ -227,5 +247,11 @@
         "pack": "rc-spark-1.0.0-assembly.zip",
         "appdir": "rc-spark-1.0.0",
         "svnsuf": "server/data/rc-spark"
+    },
+    "rc-timer": {
+        "form": "data",
+        "pack": "rc-timer-1.0.0-assembly.zip",
+        "appdir": "rc-timer-1.0.0",
+        "svnsuf": "server/data/rc-timer"
     }
 }
