@@ -593,7 +593,7 @@ def _stop(ip, mod, jstack=False):
     elif mod.form()=='center' and jstack==True:
         savejstack(mod, ip)
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
-    elif mod.form() == 'process':
+    if mod.form() == 'process':
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill $tmpid; else echo "Not found pid"; fi' % mod.pidname()
     else:
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill -9 $tmpid; else echo "Not found pid"; fi' % mod.pidname()
