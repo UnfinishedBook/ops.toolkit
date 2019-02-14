@@ -31,6 +31,13 @@
         "cnfsuf": "server/center/config/yh798-adsms-center",
         "port": "20610"
     },
+    "cms-process": {
+        "form": "process",
+        "pack": "cms-process-assembly.zip",
+        "appdir": "cms-process",
+        "svnsuf": "server/process/cms-process",
+        "cnfsuf": "server/process/config/cms-process"
+    },
     "bid-process": {
         "form": "process",
         "pack": "bid-process-assembly.zip",

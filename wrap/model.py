@@ -55,6 +55,11 @@ class Model:
                 if self.form()=='server' or self.form()=='module':
                     tmp = '%s/%s' % (self.tomcat(),tmp)
                 self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],tmp)
+            if self.form() == 'data':
+                if GL.env() == 'dev':
+                    self.__appdir = self.__appdir.replace('stats', 'stats-dev')
+                elif GL.env() == 'test':
+                    self.__appdir = self.__appdir.replace('stats', 'stats-test')
         return self.__appdir
 
     def upappdir(self): #应用部署的上层目录

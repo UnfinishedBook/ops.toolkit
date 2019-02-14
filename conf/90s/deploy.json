@@ -15,6 +15,7 @@
             "172.18.27.36": [
                 "90bid-ad-center",
                 "90bid-center",
+                "cms-process",
                 "bid-process",
                 "coupon-server",
                 "monitor-server",
@@ -27,6 +28,13 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
+            ],
+            "host-90s-test-hadoop-01": [
+                "90s-data-clean",
+                "exposure-spark",
+                "rc-spark",
+                "rc-spark-realtime",
+                "rc-timer"
             ]
         }
     },
@@ -50,6 +58,7 @@
                 "90bid-ad-center",
                 "90bid-center",
                 "90bid-toutiao-process",
+                "cms-process",
                 "bid-process",
                 "commonbiz-process",
                 "data-process",
@@ -81,6 +90,13 @@
             ],
             "172.18.203.158": [
                 "hadoop"
+            ],
+            "host-90s-test-hadoop-01": [
+                "90s-data-clean",
+                "exposure-spark",
+                "rc-spark",
+                "rc-spark-realtime",
+                "rc-timer"
             ]
         }
     },
@@ -110,6 +126,7 @@
                 "90bid-stats-center",
                 "90bid-stats-process",
                 "90bid-toutiao-process",
+                "cms-process",
                 "data-server"
             ],
             "host-90s-pro-data-02": [
@@ -120,7 +137,6 @@
             ],
             "host-90s-pro-java-01": [
                 "90bid-center",
-                "90bid-ad-center",
                 "bid-server",
                 "pay-server",
                 "monitor-server",
@@ -128,12 +144,12 @@
             ],
             "host-90s-pro-java-02": [
                 "90bid-center",
-                "90bid-ad-center",
                 "bid-server",
                 "pay-server",
                 "weixin-server"
             ],
             "host-90s-pro-node-01": [
+                "90bid-ad-center",
                 "activity-api",
                 "ad-api",
                 "api",
@@ -144,6 +160,7 @@
                 "data_channel"
             ], 
             "host-90s-pro-node-02": [
+                "90bid-ad-center",
                 "activity-api",
                 "ad-api",
                 "api",

@@ -496,6 +496,7 @@ def svn(mod, opt, path=None):
             line = ' %s/%s' % (wcopy,line)
             cmd += line
             print '\t%s' % line
+        cmd += ' --editor-cmd vim'
         out = ask('将提交上述文件, 确认立刻执行吗？', 'yes,no', 'no')
         if out == 'yes':
             localCmd(cmd)
