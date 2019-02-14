@@ -46,6 +46,13 @@ class Model:
                         self.__deploy.append(ip)
         return self.__deploy
 
+    def dealDataDir(self, tmp):
+        if GL.env() == 'dev':
+            tmp = tmp.replace('stats', 'stats-dev')
+        elif GL.env() == 'test':
+            tmp = tmp.replace('stats', 'stats-test')
+        return tmp
+
     def appdir(self):   #应用部署目录
         if self.__appdir == None:
             tmp = GL.proj()[self.name()]['appdir']
@@ -56,10 +63,7 @@ class Model:
                     tmp = '%s/%s' % (self.tomcat(),tmp)
                 self.__appdir = '%s/%s' % (GL.form()[self.form()]['appdir'],tmp)
             if self.form() == 'data':
-                if GL.env() == 'dev':
-                    self.__appdir = self.__appdir.replace('stats', 'stats-dev')
-                elif GL.env() == 'test':
-                    self.__appdir = self.__appdir.replace('stats', 'stats-test')
+                self.__appdir = self.dealDataDir(self.__appdir)
         return self.__appdir
 
     def upappdir(self): #应用部署的上层目录
@@ -114,6 +118,8 @@ class Model:
                 self.__pack = tmp
             else:   #相对路径,就要加上form中的updir
                 self.__pack = '%s/%s' % (GL.form()[self.form()]['updir'],tmp)
+                if self.form() == 'data':
+                    self.__pack = self.dealDataDir(self.__pack)
         return self.__pack
 
     def pidname(self):  #查询进程时用的字符串
