@@ -96,13 +96,12 @@
         "muser": "root",
         "mpwd": "85dae7cb22252d3da5af4d23515b120e",
         "deploy": {
-            "172.18.27.16": [
+            "host-yh-pro-tengine": [
                 "cdn",
                 "webv1",
                 "webv1_cdn"
             ],
-            "172.18.27.24": [
-                "coupon-server",
+            "host-yh-pro-node-02": [
                 "activity-api",
                 "ad-api",
                 "api",
@@ -111,33 +110,31 @@
                 "cmsTimer",
                 "data",
                 "data_channel",
+                "coupon-server",
                 "weixin-server"
             ],
-            "172.18.203.162": [
-            ],
-            "172.18.27.25": [
+            "host-yh-pro-java-02": [
                 "yh798-stats-center",
                 "yh798-adsms-center",
                 "coupon798-center",
                 "coupon798-ad-center",
-                "weixin-server",
                 "yh798-stats-server"
             ],
-            "172.18.203.160": [
+            "host-yh-pro-robot-01": [
                 "coupon798-center",
                 "coupon798-ad-center",
                 "coupon798-process",
                 "weixin-process",
-                "monitor-server"
+                "coupon-server",
+                "monitor-server",
+                "weixin-server"
             ],
-            "172.18.203.161": [
+            "host-yh-pro-data-01": [
                 "yh798-stats-center",
                 "yh798-adsms-center",
                 "yh798-stats-process",
                 "yh798-adsms-process",
                 "yh798-stats-server"
-            ],
-            "172.18.27.23": [
             ],
             "172.18.27.21": [
                 "hadoop"

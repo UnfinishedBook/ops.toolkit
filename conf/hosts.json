@@ -11,5 +11,10 @@
     "host-90s-pro-node-02": "172.18.203.170",
     "host-90s-pro-robot-01": "172.18.203.168",
     "host-90s-pro-robot-02": "172.18.27.44",
-    "host-90s-pro-hadoop-01": "172.18.27.21"
+    "host-90s-pro-hadoop-01": "172.18.27.21",
+    "host-yh-pro-data-01": "172.18.203.161",
+    "host-yh-pro-java-02": "172.18.27.25",
+    "host-yh-pro-node-02": "172.18.27.24",
+    "host-yh-pro-robot-01": "172.18.203.160",
+    "host-yh-pro-tengine": "172.18.27.16"
 }
