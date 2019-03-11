@@ -72,6 +72,7 @@
                 "data-server",
                 "monitor-server",
                 "pay-server",
+                "search-server",
                 "weixin-server",
                 "activity-api",
                 "ad-api",
@@ -149,6 +150,8 @@
                 "weixin-server"
             ],
             "host-90s-pro-node-01": [
+                "weixin-process",
+                "search-server",
                 "90bid-ad-center",
                 "activity-api",
                 "ad-api",
@@ -160,6 +163,7 @@
                 "data_channel"
             ], 
             "host-90s-pro-node-02": [
+                "search-server",
                 "90bid-ad-center",
                 "activity-api",
                 "ad-api",
@@ -172,8 +176,7 @@
             "host-90s-pro-robot-01": [
                 "90bid-center",
                 "bid-process",
-                "recommend-process",
-                "weixin-process"
+                "recommend-process"
             ],
             "host-90s-pro-robot-02": [
                 "90bid-center",

@@ -143,6 +143,13 @@
         "svnsuf": "server/server/pay-server",
         "cnfsuf": "server/server/config/pay-server"
     },
+    "search-server": {
+        "form": "newserver",
+        "pack": "search-server-assembly.zip",
+        "appdir": "search-server",
+        "svnsuf": "server/server/search-server",
+        "cnfsuf": "server/server/config/search-server"
+    },
     "weixin-server": {
         "form": "newserver",
         "pack": "weixin-server-assembly.zip",
