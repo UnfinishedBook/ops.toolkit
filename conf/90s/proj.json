@@ -15,6 +15,14 @@
         "cnfsuf": "server/center/config/90bid-ad-center",
         "port": "20605"
     },
+    "90bid-integral-center": {
+        "form": "center",
+        "pack": "90bid-integral-provider-1.0.0-assembly.zip",
+        "appdir": "90bid-integral-provider-1.0.0",
+        "svnsuf": "server/center/90bid-integral-center",
+        "cnfsuf": "server/center/config/90bid-integral-center",
+        "port": "20608"
+    },
     "90bid-stats-center": {
         "form": "center",
         "pack": "90bid-stats-provider-0.1.0-assembly.zip",
@@ -101,6 +109,41 @@
         "svnsuf": "server/process/weixin-process",
         "cnfsuf": "server/process/config/weixin-process"
     },
+    "integral-process": {
+        "form": "process",
+        "pack": "integral-process-assembly.zip",
+        "appdir": "integral-process",
+        "svnsuf": "server/process/integral-process",
+        "cnfsuf": "server/process/config/integral-process"
+    },
+    "integral-data-process": {
+        "form": "process",
+        "pack": "integral-data-process-assembly.zip",
+        "appdir": "integral-data-process",
+        "svnsuf": "server/process/integral-data-process",
+        "cnfsuf": "server/process/config/integral-data-process"
+    },
+    "integral-firewall-process": {
+        "form": "process",
+        "pack": "integral-firewall-process-assembly.zip",
+        "appdir": "integral-firewall-process",
+        "svnsuf": "server/process/integral-firewall-process",
+        "cnfsuf": "server/process/config/integral-firewall-process"
+    },
+    "integral-prizepool-process": {
+        "form": "process",
+        "pack": "integral-prizepool-process-assembly.zip",
+        "appdir": "integral-prizepool-process",
+        "svnsuf": "server/process/integral-prizepool-process",
+        "cnfsuf": "server/process/config/integral-prizepool-process"
+    },
+    "integral-proxy-process": {
+        "form": "process",
+        "pack": "integral-proxy-process-assembly.zip",
+        "appdir": "integral-proxy-process",
+        "svnsuf": "server/process/integral-proxy-process",
+        "cnfsuf": "server/process/config/integral-proxy-process"
+    },
     "90bid-stats-process": {
         "form": "process",
         "pack": "90bid-stats-process-assembly.zip",
@@ -157,6 +200,13 @@
         "svnsuf": "server/server/weixin-server",
         "cnfsuf": "server/server/config/weixin-server"
     },
+    "integral-server": {
+        "form": "newserver",
+        "pack": "integral-server-assembly.zip",
+        "appdir": "integral-server",
+        "svnsuf": "server/server/integral-server",
+        "cnfsuf": "server/server/config/integral-server"
+    },
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
@@ -171,6 +221,11 @@
         "form": "node",
         "appdir": "api",
         "svnsuf": "server/90bid"
+    },
+    "integralapi": {
+        "form": "node",
+        "appdir": "integral-api",
+        "svnsuf": "server/90bid-integral"
     },
     "auth": {
         "form": "node",
