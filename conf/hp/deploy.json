@@ -52,12 +52,17 @@
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "jks_url": "http://localhost:7281/jenkins-test/",
+        "jks_usr": "admin",
+        "jks_token": "07c88dcb8adb1bb6170765d142de26dd",
         "deploy": {
             "10.104.197.116": [
                 "wap",
                 "wapv2",
                 "hpyp-center",
                 "hpyp-ad-center",
+                "hpyp-toutiao-center",
+                "hpyp-toutiao-process",
                 "hpyp-data-process",
                 "hpyp-firewall-process",
                 "hpyp-nonstd-process",

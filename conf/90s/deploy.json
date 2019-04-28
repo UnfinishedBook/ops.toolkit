@@ -50,7 +50,7 @@
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
         "mpwd": "400126109ad316ab40e7d9138adf41a7",
-        "jks_url": "http://172.18.27.38:7281/jenkins-test/",
+        "jks_url": "http://localhost:7281/jenkins-test/",
         "jks_usr": "admin",
         "jks_token": "1eda2936b59921dc8dc08416f484ef79",
         "deploy": {
@@ -128,7 +128,7 @@
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
         "mpwd": "85dae7cb22252d3da5af4d23515b120e",
-        "jks_url": "http://172.18.27.38:7081/jenkins/",
+        "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "b67a48d844fb221dff0c174d505e92e4",
         "deploy": {
