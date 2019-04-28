@@ -32,6 +32,7 @@
     "hpyp-nonstd-process": {
         "form": "process",
         "pack": "hpyp-nonstd-process-assembly.zip",
+        "issue": "1.2.5",
         "appdir": "hpyp-nonstd-process",
         "svnsuf": "server/process/hpyp-nonstd-process",
         "cnfsuf": "server/process/config/hpyp-nonstd-process"
