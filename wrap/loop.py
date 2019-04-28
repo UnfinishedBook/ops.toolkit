@@ -250,7 +250,7 @@ class Loop(Cmd):
             pm2(arg)
         else:
             args = arg.split(' ', 1)
-            if len(args)==2 and args[0]=='reload':
+            if len(args) == 2:
                 mod = getMod(args[1])
                 if mod!=None and mod.form()=='node':
                     pm2(args[0], mod)

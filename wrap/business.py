@@ -652,7 +652,8 @@ def restart(mod, theIP=None, asked=True, jstack=False):
 
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
-        mod = getMod('cms')  #以cms来定位node所在的主机
+        if mod == None:
+            mod = getMod('cms')  #以cms来定位node所在的主机
         for ip in mod.deploy():
             remoteCmd(ip, 'pm2 l')
     elif opt=='reload' and mod!=None:

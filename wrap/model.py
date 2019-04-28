@@ -141,7 +141,7 @@ class Model:
             if GL.env()!='pro' and self.form()=='center':
                 return '%s/bin/start-dev.sh' % self.appdir()
             if GL.env()!='pro' and self.form()=='process':
-                return '%s/bin/lowstart.sh' % self.appdir()
+                return '%s/bin/start-dev.sh' % self.appdir()
             if GL.env()!='pro' and self.form()=='newserver':
                 return '%s/bin/start-dev.sh' % self.appdir()
             else:
