@@ -11,6 +11,7 @@ import datetime
 import getpass
 import re
 import requests
+import jenkins
 #from pexpect.pxssh import pxssh
 from Crypto.Cipher import AES
 from Crypto import Random
@@ -294,6 +295,17 @@ class Global:
             if GL.hosts().has_key(ip):
                 ip_list.append(self.hosts()[ip])
         return ip_list
+
+    def initJenkins(self):
+        if self.deploy()[self.env()].has_key('jks_url') and \
+            self.deploy()[self.env()].has_key('jks_usr') and \
+            self.deploy()[self.env()].has_key('jks_token'):
+            self.jks = jenkins.Jenkins(\
+                self.deploy()[self.env()]['jks_url'], \
+                username=self.deploy()[self.env()]['jks_usr'], \
+                password=self.deploy()[self.env()]['jks_token'])
+        else:
+            self.jks = None
 
 GL = Global()
 

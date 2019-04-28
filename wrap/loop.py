@@ -14,6 +14,10 @@ class Loop(Cmd):
         self.branch = False
         GL.setBranch(self.branch)
         self.settable['branch'] = 'merge from branch, not trunk'
+        self.jksOptions = { #jenkins操作的选项与对应业务功能的映射
+            'build': 'jenkinsBuild',
+            'info': 'jenkinsInfo'
+        }
         Cmd.__init__(self)
 
     def _onchange_branch(self, old, new):
@@ -47,6 +51,7 @@ class Loop(Cmd):
         #选择要管理的环境
         env = self.select(GL.deploy().keys())
         GL.setEnv(env)
+        GL.initJenkins()
         GL.LOG = getLogger('TheLogger', 'ops-toolkit.log')
 
         intro_pro = GL.conf()[GL.project()]['intro']
@@ -398,6 +403,26 @@ class Loop(Cmd):
         print '''远程同步目录，用法：
         rsync <工程名/ip/all> <src> <dest>  通过参数2得到机器，src和dest前面加:则表示为远程目录，有且只有一个为远程目录
         '''
+
+    #自定义jks命令, 实现jenkins相关操作, 用法见函数help_jks
+    def do_jks(self, arg):
+        args = arg.split(' ')   #以空格分隔参数
+        if len(args) == 2:
+            #直接接受两个参数, 第一为选项, 第二为工程
+            if args[0] in self.jksOptions:
+                #以eval来实现对字符串形式的函数名进行调用
+                eval(self.jksOptions[args[0]])(getMod(args[1]))
+                return
+        self.help_jks()
+
+    #自定义jks命令的帮助内容，循环中输入help jks时调用
+    def help_jks(self):
+        print('''
+        jks命令：jks相关操作；用法：jks [选项] [工程名];
+            选项：
+                build   立即构建
+                info    查看信息
+        ''')
 
     #def do_set(self, arg):
         #args = arg.split(' ')

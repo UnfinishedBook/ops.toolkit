@@ -222,6 +222,9 @@ class Model:
         else:
             return GL.issue()
 
+    def jenkinsJob(self):
+        return '%s-%s' % (GL.env(),self.name())
+
 #根据工程名获得一个Model实例
 def getMod(proj):
     if proj == '!$':

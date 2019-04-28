@@ -902,10 +902,20 @@ def set(var, val=None):
     elif var == 'issue':
         GL.setIssue(val)
 
+def jenkinsBuild(mod):
+    GL.jks.build_job(mod.jenkinsJob())
+    time.sleep(1)
+    jenkinsInfo(mod)
 
-
-
-
-
+def jenkinsInfo(mod):
+    num = GL.jks.get_job_info(mod.jenkinsJob())['lastBuild']['number']  #最近的构建序号
+    info = GL.jks.get_build_info(mod.jenkinsJob(), num) #通过序号获取构建信息
+    tm = datetime.datetime.fromtimestamp(info['timestamp']/1000)
+    tmStr = tm.strftime("%Y-%m-%d %H:%M:%S")    #转换构建时间
+    print('构建Job：%s' % mod.jenkinsJob())
+    print('构建序号：%d' % info['number'])
+    print('构建时间：%s' % tmStr)
+    print('构建进行中：%s' % info['building'])
+    print('构建结果：%s' % info['result'])
 
 
