@@ -13,7 +13,7 @@
         "appdir": "hpyp-ad-provider-0.1.0",
         "svnsuf": "server/center/hpyp-ad-center",
         "cnfsuf": "server/center/config/hpyp-ad-center",
-        "port": "20606"
+        "port": "20605"
     },
     "hpyp-toutiao-center": {
         "form": "center",
@@ -21,7 +21,7 @@
         "appdir": "hpyp-toutiao-provider-0.1.0",
         "svnsuf": "server/center/hpyp-toutiao-center",
         "cnfsuf": "server/center/config/hpyp-toutiao-center",
-        "port": "20605"
+        "port": "20606"
     },
     "hpyp-toutiao-process": {
         "form": "process",

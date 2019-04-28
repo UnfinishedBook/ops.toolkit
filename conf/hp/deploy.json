@@ -146,6 +146,7 @@
             "10.104.254.114": [
                 "hpyp-center",
                 "hpyp-ad-center",
+                "hpyp-toutiao-center",
                 "hpyp-data-process",
                 "hpyp-firewall-process",
                 "hpyp-nonstd-process",
@@ -159,6 +160,8 @@
                 "hpyp-process"
             ],
             "10.135.144.182": [
+                "hpyp-toutiao-center",
+                "hpyp-toutiao-process",
                 "statistics-admonitor",
                 "statistics-csdb",
                 "statistics-logsystem",
