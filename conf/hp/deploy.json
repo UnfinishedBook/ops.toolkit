@@ -100,6 +100,9 @@
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
         "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "jks_url": "http://localhost:7081/jenkins/",
+        "jks_usr": "admin",
+        "jks_token": "1d88aa23b6e851788b0d582cae22686f",
         "deploy": {
             "10.104.11.150": [
                 "cdn",
