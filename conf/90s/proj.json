@@ -268,6 +268,12 @@
         "appdir": "web/landingpage",
         "svnsuf": "web/landpage"
     },
+    "weblandpagev2": {
+        "form": "static",
+        "pack": "weblandpagev2.tar.gz",
+        "appdir": "web/landingpage",
+        "svnsuf": "web/landpage_v2"
+    },
     "weblandpage_cdn": {
         "form": "static",
         "appdir": "cdn/landingpage"

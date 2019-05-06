@@ -58,6 +58,7 @@
                 "webcms",
                 "webwap",
                 "weblandpage",
+                "weblandpagev2",
                 "90bid-ad-center",
                 "90bid-center",
                 "90bid-stats-center",
@@ -138,6 +139,8 @@
                 "webcms_cdn",
                 "weblandpage",
                 "weblandpage_cdn",
+                "weblandpagev2",
+                "weblandpagev2_cdn",
                 "webwap",
                 "webwap_cdn"
             ],
@@ -178,7 +181,8 @@
                 "cms",
                 "cmsTimer",
                 "data",
-                "data_channel"
+                "data_channel",
+                "integralapi"
             ], 
             "host-90s-pro-node-02": [
                 "search-server",
@@ -189,7 +193,8 @@
                 "auth",
                 "cms",
                 "data",
-                "data_channel"
+                "data_channel",
+                "integralapi"
             ], 
             "host-90s-pro-robot-01": [
                 "90bid-center",
@@ -202,6 +207,25 @@
                 "order-process",
                 "prizepool-process",
                 "seckill-process"
+            ],
+            "host-90s-pro-integral-java-01": [
+                "90bid-integral-center",
+                "integral-server",
+                "integral-firewall-process"
+            ],
+            "host-90s-pro-integral-java-02": [
+                "90bid-integral-center",
+                "integral-server"
+            ],
+            "host-90s-pro-integral-robot-01": [
+                "90bid-integral-center",
+                "integral-process",
+                "integral-data-process"
+            ],
+            "host-90s-pro-integral-robot-02": [
+                "90bid-integral-center",
+                "integral-prizepool-process",
+                "integral-proxy-process"
             ],
             "host-90s-pro-hadoop-01": [
                 "90s-data-clean",
