@@ -278,6 +278,10 @@
         "form": "static",
         "appdir": "cdn/landingpage"
     },
+    "weblandpagev2_cdn": {
+        "form": "static",
+        "appdir": "cdn/landingpage"
+    },
     "webcms": {
         "form": "static",
         "pack": "webcms.tar.gz",

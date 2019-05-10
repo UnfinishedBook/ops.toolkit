@@ -124,6 +124,37 @@ def up_wap_cdn(mod):
             for cmd in cmdlist:
                 remoteCmd(ip, cmd)
 
+def up_weblandpagev2(mod, patch=False):
+    pk = '%s/weblandpagev2.tar.gz' % GL.pkdir()
+    if os.path.exists(pk) == False:
+        GL.LOG.error('未发现更新包：%s' % pk)
+        return
+    tmp = '%s/weblandpagev2' % GL.pkdir()
+    if patch:
+        src = '%s/patch' % tmp
+    elif GL.env() == 'pro':
+        src = '%s/prod' % tmp
+    elif GL.env() == 'test':
+        src = '%s/test' % tmp
+    else:
+        GL.LOG.error('该环境(%s)暂不支持weblandpagev2的更新' % GL.env())
+        return
+    localCmd('mkdir -p %s' % tmp)
+    localCmd('rm -rf %s/*' % tmp)
+    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    if os.path.exists(src) == False:
+        GL.LOG.error('未发现目录: %s' % src)
+        return
+    for ip in mod.deploy():
+        cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+            tmpCmd = 'chmod -R g+w %s' % mod.appdir()
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,tmpCmd), 'yes,no', 'no')
+            if out == 'yes':
+                remoteCmd(ip, tmpCmd)
+
 def up_wapv2(mod, patch=False):
     pk = '%s/wapv2.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
@@ -200,6 +231,11 @@ def up_web(mod, patch=False):
             localCmd(cmd)
             if mod.name() == 'weblandpage':
                 tmpCmd = 'chmod -R g+w %s' % mod.appdir()
+                out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,tmpCmd), 'yes,no', 'no')
+                if out == 'yes':
+                    remoteCmd(ip, tmpCmd)
+            elif mod.name() == 'webwap':
+                tmpCmd = 'chmod -R g+w %s/other/jdappintroduce' % mod.appdir()
                 out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,tmpCmd), 'yes,no', 'no')
                 if out == 'yes':
                     remoteCmd(ip, tmpCmd)
@@ -335,7 +371,9 @@ def update(mod):
         up_webv2_cdn(mod)
     elif mod.name()=='webcms' or mod.name()=='weblandpage' or mod.name()=='webwap':
         up_web(mod)
-    elif mod.name()=='weblandpage_cdn' or mod.name()=='webwap_cdn':
+    elif mod.name() == 'weblandpagev2':
+        up_weblandpagev2(mod)
+    elif mod.name()=='weblandpage_cdn' or mod.name()=='webwap_cdn' or mod.name()=='weblandpagev2_cdn':
         up_web_cdn(mod)
     elif mod.name() == 'h5':
         up_h5(mod)
