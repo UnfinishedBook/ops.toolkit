@@ -1,8 +1,11 @@
 {
     "host-90s-dev": "172.18.27.36",
+    "host-90s-dev-integral": "172.18.27.48",
     "host-90s-test": "172.18.203.167",
     "host-90s-test-integral": "172.18.27.3",
     "host-90s-test-hadoop-01": "172.18.203.156",
+    "host-90s-test-hadoop-02": "172.18.203.157",
+    "host-90s-test-hadoop-03": "172.18.203.158",
     "host-90s-pro-tengine": "172.18.27.40",
     "host-90s-pro-data-01": "172.18.27.45",
     "host-90s-pro-data-02": "172.18.203.169",
