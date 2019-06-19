@@ -13,6 +13,8 @@
     "host-90s-pro-robot-01": "172.18.203.168",
     "host-90s-pro-robot-02": "172.18.27.44",
     "host-90s-pro-hadoop-01": "172.18.27.21",
+    "host-90s-pro-hadoop-02": "172.18.27.27",
+    "host-90s-pro-hadoop-03": "172.18.27.26",
     "host-90s-pro-integral-java-01": "172.18.27.52",
     "host-90s-pro-integral-java-02": "172.18.203.173",
     "host-90s-pro-integral-robot-01": "172.18.27.53",

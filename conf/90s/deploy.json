@@ -228,11 +228,18 @@
                 "integral-proxy-process"
             ],
             "host-90s-pro-hadoop-01": [
+                "hadoop",
                 "90s-data-clean",
                 "exposure-spark",
                 "rc-spark",
                 "rc-spark-realtime",
                 "rc-timer"
+            ],
+            "host-90s-pro-hadoop-02": [
+                "hadoop"
+            ],
+            "host-90s-pro-hadoop-03": [
+                "hadoop"
             ]
         }
     }
