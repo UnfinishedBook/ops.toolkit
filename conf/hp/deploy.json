@@ -85,6 +85,9 @@
                 "cmsTimer",
                 "data",
                 "data_channel"
+            ],
+            "10.104.58.156": [
+                "hadoop"
             ]
         }
     },
