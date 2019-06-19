@@ -294,6 +294,8 @@ class Global:
         for ip in ips:
             if GL.hosts().has_key(ip):
                 ip_list.append(self.hosts()[ip])
+            else:
+                ip_list.append(ip)
         return ip_list
 
     def initJenkins(self):

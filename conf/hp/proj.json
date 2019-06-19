@@ -119,6 +119,7 @@
         "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
         "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
+        "issue": "1.2.5",
         "svnsuf": "statistics/ad-monitor-hpyp"
     },
     "statistics-csdb": {
