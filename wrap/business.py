@@ -960,6 +960,23 @@ def jenkinsInfo(mod):
     print('构建序号：%d' % info['number'])
     print('构建时间：%s' % tmStr)
     print('构建进行中：%s' % info['building'])
-    print('构建结果：%s' % info['result'])
+    n = 0
+    while True:
+        if info['building'] == False:
+            if n != 0:
+                print('%s' % info['result'])
+            print('构建结果：%s' % info['result'])
+            break
+        else:
+            if n == 0:
+                print '构建中，请稍候 . .',
+                sys.stdout.flush()
+            else:
+                print '.',
+                sys.stdout.flush()
+            n += 1
+            time.sleep(1)
+            num = GL.jks.get_job_info(mod.jenkinsJob())['lastBuild']['number']  #最近的构建序号
+            info = GL.jks.get_build_info(mod.jenkinsJob(), num) #通过序号获取构建信息
 
 
