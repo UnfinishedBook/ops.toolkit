@@ -4,7 +4,7 @@
     "db": {
         "intro": "夺宝",
         "issue": "v5.5.0",
-        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "svn": "94b9ac06f39bf5013ae34be6986f18ab",
         "pkdir": "/mydata/maintenance/packages"
     },
     "qb": {
@@ -16,13 +16,13 @@
     "sdd": {
         "intro": "省多多",
         "issue": "1.0.0",
-        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "svn": "94b9ac06f39bf5013ae34be6986f18ab",
         "pkdir": "/mydata/maintenance/packages"
     },
     "hp": {
         "intro": "惠拍优品",
         "issue": "1.3.0",
-        "svn": "42d5a6b7aed9d364be7907cab59e0a77",
+        "svn": "94b9ac06f39bf5013ae34be6986f18ab",
         "pkdir": "/mydata/maintenance/packages"
     },
     "kt": {
