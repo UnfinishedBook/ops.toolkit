@@ -3,7 +3,7 @@
         "intro": "测试环境",
         "monitor": "10.104.197.116:7086/monitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.104.197.116": [
                 "activity-center",
@@ -42,7 +42,7 @@
         "intro": "生产环境",
         "monitor": "10.104.254.114:7086/monitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.104.11.150": [
                 "activity-center",

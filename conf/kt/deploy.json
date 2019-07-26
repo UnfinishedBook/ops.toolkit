@@ -3,7 +3,7 @@
         "intro": "开发环境",
         "monitor": "172.18.27.17:7092",
         "muser": "root",
-        "mpwd": "400126109ad316ab40e7d9138adf41a7",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "deploy": {
             "172.18.27.17": [
                 "ktyp-center",
@@ -44,7 +44,7 @@
         "intro": "测试环境",
         "monitor": "172.18.27.28:7092/qbmonitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "172.18.27.28": [
                 "webv2",
@@ -96,7 +96,7 @@
         "intro": "生产环境",
         "monitor": "172.18.27.25:7092/qbmonitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "172.18.27.16": [
                 "cdn",

@@ -10,7 +10,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.135.17.9": [
                 "wap",
@@ -51,7 +51,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "jks_url": "http://localhost:7281/jenkins-test/",
         "jks_usr": "admin",
         "jks_token": "07c88dcb8adb1bb6170765d142de26dd",
@@ -102,7 +102,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "1d88aa23b6e851788b0d582cae22686f",

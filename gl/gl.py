@@ -16,6 +16,7 @@ import jenkins
 from Crypto.Cipher import AES
 from Crypto import Random
 from binascii import b2a_hex,a2b_hex
+from fabric.api import env
 
 #配置编码
 reload(sys)
@@ -150,6 +151,9 @@ class Global:
         self.__branch = None
         self.__default_proj = None
         self.LOG = None
+        self.__fabric_env = env   #将fabric模块的环境变量保存下来
+        self.__fabric_env.key_filename = self.__conf['rsa_file']
+        self.__fabric_env.password = cipher(self.key(), self.__conf['rsa_pwd'], False)
 
     def dirMain(self):
         return self.__dirMain

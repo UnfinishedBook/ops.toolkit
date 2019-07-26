@@ -10,7 +10,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "172.18.27.3": [
                 "wap",
@@ -52,7 +52,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "172.18.27.5": [
                 "wap",
@@ -97,7 +97,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "172.18.27.14": [
                 "cdn",

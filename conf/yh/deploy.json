@@ -10,7 +10,7 @@
         "mget_center": "dubbo/get_check_servers",
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
-        "mpwd": "400126109ad316ab40e7d9138adf41a7",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "deploy": {
             "172.18.203.163": [
                 "coupon798-ad-center",
@@ -45,7 +45,7 @@
         "mget_center": "dubbo/get_check_servers",
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
-        "mpwd": "400126109ad316ab40e7d9138adf41a7",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "deploy": {
             "172.18.27.17": [
                 "webv1",
@@ -94,7 +94,7 @@
         "mget_center": "dubbo/get_check_servers",
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
-        "mpwd": "85dae7cb22252d3da5af4d23515b120e",
+        "mpwd": "640fe9e4816e90b1612ab04c2f817d6b",
         "deploy": {
             "host-yh-pro-tengine": [
                 "cdn",

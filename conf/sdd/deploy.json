@@ -3,7 +3,7 @@
         "intro": "开发环境",
         "monitor": "10.135.17.9:7092/qbmonitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.135.17.9": [
                 "wap",
@@ -33,7 +33,7 @@
         "intro": "测试环境",
         "monitor": "10.104.197.116:7092/qbmonitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.104.197.116": [
                 "wap",
@@ -63,7 +63,7 @@
         "intro": "生产环境",
         "monitor": "10.104.105.125:7092/qbmonitor",
         "muser": "admin",
-        "mpwd": "946ef60ac6ad8a62af8f2a60fde83b9a",
+        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
             "10.104.11.150": [
                 "cdn",

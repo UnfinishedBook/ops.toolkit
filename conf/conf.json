@@ -1,4 +1,6 @@
 {
+    "rsa_file": "/mydata/maintenance/identity/ops_rsa",
+    "rsa_pwd": "e1ed906489876c59f865096e4aedd32b",
     "db": {
         "intro": "夺宝",
         "issue": "v5.5.0",
@@ -8,7 +10,7 @@
     "qb": {
         "intro": "闪拍",
         "issue": "2.0.0",
-        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     },
     "sdd": {
@@ -26,25 +28,25 @@
     "kt": {
         "intro": "快淘优品",
         "issue": "1.0.0",
-        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     },
     "yh": {
         "intro": "AI优惠",
         "issue": "",
-        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     },
     "90s": {
         "intro": "90秒",
         "issue": "",
-        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     },
     "gtc": {
         "intro": "基因时代",
         "issue": "1.0.0",
-        "svn": "3cbc98a586929ffb5030f5c5097159bd",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     }
 }

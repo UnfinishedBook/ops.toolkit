@@ -30,7 +30,7 @@ elif sys.argv[1] == 'hp':
 elif sys.argv[1] == '90s':
     os.environ['ops_project'] = '90s'
     host = '90s.monitor'
-os.environ['ops_key'] = 'maintenance'
+os.environ['ops_key'] = 'xelementx'
 
 from gl import *
 from wrap import *
