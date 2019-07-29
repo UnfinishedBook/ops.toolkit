@@ -143,6 +143,17 @@ class Loop(Cmd):
     def help_clean(self):
         print '清理指定的工程的备份，用法：clean <工程名>'
 
+    def do_rollback(self, proj):
+        if proj!=None and proj!='':
+            mod = getMod(proj)
+            if mod != None:
+                rollback(mod)
+        else:
+            self.help_rollback()
+
+    def help_rollback(self):
+        print '还原指定的工程，用法：rollback <工程名>'
+
     def do_up(self, proj):
         if proj!=None and proj!='':
             mod = getMod(proj)
