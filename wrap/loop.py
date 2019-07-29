@@ -154,6 +154,17 @@ class Loop(Cmd):
     def help_rollback(self):
         print '还原指定的工程，用法：rollback <工程名>'
 
+    def do_show(self, proj):
+        if proj!=None and proj!='':
+            mod = getMod(proj)
+            if mod != None:
+                show(mod)
+        else:
+            self.help_show()
+
+    def help_show(self):
+        print '查看指定的工程目录和更新包的信息，用法：show <工程名>'
+
     def do_up(self, proj):
         if proj!=None and proj!='':
             mod = getMod(proj)

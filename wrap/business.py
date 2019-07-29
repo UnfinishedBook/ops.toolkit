@@ -93,6 +93,11 @@ def rollback(mod):
         if out == 'yes':
             remoteCmd(ip, cmd)
 
+def show(mod):
+    for ip in mod.deploy():
+        cmd = 'ls -l %s && ls -ld %s' % (mod.pack(),mod.appdir())
+        remoteCmd(ip, cmd)
+
 def up_wap(mod, patch=False):
     pk = '%s/wap.tar.gz' % GL.pkdir()
     if os.path.exists(pk) == False:
