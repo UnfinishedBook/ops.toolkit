@@ -113,9 +113,11 @@ def up_wap(mod, patch=False):
     else:
         GL.LOG.error('该环境(%s)暂不支持wap的更新' % GL.env())
         return
+    localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('ls -ld %s %s' % (pk,tmp))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
         return
@@ -160,9 +162,11 @@ def up_weblandpagev2(mod, patch=False):
     else:
         GL.LOG.error('该环境(%s)暂不支持weblandpagev2的更新' % GL.env())
         return
+    localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('ls -ld %s %s' % (pk,tmp))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
         return
@@ -182,9 +186,11 @@ def up_wapv2(mod, patch=False):
         GL.LOG.error('未发现更新包：%s' % pk)
         return
     tmp = '%s/wapv2' % GL.pkdir()
+    localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -201,9 +207,11 @@ def up_webv1(mod, patch=False):
         GL.LOG.error('未发现更新包：%s' % pk)
         return
     tmp = '%s/webv1' % GL.pkdir()
+    localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -220,9 +228,11 @@ def up_webv2(mod, patch=False):
         GL.LOG.error('未发现更新包：%s' % pk)
         return
     tmp = '%s/webv2' % GL.pkdir()
+    localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -238,9 +248,11 @@ def up_web(mod, patch=False):
         GL.LOG.error('未发现更新包：%s' % mod.pk())
         return
     tmp = '%s/%s' % (GL.pkdir(),mod.name())
+    localCmd('ls -ld %s %s' % (mod.pk(),tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
     localCmd('tar -zxf %s -C %s' % (mod.pk(),tmp))
+    localCmd('ls -ld %s %s' % (mod.pk(),tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
