@@ -1,0 +1,37 @@
+{
+    "bakdir": "/mydata/maintenance/backup", 
+    "trunk": "codes/trunk_ktypnew",
+    "branch": "codes/branches_ktypnew/{issue}",
+    "tag": "codes/tags_ktypnew/{issue}",
+    "wcopy": "/mydata/maintenance/svn/tags_ktypnew/{issue}",
+    "test.branch": "codes/test_ktypnew/{issue}",
+    "test.wcopy": "/mydata/maintenance/svn/test_ktypnew/{issue}",
+    "logdir": "/mydata/logs",
+    "center": {
+        "appdir": "/mydata/center",
+        "cnfdir": "/data/config/center",
+        "updir": "/mydata/center/zip"
+    },
+    "process": {
+        "appdir": "/mydata/process",
+        "cnfdir": "/data/config/process",
+        "updir": "/mydata/process/zip" 
+    },
+    "server": {
+        "appdir": "/mydata/server",
+        "cnfdir": "/data/config/server",
+        "updir": "/mydata/server/war" 
+    },
+    "module": {
+        "appdir": "/mydata/module",
+        "updir": "/mydata/module/war" 
+    },
+    "node": {
+        "appdir": "/mydata/nodeproj"
+    },
+    "static": {
+        "appdir": "/mydata"
+    },
+    "mobile": {
+    }
+}
