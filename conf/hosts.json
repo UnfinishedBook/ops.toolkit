@@ -26,5 +26,17 @@
     "host-yh-pro-java-02": "172.18.27.25",
     "host-yh-pro-node-02": "172.18.27.24",
     "host-yh-pro-robot-01": "172.18.203.160",
-    "host-yh-pro-tengine": "172.18.27.16"
+    "host-yh-pro-tengine": "172.18.27.16",
+    "host-kt-dev": "172.18.203.179",
+    "host-kt-dev-data": "172.18.27.59",
+    "host-kt-test": "172.18.203.181",
+    "host-kt-test-data": "172.18.27.60",
+    "host-kt-pro-tengine": "172.18.203.182",
+    "host-kt-pro-node-01": "172.18.27.61",
+    "host-kt-pro-node-02": "172.18.203.183",
+    "host-kt-pro-robot-01": "172.18.27.62",
+    "host-kt-pro-robot-02": "172.18.203.184",
+    "host-kt-pro-java-01": "172.18.27.64",
+    "host-kt-pro-java-02": "172.18.203.185",
+    "host-kt-pro-data-01": "172.18.27.65"
 }

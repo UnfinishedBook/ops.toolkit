@@ -12,7 +12,7 @@
         "muser": "admin",
         "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "deploy": {
-            "172.18.203.179": [
+            "host-kt-dev": [
                 "wap",
                 "ktypnew-center",
                 "ktypnew-ad-center",
@@ -38,7 +38,7 @@
                 "data",
                 "data_channel"
             ],
-            "172.18.27.59": [
+            "host-kt-dev-data": [
                 "ktypnew-toutiao-center",
                 "ktypnew-toutiao-process"
             ]
@@ -60,7 +60,7 @@
         "jks_usr": "admin",
         "jks_token": "07c88dcb8adb1bb6170765d142de26dd",
         "deploy": {
-            "172.18.203.181": [
+            "host-kt-test": [
                 "wap",
                 "wapv2",
                 "ktypnew-center",
@@ -88,7 +88,7 @@
                 "data",
                 "data_channel"
             ],
-            "172.18.27.60": [
+            "host-kt-test-data": [
                 "ktypnew-toutiao-center",
                 "ktypnew-toutiao-process"
             ]
@@ -96,7 +96,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "10.104.105.125:7092/qbmonitor",
+        "monitor": "172.18.203.185:7092/qbmonitor",
         "mlogin": "login_controller/do_login",
         "mget_job": "ljob_controller/get_online_ljobs",
         "mget_queue": "lqueue_controller/get_online_lqueues.do",
@@ -110,14 +110,14 @@
         "jks_usr": "admin",
         "jks_token": "1d88aa23b6e851788b0d582cae22686f",
         "deploy": {
-            "10.104.11.150": [
+            "host-kt-pro-tengine": [
                 "cdn",
                 "wap",
                 "wap_cdn",
                 "wapv2",
                 "wapv2_cdn"
             ],
-            "10.104.194.197": [
+            "host-kt-pro-node-01": [
                 "qbpay-server",
                 "activity-api",
                 "ad-api",
@@ -127,7 +127,7 @@
                 "data",
                 "data_channel"
             ],
-            "10.135.0.203": [
+            "host-kt-pro-node-02": [
                 "qbpay-server",
                 "activity-api",
                 "ad-api",
@@ -138,18 +138,18 @@
                 "data",
                 "data_channel"
             ],
-            "10.104.225.127": [
+            "host-kt-pro-robot-01": [
                 "ktypnew-center",
                 "qbinside-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
-            "10.104.105.125": [
+            "host-kt-pro-robot-02": [
                 "ktypnew-center",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
-            "10.104.254.114": [
+            "host-kt-pro-java-01": [
                 "ktypnew-center",
                 "ktypnew-ad-center",
                 "ktypnew-toutiao-center",
@@ -159,13 +159,13 @@
                 "ktypnew-prizepool-process",
                 "ktypnew-proxy-process"
             ],
-            "10.104.23.52": [
+            "host-kt-pro-java-02": [
                 "ktypnew-center",
                 "ktypnew-ad-center",
                 "ktypnew-prizepool-process",
                 "ktypnew-process"
             ],
-            "10.135.144.182": [
+            "host-kt-pro-data-01": [
                 "ktypnew-toutiao-center",
                 "ktypnew-toutiao-process",
                 "statistics-admonitor",
@@ -173,10 +173,7 @@
                 "statistics-logsystem",
                 "statistics-recommendation",
                 "statistics-search"
-            ],
-            "10.104.128.211": [],
-            "10.104.131.170": [],
-            "10.104.145.215": []
+            ]
         }
     }
 }
