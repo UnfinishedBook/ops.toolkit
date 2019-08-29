@@ -58,7 +58,7 @@
         "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "jks_url": "http://localhost:7281/jenkins-test/",
         "jks_usr": "admin",
-        "jks_token": "07c88dcb8adb1bb6170765d142de26dd",
+        "jks_token": "06f41b1cfb7bda4393a85ce9d2448fb3",
         "deploy": {
             "host-kt-test": [
                 "wap",

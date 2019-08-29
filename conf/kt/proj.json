@@ -47,7 +47,6 @@
     "ktypnew-nonstd-process": {
         "form": "process",
         "pack": "ktypnew-nonstd-process-assembly.zip",
-        "issue": "1.2.5",
         "appdir": "ktypnew-nonstd-process",
         "svnsuf": "server/process/ktypnew-nonstd-process",
         "cnfsuf": "server/process/config/ktypnew-nonstd-process"
@@ -84,7 +83,6 @@
     "qbmonitor-server": {
         "form": "server",
         "pack": "qbmonitor.war",
-        "issue": "1.0.0",
         "tomcat": "tomcat-qbmonitor-server",
         "appdir": "webapps/qbmonitor",
         "svnsuf": "server/server/qbmonitor-server",
@@ -119,7 +117,6 @@
         "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
         "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
-        "issue": "1.2.5",
         "svnsuf": "statistics/ad-monitor-ktypnew"
     },
     "statistics-csdb": {
@@ -168,7 +165,6 @@
     "auth": {
         "form": "node",
         "appdir": "auth",
-        "issue": "1.2.5",
         "svnsuf": "cms/cms_login_server"
     },
     "cms": {
@@ -189,15 +185,13 @@
     "data_channel": {
         "form": "node",
         "appdir": "data_channel",
-        "issue": "1.2.5",
         "svnsuf": "ad/channel_stats"
     },
     "wap": {
         "form": "static",
         "pack": "wap.tar.gz",
         "appdir": "wap",
-        "issue": "1.2.5",
-        "svnsuf": "wap"
+        "svnsuf": "web/v1"
     },
     "wap_cdn": {
         "form": "static",
@@ -207,8 +201,7 @@
         "form": "static",
         "pack": "wapv2.tar.gz",
         "appdir": "wap/v2",
-        "issue": "1.2.5",
-        "svnsuf": "wap/hp_v2"
+        "svnsuf": "web/v2"
     },
     "wapv2_cdn": {
         "form": "static",
