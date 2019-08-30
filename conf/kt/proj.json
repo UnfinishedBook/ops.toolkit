@@ -114,10 +114,11 @@
     },
     "statistics-admonitor": {
         "form": "module",
-        "pack": "ad-monitor2-0.0.1-SNAPSHOT.war",
+        "pack": "ad-monitor-ktyp-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-admonitor",
-        "appdir": "webapps/ad-monitor2-0.0.1-SNAPSHOT",
-        "svnsuf": "statistics/ad-monitor-ktypnew"
+        "appdir": "webapps/ad-monitor-ktyp-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/ad-monitor-ktyp",
+        "cnfsuf": "statistics/config/ad-monitor-ktyp"
     },
     "statistics-csdb": {
         "form": "module",
@@ -131,14 +132,15 @@
         "pack": "logSystem.war",
         "tomcat": "tomcat-statistics-logsystem",
         "appdir": "webapps/logSystem",
-        "svnsuf": "statistics/logSystem2"
+        "svnsuf": "statistics/logSystem-ktyp"
     },
     "statistics-recommendation": {
         "form": "module",
-        "pack": "ktypnew-recommendation-0.0.1-SNAPSHOT.war",
+        "pack": "recommendation-ktyp-0.0.1-SNAPSHOT.war",
         "tomcat": "tomcat-statistics-recommendation",
-        "appdir": "webapps/ktypnew-recommendation-0.0.1-SNAPSHOT",
-        "svnsuf": "statistics/ktypnew-recommendation"
+        "appdir": "webapps/recommendation-ktyp-0.0.1-SNAPSHOT",
+        "svnsuf": "statistics/recommendation-ktyp",
+        "cnfsuf": "statistics/config/recommendation-ktyp"
     },
     "statistics-search": {
         "form": "module",
@@ -179,7 +181,7 @@
     },
     "data": {
         "form": "node",
-        "appdir": "ad_stats",
+        "appdir": "data",
         "svnsuf": "ad/ad_stats"
     },
     "data_channel": {
@@ -187,23 +189,23 @@
         "appdir": "data_channel",
         "svnsuf": "ad/channel_stats"
     },
-    "wap": {
+    "h5v1": {
         "form": "static",
-        "pack": "wap.tar.gz",
+        "pack": "h5v1.tar.gz",
         "appdir": "wap",
         "svnsuf": "web/v1"
     },
-    "wap_cdn": {
+    "h5v1_cdn": {
         "form": "static",
         "appdir": "cdn"
     },
-    "wapv2": {
+    "h5v2": {
         "form": "static",
-        "pack": "wapv2.tar.gz",
+        "pack": "h5v2.tar.gz",
         "appdir": "wap/v2",
         "svnsuf": "web/v2"
     },
-    "wapv2_cdn": {
+    "h5v2_cdn": {
         "form": "static",
         "appdir": "cdn/v2"
     },

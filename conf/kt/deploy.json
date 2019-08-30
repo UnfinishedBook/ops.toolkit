@@ -108,14 +108,14 @@
         "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
         "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
-        "jks_token": "1d88aa23b6e851788b0d582cae22686f",
+        "jks_token": "06f41b1cfb7bda4393a85ce9d2448fb3",
         "deploy": {
             "host-kt-pro-tengine": [
                 "cdn",
-                "wap",
-                "wap_cdn",
-                "wapv2",
-                "wapv2_cdn"
+                "h5v1",
+                "h5v1_cdn",
+                "h5v2",
+                "h5v2_cdn"
             ],
             "host-kt-pro-node-01": [
                 "qbpay-server",
@@ -138,18 +138,18 @@
                 "data",
                 "data_channel"
             ],
-            "host-kt-pro-robot-01": [
+            "host-kt-pro-java-01": [
                 "ktypnew-center",
                 "qbinside-server",
                 "qbshield-server",
                 "quickbid-server"
             ],
-            "host-kt-pro-robot-02": [
+            "host-kt-pro-java-02": [
                 "ktypnew-center",
                 "qbmonitor-server",
                 "quickbid-server"
             ],
-            "host-kt-pro-java-01": [
+            "host-kt-pro-robot-01": [
                 "ktypnew-center",
                 "ktypnew-ad-center",
                 "ktypnew-toutiao-center",
@@ -159,20 +159,17 @@
                 "ktypnew-prizepool-process",
                 "ktypnew-proxy-process"
             ],
-            "host-kt-pro-java-02": [
+            "host-kt-pro-robot-02": [
                 "ktypnew-center",
                 "ktypnew-ad-center",
-                "ktypnew-prizepool-process",
                 "ktypnew-process"
             ],
             "host-kt-pro-data-01": [
                 "ktypnew-toutiao-center",
                 "ktypnew-toutiao-process",
                 "statistics-admonitor",
-                "statistics-csdb",
                 "statistics-logsystem",
-                "statistics-recommendation",
-                "statistics-search"
+                "statistics-recommendation"
             ]
         }
     }

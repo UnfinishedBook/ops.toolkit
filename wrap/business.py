@@ -273,24 +273,74 @@ def up_web(mod, patch=False):
                 if out == 'yes':
                     remoteCmd(ip, tmpCmd)
 
-def up_h5(mod, patch=False):
-    pk = '%s/h5.tar.gz' % GL.pkdir()
+def up_h5v1(mod, patch=False):
+    pk = mod.pk()
     if os.path.exists(pk) == False:
         GL.LOG.error('未发现更新包：%s' % pk)
         return
-    tmp = '%s/%s' % (GL.pkdir(),mod.name())
-    localCmd('mkdir -p %s' % tmp)
-    localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
-    src = '%s/dist' % tmp
+    src = '%s/%s' % (GL.pkdir(),mod.name())
+    localCmd('mkdir -p %s' % src)
+    localCmd('rm -rf %s/*' % src)
+    localCmd('tar -zxf %s -C %s' % (pk,src))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
         return
     for ip in mod.deploy():
-        cmd = 'rsync -azv %s/ root@%s:%s/' % (src,ip,mod.appdir())
+        cmd = 'rsync -azv --exclude ".svn" %s/ root@%s:%s/' % (src,ip,mod.appdir())
         out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
         if out == 'yes':
             localCmd(cmd)
+            cmd = 'chown -R config:config /mydata/wap/other /mydata/wap/landingpage'
+            out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
+            if out == 'yes':
+                remoteCmd(ip, cmd)
+
+def up_h5v2(mod, patch=False):
+    pk = mod.pk()
+    if os.path.exists(pk) == False:
+        GL.LOG.error('未发现更新包：%s' % pk)
+        return
+    src = '%s/%s' % (GL.pkdir(),mod.name())
+    localCmd('mkdir -p %s' % src)
+    localCmd('rm -rf %s/*' % src)
+    localCmd('tar -zxf %s -C %s' % (pk,src))
+    if os.path.exists(src) == False:
+        GL.LOG.error('未发现目录: %s' % src)
+        return
+    for ip in mod.deploy():
+        cmd = 'rsync -azv --exclude ".svn" %s/ root@%s:%s/' % (src,ip,mod.appdir())
+        out = ask('将在本地运行命令 (%s), 确认立刻执行吗？' % cmd, 'yes,no', 'no')
+        if out == 'yes':
+            localCmd(cmd)
+
+def up_h5v1_cdn(mod):
+    if GL.env() != 'pro':
+        GL.LOG.error('该环境(%s)暂不支持cdn的更新' % GL.env())
+    mod_app = getMod(mod.name().replace('_cdn',''))
+    for ip in mod.deploy():
+        cmdlist = [
+            'rsync -azv %s/js/ %s/js/' % (mod_app.appdir(),mod.appdir()),
+            'rsync -azv %s/css/ %s/css/' % (mod_app.appdir(),mod.appdir()),
+            'rsync -azv %s/images/ %s/images/' % (mod_app.appdir(),mod.appdir()),
+            'rsync -azv %s/fonts/ %s/fonts/' % (mod_app.appdir(),mod.appdir())
+        ]
+        for tmp in cmdlist:
+            print tmp
+        out = ask('将在 (%s) 运行命令上述 (%d) 条命令, 确认立刻执行吗？' % (ip, len(cmdlist)), 'yes,no', 'no')
+        if out == 'yes':
+            for cmd in cmdlist:
+                remoteCmd(ip, cmd)
+
+def up_h5v2_cdn(mod):
+    if GL.env() != 'pro':
+        GL.LOG.error('该环境(%s)暂不支持cdn的更新' % GL.env())
+    mod_app = getMod(mod.name().replace('_cdn',''))
+    for ip in mod.deploy():
+        cmd = 'rsync -azv %s/v2/ %s/' % (mod_app.appdir(),mod.appdir())
+        out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip, cmd), 'yes,no', 'no')
+        print cmd
+        if out == 'yes':
+            remoteCmd(ip, cmd)
 
 def up_php(mod, patch=False):
     pk = '%s/php.tar.gz' % GL.pkdir()
@@ -408,8 +458,14 @@ def update(mod):
         up_weblandpagev2(mod)
     elif mod.name()=='weblandpage_cdn' or mod.name()=='webwap_cdn' or mod.name()=='weblandpagev2_cdn':
         up_web_cdn(mod)
-    elif mod.name() == 'h5':
-        up_h5(mod)
+    elif mod.name()=='h5v1':
+        up_h5v1(mod)
+    elif mod.name()=='h5v2':
+        up_h5v2(mod)
+    elif mod.name()=='h5v1_cdn':
+        up_h5v1_cdn(mod)
+    elif mod.name()=='h5v2_cdn':
+        up_h5v2_cdn(mod)
     elif mod.name() == 'php':
         up_php(mod)
     elif mod.form()=='center' or mod.form()=='process' or mod.form()=='newserver' or mod.form()=='data':
