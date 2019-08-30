@@ -915,10 +915,10 @@ def monitor(opt, mod):
         i = 1
         print '定时任务：'
         for job in jobs:
-            if GL.project()=='kt' or GL.project()=='yh':
-                print '%d\t%s\t%s\t%-50s %s\t%s' % (i,job[0],job[1],job[2],job[6],job[7])
-            else:
-                print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
+            #if GL.project()=='kt' or GL.project()=='yh':
+                #print '%d\t%s\t%s\t%-50s %s\t%s' % (i,job[0],job[1],job[2],job[6],job[7])
+            #else:
+            print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
             i += 1
             tmp1.append(job)
         i = 1

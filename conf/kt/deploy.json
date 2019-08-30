@@ -105,7 +105,7 @@
         "mget_center": "dubbo/get_check_servers.do",
         "mctl_center": "dubbo/change_check_status",
         "muser": "admin",
-        "mpwd": "53437b4bf44958d81c2e25fe9d9d6a5c",
+        "mpwd": "94b9d4ba003478fea9ee94330e2ed47c",
         "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "06f41b1cfb7bda4393a85ce9d2448fb3",
