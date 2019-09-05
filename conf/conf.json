@@ -43,6 +43,12 @@
         "svn": "6dec116cdc30b03cbd66ad08350abb8b",
         "pkdir": "/mydata/maintenance/packages"
     },
+    "rlm": {
+        "intro": "扔了吗",
+        "issue": "",
+        "svn": "6dec116cdc30b03cbd66ad08350abb8b",
+        "pkdir": "/mydata/maintenance/packages-rlm"
+    },
     "gtc": {
         "intro": "基因时代",
         "issue": "1.0.0",

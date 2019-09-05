@@ -223,7 +223,10 @@ class Model:
             return GL.issue()
 
     def jenkinsJob(self):
-        return '%s-%s' % (GL.env(),self.name())
+        if GL.form().has_key('jks_suffix'):
+            return '%s-%s%s' % (GL.env(),self.name(),GL.form()['jks_suffix'])
+        else:
+            return '%s-%s' % (GL.env(),self.name())
 
 #根据工程名获得一个Model实例
 def getMod(proj):

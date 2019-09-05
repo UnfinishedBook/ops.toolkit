@@ -27,6 +27,8 @@
     "host-yh-pro-node-02": "172.18.27.24",
     "host-yh-pro-robot-01": "172.18.203.160",
     "host-yh-pro-tengine": "172.18.27.16",
+    "host-rlm-dev": "172.18.27.56",
+    "host-rlm-test": "172.18.203.177",
     "host-kt-dev": "172.18.203.179",
     "host-kt-dev-data": "172.18.27.59",
     "host-kt-test": "172.18.203.181",
