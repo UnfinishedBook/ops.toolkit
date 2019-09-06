@@ -563,7 +563,7 @@ def svn(mod, opt, path=None):
     if opt!='info' and opt!='up' and opt!='merge' and opt!='ci' and opt!='cii' and opt!='switch' and opt!='cp' and opt!='del' and opt!='ls':
         print '不支持的操作 %s' % opt
         return
-    if (opt=='info' or opt=='up') and mod.form()=='node':
+    if (opt=='info' or opt=='up') and (mod.form()=='node' or mod.form()=='npm'):
         if path == None:
             dest = mod.appdir()
         else:
@@ -707,6 +707,8 @@ def status(mod):
         remoteCmd(ip, cmd)
 
 def bakgc(mod, ip):
+    if mod.form() == 'npm':
+        return
     GL.LOG.info('在 (%s) 备份 (%s) 的gc日志' % (ip,mod.name()))
     gcdir = mod.gcdir()
     gcfile = 'gc.log'
@@ -716,8 +718,6 @@ def bakgc(mod, ip):
     remoteCmd(ip, cmd)
 
 def savejstack(mod, ip):
-    if mod.form() == 'npm':
-        return
     GL.LOG.info('在 (%s) 保存 (%s) 的jstack信息' % (ip,mod.name()))
     jsdir = mod.jstackdir()
     cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
