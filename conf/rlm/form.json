@@ -35,6 +35,9 @@
     "node": {
         "appdir": "/mydata/nodeproj"
     },
+    "npm": {
+        "appdir": "/mydata/nodeproj"
+    },
     "static": {
         "appdir": "/mydata"
     },

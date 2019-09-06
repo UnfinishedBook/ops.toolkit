@@ -698,8 +698,12 @@ def svn(mod, opt, path=None):
             localCmd(cmd)
 
 def status(mod):
+    if mod.form() == 'npm':
+        cmd = "ps -ef|grep node|grep {pidname}|grep -v grep"
+    else:
+        cmd = "ps -ef|grep java|grep {pidname}|grep -v grep"
     for ip in mod.deploy():
-        cmd = "ps -ef|grep java|grep %s|grep -v grep" % mod.pidname()
+        cmd = cmd.replace('{pidname}', mod.pidname())
         remoteCmd(ip, cmd)
 
 def bakgc(mod, ip):
@@ -712,6 +716,8 @@ def bakgc(mod, ip):
     remoteCmd(ip, cmd)
 
 def savejstack(mod, ip):
+    if mod.form() == 'npm':
+        return
     GL.LOG.info('在 (%s) 保存 (%s) 的jstack信息' % (ip,mod.name()))
     jsdir = mod.jstackdir()
     cmd = 'if [ ! -d "%s" ];then mkdir -p %s;fi' % (jsdir,jsdir)
@@ -728,6 +734,8 @@ def _stop(ip, mod, jstack=False):
     #cmd = "ps -ef|grep java|grep %s|awk '{print $2}'|xargs kill -9" % mod.pidname()
     if mod.form() == 'process':
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill $tmpid; else echo "Not found pid"; fi' % mod.pidname()
+    elif mod.form() == 'npm':
+        cmd = 'cd %s && npm stop' % mod.appdir()
     else:
         cmd = 'tmpid=`ps -ef|grep java|grep %s|grep -v grep|awk \'{print $2}\'`; if [ -n "$tmpid" ];then kill -9 $tmpid; else echo "Not found pid"; fi' % mod.pidname()
     remoteCmd(ip, cmd)
@@ -785,7 +793,7 @@ def restart(mod, theIP=None, asked=True, jstack=False):
 def pm2(opt, mod=None):
     if opt=='l' or opt=='list':
         if mod == None:
-            mod = getMod('cms')  #以cms来定位node所在的主机
+            mod = getMod('auth')  #以cms来定位node所在的主机
         for ip in mod.deploy():
             remoteCmd(ip, 'pm2 l')
     elif opt=='reload' and mod!=None:

@@ -13,21 +13,17 @@
         "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "deploy": {
             "host-rlm-dev": [
-                "90bid-ad-center",
-                "90bid-center",
-                "cms-process",
-                "bid-process",
-                "coupon-server",
+                "webcms",
+                "webwap",
+                "rleme-center",
+                "rleme-data-process",
                 "monitor-server",
+                "search-server",
                 "weixin-server",
-                "activity-api",
-                "ad-api",
-                "api",
+                "rleme-ad",
+                "rleme-api",
                 "auth",
-                "cms",
-                "cmsTimer",
-                "data",
-                "data_channel"
+                "cms"
             ]
         }
     },

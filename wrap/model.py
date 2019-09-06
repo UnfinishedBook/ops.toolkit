@@ -137,6 +137,8 @@ class Model:
     def pidexe(self):   #启动文件
         if self.form()=='server' or self.form()=='module':
             return '%s/%s/bin/startup.sh' % (GL.form()[self.form()]['appdir'],self.tomcat())
+        elif self.form() == 'npm':
+            return 'cd %s && npm start' % self.appdir()
         else:
             if GL.env()!='pro' and self.form()=='center':
                 return '%s/bin/start-dev.sh' % self.appdir()

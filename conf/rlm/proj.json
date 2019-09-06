@@ -41,7 +41,7 @@
         "svnsuf": "ad/rleme-ad"
     },
     "rleme-api": {
-        "form": "node",
+        "form": "npm",
         "appdir": "rleme-api",
         "svnsuf": "server/rleme-api"
     },
@@ -51,7 +51,7 @@
         "svnsuf": "cms/cms_login_server"
     },
     "cms": {
-        "form": "node",
+        "form": "npm",
         "appdir": "cms",
         "svnsuf": "cms/cms_system"
     },
