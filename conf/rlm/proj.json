@@ -69,7 +69,7 @@
         "form": "static",
         "pack": "webcms.tar.gz",
         "appdir": "web/cms",
-        "svnsuf": "web/90scms"
+        "svnsuf": "web/cms"
     },
     "cdn": {
         "form": "static",
