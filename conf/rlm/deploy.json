@@ -60,7 +60,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.27.47:7092",
+        "monitor": "172.18.203.187:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -70,117 +70,40 @@
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
         "mpwd": "640fe9e4816e90b1612ab04c2f817d6b",
-        "jks_url": "http://localhost:7081/jenkins/",
+        "jks_url": "http://172.18.27.38:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "b67a48d844fb221dff0c174d505e92e4",
         "deploy": {
-            "host-90s-pro-tengine": [
+            "host-rlm-pro-tengine": [
                 "cdn",
                 "webcms",
                 "webcms_cdn",
-                "weblandpage",
-                "weblandpage_cdn",
-                "weblandpagev2",
-                "weblandpagev2_cdn",
                 "webwap",
                 "webwap_cdn"
             ],
-            "host-90s-pro-data-01": [
-                "90bid-stats-center",
-                "90bid-stats-process",
-                "90bid-toutiao-process",
-                "cms-process",
-                "data-server"
-            ],
-            "host-90s-pro-data-02": [
-                "90bid-stats-center",
-                "data-process",
-                "rc-process",
-                "data-server"
-            ],
-            "host-90s-pro-java-01": [
-                "90bid-center",
-                "bid-server",
-                "pay-server",
-                "monitor-server",
+            "host-rlm-pro-java-01": [
+                "rleme-center",
+                "search-server",
                 "weixin-server"
             ],
-            "host-90s-pro-java-02": [
-                "90bid-center",
-                "bid-server",
-                "pay-server",
-                "weixin-server"
-            ],
-            "host-90s-pro-node-01": [
-                "weixin-process",
+            "host-rlm-pro-java-02": [
+                "rleme-center",
+                "rleme-data-process",
                 "search-server",
-                "90bid-ad-center",
-                "activity-api",
-                "ad-api",
-                "api",
+                "weixin-server",
+                "monitor-server"
+            ],
+            "host-rlm-pro-node-01": [
+                "rleme-ad",
+                "rleme-api",
                 "auth",
-                "cms",
-                "cmsTimer",
-                "data",
-                "data_channel",
-                "integralapi"
+                "cms"
             ], 
-            "host-90s-pro-node-02": [
-                "search-server",
-                "90bid-ad-center",
-                "activity-api",
-                "ad-api",
-                "api",
+            "host-rlm-pro-node-02": [
+                "rleme-ad",
+                "rleme-api",
                 "auth",
-                "cms",
-                "data",
-                "data_channel",
-                "integralapi"
-            ], 
-            "host-90s-pro-robot-01": [
-                "90bid-center",
-                "bid-process",
-                "recommend-process"
-            ],
-            "host-90s-pro-robot-02": [
-                "90bid-center",
-                "commonbiz-process",
-                "order-process",
-                "prizepool-process",
-                "seckill-process"
-            ],
-            "host-90s-pro-integral-java-01": [
-                "90bid-integral-center",
-                "integral-server",
-                "integral-firewall-process"
-            ],
-            "host-90s-pro-integral-java-02": [
-                "90bid-integral-center",
-                "integral-server"
-            ],
-            "host-90s-pro-integral-robot-01": [
-                "90bid-integral-center",
-                "integral-process",
-                "integral-data-process"
-            ],
-            "host-90s-pro-integral-robot-02": [
-                "90bid-integral-center",
-                "integral-prizepool-process",
-                "integral-proxy-process"
-            ],
-            "host-90s-pro-hadoop-01": [
-                "hadoop",
-                "90s-data-clean",
-                "exposure-spark",
-                "rc-spark",
-                "rc-spark-realtime",
-                "rc-timer"
-            ],
-            "host-90s-pro-hadoop-02": [
-                "hadoop"
-            ],
-            "host-90s-pro-hadoop-03": [
-                "hadoop"
+                "cms"
             ]
         }
     }
