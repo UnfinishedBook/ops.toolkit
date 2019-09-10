@@ -98,7 +98,7 @@ class Loop(Cmd):
                 mod = getMod(item)
                 if mod != None:
                     cmd(mod.deploy(), drt, self.cmdask)
-            elif GL.deploy()[GL.env()]['deploy'].has_key(item):
+            elif GL.deploy()[GL.env()]['deploy'].has_key(item) or GL.ipHosts().has_key(item):
                 lst = [item,]
                 ip_list = GL.getRealIPs(lst)
                 cmd(ip_list, drt, self.cmdask)

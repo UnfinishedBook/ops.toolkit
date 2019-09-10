@@ -69,7 +69,7 @@
         "mget_center": "dubbo/get_check_servers",
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
-        "mpwd": "640fe9e4816e90b1612ab04c2f817d6b",
+        "mpwd": "95c67d121291d71755263c808322bd66",
         "jks_url": "http://172.18.27.38:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "b67a48d844fb221dff0c174d505e92e4",
