@@ -197,12 +197,16 @@
                 "integralapi"
             ], 
             "host-90s-pro-robot-01": [
-                "90bid-center",
+                "90bid-center"
+            ],
+            "host-90s-pro-robot-02": [
+                "90bid-center"
+            ],
+            "host-90s-pro-process-01": [
                 "bid-process",
                 "recommend-process"
             ],
-            "host-90s-pro-robot-02": [
-                "90bid-center",
+            "host-90s-pro-process-02": [
                 "commonbiz-process",
                 "order-process",
                 "prizepool-process",

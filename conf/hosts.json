@@ -15,6 +15,8 @@
     "host-90s-pro-node-02": "172.18.203.170",
     "host-90s-pro-robot-01": "172.18.203.168",
     "host-90s-pro-robot-02": "172.18.27.44",
+    "host-90s-pro-process-01": "172.18.27.76",
+    "host-90s-pro-process-02": "172.18.203.189",
     "host-90s-pro-hadoop-01": "172.18.27.21",
     "host-90s-pro-hadoop-02": "172.18.27.27",
     "host-90s-pro-hadoop-03": "172.18.27.26",
