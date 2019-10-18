@@ -1,3 +1,4 @@
+more-itertools==4.3.0
 CherryPy==15.0.0
 cmd2==0.8.5
 Fabric==1.14.0
