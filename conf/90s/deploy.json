@@ -98,6 +98,7 @@
                 "integral-proxy-process",
                 "commonbiz-process",
                 "recommend-process",
+                "online-recommend-process",
                 "integral-server",
                 "integralapi"
             ],
@@ -197,9 +198,11 @@
                 "integralapi"
             ], 
             "host-90s-pro-robot-01": [
+                "online-recommend-process",
                 "90bid-center"
             ],
             "host-90s-pro-robot-02": [
+                "online-recommend-process",
                 "90bid-center"
             ],
             "host-90s-pro-process-01": [

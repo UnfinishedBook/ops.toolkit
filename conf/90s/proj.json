@@ -88,6 +88,13 @@
         "svnsuf": "server/process/recommend-process",
         "cnfsuf": "server/process/config/recommend-process"
     },
+    "online-recommend-process": {
+        "form": "process",
+        "pack": "online-recommend-process-assembly.zip",
+        "appdir": "online-recommend-process",
+        "svnsuf": "server/process/online-recommend-process",
+        "cnfsuf": "server/process/config/online-recommend-process"
+    },
     "rc-process": {
         "form": "process",
         "pack": "rc-process-assembly.zip",

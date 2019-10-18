@@ -41,9 +41,9 @@ GL.LOG = getLogger('TheLogger', 'ops-toolkit-monitor.log')
 
 def job_up_data(data, fname):
     lines = []
-    line = '%s monitor_jobs_count %d\n' % (host, len(data['data']))
-    lines.append(line)
+    count = 0
     for tt in data['data']:
+        count += len(tt['{#DEPLOY}'])
         line = '%s monitor.job[%s.deploy] %s\n' % (host, tt['{#NAME}'], seq.join(tt['{#DEPLOY}']))
         lines.append(line)
         line = '%s monitor.job[%s.distributed] %s\n' % (host, tt['{#NAME}'], tt['{#DISTRIBUTED}'])
@@ -62,16 +62,17 @@ def job_up_data(data, fname):
             problem = 'None'
         line = '%s monitor.job[%s.problem] %s\n' % (host, tt['{#NAME}'], problem)
         lines.append(line)
-    fname = '/tmp/job.txt'
+    line = '%s monitor_jobs_count %d\n' % (host, count)
+    lines.append(line)
     f = open(fname, 'w')
     f.writelines(lines)
     f.close()
 
 def queue_up_data(data, fname):
     lines = []
-    line = '%s monitor_queues_count %d\n' % (host, len(data['data']))
-    lines.append(line)
+    count = 0
     for tt in data['data']:
+        count += len(tt['{#DEPLOY}'])
         line = '%s monitor.queue[%s.deploy] %s\n' % (host, tt['{#NAME}'], seq.join(tt['{#DEPLOY}']))
         lines.append(line)
         line = '%s monitor.queue[%s.heartbeat] %s\n' % (host, tt['{#NAME}'], seq.join(tt['{#HEARTBEAT}']))
@@ -84,9 +85,11 @@ def queue_up_data(data, fname):
             problem = 'None'
         line = '%s monitor.queue[%s.problem] %s\n' % (host, tt['{#NAME}'], problem)
         lines.append(line)
-    fname = '/tmp/queue.txt'
+    line = '%s monitor_queues_count %d\n' % (host, count)
+    lines.append(line)
     f = open(fname, 'w')
     f.writelines(lines)
+    f.close()
 
 (zabbix_job,zabbix_queue) = zabbix_monitor()
 job_data = {"data": zabbix_job.values()}
