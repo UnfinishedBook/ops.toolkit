@@ -32,11 +32,6 @@
             "host-90s-dev-integral": [
             ],
             "host-90s-test-hadoop-01": [
-                "90s-data-clean",
-                "exposure-spark",
-                "rc-spark",
-                "rc-spark-realtime",
-                "rc-timer"
             ]
         }
     },
@@ -91,6 +86,7 @@
             ],
             "host-90s-test-integral": [
                 "90bid-integral-center",
+                "90bid-bata-center",
                 "integral-process",
                 "integral-data-process",
                 "integral-firewall-process",
@@ -99,16 +95,16 @@
                 "commonbiz-process",
                 "recommend-process",
                 "online-recommend-process",
+                "bata-process",
+                "online-bata-process",
                 "integral-server",
                 "integralapi"
             ],
             "host-90s-test-hadoop-01": [
                 "hadoop",
-                "90s-data-clean",
-                "exposure-spark",
-                "rc-spark",
-                "rc-spark-realtime",
-                "rc-timer"
+                "spark-exposure-statistics",
+                "spark-hot-statistics",
+                "spark-similarity-matrix-calculus"
             ],
             "host-90s-test-hadoop-02": [
                 "hadoop"
