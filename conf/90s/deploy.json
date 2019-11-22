@@ -142,6 +142,7 @@
                 "webwap_cdn"
             ],
             "host-90s-pro-data-01": [
+                "90bid-bata-center",
                 "90bid-stats-center",
                 "90bid-stats-process",
                 "90bid-toutiao-process",
@@ -149,7 +150,9 @@
                 "data-server"
             ],
             "host-90s-pro-data-02": [
+                "90bid-bata-center",
                 "90bid-stats-center",
+                "bata-process",
                 "data-process",
                 "rc-process",
                 "data-server"
@@ -214,10 +217,12 @@
             "host-90s-pro-integral-java-01": [
                 "90bid-integral-center",
                 "integral-server",
+                "online-bata-process",
                 "integral-firewall-process"
             ],
             "host-90s-pro-integral-java-02": [
                 "90bid-integral-center",
+                "online-bata-process",
                 "integral-server"
             ],
             "host-90s-pro-integral-robot-01": [
@@ -232,6 +237,9 @@
             ],
             "host-90s-pro-hadoop-01": [
                 "hadoop",
+                "spark-exposure-statistics",
+                "spark-hot-statistics",
+                "spark-similarity-matrix-calculus",
                 "90s-data-clean",
                 "exposure-spark",
                 "rc-spark",
