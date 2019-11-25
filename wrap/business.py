@@ -921,20 +921,17 @@ def monitor(opt, mod):
         tmp1 = []
         tmp2 = []
         i = 1
-        print '定时任务：'
-        for job in jobs:
-            #if GL.project()=='kt' or GL.project()=='yh':
-                #print '%d\t%s\t%s\t%-50s %s\t%s' % (i,job[0],job[1],job[2],job[6],job[7])
-            #else:
-            print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
-            i += 1
-            tmp1.append(job)
-        i = 1
         print '队列监控：'
         for q in queues:
             print '%d\t%s\t%s\t%-50s %s' % (i,q[0],q[1],q[2],q[4])
             i += 1
             tmp2.append(q)
+        i = 1
+        print '定时任务：'
+        for job in jobs:
+            print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
+            i += 1
+            tmp1.append(job)
         if opt == 'save':
             GL.setCloseJobs(tmp1)
             GL.setCloseQueues(tmp2)
@@ -948,15 +945,6 @@ def monitor(opt, mod):
             info = '关闭'
             status = False
         i = 1
-        print '定时任务：'
-        for job in jobs:
-            if job[1] == mod.name():
-                ip_id = job[0]
-                ljobKey = '%s_%s' % (job[1],job[2])
-                print i,info,ip_id,ljobKey,
-                i += 1
-                monitorJob(s, ip_id, ljobKey, status)
-        i = 1
         print '队列监控：'
         for q in queues:
             if q[1] == mod.name():
@@ -965,6 +953,17 @@ def monitor(opt, mod):
                 print i,info,ip_id,lqueueKey,
                 i += 1
                 monitorQueue(s, ip_id, lqueueKey, status)
+        if opt == 'close':
+            time.sleep(2)
+        i = 1
+        print '定时任务：'
+        for job in jobs:
+            if job[1] == mod.name():
+                ip_id = job[0]
+                ljobKey = '%s_%s' % (job[1],job[2])
+                print i,info,ip_id,ljobKey,
+                i += 1
+                monitorJob(s, ip_id, ljobKey, status)
 
 #opt: enable/disable
 def dubboAdmin(mod, ip, opt):
