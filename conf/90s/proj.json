@@ -15,6 +15,14 @@
         "cnfsuf": "server/center/config/90bid-ad-center",
         "port": "20605"
     },
+    "90bid-bata-center": {
+        "form": "center",
+        "pack": "90bid-bata-provider-1.0.0-assembly.zip",
+        "appdir": "90bid-bata-provider-1.0.0",
+        "svnsuf": "server/center/90bid-bata-center",
+        "cnfsuf": "server/center/config/90bid-bata-center",
+        "port": "20609"
+    },
     "90bid-integral-center": {
         "form": "center",
         "pack": "90bid-integral-provider-1.0.0-assembly.zip",
@@ -94,6 +102,20 @@
         "appdir": "online-recommend-process",
         "svnsuf": "server/process/online-recommend-process",
         "cnfsuf": "server/process/config/online-recommend-process"
+    },
+    "bata-process": {
+        "form": "process",
+        "pack": "bata-process-assembly.zip",
+        "appdir": "bata-process",
+        "svnsuf": "server/process/bata-process",
+        "cnfsuf": "server/process/config/bata-process"
+    },
+    "online-bata-process": {
+        "form": "process",
+        "pack": "online-bata-process-assembly.zip",
+        "appdir": "online-bata-process",
+        "svnsuf": "server/process/online-bata-process",
+        "cnfsuf": "server/process/config/online-bata-process"
     },
     "rc-process": {
         "form": "process",
@@ -309,6 +331,24 @@
     },
     "hadoop": {
         "form": "static"
+    },
+    "spark-exposure-statistics": {
+        "form": "data",
+        "pack": "spark-exposure-statistics-0.0.1-assembly.zip",
+        "appdir": "spark-exposure-statistics-0.0.1",
+        "svnsuf": "server/data/spark-exposure-statistics"
+    },
+    "spark-hot-statistics": {
+        "form": "data",
+        "pack": "spark-hot-statistics-0.0.1-assembly.zip",
+        "appdir": "spark-hot-statistics-0.0.1",
+        "svnsuf": "server/data/spark-hot-statistics"
+    },
+    "spark-similarity-matrix-calculus": {
+        "form": "data",
+        "pack": "spark-similarity-matrix-calculus-0.0.1-assembly.zip",
+        "appdir": "spark-similarity-matrix-calculus-0.0.1",
+        "svnsuf": "server/data/spark-similarity-matrix-calculus"
     },
     "90s-data-clean": {
         "form": "data",

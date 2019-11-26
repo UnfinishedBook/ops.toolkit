@@ -38,8 +38,8 @@
         "appdir": "/mydata"
     },
     "data": {
-        "appdir": "/mydata/stats",
-        "updir": "/mydata/stats/zip"
+        "appdir": "/mydata/spark-90bid-{env}",
+        "updir": "/mydata/spark-90bid-{env}/zip"
     },
     "mobile": {
     }
