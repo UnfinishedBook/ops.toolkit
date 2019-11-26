@@ -61,7 +61,7 @@
     },
     "test": {
         "intro": "测试环境",
-        "monitor": "172.18.203.167:7092",
+        "monitor": "172.18.27.82:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -73,7 +73,7 @@
         "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "jks_url": "http://localhost:7281/jenkins-test/",
         "jks_usr": "admin",
-        "jks_token": "1eda2936b59921dc8dc08416f484ef79",
+        "jks_token": "710b391a078bf1d094b30366fad6f454",
         "deploy": {
             "host-sdd-test": [
                 "webcms",
@@ -117,21 +117,22 @@
                 "integral-proxy-process",
                 "commonbiz-process",
                 "recommend-process",
+                "online-recommend-process",
                 "integral-server",
                 "integralapi"
             ],
-            "host-sdd-test-hadoop-01": [
+            "host-90s-test-hadoop-01": [
                 "hadoop",
-                "sdd-data-clean",
+                "data-clean",
                 "exposure-spark",
                 "rc-spark",
                 "rc-spark-realtime",
                 "rc-timer"
             ],
-            "host-sdd-test-hadoop-02": [
+            "host-90s-test-hadoop-02": [
                 "hadoop"
             ],
-            "host-sdd-test-hadoop-03": [
+            "host-90s-test-hadoop-03": [
                 "hadoop"
             ]
         }

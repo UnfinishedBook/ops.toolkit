@@ -215,17 +215,17 @@
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "svnsuf": "ad/sdd-ad"
+        "svnsuf": "ad/ad-api"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "svnsuf": "server/sdd"
+        "svnsuf": "server/api"
     },
     "integralapi": {
         "form": "node",
         "appdir": "integral-api",
-        "svnsuf": "server/sdd-integral"
+        "svnsuf": "server/integral-api"
     },
     "auth": {
         "form": "node",
@@ -286,7 +286,7 @@
         "form": "static",
         "pack": "webcms.tar.gz",
         "appdir": "web/cms",
-        "svnsuf": "web/90scms"
+        "svnsuf": "web/cms"
     },
     "cdn": {
         "form": "static",
@@ -303,11 +303,17 @@
     "hadoop": {
         "form": "static"
     },
-    "90s-data-clean": {
+    "shells": {
         "form": "data",
-        "pack": "90s-data-clean-0.0.1-assembly.zip",
-        "appdir": "90s-data-clean-0.0.1",
-        "svnsuf": "server/data/90s-data-clean"
+        "pack": "",
+        "appdir": "",
+        "svnsuf": "server/data/config/shells"
+    },
+    "data-clean": {
+        "form": "data",
+        "pack": "data-clean-0.0.1-assembly.zip",
+        "appdir": "data-clean-0.0.1",
+        "svnsuf": "server/data/data-clean"
     },
     "exposure-spark": {
         "form": "data",
