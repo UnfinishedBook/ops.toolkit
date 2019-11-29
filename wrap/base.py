@@ -107,16 +107,16 @@ def parseQueues(page):
         tds = []
         for item in pt2.findall(td):
             tds.append(item)
-        if len(tds) >= 5:
+        if len(tds) >= 6:
             queues.append(tds)
 
     for q in queues:
         qname = pt3.findall(q[2])
         if len(qname) > 0:
             q[2] = qname[0]
-        status = pt4.findall(q[4])
+        status = pt4.findall(q[5])
         if len(status) > 0:
-            q[4] = status[0][0].strip()
+            q[5] = status[0][0].strip()
             q.append(status[0][1])
     return queues
 

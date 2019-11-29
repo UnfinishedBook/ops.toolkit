@@ -877,16 +877,16 @@ def monitorCenterSrv(s, serverIP, status):
 
 def monitorSave():
     i = 1
-    print '定时任务：'
-    if GL.closeJobs() != None:
-        for job in GL.closeJobs():
-            print i,job[0],job[1],job[2]
-            i += 1
-    i = 1
     print '队列监控：'
     if GL.closeQueues() != None:
         for q in GL.closeQueues():
             print i,q[0],q[1],q[2]
+            i += 1
+    i = 1
+    print '定时任务：'
+    if GL.closeJobs() != None:
+        for job in GL.closeJobs():
+            print i,job[0],job[1],job[2]
             i += 1
 
 def monitor(opt, mod):
@@ -923,7 +923,7 @@ def monitor(opt, mod):
         i = 1
         print '队列监控：'
         for q in queues:
-            print '%d\t%s\t%s\t%-50s %s' % (i,q[0],q[1],q[2],q[4])
+            print '%d\t%s\t%s\t%-50s %s' % (i,q[0],q[1],q[2],q[5])
             i += 1
             tmp2.append(q)
         i = 1
