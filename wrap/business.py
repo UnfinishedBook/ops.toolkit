@@ -1020,7 +1020,7 @@ def zabbix_monitor():
         if name in zabbix_queue:
             zabbix_queue[name]['{#DEPLOY}'].append(queue[0])
             zabbix_queue[name]['{#HEARTBEAT}'].append(queue[3])
-            if queue[4] == '运行中':
+            if queue[5] == '运行中':
                 zabbix_queue[name]['{#RUNNING}'].append(True)
             else:
                 zabbix_queue[name]['{#RUNNING}'].append(False)
@@ -1029,8 +1029,8 @@ def zabbix_monitor():
             zabbix_queue[name]['{#NAME}'] = name
             zabbix_queue[name]['{#DEPLOY}'] = [queue[0],]
             #zabbix_queue[name]['{#HEARTBEAT}'] = [time.strptime(queue[5], '%Y-%m-%d %H:%M:%S'),]
-            zabbix_queue[name]['{#HEARTBEAT}'] = [queue[3],]
-            if queue[4] == '运行中':
+            zabbix_queue[name]['{#HEARTBEAT}'] = [queue[4],]
+            if queue[5] == '运行中':
                 zabbix_queue[name]['{#RUNNING}'] = [True,]
             else:
                 zabbix_queue[name]['{#RUNNING}'] = [False,]
