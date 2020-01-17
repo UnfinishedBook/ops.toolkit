@@ -501,13 +501,15 @@ def svncnf(mod, opt):
         trunk = mod.trunk_cnf()
         wcopy = mod.workcopy_cnf()
         #执行合并测试
-        cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
+        #cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)   # 2url合并
+        cmd = 'svn merge --dry-run %s %s' % (trunk,wcopy)   # sync合并
         GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
-            cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
+            #cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy) # 2url合并
+            cmd = 'svn merge %s %s' % (trunk,wcopy) # sync合并
             GL.LOG.info('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
@@ -591,13 +593,15 @@ def svn(mod, opt, path=None):
             trunk = '%s/%s' % (mod.trunk(),path)
             wcopy = '%s/%s' % (mod.workcopy(),path)
         #执行合并测试
-        cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)
+        #cmd = 'svn merge --dry-run %s %s %s' % (tag,trunk,wcopy)   # 2url合并
+        cmd = 'svn merge --dry-run %s %s' % (trunk,wcopy)   # sync合并
         GL.LOG.debug('合并测试，执行命令 (%s)' % cmd)
         localCmd(cmd)
         #合并
         out = ask('查看合并测试结果后，请确认是否执行实际的合并操作？', 'yes,no', 'no')
         if out == 'yes':
-            cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy)
+            #cmd = 'svn merge %s %s %s' % (tag,trunk,wcopy) # 2url合并
+            cmd = 'svn merge %s %s' % (trunk,wcopy) # sync合并
             GL.LOG.info('执行实际的合并操作 (%s)' % cmd)
             localCmd(cmd)
     elif opt == 'ci':
