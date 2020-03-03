@@ -12,6 +12,7 @@ import getpass
 import re
 import requests
 import jenkins
+import base64
 #from pexpect.pxssh import pxssh
 from Crypto.Cipher import AES
 from Crypto import Random
@@ -150,6 +151,8 @@ class Global:
         self.__svn = None
         self.__branch = None
         self.__default_proj = None
+        self.__dadmin = None
+        self.__dadmin_auth = None
         self.LOG = None
         #self.__fabric_env = env   #将fabric模块的环境变量保存下来
         #self.__fabric_env.key_filename = self.__conf['rsa_file']
@@ -312,6 +315,16 @@ class Global:
                 password=self.deploy()[self.env()]['jks_token'])
         else:
             self.jks = None
+
+    def dadmin(self):
+        if self.__dadmin == None:
+            self.__dadmin = self.deploy()[self.env()]['dadmin']
+        return self.__dadmin
+
+    def dadmin_auth(self):
+        if self.__dadmin_auth == None:
+            self.__dadmin_auth = cipher(GL.key(), self.deploy()[self.env()]['dadmin_auth'], False)
+        return self.__dadmin_auth
 
 GL = Global()
 

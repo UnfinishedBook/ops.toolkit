@@ -129,6 +129,8 @@
         "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
         "jks_token": "b67a48d844fb221dff0c174d505e92e4",
+        "dadmin": "http://172.18.203.168:4080/dubbo-admin-2.8.4/",
+        "dadmin_auth": "62afe3d635d2eca358225bb46154aec9",
         "deploy": {
             "host-90s-pro-tengine": [
                 "cdn",

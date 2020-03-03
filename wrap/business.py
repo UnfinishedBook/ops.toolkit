@@ -976,6 +976,7 @@ def dubboAdmin(mod, ip, opt):
     if mod.form() == 'center':
         if opt == 'enable':  #启用前等待服务注册到dubboadmin
             timekeeping(40)
+        dadmin_count()
         addr = '%s:%s' % (ip,mod.port())
         out = ask('%s DubboAdmin (%s), 确认立刻执行吗？' % (opt,addr), 'yes,no', 'no')
         if out == 'yes':
@@ -1079,4 +1080,16 @@ def jenkinsInfo(mod):
             num = GL.jks.get_job_info(mod.jenkinsJob())['lastBuild']['number']  #最近的构建序号
             info = GL.jks.get_build_info(mod.jenkinsJob(), num) #通过序号获取构建信息
 
+# 访问dubboadmin，获取当前提供者的总数
+def dadmin_count():
+    s = requests.session()
+    url = '%s/login' % GL.dadmin()
+    usrinfo = GL.dadmin_auth()
+    auth=base64.b64encode(usrinfo.encode())
+    headers = {'Authorization': "Basic " + auth.decode()}
+    r = s.get(url, headers=headers, timeout=3)
+    url = '%s/governance/providers' % GL.dadmin()
+    r = s.get(url, headers=headers, timeout=3)
+    pt = re.compile(r'共\d+条记录')
+    print pt.findall(r.content)[0]
 
