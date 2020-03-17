@@ -458,12 +458,12 @@ class Loop(Cmd):
         if GL.proj().has_key(arg):
             mod = getMod(arg)
             if mod != None:
-                print dumpJson(mod.deploy())
-                print dumpJson(GL.proj()[arg])
+                for ip in mod.deploy():
+                    self.do_local('ssh %s' % ip)
         elif GL.dplHosts().has_key(arg):
-            print dumpJson(GL.dplHosts()[arg])
-        elif arg == 'all':
-            print dumpJson(GL.deploy()[GL.env()])
+            self.do_local('ssh %s' % GL.getRealIP(arg))
+        elif GL.ipHosts().has_key(arg):
+            self.do_local('ssh %s' % arg)
         else:
             pass
 
