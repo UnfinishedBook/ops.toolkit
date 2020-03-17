@@ -88,7 +88,7 @@ class Loop(Cmd):
             return ret
 
     def do_cmd(self, arg):
-        args = arg.split(' ', 1)
+        args = arg.split(None, 1)
         if len(args) == 2:
             item = args[0]
             drt = args[1]
@@ -195,7 +195,7 @@ class Loop(Cmd):
         if GL.env() == 'dev':
             GL.LOG.error('开发环境不需要svn操作')
             return
-        args = arg.split(' ')
+        args = arg.split()
         if len(args)!=2 and len(args)!=3:
             self.help_svn()
         else:
@@ -216,7 +216,7 @@ class Loop(Cmd):
         if GL.env() == 'dev':
             GL.LOG.error('开发环境不需要svn操作')
             return
-        args = arg.split(' ')
+        args = arg.split()
         if len(args) != 2:
             self.help_svncnf()
         else:
@@ -273,7 +273,7 @@ class Loop(Cmd):
         if arg=='l' or arg=='list':
             pm2(arg)
         else:
-            args = arg.split(' ', 1)
+            args = arg.split(None, 1)
             if len(args) == 2:
                 mod = getMod(args[1])
                 if mod!=None and mod.form()=='node':
@@ -303,7 +303,7 @@ class Loop(Cmd):
         print '查询指定Java工程的进程情况，用法：status <工程名>'
 
     def do_monitor(self, arg):
-        args = arg.split(' ', 2)
+        args = arg.split(None, 2)
         if len(args)==1 and args[0]=='save':
             monitorSave()
         elif len(args)==2 and (args[0]=='show' or args[0]=='save' or args[0]=='close' or args[0]=='start'):
@@ -321,7 +321,7 @@ class Loop(Cmd):
         monitor <start/close> <工程名>  开启/关闭已save中对应工程的jobs和queues'''
 
     def do_dubbo(self, arg):
-        args = arg.split(' ', 2)
+        args = arg.split(None, 2)
         if len(args)==2 and (args[0]=='disable' or args[0]=='enable'):
             mod = getMod(args[1])
             if mod != None:
@@ -361,7 +361,7 @@ class Loop(Cmd):
             pass
 
     def do_scp(self, arg):
-        args = arg.split(' ', 2)
+        args = arg.split(None, 2)
         if len(args) != 3:
             self.help_scp()
             return
@@ -395,7 +395,7 @@ class Loop(Cmd):
         '''
 
     def do_rsync(self, arg):
-        args = arg.split(' ', 2)
+        args = arg.split(None, 2)
         if len(args) != 3:
             self.help_rsync()
             return
@@ -430,7 +430,7 @@ class Loop(Cmd):
 
     #自定义jks命令, 实现jenkins相关操作, 用法见函数help_jks
     def do_jks(self, arg):
-        args = arg.split(' ')   #以空格分隔参数
+        args = arg.split()   #以空格分隔参数
         if len(args) == 2:
             #直接接受两个参数, 第一为选项, 第二为工程
             if args[0] in self.jksOptions:
@@ -448,8 +448,18 @@ class Loop(Cmd):
                 info    查看信息
         ''')
 
+    def do_ssh(self, arg):
+        args = arg.split()
+        if len(args) == 1:
+            self.do_local('ssh %s' % arg)
+        #if len(args)!=2 and len(args)!=3:
+            #self.help_shh()
+
+    def help_shh(self):
+        pass
+
     #def do_set(self, arg):
-        #args = arg.split(' ')
+        #args = arg.split()
         #if len(args)==1 and arg=='show':
             #set(arg)
         #elif len(args) == 2:
