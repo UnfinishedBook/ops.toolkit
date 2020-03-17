@@ -150,6 +150,7 @@ class Global:
         self.__default_proj = None
         self.__dadmin = None
         self.__dadmin_auth = None
+        self.loop = None
         self.LOG = None
         #self.__fabric_env = env   #将fabric模块的环境变量保存下来
         #self.__fabric_env.key_filename = self.__conf['rsa_file']

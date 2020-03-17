@@ -752,7 +752,9 @@ def _start(ip, mod):
         out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
         if out == 'yes':
             remoteCmd(ip, cmd)
-    remoteCmd(ip, mod.pidexe(), False)
+    remoteCmd(ip, mod.pidexe())
+    if GL.env()=='pro' and mod.form()=='newserver':
+        remoteCmd(ip, 'tail -f %s' % mod.logfile())
 
 def start(mod):
     for ip in mod.deploy():

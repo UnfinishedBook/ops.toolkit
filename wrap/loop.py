@@ -58,6 +58,7 @@ class Loop(Cmd):
         intro_env = GL.deploy()[GL.env()]['intro']
         self.intro = '进入运维工具事件循环，项目：%s，选择的环境是：%s。' % (intro_pro,intro_env)
         self.prompt = "运维 %s %s ->> " % (intro_pro,intro_env)
+        GL.loop = self
 
     #事件循环结束时执行
     def postloop(self):
@@ -459,9 +460,9 @@ class Loop(Cmd):
         elif GL.ipHosts().has_key(arg):
             self.do_local('ssh %s' % arg)
         else:
-            pass
+            self.help_ssh()
 
-    def help_shh(self):
+    def help_ssh(self):
         print('''
         ssh命令：远程连接主机；用法：ssh [工程名/主机名/IP地址]
         ''')

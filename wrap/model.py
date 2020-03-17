@@ -21,6 +21,7 @@ class Model:
         self.__trunk_cnf = None
         self.__tag_cnf = None
         self.__workcopy_cnf = None
+        self.__logdir = None
         self.__gcdir = None
         self.__gcbakdir = None
         self.__port = None
@@ -73,9 +74,27 @@ class Model:
             self.__cnfdir = '%s/%s' % (GL.form()[self.form()]['cnfdir'],self.name())
         return self.__cnfdir
 
+    def logdir(self):
+        if self.__logdir == None:
+            form = self.form()
+            if form == 'newserver':
+                form = 'server'
+            self.__logdir = '%s/%s/%s' % (GL.form()['logdir'],form,self.name())
+        return self.__logdir
+
+    def logfile(self):  # 当前时刻的日志文件
+        print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+        curTime = time.localtime(time.time())
+        curDate = time.strftime('%Y-%m-%d', curTime)
+        curHour = time.strftime('%Y-%m-%d-%H', curTime)
+        return '%s/%s/application-%s.log' % (self.logdir(),curDate,curHour)
+
     def gcdir(self):    #gc日志目录
         if self.__gcdir == None:
-            self.__gcdir = '%s/gc/%s/%s' % (GL.form()['logdir'],self.form(),self.name())
+            form = self.form()
+            if form == 'newserver':
+                form = 'server'
+            self.__gcdir = '%s/gc/%s/%s' % (GL.form()['logdir'],form,self.name())
         return self.__gcdir
 
     def gcbakdir(self):    #gc日志的备份目录
