@@ -448,19 +448,13 @@ class Loop(Cmd):
                 info    查看信息
         ''')
 
-    #def do_ssh(self, arg):
-        #args = arg.split()
-        #if len(args) == 1:
-            #self.do_local('ssh %s' % arg)
-        #if len(args)!=2 and len(args)!=3:
-            #self.help_shh()
     def do_ssh(self, arg):
-        if GL.proj().has_key(arg):
+        if GL.proj().has_key(arg) or arg=='!$':
             mod = getMod(arg)
             if mod != None:
                 for ip in mod.deploy():
                     self.do_local('ssh %s' % ip)
-        elif GL.dplHosts().has_key(arg):
+        elif GL.hosts().has_key(arg):
             self.do_local('ssh %s' % GL.getRealIP(arg))
         elif GL.ipHosts().has_key(arg):
             self.do_local('ssh %s' % arg)
@@ -468,7 +462,9 @@ class Loop(Cmd):
             pass
 
     def help_shh(self):
-        pass
+        print('''
+        ssh命令：远程连接主机；用法：ssh [工程名/主机名/IP地址]
+        ''')
 
     #def do_set(self, arg):
         #args = arg.split()

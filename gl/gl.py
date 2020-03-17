@@ -124,19 +124,15 @@ class Global:
         self.__dirMain = sys.path[0]    #程序的主目录
         self.__dirCfg = '%s/conf' % self.__dirMain  #配置文件目录
         self.__conf = loadJsonFile('%s/conf.json' % self.__dirCfg)
-        self.__hosts = loadJsonFile('%s/hosts.json' % self.__dirCfg)
-        self.__dplHosts = None
-        self.__ipHosts = None
-        #self.__project = self.__conf['project']
         self.__issue = self.__conf[self.__project]['issue']
         self.__pkdir = self.__conf[self.__project]['pkdir']
         self.__deploy = loadJsonFile('%s/%s/deploy.json' % (self.__dirCfg,self.__project))
         self.__form = loadJsonFile('%s/%s/form.json' % (self.__dirCfg,self.__project))
+        self.__hosts = loadJsonFile('%s/%s/hosts.json' % (self.__dirCfg,self.__project))
         self.__proj = loadJsonFile('%s/%s/proj.json' % (self.__dirCfg,self.__project))
-        #self.__rsa ='/mydata/maintenance/identity/maintenance_rsa'
-        #self.__rsa ='/root/.ssh/id_rsa'
+        self.__ipHosts = None
+        self.__dplHosts = None
         self.__env = None
-        #self.remote = {}
         self.__monitor = None
         self.__mlogin = None
         self.__mget_job = None
@@ -168,20 +164,20 @@ class Global:
     def conf(self):
         return self.__conf
 
-    def hosts(self):
+    def hosts(self):    # hosts配置文件中的主机（全部环境）
         return self.__hosts
 
-    def dplHosts(self):
-        if self.__dplHosts == None:
-            self.__dplHosts = self.deploy()[self.env()]['deploy']
-        return self.__dplHosts
-
-    def ipHosts(self):
+    def ipHosts(self):  # 将hosts的内容从主机名转为IP地址
         if self.__ipHosts == None:
             self.__ipHosts = {}
             for k,v in self.hosts().items():
                 self.__ipHosts[v] = k
         return self.__ipHosts
+
+    def dplHosts(self): # deploy配置文件中当前环境所部署的主机
+        if self.__dplHosts == None:
+            self.__dplHosts = self.deploy()[self.env()]['deploy']
+        return self.__dplHosts
 
     def deploy(self):
         return self.__deploy
