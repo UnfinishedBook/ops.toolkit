@@ -125,6 +125,7 @@ class Global:
         self.__dirCfg = '%s/conf' % self.__dirMain  #配置文件目录
         self.__conf = loadJsonFile('%s/conf.json' % self.__dirCfg)
         self.__hosts = loadJsonFile('%s/hosts.json' % self.__dirCfg)
+        self.__dplHosts = None
         self.__ipHosts = None
         #self.__project = self.__conf['project']
         self.__issue = self.__conf[self.__project]['issue']
@@ -169,6 +170,11 @@ class Global:
 
     def hosts(self):
         return self.__hosts
+
+    def dplHosts(self):
+        if self.__dplHosts == None:
+            self.__dplHosts = self.deploy()[self.env()]['deploy']
+        return self.__dplHosts
 
     def ipHosts(self):
         if self.__ipHosts == None:

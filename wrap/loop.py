@@ -98,12 +98,12 @@ class Loop(Cmd):
                 mod = getMod(item)
                 if mod != None:
                     cmd(mod.deploy(), drt, self.cmdask)
-            elif GL.deploy()[GL.env()]['deploy'].has_key(item) or GL.ipHosts().has_key(item):
+            elif GL.dplHosts().has_key(item) or GL.ipHosts().has_key(item):
                 lst = [item,]
                 ip_list = GL.getRealIPs(lst)
                 cmd(ip_list, drt, self.cmdask)
             elif item == 'all':
-                lst = GL.deploy()[GL.env()]['deploy'].keys()
+                lst = GL.dplHosts().keys()
                 ip_list = GL.getRealIPs(lst)
                 cmd(ip_list, drt, self.cmdask)
             else:
@@ -353,8 +353,8 @@ class Loop(Cmd):
             if mod != None:
                 print dumpJson(mod.deploy())
                 print dumpJson(GL.proj()[arg])
-        elif GL.deploy()[GL.env()]['deploy'].has_key(arg):
-            print dumpJson(GL.deploy()[GL.env()]['deploy'][arg])
+        elif GL.dplHosts().has_key(arg):
+            print dumpJson(GL.dplHosts()[arg])
         elif arg == 'all':
             print dumpJson(GL.deploy()[GL.env()])
         else:
@@ -379,11 +379,11 @@ class Loop(Cmd):
             ip = GL.getRealIP(args[0])
             ip_list = [ip,]
             scp(ip_list, src, dest)
-        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]) or GL.ipHosts().has_key(args[0]):
+        elif GL.dplHosts().has_key(args[0]) or GL.ipHosts().has_key(args[0]):
             ip_list = [args[0],]
             scp(ip_list, src, dest)
         elif args[0] == 'all':
-            lst = GL.deploy()[GL.env()]['deploy'].keys()
+            lst = GL.dplHosts().keys()
             ip_list = GL.getRealIPs(lst)
             scp(ip_list, src, dest)
         else:
@@ -413,11 +413,11 @@ class Loop(Cmd):
             ip = GL.getRealIP(args[0])
             ip_list = [ip,]
             rsync(ip_list, src, dest)
-        elif GL.deploy()[GL.env()]['deploy'].has_key(args[0]) or GL.ipHosts().has_key(args[0]):
+        elif GL.dplHosts().has_key(args[0]) or GL.ipHosts().has_key(args[0]):
             ip_list = [args[0],]
             rsync(ip_list, src, dest)
         elif args[0] == 'all':
-            lst = GL.deploy()[GL.env()]['deploy'].keys()
+            lst = GL.dplHosts().keys()
             ip_list = GL.getRealIPs(lst)
             rsync(ip_list, src, dest)
         else:
@@ -448,12 +448,24 @@ class Loop(Cmd):
                 info    查看信息
         ''')
 
-    def do_ssh(self, arg):
-        args = arg.split()
-        if len(args) == 1:
-            self.do_local('ssh %s' % arg)
+    #def do_ssh(self, arg):
+        #args = arg.split()
+        #if len(args) == 1:
+            #self.do_local('ssh %s' % arg)
         #if len(args)!=2 and len(args)!=3:
             #self.help_shh()
+    def do_ssh(self, arg):
+        if GL.proj().has_key(arg):
+            mod = getMod(arg)
+            if mod != None:
+                print dumpJson(mod.deploy())
+                print dumpJson(GL.proj()[arg])
+        elif GL.dplHosts().has_key(arg):
+            print dumpJson(GL.dplHosts()[arg])
+        elif arg == 'all':
+            print dumpJson(GL.deploy()[GL.env()])
+        else:
+            pass
 
     def help_shh(self):
         pass
