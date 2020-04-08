@@ -935,7 +935,7 @@ def monitor(opt, mod):
         i = 1
         print '定时任务：'
         for job in jobs:
-            print '%d\t%s\t%s\t%-50s %s' % (i,job[0],job[1],job[2],job[6])
+            print '%d\t%s\t%s\t%-50s %s\t%s' % (i,job[0],job[1],job[2],job[6],job[7])
             i += 1
             tmp1.append(job)
         if opt == 'save':
