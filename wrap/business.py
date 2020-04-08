@@ -116,7 +116,7 @@ def up_wap(mod, patch=False):
     localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     localCmd('ls -ld %s %s' % (pk,tmp))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -165,7 +165,7 @@ def up_weblandpagev2(mod, patch=False):
     localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     localCmd('ls -ld %s %s' % (pk,tmp))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -189,7 +189,7 @@ def up_wapv2(mod, patch=False):
     localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
@@ -210,7 +210,7 @@ def up_webv1(mod, patch=False):
     localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
@@ -231,7 +231,7 @@ def up_webv2(mod, patch=False):
     localCmd('ls -ld %s %s' % (pk,tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     localCmd('ls -ld %s %s' % (pk,tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
@@ -251,7 +251,7 @@ def up_web(mod, patch=False):
     localCmd('ls -ld %s %s' % (mod.pk(),tmp))
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (mod.pk(),tmp))
+    localCmd('tar -xf %s -C %s' % (mod.pk(),tmp))
     localCmd('ls -ld %s %s' % (mod.pk(),tmp))
     src = '%s/dist' % tmp
     if os.path.exists(src) == False:
@@ -281,7 +281,7 @@ def up_h5v1(mod, patch=False):
     src = '%s/%s' % (GL.pkdir(),mod.name())
     localCmd('mkdir -p %s' % src)
     localCmd('rm -rf %s/*' % src)
-    localCmd('tar -zxf %s -C %s' % (pk,src))
+    localCmd('tar -xf %s -C %s' % (pk,src))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
         return
@@ -303,7 +303,7 @@ def up_h5v2(mod, patch=False):
     src = '%s/%s' % (GL.pkdir(),mod.name())
     localCmd('mkdir -p %s' % src)
     localCmd('rm -rf %s/*' % src)
-    localCmd('tar -zxf %s -C %s' % (pk,src))
+    localCmd('tar -xf %s -C %s' % (pk,src))
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
         return
@@ -350,7 +350,7 @@ def up_php(mod, patch=False):
     tmp = '%s/%s' % (GL.pkdir(),mod.name())
     localCmd('mkdir -p %s' % tmp)
     localCmd('rm -rf %s/*' % tmp)
-    localCmd('tar -zxf %s -C %s' % (pk,tmp))
+    localCmd('tar -xf %s -C %s' % (pk,tmp))
     src = '%s/h5_php' % tmp
     if os.path.exists(src) == False:
         GL.LOG.error('未发现目录: %s' % src)
@@ -430,7 +430,7 @@ def up_server(mod):
 
 def up_center(mod):
     for ip in mod.deploy():
-        cmd = 'rm -rf %s; unzip %s -d %s' % (mod.appdir(),mod.pack(),mod.upappdir())
+        cmd = 'rm -rf %s; unzip -q %s -d %s' % (mod.appdir(),mod.pack(),mod.upappdir())
         out = ask('将在 (%s) 运行命令 (%s), 确认立刻执行吗？' % (ip,cmd), 'yes,no', 'no')
         if out == 'yes':
             remoteCmd(ip, cmd)
