@@ -1,6 +1,12 @@
 {
     "rsa_file": "/mydata/maintenance/identity/ops_rsa",
     "rsa_pwd": "e1ed906489876c59f865096e4aedd32b",
+    "rgs": {
+        "intro": "袋鼠",
+        "issue": "",
+        "svn": "06bfd3fdf4129104b5fe6a505607791d",
+        "pkdir": "/mydata/maintenance/packages"
+    },
     "90s": {
         "intro": "90秒",
         "issue": "",

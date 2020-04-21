@@ -1,0 +1,257 @@
+{
+    "dev": {
+        "intro": "开发环境",
+        "monitor": "172.18.27.36:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_center": "dubbo/get_check_servers",
+        "mctl_center": "dubbo/change_check_status",
+        "muser": "root",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
+        "deploy": {
+            "host-rgs-dev": [
+                "roogoods-ad-center",
+                "roogoods-center",
+                "cms-process",
+                "bid-process",
+                "coupon-server",
+                "monitor-server",
+                "weixin-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel"
+            ],
+            "host-rgs-dev-integral": [
+            ]
+        }
+    },
+    "test": {
+        "intro": "测试环境",
+        "monitor": "172.18.203.167:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_center": "dubbo/get_check_servers",
+        "mctl_center": "dubbo/change_check_status",
+        "muser": "root",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
+        "jks_url": "http://localhost:7281/jenkins-test/",
+        "jks_usr": "admin",
+        "jks_token": "1eda2936b59921dc8dc08416f484ef79",
+        "deploy": {
+            "host-rgs-test": [
+                "webcms",
+                "webwap",
+                "weblandpage",
+                "weblandpagev2",
+                "roogoods-ad-center",
+                "roogoods-center",
+                "roogoods-stats-center",
+                "roogoods-stats-process",
+                "roogoods-toutiao-process",
+                "cms-process",
+                "bid-process",
+                "data-process",
+                "order-process",
+                "prizepool-process",
+                "rc-process",
+                "seckill-process",
+                "weixin-process",
+                "bid-server",
+                "data-server",
+                "monitor-server",
+                "pay-server",
+                "search-server",
+                "weixin-server",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel"
+            ],
+            "host-rgs-test-integral": [
+                "roogoods-integral-center",
+                "roogoods-bata-center",
+                "integral-process",
+                "integral-data-process",
+                "integral-firewall-process",
+                "integral-prizepool-process",
+                "integral-proxy-process",
+                "commonbiz-process",
+                "recommend-process",
+                "online-recommend-process",
+                "bata-process",
+                "online-bata-process",
+                "integral-server",
+                "integralapi"
+            ],
+            "host-rgs-test-hadoop-01": [
+                "hadoop",
+                "spark-exposure-statistics",
+                "spark-hot-statistics",
+                "spark-similarity-matrix-calculus"
+            ],
+            "host-rgs-test-hadoop-02": [
+                "hadoop"
+            ],
+            "host-rgs-test-hadoop-03": [
+                "hadoop"
+            ]
+        }
+    },
+    "pro": {
+        "intro": "生产环境",
+        "monitor": "172.18.27.47:7092",
+        "mlogin": "login/do_login",
+        "mget_job": "ljob/get_online_ljobs",
+        "mget_queue": "lqueue/get_online_lqueues",
+        "mctl_job": "ljob/send_ljob_status_request",
+        "mctl_queue": "lqueue/send_lqueue_status_request",
+        "mget_center": "dubbo/get_check_servers",
+        "mctl_center": "dubbo/change_check_status",
+        "muser": "root",
+        "mpwd": "640fe9e4816e90b1612ab04c2f817d6b",
+        "jks_url": "http://localhost:7081/jenkins/",
+        "jks_usr": "admin",
+        "jks_token": "b67a48d844fb221dff0c174d505e92e4",
+        "dadmin": "http://172.18.203.168:4080/dubbo-admin-2.8.4/",
+        "dadmin_auth": "62afe3d635d2eca358225bb46154aec9",
+        "deploy": {
+            "host-rgs-pro-tengine": [
+                "cdn",
+                "webcms",
+                "webcms_cdn",
+                "weblandpage",
+                "weblandpage_cdn",
+                "weblandpagev2",
+                "weblandpagev2_cdn",
+                "webwap",
+                "webwap_cdn"
+            ],
+            "host-rgs-pro-data-01": [
+                "roogoods-bata-center",
+                "roogoods-stats-center",
+                "roogoods-stats-process",
+                "roogoods-toutiao-process",
+                "cms-process",
+                "data-server"
+            ],
+            "host-rgs-pro-data-02": [
+                "roogoods-bata-center",
+                "roogoods-stats-center",
+                "bata-process",
+                "data-process",
+                "rc-process",
+                "data-server"
+            ],
+            "host-rgs-pro-java-01": [
+                "roogoods-center",
+                "bid-server",
+                "pay-server",
+                "monitor-server",
+                "weixin-server"
+            ],
+            "host-rgs-pro-java-02": [
+                "roogoods-center",
+                "bid-server",
+                "pay-server",
+                "weixin-server"
+            ],
+            "host-rgs-pro-node-01": [
+                "weixin-process",
+                "search-server",
+                "roogoods-ad-center",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "cmsTimer",
+                "data",
+                "data_channel",
+                "integralapi"
+            ], 
+            "host-rgs-pro-node-02": [
+                "search-server",
+                "roogoods-ad-center",
+                "activity-api",
+                "ad-api",
+                "api",
+                "auth",
+                "cms",
+                "data",
+                "data_channel",
+                "integralapi"
+            ], 
+            "host-rgs-pro-robot-01": [
+                "online-recommend-process",
+                "roogoods-center"
+            ],
+            "host-rgs-pro-robot-02": [
+                "online-recommend-process",
+                "roogoods-center"
+            ],
+            "host-rgs-pro-process-01": [
+                "bid-process",
+                "recommend-process"
+            ],
+            "host-rgs-pro-process-02": [
+                "commonbiz-process",
+                "order-process",
+                "prizepool-process",
+                "seckill-process"
+            ],
+            "host-rgs-pro-integral-java-01": [
+                "roogoods-integral-center",
+                "integral-server",
+                "online-bata-process",
+                "integral-firewall-process"
+            ],
+            "host-rgs-pro-integral-java-02": [
+                "roogoods-integral-center",
+                "online-bata-process",
+                "integral-server"
+            ],
+            "host-rgs-pro-integral-robot-01": [
+                "roogoods-integral-center",
+                "integral-process",
+                "integral-data-process"
+            ],
+            "host-rgs-pro-integral-robot-02": [
+                "roogoods-integral-center",
+                "integral-prizepool-process",
+                "integral-proxy-process"
+            ],
+            "host-rgs-pro-hadoop-01": [
+                "hadoop",
+                "spark-exposure-statistics",
+                "spark-hot-statistics",
+                "spark-similarity-matrix-calculus",
+                "rgs-data-clean",
+                "exposure-spark",
+                "rc-spark",
+                "rc-spark-realtime",
+                "rc-timer"
+            ],
+            "host-rgs-pro-hadoop-02": [
+                "hadoop"
+            ],
+            "host-rgs-pro-hadoop-03": [
+                "hadoop"
+            ]
+        }
+    }
+}
