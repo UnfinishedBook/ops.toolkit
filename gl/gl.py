@@ -150,6 +150,8 @@ class Global:
         self.__default_proj = None
         self.__dadmin = None
         self.__dadmin_auth = None
+        self.__rsaDir = None
+        self.__logDir = None
         self.loop = None
         self.LOG = None
         #self.__fabric_env = env   #将fabric模块的环境变量保存下来
@@ -328,6 +330,16 @@ class Global:
         if self.__dadmin_auth == None:
             self.__dadmin_auth = cipher(GL.key(), self.deploy()[self.env()]['dadmin_auth'], False)
         return self.__dadmin_auth
+
+    def rsaDir(self):
+        if self.__rsaDir == None:
+            self.__rsaDir = self.conf()['rsa_dir']
+        return self.__rsaDir
+
+    def logDir(self):
+        if self.__logDir == None:
+            self.__logDir = self.conf()['log_dir']
+        return self.__logDir
 
 GL = Global()
 

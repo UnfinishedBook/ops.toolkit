@@ -1,6 +1,6 @@
 {
-    "rsa_file": "/mydata/maintenance/identity/ops_rsa",
-    "rsa_pwd": "e1ed906489876c59f865096e4aedd32b",
+    "rsa_dir": "/mydata/maintenance/identity",
+    "log_dir": "/mydata/maintenance/logs",
     "rgs": {
         "intro": "袋鼠",
         "issue": "",

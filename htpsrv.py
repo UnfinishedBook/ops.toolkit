@@ -1,9 +1,6 @@
 #!/usr/bin/python  
 # -*- coding: UTF-8 -*-
 
-#启动本程序: ssh-agent ./http.py
-#后台启动本程序: nohup ssh-agent ./http.py > /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &
-
 from gl import *
 from wrap import *
 #from bottle import *
@@ -13,22 +10,22 @@ import cherrypy
 from paramiko import SSHException
 import thread
 
-f = open('/mydata/maintenance/identity/key')
+f = open('%s/key' % GL.rsaDir())
 pwd = f.readline()
 f.close()
-ch = pexpect.spawn('ssh-add /mydata/maintenance/identity/maintenance_rsa')
-ch.expect('Enter passphrase for /mydata/maintenance/identity/maintenance_rsa: ')
+ch = pexpect.spawn('ssh-add %s/maintenance_rsa' % GL.rsaDir())
+ch.expect('Enter passphrase for %s/maintenance_rsa: ' % GL.rsaDir())
 ch.sendline(pwd)
 output = commands.getoutput('ssh-add -l')
 ch.close()
 if 'maintenance_rsa' not in output:
-    print '请使用ssh-agent命令启动本程序,示例: \nnohup ssh-agent ./http.py > /mydata/maintenance/logs/ops-toolkit-http.std 2>&1 &'
+    print '添加ssh key到ssh-agent失败！请检查！'
     exit()
 
 GL.LOG = getLogger('HttpLogger', 'ops-toolkit-http.log')
 
 def capturePkg(ip, hostip):
-    cmd = 'nohup tcpdump host %s -n -nn -c 200000 > /mydata/maintenance/logs/tcpdump-%s.log 2>&1 &' % (hostip,getTimestamp())
+    cmd = 'nohup tcpdump host %s -n -nn -c 200000 > %s/tcpdump-%s.log 2>&1 &' % (hostip,GL.logDir(),getTimestamp())
     GL.LOG.info('抓包线程启动 : %s' % cmd)
     remoteCmd(ip, cmd, False)
     GL.LOG.info('抓包线程退出')
