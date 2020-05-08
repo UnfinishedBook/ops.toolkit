@@ -1,42 +1,42 @@
 {
-    "90bid-center": {
+    "roogoods-center": {
         "form": "center",
-        "pack": "90bid-provider-1.0.0-assembly.zip",
-        "appdir": "90bid-provider-1.0.0",
-        "svnsuf": "server/center/90bid-center",
-        "cnfsuf": "server/center/config/90bid-center",
+        "pack": "roogoods-provider-1.0.0-assembly.zip",
+        "appdir": "roogoods-provider-1.0.0",
+        "svnsuf": "server/center/roogoods-center",
+        "cnfsuf": "server/center/config/roogoods-center",
         "port": "20604"
     },
-    "90bid-ad-center": {
+    "roogoods-ad-center": {
         "form": "center",
-        "pack": "90bid-ad-provider-1.0.0-assembly.zip",
-        "appdir": "90bid-ad-provider-1.0.0",
-        "svnsuf": "server/center/90bid-ad-center",
-        "cnfsuf": "server/center/config/90bid-ad-center",
+        "pack": "roogoods-ad-provider-1.0.0-assembly.zip",
+        "appdir": "roogoods-ad-provider-1.0.0",
+        "svnsuf": "server/center/roogoods-ad-center",
+        "cnfsuf": "server/center/config/roogoods-ad-center",
         "port": "20605"
     },
-    "90bid-bata-center": {
+    "roogoods-bata-center": {
         "form": "center",
-        "pack": "90bid-bata-provider-1.0.0-assembly.zip",
-        "appdir": "90bid-bata-provider-1.0.0",
-        "svnsuf": "server/center/90bid-bata-center",
-        "cnfsuf": "server/center/config/90bid-bata-center",
+        "pack": "roogoods-bata-provider-1.0.0-assembly.zip",
+        "appdir": "roogoods-bata-provider-1.0.0",
+        "svnsuf": "server/center/roogoods-bata-center",
+        "cnfsuf": "server/center/config/roogoods-bata-center",
         "port": "20609"
     },
-    "90bid-integral-center": {
+    "roogoods-integral-center": {
         "form": "center",
-        "pack": "90bid-integral-provider-1.0.0-assembly.zip",
-        "appdir": "90bid-integral-provider-1.0.0",
-        "svnsuf": "server/center/90bid-integral-center",
-        "cnfsuf": "server/center/config/90bid-integral-center",
+        "pack": "roogoods-integral-provider-1.0.0-assembly.zip",
+        "appdir": "roogoods-integral-provider-1.0.0",
+        "svnsuf": "server/center/roogoods-integral-center",
+        "cnfsuf": "server/center/config/roogoods-integral-center",
         "port": "20608"
     },
-    "90bid-stats-center": {
+    "roogoods-stats-center": {
         "form": "center",
-        "pack": "90bid-stats-provider-0.1.0-assembly.zip",
-        "appdir": "90bid-stats-provider-0.1.0",
-        "svnsuf": "server/center/90bid-stats-center",
-        "cnfsuf": "server/center/config/90bid-stats-center",
+        "pack": "roogoods-stats-provider-1.0.0-assembly.zip",
+        "appdir": "roogoods-stats-provider-1.0.0",
+        "svnsuf": "server/center/roogoods-stats-center",
+        "cnfsuf": "server/center/config/roogoods-stats-center",
         "port": "20606"
     },
     "yh798-adsms-center": {
@@ -173,19 +173,19 @@
         "svnsuf": "server/process/integral-proxy-process",
         "cnfsuf": "server/process/config/integral-proxy-process"
     },
-    "90bid-stats-process": {
+    "roogoods-stats-process": {
         "form": "process",
-        "pack": "90bid-stats-process-assembly.zip",
-        "appdir": "90bid-stats-process",
-        "svnsuf": "server/process/90bid-stats-process",
-        "cnfsuf": "server/process/config/90bid-stats-process"
+        "pack": "roogoods-stats-process-assembly.zip",
+        "appdir": "roogoods-stats-process",
+        "svnsuf": "server/process/roogoods-stats-process",
+        "cnfsuf": "server/process/config/roogoods-stats-process"
     },
-    "90bid-toutiao-process": {
+    "roogoods-toutiao-process": {
         "form": "process",
-        "pack": "90bid-toutiao-process-assembly.zip",
-        "appdir": "90bid-toutiao-process",
-        "svnsuf": "server/process/90bid-toutiao-process",
-        "cnfsuf": "server/process/config/90bid-toutiao-process"
+        "pack": "roogoods-toutiao-process-assembly.zip",
+        "appdir": "roogoods-toutiao-process",
+        "svnsuf": "server/process/roogoods-toutiao-process",
+        "cnfsuf": "server/process/config/roogoods-toutiao-process"
     },
     "bid-server": {
         "form": "newserver",
@@ -239,22 +239,22 @@
     "activity-api": {
         "form": "node",
         "appdir": "activity-api",
-        "svnsuf": "server/90bid-activity"
+        "svnsuf": "server/roogoods-activity"
     },
     "ad-api": {
         "form": "node",
         "appdir": "ad-api",
-        "svnsuf": "ad/90bid-ad"
+        "svnsuf": "ad/roogoods-ad"
     },
     "api": {
         "form": "node",
         "appdir": "api",
-        "svnsuf": "server/90bid"
+        "svnsuf": "server/roogoods"
     },
     "integralapi": {
         "form": "node",
         "appdir": "integral-api",
-        "svnsuf": "server/90bid-integral"
+        "svnsuf": "server/roogoods-integral"
     },
     "auth": {
         "form": "node",
@@ -315,7 +315,7 @@
         "form": "static",
         "pack": "webcms.tar.gz",
         "appdir": "web/cms",
-        "svnsuf": "web/90scms"
+        "svnsuf": "web/cms"
     },
     "cdn": {
         "form": "static",

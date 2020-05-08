@@ -1,7 +1,7 @@
 {
     "dev": {
         "intro": "开发环境",
-        "monitor": "172.18.27.36:7092",
+        "monitor": "172.18.203.208:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -35,7 +35,7 @@
     },
     "test": {
         "intro": "测试环境",
-        "monitor": "172.18.203.167:7092",
+        "monitor": "172.18.27.96:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -47,7 +47,7 @@
         "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "jks_url": "http://localhost:7281/jenkins-test/",
         "jks_usr": "admin",
-        "jks_token": "1eda2936b59921dc8dc08416f484ef79",
+        "jks_token": "4804ffc538f76d9edb7231b50692cfa6",
         "deploy": {
             "host-rgs-test": [
                 "webcms",
@@ -114,7 +114,7 @@
     },
     "pro": {
         "intro": "生产环境",
-        "monitor": "172.18.27.47:7092",
+        "monitor": "172.18.27.103:7092",
         "mlogin": "login/do_login",
         "mget_job": "ljob/get_online_ljobs",
         "mget_queue": "lqueue/get_online_lqueues",
@@ -123,11 +123,11 @@
         "mget_center": "dubbo/get_check_servers",
         "mctl_center": "dubbo/change_check_status",
         "muser": "root",
-        "mpwd": "640fe9e4816e90b1612ab04c2f817d6b",
+        "mpwd": "a802cc95fbc98015cf4f416d08239d65",
         "jks_url": "http://localhost:7081/jenkins/",
         "jks_usr": "admin",
-        "jks_token": "b67a48d844fb221dff0c174d505e92e4",
-        "dadmin": "http://172.18.203.168:4080/dubbo-admin-2.8.4/",
+        "jks_token": "7a3c63814a48adc7d6c0dc9c1aee00f3",
+        "dadmin": "http://172.18.27.100:4080/dubbo-admin-2.8.4/",
         "dadmin_auth": "62afe3d635d2eca358225bb46154aec9",
         "deploy": {
             "host-rgs-pro-tengine": [
@@ -159,16 +159,10 @@
             ],
             "host-rgs-pro-java-01": [
                 "roogoods-center",
-                "bid-server",
-                "pay-server",
-                "monitor-server",
-                "weixin-server"
+                "monitor-server"
             ],
             "host-rgs-pro-java-02": [
-                "roogoods-center",
-                "bid-server",
-                "pay-server",
-                "weixin-server"
+                "roogoods-center"
             ],
             "host-rgs-pro-node-01": [
                 "weixin-process",
@@ -196,23 +190,11 @@
                 "data_channel",
                 "integralapi"
             ], 
-            "host-rgs-pro-robot-01": [
-                "online-recommend-process",
-                "roogoods-center"
-            ],
-            "host-rgs-pro-robot-02": [
-                "online-recommend-process",
-                "roogoods-center"
-            ],
             "host-rgs-pro-process-01": [
-                "bid-process",
-                "recommend-process"
+                "roogoods-center"
             ],
             "host-rgs-pro-process-02": [
-                "commonbiz-process",
-                "order-process",
-                "prizepool-process",
-                "seckill-process"
+                "roogoods-center"
             ],
             "host-rgs-pro-integral-java-01": [
                 "roogoods-integral-center",
